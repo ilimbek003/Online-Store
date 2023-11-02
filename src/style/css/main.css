@@ -6,7 +6,7 @@
     background: var(--orange);
     border-radius: 15px;
     margin-top: 150px;
-    padding: 10px  15px;
+    padding: 10px 15px;
     cursor: pointer;
 }
 
@@ -23,7 +23,7 @@
     right: 0;
     height: 50px;
     background: #ffffff;
-    z-index: 9990;
+    z-index: 998;
     padding: 5px 0 0 0;
     margin: 0 auto;
     width: 90%;
@@ -57,7 +57,7 @@
     font-size: 12px;
     font-weight: 400;
     font-style: normal;
-    color: #787676 ;
+    color: #787676;
     margin: 3px 0 0 0;
 }
 
@@ -77,7 +77,8 @@
     color: var(--orange) !important;
     font-size: 12px;
 }
-.coupon_box{
+
+.coupon_box {
     width: 100%;
     min-height: 160px;
     background: linear-gradient(45deg, rgb(255, 255, 255), rgb(243, 243, 243));
@@ -91,22 +92,89 @@
     margin: 0 20px 20px 0;
     box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
 }
-.coupon_block_all{
+
+.coupon_block_all {
     display: flex;
     align-items: center;
     width: 100%;
     overflow-x: scroll;
 }
-.coupon_block_all .title_goods img{
+
+.coupon_block_all .title_goods img {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
-.coupon_block_all .text_box img{
+
+.coupon_block_all .text_box img {
     width: 30px;
     height: 30px;
     margin: -21px 0 0 0;
 }
-.coupon_block_all .text_box .pro{
+
+.coupon_block_all .text_box .pro {
     width: 150px
+}
+
+#modal {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+
+.nav img {
+    width: 20%;
+}
+
+.area_all {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 0 0 20px 0;
+}
+
+.one {
+    margin: 100px 0 20px 0;
+}
+
+.area_all .bell {
+    display: flex;
+    align-items: center;
+}
+
+.area_all .bell h3 {
+    color: #000;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.area_all .bi {
+    border-radius: 50%;
+    background: white;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.be {
+    font-size: 23px;
+    color: var(--orange);
 }

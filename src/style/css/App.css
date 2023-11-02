@@ -4,7 +4,11 @@
     font-weight: 600;
     font-size: 25px;
 }
-
+.title_h2 {
+    font-size: 22px;
+    color: var(--orange);
+    font-weight: 500;
+}
 .title_h4 {
     font-size: 18px;
     color: var(--orange);
@@ -56,7 +60,7 @@
     left: 0;
     right: 0;
     background: #fff;
-    z-index: 9999;
+    z-index: 998;
     width: 90% ;
     max-width: 784px;
     margin: 0 auto
