@@ -1,0 +1,69 @@
+:root {
+    --orange: #ff640d;
+}
+
+a {
+    text-decoration: none;
+}
+
+.title_h4 {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+}
+
+.title_h5 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 300;
+}
+
+.title_h6 {
+    font-size: 14px;
+    color: #000;
+}
+
+.project {
+    font-size: 12px;
+    color: #ddd;
+    font-weight: 300;
+}
+
+.btn {
+    width: 100%;
+    background: #ff640d;
+}
+
+.input_form {
+    width: 100%;
+    height: 40px;
+    background: white;
+}
+
+.images {
+    width: 20%;
+}
+
+.fi {
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--orange) !important;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 9999;
+    width: 90% ;
+    max-width: 784px;
+    margin: 0 auto
+}
+
+@media (max-width: 450px) {
+    #header .nav img {
+        width: 40%;
+    }
+}
