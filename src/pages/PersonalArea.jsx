@@ -19,7 +19,7 @@ const PersonalArea = ({modal, setModal}) => {
         <>
             {
                 modal === true && (
-                    <div id="modal">
+                    <div id="modal" className={modal === true ? "modal-fade-in" : "modal-fade-out"}>
                         <div>
                             <div className="nav d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => setModal(false)}/>
