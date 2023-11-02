@@ -1,5 +1,5 @@
 @media (max-width: 450px) {
-    #header .nav img {
+    .nav img {
         width: 40%;
     }
 }
