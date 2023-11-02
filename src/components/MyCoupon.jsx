@@ -28,7 +28,7 @@ const MyCoupon = () => {
     return (
         <div className="my_coupon">
             <div className="container">
-                <div className="title">
+                <div className="d-flex align-items-center justify-content-between">
                     <p>Менин купондорум</p>
                     <h4
                         className="title_add"
