@@ -3,6 +3,7 @@ import {FiUser} from "react-icons/fi"
 import {BiBell} from "react-icons/bi"
 import bekbekei from "../img/2.png"
 import '../style/css/App.css'
+import '../style/css/media.css'
 const Header = () => {
     return (
         <div>

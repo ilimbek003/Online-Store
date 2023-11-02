@@ -1,9 +1,8 @@
-:root {
-    --orange: #ff640d;
-}
-
-a {
-    text-decoration: none;
+.title_h1{
+    max-width: 50px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 25px;
 }
 
 .title_h4 {
@@ -60,10 +59,4 @@ a {
     width: 90% ;
     max-width: 784px;
     margin: 0 auto
-}
-
-@media (max-width: 450px) {
-    #header .nav img {
-        width: 40%;
-    }
 }

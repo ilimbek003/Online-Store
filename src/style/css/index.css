@@ -51,3 +51,15 @@
     max-width: 784px!important;
     margin: 0 auto !important;
 }
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+     --bs-gutter-x: 1.5rem;
+     --bs-gutter-y: 0;
+     width: 100%;
+     padding-right: 0!important;
+     padding-left: 0!important;
+     margin-right: auto;
+     margin-left: auto;
+}
+a {
+    text-decoration: none;
+}
