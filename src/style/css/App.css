@@ -7,14 +7,15 @@
 
 .title_h4 {
     font-size: 18px;
-    color: #000;
+    color: var(--orange);
     font-weight: 500;
 }
 
 .title_h5 {
     font-size: 16px;
     color: #000;
-    font-weight: 300;
+    font-weight: 500;
+    width: 150px;
 }
 
 .title_h6 {
@@ -59,4 +60,7 @@
     width: 90% ;
     max-width: 784px;
     margin: 0 auto
+}
+.navs_one{
+    font-weight: 400;
 }
