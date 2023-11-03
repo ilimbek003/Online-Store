@@ -11,11 +11,13 @@ const QrCode = ({qrCode, setQrCode}) => {
             {
                 qrCode === true && (
                     <div id="modal">
-                        <div className="nav d-flex justify-content-between align-items-center">
-                            <HiArrowLongLeft className="fi" onClick={() => setQrCode(false)}/>
-                            <h3 className="title_h3">Сиздин Бекбекйдик картаныз <br/> <span
-                                className="sapn">2700 0081 1499 7</span></h3>
-                            <HiMiniArrowRightOnRectangle className="fi"/>
+                        <div className="nav">
+                            <div className="container d-flex justify-content-between align-items-center">
+                                <HiArrowLongLeft className="fi" onClick={() => setQrCode(false)}/>
+                                <h3 className="title_h3">Сиздин Бекбекйдик картаныз <br/> <span
+                                    className="sapn">2700 0081 1499 7</span></h3>
+                                <HiMiniArrowRightOnRectangle className="fi"/>
+                            </div>
                         </div>
                         <div className="block container ">
                             <img className="qar" src={qar} alt=""/>
