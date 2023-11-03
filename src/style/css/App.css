@@ -35,13 +35,19 @@
 
 .project {
     font-size: 12px;
-    color: #ddd;
+    color: #8b8989;
     font-weight: 300;
 }
 .sapn{
     font-size: 16px;
     font-weight: 300;
     color: var(--orange);
+}
+.all_title{
+    width: 0 !important;
+    font-weight: 400!important;
+    margin-left: -100px;
+    padding: 30px 0 0 0;
 }
 .btn {
     width: 100%;
@@ -61,7 +67,7 @@
 .fi {
     font-size: 25px;
     cursor: pointer;
-    color: var(--orange) !important;
+    color: var(--orange) ;
 }
 
 .nav {
@@ -69,11 +75,10 @@
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background: #ffffff;
     z-index: 998;
-    width: 90% ;
-    max-width: 784px;
-    margin: 10px auto
+    margin:0 auto;
+    padding: 10px 0;
 }
 .navs_one{
     font-weight: 400;

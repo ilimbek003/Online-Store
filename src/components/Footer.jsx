@@ -29,6 +29,12 @@ const Footer = () => {
                         <span>Акциялар</span>
                     </NavLink>
                 </div>
+                <div className="flex_block">
+                    <NavLink to="/promotion" activeClassName="active">
+                        <LuBadgePercent className="fi ai" />
+                        <span>Акциялар</span>
+                    </NavLink>
+                </div>
             </div>
         </div>
     );

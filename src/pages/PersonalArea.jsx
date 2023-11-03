@@ -1,4 +1,4 @@
-import React , {useEffect} from 'react';
+import React, {useEffect} from 'react';
 import "../style/css/main.css";
 import "../style/css/App.css";
 import "../style/css/modal.css"
@@ -22,10 +22,12 @@ const PersonalArea = ({isOpen, setIsOpen}) => {
             {
                 isOpen === true && (
                     <div id="modal">
-                        <div className="nav d-flex justify-content-between align-items-center">
-                            <HiArrowLongLeft className="fi" onClick={() => setIsOpen(false)}/>
-                            <img className="images" src={bekbekei} alt="Бекбекей"/>
-                            <HiMiniArrowRightOnRectangle className="fi"/>
+                        <div className="nav">
+                            <div className="container d-flex justify-content-between align-items-center">
+                                <HiArrowLongLeft className="fi" onClick={() => setIsOpen(false)}/>
+                                <img className="images" src={bekbekei} alt="Бекбекей"/>
+                                <HiMiniArrowRightOnRectangle className="fi"/>
+                            </div>
                         </div>
                         <div className="container">
                             <div className="top_one">

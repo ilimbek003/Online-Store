@@ -17,7 +17,7 @@ const QrCode = ({qrCode, setQrCode}) => {
                                 className="sapn">2700 0081 1499 7</span></h3>
                             <HiMiniArrowRightOnRectangle className="fi"/>
                         </div>
-                        <div className="block container mt-5">
+                        <div className="block container ">
                             <img className="qar" src={qar} alt=""/>
                         </div>
                     </div>

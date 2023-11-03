@@ -40,7 +40,7 @@ const MyCoupon = () => {
                 </div>
                 <div className="coupon_block_all">
                     {coupon.map((el, id) => (
-                        <div
+                          <div
                             key={id}
                             className="coupon_box"
                             onClick={() => navigate(`/my-coupon-details-id/${el.id}`)}
