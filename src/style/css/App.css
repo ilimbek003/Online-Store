@@ -32,7 +32,10 @@
     font-size: 14px;
     color: #000;
 }
-
+p{
+    font-size: 16px;
+    margin: 0px !important;
+}
 .project {
     font-size: 12px;
     color: #8b8989;
@@ -85,5 +88,4 @@
 }
 .qar{
     width:100%;
-
 }
