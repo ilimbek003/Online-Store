@@ -23,7 +23,7 @@ const recoment = [
   },
   {
     id: 4,
-    image: promotionkg,
+    image: globus,
   },
   {
     id: 5,
@@ -35,7 +35,6 @@ const SpecialDetails = () => {
   const navigate = useNavigate();
   return (
     <div className="special_details">
-      <div className="container">
         <div className="container d-flex justify-content-between align-items-center ">
           <HiArrowLongLeft
             className="fi"
@@ -46,6 +45,7 @@ const SpecialDetails = () => {
           <p>Бардык сунуштар</p>
           <span></span>
         </div>
+      <div className="container">
         <div className="special_details_block_all">
           {recoment.map((el, id) => (
             <div

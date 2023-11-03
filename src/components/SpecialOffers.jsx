@@ -10,11 +10,11 @@ import hleb from "../../src/img/hleb.jpg";
 const recoment = [
   {
     id: 1,
-    image: globus,
+    image:kola ,
   },
   {
     id: 2,
-    image: kola,
+    image: promotionkg,
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ const recoment = [
   },
   {
     id: 4,
-    image: promotionkg,
+    image: globus,
   },
   {
     id: 5,

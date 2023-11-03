@@ -1,87 +1,102 @@
-.title_h1{
-    max-width: 50px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 25px;
+.title_h1 {
+  max-width: 50px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 25px;
 }
 .title_h2 {
-    font-size: 22px;
-    color: var(--orange);
-    font-weight: 500;
+  font-size: 22px;
+  color: var(--orange);
+  font-weight: 500;
 }
 .title_h4 {
-    font-size: 18px;
-    color: var(--orange);
-    font-weight: 500;
+  font-size: 18px;
+  color: var(--orange);
+  font-weight: 500;
 }
 .title_h3 {
-    font-size: 16px;
-    color: #000;
-    font-weight: 300;
-    text-align: center;
+  font-size: 16px;
+  color: #000;
+  font-weight: 300;
+  text-align: center;
 }
 
 .title_h5 {
-    font-size: 16px;
-    color: #000;
-    font-weight: 500;
-    width: 150px;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  width: 150px;
 }
 
 .title_h6 {
-    font-size: 14px;
-    color: #000;
+  font-size: 14px;
+  color: #000;
 }
 
 .project {
-    font-size: 12px;
-    color: #8b8989;
-    font-weight: 300;
+  font-size: 12px;
+  color: #8b8989;
+  font-weight: 300;
 }
-.sapn{
-    font-size: 16px;
-    font-weight: 300;
-    color: var(--orange);
+.sapn {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--orange);
 }
-.all_title{
-    width: 0 !important;
-    font-weight: 400!important;
-    margin-left: -100px;
+.all_title {
+  width: 0 !important;
+  font-weight: 400 !important;
+  margin-left: -100px;
 }
 .btn {
-    width: 100%;
-    background: #ff640d;
+  width: 100%;
+  background: #ff640d;
 }
 
 .input_form {
-    width: 100%;
-    height: 40px;
-    background: white;
+  width: 100%;
+  height: 45px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.438);
+  outline: none;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
 }
-
+label {
+  font-size: 14px;
+  font-weight: 400;
+}
+button {
+  width: 100%;
+  height: 45px;
+  font-weight: 400;
+  font-size: 16px;
+  outline: none;
+  cursor: pointer;
+}
 .images {
-    width: 20%;
+  width: 20%;
 }
 
 .fi {
-    font-size: 25px;
-    cursor: pointer;
-    color: var(--orange) ;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--orange);
 }
 
 .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #ffffff;
-    z-index: 998;
-    margin:0 auto;
-    padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 998;
+  margin: 0 auto;
+  padding: 10px 0;
 }
-.navs_one{
-    font-weight: 400;
+.navs_one {
+  font-weight: 400;
 }
-.qar{
-    width:100%;
+.qar {
+  width: 100%;
 }
