@@ -7,10 +7,12 @@ import SpecialOffers from "../components/SpecialOffers";
 const Promotion = () => {
   return (
     <div className="promotion">
-      <div className="nav d-flex justify-content-between align-items-center">
-        <span></span>
-        <img className="images" src={bekbekei} alt="Бекбекей" />
-        <LiaQuestionCircleSolid className="fi" />
+      <div className="nav">
+        <div className="container d-flex justify-content-between align-items-center ">
+          <span></span>
+          <img className="images" src={bekbekei} alt="Бекбекей" />
+          <LiaQuestionCircleSolid className="fi" />
+        </div>
       </div>
       <GetShot />
       <SpecialOffers />

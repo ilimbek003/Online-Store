@@ -1,65 +1,71 @@
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Thin.ttf");
-    font-weight: 100;
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Thin.ttf");
+  font-weight: 100;
 }
 
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Light.ttf");
-    font-weight: 300;
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Light.ttf");
+  font-weight: 300;
 }
 
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Regular.ttf");
-    font-weight: 400;
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Regular.ttf");
+  font-weight: 400;
 }
 
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Medium.ttf");
-    font-weight: 500;
-
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Medium.ttf");
+  font-weight: 500;
 }
 
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Bold.ttf");
-    font-weight: 700;
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Bold.ttf");
+  font-weight: 700;
 }
 
 @font-face {
-    font-family: Gilroy;
-    src: url("../../fonts/Roboto-Black.ttf");
-    font-weight: 900;
+  font-family: Gilroy;
+  src: url("../../fonts/Roboto-Black.ttf");
+  font-weight: 900;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Gilroy, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gilroy, sans-serif;
 }
 
 :root {
-    --orange: #ff640d;
+  --orange: #ff640d;
+  --green: #04c700;
 }
 
 .container {
-    width: 90% !important;
-    max-width: 784px!important;
-    margin: 0 auto !important;
+  width: 90% !important;
+  max-width: 784px !important;
+  margin: 0 auto !important;
 }
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
-     --bs-gutter-x: 1.5rem;
-     --bs-gutter-y: 0;
-     width: 100%;
-     padding-right: 0!important;
-     padding-left: 0!important;
-     margin-right: auto;
-     margin-left: auto;
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
