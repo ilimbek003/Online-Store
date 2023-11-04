@@ -108,6 +108,7 @@ const ShopDetail = () => {
                         ))}
                     </div>
                 </div>
+
             </div>
             {
                 filter === true && (
