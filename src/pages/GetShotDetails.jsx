@@ -1,7 +1,7 @@
 import React from "react";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import { useNavigate } from "react-router";
 import "../style/css/main.css";
+import { useNavigate } from "react-router";
+import { HiArrowLongLeft } from "react-icons/hi2";
 import smetana from "../../src/img/сметана.jpg";
 import djen from "../../src/img/джин.jpeg";
 import burger from "../../src/img/burger.jpg";
@@ -54,44 +54,47 @@ const shot = [
     news: "адал озубуздун продукция kjsbvskjbv ",
   },
 ];
-
-const GetShot = () => {
+const GetShotDetails = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="get_shot">
+    <div className="get_shot_details">
+      <div className="container d-flex justify-content-between align-items-center ">
+        <HiArrowLongLeft
+          className="fi"
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/promotion")}
+          size={20}
+        />
+        <p>Бардык сунуштар</p>
+        <span></span>
+      </div>
       <div className="container">
-        <div className="title">
-          <p>Сатып алууга шашыл</p>
-          <h4
-            className="title_add"
-            onClick={() => navigate("/get-shot-details")}
-          >
-            Бардыгы <MdOutlineKeyboardArrowRight size={20} />
-          </h4>
-        </div>
-        <div className="get_block_all">
+        <div className="get_details_block_all">
           {shot.map((el, id) => (
             <div
               key={id}
-              className="get_block"
+              className="get_block get_details_block"
               onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
             >
-              <div className="div_box">
-                <div className="date display">
-                  <span className="title_h6 the_time">{el.the_time}</span>
-                </div>
-                <div className="shot_news_block display">
-                  <div className="shot_news display">
-                    <img src={el.image} alt="" />
-                  </div>
-                  <div className="price_all">
-                    <h2>{el.low_price}</h2>
-                    <div className="cheap_price display">
-                      <h2 className="cheap_price_text display">{el.price}</h2>
+              <div className="date display">
+                <span className="title_h6 the_time">{el.the_time}</span>
+              </div>
+              <div className="relative_block">
+                <div className="relative">
+                  <div className="shot_news_block display">
+                    <div className="shot_news display">
+                      <img src={el.image} alt="" />
                     </div>
-                    <div className="none"></div>
-                    <div className="precent_box display">
-                      <h6 className="precent_text">{el.precent}</h6>
+                    <div className="price_all price_details">
+                      <h2>{el.low_price}</h2>
+                      <div className="cheap_price display">
+                        <h2 className="cheap_price_text display">{el.price}</h2>
+                      </div>
+                      <div className="none"></div>
+                      <div className="precent_box display">
+                        <h6 className="precent_text">{el.precent}</h6>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -104,4 +107,4 @@ const GetShot = () => {
   );
 };
 
-export default GetShot;
+export default GetShotDetails;

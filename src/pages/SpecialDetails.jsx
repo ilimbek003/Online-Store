@@ -1,16 +1,17 @@
 import React from "react";
 import "../style/css/main.css";
+import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import promotionkg from "../../src/img/promotionkg.jpg";
 import kola from "../../src/img/kola.jpg";
 import manty from "../../src/img/manty.jpg";
 import globus from "../../src/img/globus.jpg";
 import hleb from "../../src/img/hleb.jpg";
+
 const recoment = [
   {
     id: 1,
-    image:kola ,
+    image: kola,
   },
   {
     id: 2,
@@ -30,31 +31,29 @@ const recoment = [
   },
 ];
 
-const SpecialOffers = () => {
+const SpecialDetails = () => {
   const navigate = useNavigate();
   return (
-    <div className="special_offers">
-      <div className="container">
-        <div className="title title_top">
-          <p>Атайын сунуштар </p>
-          <h4
-            className="title_add"
-            onClick={() => navigate("/special-details")}
-          >
-            Бардыгы
-            <MdOutlineKeyboardArrowRight size={20} />
-          </h4>
+    <div className="special_details">
+        <div className="container d-flex justify-content-between align-items-center ">
+          <HiArrowLongLeft
+            className="fi"
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate("/promotion")}
+            size={20}
+          />
+          <p>Бардык сунуштар</p>
+          <span></span>
         </div>
-        <div className="special_block_all">
+      <div className="container">
+        <div className="special_details_block_all">
           {recoment.map((el, id) => (
             <div
               key={id}
               onClick={() => navigate(`/special-details-id/${el.id}`)}
-              className="special_box"
+              className="special_details_box"
             >
-              <div className="div_box">
-                <img className="special_image" src={el.image} alt="" />
-              </div>
+              <img className="special_image" src={el.image} alt="" />
             </div>
           ))}
         </div>
@@ -63,4 +62,4 @@ const SpecialOffers = () => {
   );
 };
 
-export default SpecialOffers;
+export default SpecialDetails;
