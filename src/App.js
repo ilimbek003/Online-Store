@@ -19,6 +19,9 @@ import NewAddress from "./pages/NewAddress";
 
 const App = () => {
   const [modal, setModal] = useState(false);
+  const [shop, setShop] = useState(false)
+  const [modals ,setModals] = useState(false)
+
   return (
     <div>
       <Routes>
@@ -34,12 +37,13 @@ const App = () => {
         <Route path="/settings" element={<Settings />} />
         <Route path="/delivery-address" element={<DeliveryAddress />} />
         <Route path="/new-address" element={<NewAddress />} />
-        {/*<Route path="shop/:id" element={<ShopDetail*/}
-        {/*    shop={shop}*/}
-        {/*    setModal={setModals}*/}
-        {/*/>}/>*/}
-        {/*<Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>*/}
-        {/*<Route path="filter" element={<Filter/>}/>*/}
+        <Route path="shop" element={<Shop />}/>
+        <Route path="shop/:id" element={<ShopDetail
+            shop={shop}
+            setModal={setModals}
+        />}/>
+        <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
+        <Route path="filter" element={<Filter/>}/>
       </Routes>
       <Footer />
     </div>

@@ -112,51 +112,50 @@ const MessagePage = () => {
                 />
               </div>
             </div>
-            <div
-              id="modal_message"
-              className={`modal ${isModalOpen ? "active" : ""}`}
-            >
-              <div className="modalka">
-                <div className="modal_content">
-                  <h3> Тема сообщения </h3>
-                  <AiOutlineClose
-                    className="close"
-                    style={{ border: "none", background: "none" }}
-                    onClick={closeModal}
-                  />
+            {isModalOpen === true && (
+              <div className="filters_oll">
+                <div className="order">
+                  <div className="modal_content">
+                    <h3> Тема сообщения </h3>
+                    <AiOutlineClose
+                      className="close"
+                      style={{ border: "none", background: "none" }}
+                      onClick={closeModal}
+                    />
+                  </div>
+                  <label className="detial">
+                    <input
+                      type="radio"
+                      value="Жалоба"
+                      checked={selectedOption === "Жалоба"}
+                      onChange={() => handleCheckboxChange("Жалоба")}
+                      onClick={closeModal}
+                    />
+                    <p>Жалоба</p>
+                  </label>
+                  <label className="detial">
+                    <input
+                      type="radio"
+                      value="Пожелание"
+                      checked={selectedOption === "Пожелание"}
+                      onChange={() => handleCheckboxChange("Пожелание")}
+                      onClick={closeModal}
+                    />
+                    <p>Пожелание</p>
+                  </label>
+                  <label className="detial">
+                    <input
+                      type="radio"
+                      value="Отзыв"
+                      checked={selectedOption === "Отзыв"}
+                      onChange={() => handleCheckboxChange("Отзыв")}
+                      onClick={closeModal}
+                    />
+                    <p>Отзыв</p>
+                  </label>
                 </div>
-                <label className="detial">
-                  <input
-                    type="radio"
-                    value="Жалоба"
-                    checked={selectedOption === "Жалоба"}
-                    onChange={() => handleCheckboxChange("Жалоба")}
-                    onClick={closeModal}
-                  />
-                  <p>Жалоба</p>
-                </label>
-                <label className="detial">
-                  <input
-                    type="radio"
-                    value="Пожелание"
-                    checked={selectedOption === "Пожелание"}
-                    onChange={() => handleCheckboxChange("Пожелание")}
-                    onClick={closeModal}
-                  />
-                  <p>Пожелание</p>
-                </label>
-                <label className="detial">
-                  <input
-                    type="radio"
-                    value="Отзыв"
-                    checked={selectedOption === "Отзыв"}
-                    onChange={() => handleCheckboxChange("Отзыв")}
-                    onClick={closeModal}
-                  />
-                  <p>Отзыв</p>
-                </label>
               </div>
-            </div>
+            )}
             <div className="input_box">
               <label className="photo_span" htmlFor="">
                 Фото тиркоо <span>макс 5, 10 МБ чейин </span>
