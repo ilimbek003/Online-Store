@@ -1,6 +1,6 @@
 h4,
 p {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
 
 .bonus_block_all {
@@ -93,6 +93,22 @@ p {
   width: 100%;
   overflow-x: scroll;
   margin: 10px 0 0 0;
+}
+.coupon_block_all .tabs::-webkit-scrollbar-track {
+  -webkit-box-shadow: transparent;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.coupon_block_all .tabs::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+.coupon_block_all .tabs::-webkit-scrollbar-thumb {
+  border-radius: 0;
+  -webkit-box-shadow: transparent;
+  background-color: transparent;
 }
 .coupon_block_all .title_goods img {
   width: 100px;
