@@ -92,6 +92,7 @@ p {
   align-items: center;
   width: 100%;
   overflow-x: scroll;
+  margin: 10px 0 0 0;
 }
 .coupon_block_all .title_goods img {
   width: 100px;
@@ -106,6 +107,7 @@ p {
 .coupon_block_all .text_box .pro {
   width: 150px;
 }
+
 #modal {
   position: absolute;
   width: 100%;
@@ -538,8 +540,8 @@ input#file-upload-button {
   border: 1px solid rgba(0, 0, 0, 0.438);
   font-size: 14px;
   outline: none;
-  background: var(--white, #fff);
-  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  background:  #fff;
+  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
   -webkit-transition: all 0.3s linear;
   -moz-transition: all 0.3s linear;
   -o-transition: all 0.3s linear;
