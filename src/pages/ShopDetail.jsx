@@ -112,8 +112,7 @@ const ShopDetail = () => {
             {
                 filter === true && (
                     <div className="filters_oll" onClick={() => setFilter(false)}>
-                        <div className="order">
-
+                        <div className="order" onClick={(e) => e.stopPropagation()}>
                             <div className="container">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="title_h3 orders">Иретоо</h6>
