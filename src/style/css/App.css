@@ -557,9 +557,10 @@ input[type=checkbox]:before {
 }
 
 .mt_bt {
-    margin: 15px 0 0 0;
+    margin: 20px 0 0 0;
 }
 
 .mt_bt h6 {
     font-size: 16px!important;
+    font-weight: 300!important;
 }
