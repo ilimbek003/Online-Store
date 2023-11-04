@@ -21,17 +21,6 @@
     top: 0;
   }
 }
-
-/* Modal */
-#modal_message {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-}
 .modal_content {
   padding: 10px !important;
   display: flex !important;
@@ -41,22 +30,6 @@
 .modal_content h3 {
   margin-bottom: 0px !important;
   font-size: 18px;
-}
-.modalka {
-  position: fixed;
-  background-color: #fff;
-  width: 100%;
-  height: 500px;
-  bottom: 0;
-  height: auto;
-  border: 1px solid #ccc;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  z-index: 9999999;
-  color: black;
-  justify-content: space-between;
-  padding: 10px 0 10px 10px;
-
 }
 .detial {
   display: flex;
@@ -78,9 +51,6 @@
   background: none;
   color: black;
   cursor: pointer;
-}
-.modal.active {
-  display: block;
 }
 .all_input {
   width: 100%;
