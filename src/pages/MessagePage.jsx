@@ -127,7 +127,7 @@ const MessagePage = () => {
                 </div>
                 <label className="detial">
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="Жалоба"
                     checked={selectedOption === "Жалоба"}
                     onChange={() => handleCheckboxChange("Жалоба")}
@@ -137,7 +137,7 @@ const MessagePage = () => {
                 </label>
                 <label className="detial">
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="Пожелание"
                     checked={selectedOption === "Пожелание"}
                     onChange={() => handleCheckboxChange("Пожелание")}
@@ -147,7 +147,7 @@ const MessagePage = () => {
                 </label>
                 <label className="detial">
                   <input
-                    type="checkbox"
+                    type="radio"
                     value="Отзыв"
                     checked={selectedOption === "Отзыв"}
                     onChange={() => handleCheckboxChange("Отзыв")}
