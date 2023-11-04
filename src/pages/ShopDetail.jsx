@@ -108,12 +108,12 @@ const ShopDetail = () => {
                         ))}
                     </div>
                 </div>
-
             </div>
             {
                 filter === true && (
                     <div className="filters_oll" onClick={() => setFilter(false)}>
                         <div className="order">
+
                             <div className="container">
                                 <div className="d-flex justify-content-between">
                                     <h6 className="title_h3 orders">Иретоо</h6>
