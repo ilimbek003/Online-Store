@@ -14,13 +14,11 @@ p {
   padding: 10px 15px;
   cursor: pointer;
 }
-
 .bonus_block_all img {
   max-width: 160px;
   height: 100%;
   border-radius: 10px;
 }
-
 #footer {
   position: fixed;
   bottom: 0;
@@ -34,14 +32,12 @@ p {
   width: 90%;
   max-width: 784px;
 }
-
 #footer .navs {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
 }
-
 #footer .logo {
   width: 40px !important;
   height: 40px !important;
@@ -49,7 +45,6 @@ p {
   background-color: var(--orange);
   margin: 0 auto;
 }
-
 #footer .navs .flex_block a {
   display: flex;
   align-items: center;
@@ -57,7 +52,6 @@ p {
   flex-direction: column;
   text-decoration: none;
 }
-
 #footer .navs .flex_block a span {
   font-size: 12px;
   font-weight: 400;
@@ -382,7 +376,7 @@ p {
   font-weight: 600;
 }
 .special_details_id {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 /* GetShotDetails */
 .get_shot_details {
@@ -392,6 +386,9 @@ p {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.top {
+  padding-top: 40px;
 }
 .get_details_block {
   width: 100%;
@@ -473,6 +470,7 @@ p {
 /* MessagePage */
 .message_page {
   padding-bottom: 100px;
+  padding-top: 40px;
 }
 .message_page .message_title {
   width: 100%;
@@ -605,7 +603,7 @@ input#file-upload-button {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.modal-content {
+.modal_content {
   padding: 10px !important;
   display: flex !important;
   justify-content: space-between !important;

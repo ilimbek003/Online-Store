@@ -34,28 +34,32 @@ const recoment = [
 const SpecialDetails = () => {
   const navigate = useNavigate();
   return (
-    <div className="special_details">
-        <div className="container d-flex justify-content-between align-items-center ">
-          <HiArrowLongLeft
-            className="fi"
-            style={{ cursor: "pointer" }}
-            onClick={() => navigate("/promotion")}
-            size={20}
-          />
-          <p>Бардык сунуштар</p>
-          <span></span>
+    <div id="modal">
+      <div className="special_details">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <HiArrowLongLeft
+              className="fi"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/promotion")}
+              size={20}
+            />
+            <p>Бардык сунуштар</p>
+            <span></span>
+          </div>
         </div>
-      <div className="container">
-        <div className="special_details_block_all">
-          {recoment.map((el, id) => (
-            <div
-              key={id}
-              onClick={() => navigate(`/special-details-id/${el.id}`)}
-              className="special_details_box"
-            >
-              <img className="special_image" src={el.image} alt="" />
-            </div>
-          ))}
+        <div className="container">
+          <div className="special_details_block_all top">
+            {recoment.map((el, id) => (
+              <div
+                key={id}
+                onClick={() => navigate(`/special-details-id/${el.id}`)}
+                className="special_details_box"
+              >
+                <img className="special_image" src={el.image} alt="" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

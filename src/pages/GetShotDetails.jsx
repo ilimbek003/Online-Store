@@ -58,49 +58,55 @@ const GetShotDetails = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="get_shot_details">
-      <div className="container d-flex justify-content-between align-items-center ">
-        <HiArrowLongLeft
-          className="fi"
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/promotion")}
-          size={20}
-        />
-        <p>Бардык сунуштар</p>
-        <span></span>
-      </div>
-      <div className="container">
-        <div className="get_details_block_all">
-          {shot.map((el, id) => (
-            <div
-              key={id}
-              className="get_block get_details_block"
-              onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
-            >
-              <div className="date display">
-                <span className="title_h6 the_time">{el.the_time}</span>
-              </div>
-              <div className="relative_block">
-                <div className="relative">
-                  <div className="shot_news_block display">
-                    <div className="shot_news display">
-                      <img src={el.image} alt="" />
-                    </div>
-                    <div className="price_all price_details">
-                      <h2>{el.low_price}</h2>
-                      <div className="cheap_price display">
-                        <h2 className="cheap_price_text display">{el.price}</h2>
+    <div id="modal">
+      <div className="get_shot_details">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <HiArrowLongLeft
+              className="fi"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/promotion")}
+              size={20}
+            />
+            <p>Бардык акциялар</p>
+            <span></span>
+          </div>
+        </div>
+        <div className="container">
+          <div className="get_details_block_all top">
+            {shot.map((el, id) => (
+              <div
+                key={id}
+                className="get_block get_details_block"
+                onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
+              >
+                <div className="date display">
+                  <span className="title_h6 the_time">{el.the_time}</span>
+                </div>
+                <div className="relative_block">
+                  <div className="relative">
+                    <div className="shot_news_block display">
+                      <div className="shot_news display">
+                        <img src={el.image} alt="" />
                       </div>
-                      <div className="none"></div>
-                      <div className="precent_box display">
-                        <h6 className="precent_text">{el.precent}</h6>
+                      <div className="price_all price_details">
+                        <h2>{el.low_price}</h2>
+                        <div className="cheap_price display">
+                          <h2 className="cheap_price_text display">
+                            {el.price}
+                          </h2>
+                        </div>
+                        <div className="none"></div>
+                        <div className="precent_box display">
+                          <h6 className="precent_text">{el.precent}</h6>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>
