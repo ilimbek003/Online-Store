@@ -79,14 +79,14 @@ const ShopDetail = () => {
                                 </div>
                                 <div className="all">
                                     <h3 className="title_one mt">{el.title}</h3>
-                                    <div className="d-flex  justify-content-between">
+                                    <div className="d-flex  justify-content-between mt-2">
                                         <p className="project">
                                             <span>{el.pack}</span>
                                         </p>
                                         <h2>{el.price} сом</h2>
                                     </div>
                                 </div>
-                                <div className="flex ">
+                                <div className="flex mt-2">
                                     <div className="marks">
                                         <BsBookmark
                                             className="fi bs"
