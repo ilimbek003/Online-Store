@@ -12,65 +12,76 @@ const ToHelpPage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="to_help_page">
-      <div className="container d-flex justify-content-between align-items-center ">
-        <HiArrowLongLeft
-          className="fi"
-          style={{ cursor: "pointer" }}
-          onClick={() => navigate("/promotion")}
-          size={20}
-        />
-        <p>Колдоо</p>
-        <span></span>
-      </div>
-      <div className="container"></div>
-      <div className="guestions_block_all">
-        <div className="worker_box">
-          <img src={ihsan} alt="" />
+    <div id="modal">
+      <div className="to_help_page">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <HiArrowLongLeft
+              className="fi"
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate("/promotion")}
+              size={20}
+            />
+            <p>Колдоо</p>
+            <span></span>
+          </div>
         </div>
-        <div className="support_text">
-          <h3>Cуроолор жаралдыбы??</h3>
-          <p className="title_h6">
-            Биздин колдоо кызмат жаралган бардык суроолорунуз боюнча маалымат
-            берет.
-          </p>
-        </div>
-        <div className="to_contact">
-          <div>
-            <div className="contact_box">
-              <FiPhone size={23} />
+        <div className="container">
+          <div className="guestions_block_all">
+            <div className="worker_box">
+              <img src={ihsan} alt="" />
             </div>
-            <div>
-              <p className="title_h6" style={{ marginTop: "8px" }}>
-                Позвонить
+            <div className="support_text">
+              <h3>Cуроолор жаралдыбы??</h3>
+              <p className="title_h6">
+                Биздин колдоо кызмат жаралган бардык суроолорунуз боюнча
+                маалымат берет.
               </p>
             </div>
-          </div>
-          <div>
-            <div className="contact_box">
-              <LiaTelegramPlane size={23} />
-            </div>
-            <div>
-              <p className="title_h6" style={{ marginTop: "8px" }}>Telegram</p>
-            </div>
-          </div>
-          <div>
-            <div className="contact_box">
-              <BsWhatsapp size={23} />
-            </div>
-            <div>
-              <p className="title_h6" style={{ marginTop: "8px" }}>Whatsapp</p>
-            </div>
-          </div>
-          <div>
-            <div
-              className="contact_box"
-              onClick={() => navigate("/message-page")}
-            >
-              <BsChatRightText size={23} />
-            </div>
-            <div>
-              <p className="title_h6" style={{ marginTop: "8px" }}>Написать</p>
+            <div className="to_contact">
+              <div>
+                <div className="contact_box">
+                  <FiPhone size={23} />
+                </div>
+                <div>
+                  <p className="title_h6" style={{ marginTop: "8px" }}>
+                    Позвонить
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div className="contact_box">
+                  <LiaTelegramPlane size={23} />
+                </div>
+                <div>
+                  <p className="title_h6" style={{ marginTop: "8px" }}>
+                    Telegram
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div className="contact_box">
+                  <BsWhatsapp size={23} />
+                </div>
+                <div>
+                  <p className="title_h6" style={{ marginTop: "8px" }}>
+                    Whatsapp
+                  </p>
+                </div>
+              </div>
+              <div>
+                <div
+                  className="contact_box"
+                  onClick={() => navigate("/message-page")}
+                >
+                  <BsChatRightText size={23} />
+                </div>
+                <div>
+                  <p className="title_h6" style={{ marginTop: "8px" }}>
+                    Написать
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

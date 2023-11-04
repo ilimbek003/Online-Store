@@ -35,32 +35,36 @@ const SpecialDetailsId = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   return (
-    <div className="special_details_id">
-      <div className="container d-flex justify-content-between align-items-center ">
-        <span></span>
-        <p>сунуштардын шарттары</p>
-        <IoMdClose
-          className="fi"
-          onClick={() => navigate("/promotion")}
-          size={22}
-          style={{ cursor: "pointer" }}
-        />
-      </div>
-      <div className="container">
-        <div className="details_title">
-          <h4>19.09-31.10</h4>
-          <h4>супер комбо!!</h4>
+    <div id="modal">
+      <div className="special_details_id">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <span></span>
+            <p>сунуштардын шарттары</p>
+            <IoMdClose
+              className="fi"
+              onClick={() => navigate("/promotion")}
+              size={22}
+              style={{ cursor: "pointer" }}
+            />
+          </div>
         </div>
-        <div className="special_details_block_all">
-          {recoment.map((el) =>
-            el.id == id ? (
-              <div className="special_details_box">
-                <img className="special_image" src={el.image} alt="" />
-              </div>
-            ) : (
-              ""
-            )
-          )}
+        <div className="container">
+          <div className="details_title">
+            <h4>19.09-31.10</h4>
+            <h4>супер комбо!!</h4>
+          </div>
+          <div className="special_details_block_all">
+            {recoment.map((el) =>
+              el.id == id ? (
+                <div className="special_details_box">
+                  <img className="special_image" src={el.image} alt="" />
+                </div>
+              ) : (
+                ""
+              )
+            )}
+          </div>
         </div>
       </div>
     </div>
