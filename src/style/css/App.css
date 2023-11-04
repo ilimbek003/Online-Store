@@ -11,6 +11,12 @@
     font-weight: 500;
 }
 
+.title_one {
+    font-size: 14px;
+    color: #000;
+    font-weight: 400;
+}
+
 .title_h4 {
     font-size: 18px;
     color: var(--orange);
@@ -22,6 +28,11 @@
     color: #000;
     font-weight: 300;
     text-align: center;
+}
+
+.orders {
+    font-weight: 600 !important;
+    text-align: start !important;
 }
 
 .title_h5 {
@@ -38,7 +49,7 @@
 
 .project {
     font-size: 12px;
-    color: #232323;
+    color: #525151;
     font-weight: 400;
 }
 
@@ -189,13 +200,7 @@ button {
 }
 
 .row_one {
-    margin-top: 150px !important;
-}
-
-.all_shop .shops h5 {
-    color: #000000;
-    font-size: 12px;
-    font-weight: 400;
+    margin-top: 135px !important;
 }
 
 .image-container {
@@ -236,7 +241,7 @@ button {
     font-size: 14px;
     font-weight: 400;
     width: 100% !important;
-    height: 33px !important;
+    height: 25px !important;
     border-radius: 15px;
     padding: 0 10px;
     margin: 0 10px 0 0;
@@ -282,9 +287,15 @@ button {
 }
 
 .line {
+    position: fixed;
+    z-index: 9999;
+    top: 120px;
+    left: 0;
+    right: 0;
     width: 100%;
-    border-bottom: 1px solid #cccccc;
-    margin: 10px 0 0 0;
+    height: 0.5px;
+    background: #cccccc;
+    margin: 4px 0 0 0;
 }
 
 .slider {
@@ -344,7 +355,7 @@ button {
 }
 
 .from_btn {
-    margin: 0 13px 0 0;
+    margin: 0 8px 0 0;
 }
 
 .blocks {
@@ -353,7 +364,7 @@ button {
     border: none;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
     padding: 5px;
     margin: 0 auto;
     display: flex;
@@ -367,26 +378,21 @@ button {
     height: 140px;
 }
 
-.all h3 {
-    color: #000;
-    font-weight: 400;
-    font-size: 14px;
-    font-style: normal;
+.mt {
     margin: 10px 0 10px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-height: 20px;
-    max-height: 60px;
+}
+
+.font {
+    font-weight: 500;
 }
 
 .all h2 {
     display: inline-block;
-    font-size: 15px;
+    font-size: 14px;
     color: var(--orange);
     float: right;
+    font-weight: 600;
+    margin: 0 0 10px 0;
 }
 
 .project span {
@@ -411,8 +417,8 @@ button {
 }
 
 .plus {
-    width: 95px;
-    height: 40px;
+    width: 75px;
+    height: 30px;
     border-radius: 20px;
     background-color: #ffffff;
     -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
@@ -450,3 +456,70 @@ button {
     width: 100%;
 }
 
+.marks {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgb(255, 255, 255) 36%, rgb(237, 241, 241));
+    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mt_one {
+    margin: 4px 0 0 7px;
+}
+
+.bs {
+    font-size: 18px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input[type=checkbox] {
+    position: relative;
+    border: 2px solid #000;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+    margin: 0 .6em 0 0;
+    outline: 0;
+    padding: 0 !important;
+    vertical-align: text-top;
+    height: 15px;
+    width: 15px;
+    -webkit-appearance: none;
+    opacity: .5;
+    border-radius: 50%;
+}
+
+input[type=checkbox]:hover {
+    opacity: 1;
+}
+
+input[type=checkbox]:checked {
+    background-color: #000;
+    opacity: 1;
+}
+
+input[type=checkbox]:before {
+    content: '';
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    width: 4px;
+    height: 10px;
+    border: solid #FFF;
+    border-width: 0 2px 2px 0;
+    margin: -1px -1px 0 -1px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    z-index: 2;
+}
+.mt_bt{
+    margin: 10px 0 0 0;
+}
