@@ -61,7 +61,7 @@ const ShopDetail = () => {
                 <div className="line"/>
             </div>
             <div className="container">
-                <div className="row">
+                <div className="row row_one">
                     {data.map((el, index) => (
                         <div className="col-6" key={el.id}>
                             <div

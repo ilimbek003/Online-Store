@@ -16,6 +16,9 @@ import MessagePage from "./pages/MessagePage";
 
 const App = () => {
   const [modal, setModal] = useState(false);
+  const [shop, setShop] = useState(false)
+  const [modals ,setModals] = useState(false)
+
   return (
     <div>
       <Routes>
@@ -27,13 +30,13 @@ const App = () => {
         <Route path="/get-shot-details-id/:id" element={<GetShotDetailsId />} />
         <Route path="/to-help-page" element={<ToHelpPage />} />
         <Route path="/message-page" element={<MessagePage />} />
-          <Route path="shop" element={<Shop />}/>
-          {/*<Route path="shop/:id" element={<ShopDetail*/}
-          {/*    shop={shop}*/}
-          {/*    setModal={setModals}*/}
-          {/*/>}/>*/}
-          {/*<Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>*/}
-          {/*<Route path="filter" element={<Filter/>}/>*/}
+        <Route path="shop" element={<Shop />}/>
+        <Route path="shop/:id" element={<ShopDetail
+            shop={shop}
+            setModal={setModals}
+        />}/>
+        <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
+        <Route path="filter" element={<Filter/>}/>
       </Routes>
       <Footer />
     </div>
