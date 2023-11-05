@@ -24,6 +24,7 @@ const Project = () => {
             setCart(updatedCart);
             localStorage.setItem('cart', JSON.stringify(updatedCart));
         }
+        console.log(itemToAdd)
     };
     return (
         <div>
