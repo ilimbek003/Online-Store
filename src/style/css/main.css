@@ -159,6 +159,7 @@ p {
 }
 .one {
   margin: 100px 0 20px 0;
+  margin-bottom: 20px;
 }
 .area_all .bell {
   display: flex;
@@ -627,7 +628,7 @@ input#file-upload-button {
 }
 .settings_kart {
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 1;
 }
@@ -642,6 +643,7 @@ input#file-upload-button {
   justify-content: space-between;
   cursor: pointer;
   padding: 0;
+  font-size: 16px;
 }
 .language {
   margin-top: 15px;
