@@ -15,7 +15,7 @@ const Footer = () => {
                     </NavLink>
                 </div>
                 <div className="flex_block">
-                    <NavLink to="/shop" activeClassName="active">
+                    <NavLink to="/shop-all/shop" activeClassName="active">
                         <BsShop className="fi ai" />
                         <span>Дyкон</span>
                     </NavLink>

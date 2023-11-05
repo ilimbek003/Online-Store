@@ -14,7 +14,7 @@ const Shop = () => {
     }, [])
     return (
         <>
-            <div className="nav" onClick={() =>  navigate('/search')}>
+            <div className="nav" onClick={() =>  navigate('/shop-all/search')}>
                 <div className="container d-flex justify-content-between align-items-center">
                     <input className="input_form" type="text" placeholder="Товарларды табуу"/>
                 </div>
@@ -24,7 +24,7 @@ const Shop = () => {
                     {
                         data.map((el) => (
                             <div className="shops" key={el.id}
-                                 onClick={() => navigate(`/shop/${el.id} `)}>
+                                 onClick={() => navigate(`/shop-all/shop/${el.id} `)}>
                                 <h5 className="title_one">{el.name}</h5>
                                 <div className="img_container">
                                     <img src={el.image} alt=""/>

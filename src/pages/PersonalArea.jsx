@@ -45,7 +45,7 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div className="area_all" onClick={() => navigate(`/cart`)}>
+                        <div className="area_all" onClick={() => navigate(`/shop-all/cart`)}>
                             <div className="bell">
                                 <div className="bi">
                                     <FaRegBookmark className="be"/>{" "}

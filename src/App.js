@@ -18,10 +18,9 @@ import DeliveryAddress from "./pages/DeliveryAddress";
 import NewAddress from "./pages/NewAddress";
 import Cart from "./pages/Cart";
 import PersonalArea from "./pages/PersonalArea";
+import Project from "./pages/Project";
 
 const App = () => {
-  const [shop, setShop] = useState(false)
-  const [modals ,setModals] = useState(false)
 
   return (
     <div>
@@ -34,19 +33,11 @@ const App = () => {
         <Route path="/get-shot-details-id/:id" element={<GetShotDetailsId />} />
         <Route path="/to-help-page" element={<ToHelpPage />} />
         <Route path="/message-page" element={<MessagePage />} />
-        <Route path="shop" element={<Shop />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/delivery-address" element={<DeliveryAddress />} />
         <Route path="/new-address" element={<NewAddress />} />
-        <Route path="shop" element={<Shop />}/>
-        <Route path="shop/:id" element={<ShopDetail
-            shop={shop}
-            setModal={setModals}
-        />}/>
-        <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
-        <Route path="filter" element={<Filter/>}/>
-        <Route path="cart" element={<Cart/>}/>
         <Route path="/dashboard" element={<PersonalArea/>} />
+        <Route path="shop-all/*" element={<Project/>} />
       </Routes>
       <Footer />
     </div>
