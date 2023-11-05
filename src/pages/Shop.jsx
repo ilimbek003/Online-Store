@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "../style/css/App.css"
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import Search from "./Search";
-import ShopDetail from "./ShopDetail";
+
 
 const Shop = () => {
     const [data, setData] = useState([])
