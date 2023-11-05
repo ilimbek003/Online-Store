@@ -5,24 +5,27 @@ import { useNavigate } from "react-router";
 const DeliveryAddress = () => {
   const navigate = useNavigate();
   return (
-    <div className="delivery_address">
-      <div className="nav">
-        <div className="container d-flex justify-content-between align-items-center ">
-          <HiArrowLongLeft onClick={() => navigate("/")} className="fi" />
-          <p>Адрес доставки</p>
-          <span></span>
+    <div id="modal">
+      {" "}
+      <div className="delivery_address">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <HiArrowLongLeft onClick={() => navigate("/")} className="fi" />
+            <p>Адрес доставки</p>
+            <span></span>
+          </div>
         </div>
-      </div>
-      <div className="container">
-        <div className="address_add" onClick={() => navigate("/new-address")}>
-          <h6>Адрес доставки</h6>
-          <p className="add_block">
-            <span className="add">+ </span> Добавить
-          </p>
-        </div>
-        <div className="page_empty">
-          <h2>Здесь пока пусто</h2>
-          <p>Здесь будут храниться ваши адреса</p>
+        <div className="container">
+          <div className="address_add" onClick={() => navigate("/new-address")}>
+            <h6>Адрес доставки</h6>
+            <p className="add_block">
+              <span className="add">+ </span> Добавить
+            </p>
+          </div>
+          <div className="page_empty">
+            <h2>Здесь пока пусто</h2>
+            <p>Здесь будут храниться ваши адреса</p>
+          </div>
         </div>
       </div>
     </div>

@@ -99,13 +99,10 @@ p {
   border-radius: 0;
   background-color: transparent;
 }
-
 .coupon_block_all .tabs::-webkit-scrollbar {
   width: 0;
   background-color: transparent;
 }
-
-
 .coupon_block_all .tabs::-webkit-scrollbar-thumb {
   border-radius: 0;
   -webkit-box-shadow: transparent;
@@ -162,6 +159,7 @@ p {
 }
 .one {
   margin: 100px 0 20px 0;
+  margin-bottom: 20px;
 }
 .area_all .bell {
   display: flex;
@@ -291,7 +289,7 @@ p {
   width: 100%;
   height: 40px;
   background: var(--orange);
-  margin-top: -10px;
+  margin-top: -2px;
   border-radius: 5px;
 }
 .cheap_price_text {
@@ -491,7 +489,7 @@ p {
   padding-bottom: 100px;
   padding-top: 40px;
 }
-.message_page .message_title {
+.message_title {
   width: 100%;
   display: flex;
   align-items: center;
@@ -499,17 +497,17 @@ p {
   justify-content: space-around;
   margin-top: 15px;
 }
-.message_page .message_title p {
+.message_title p {
   cursor: pointer;
 }
-.message_page .input_block {
+.input_block {
   display: flex;
   flex-direction: column;
 }
 .message_page label {
   margin-bottom: 5px;
 }
-.message_page .input_arrow {
+.input_arrow {
   position: relative;
   width: 100%;
   height: 45px;
@@ -524,7 +522,7 @@ p {
   align-items: center;
   color: rgba(0, 0, 0, 0.559);
 }
-.message_page .input_arrow input {
+.input_arrow input {
   background: none;
   border: none;
   padding: 0;
@@ -532,7 +530,7 @@ p {
   display: flex;
   align-items: center;
 }
-.message_page .preview_image {
+.preview_image {
   max-width: 180px;
   height: 200px;
   object-fit: cover;
@@ -630,9 +628,9 @@ input#file-upload-button {
 }
 .settings_kart {
   color: black;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.5px;
-  line-height: 1, 2;
+  line-height: 1;
 }
 .akaunt_remove {
   color: red;
@@ -645,6 +643,7 @@ input#file-upload-button {
   justify-content: space-between;
   cursor: pointer;
   padding: 0;
+  font-size: 16px;
 }
 .language {
   margin-top: 15px;
@@ -675,7 +674,7 @@ input#file-upload-button {
   cursor: pointer;
 }
 .add {
-  font-size: 18px;  
+  font-size: 18px;
   margin-right: 5px;
 }
 .page_empty {
@@ -694,4 +693,23 @@ input#file-upload-button {
 .page_empty p {
   font-size: 16px;
   text-align: center;
+}
+.new_address {
+  padding-bottom: 100px;
+}
+.new_block {
+  width: 100%;
+  padding-top: 40px;
+}
+.new_add_input {
+  border: none !important;
+  background: #e9ecef;
+}
+.new_button {
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  background: #8d99ae;
+  margin-top: 30px;
 }

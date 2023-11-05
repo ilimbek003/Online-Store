@@ -81,25 +81,25 @@ const MessagePage = () => {
           </div>
           <form className="input_block">
             <div className="input_box">
-              <label htmlFor="">
+              <label>
                 Аты<span>*</span>
               </label>
               <input className="input_form" type="text" />
             </div>
             <div className="input_box">
-              <label htmlFor="">
+              <label>
                 Телефон <span>*</span>
               </label>
               <input className="input_form" type="text" />
             </div>
             <div className="input_box">
-              <label htmlFor="">
+              <label>
                 Электрондук дарек<span>*</span>
               </label>
               <input className="input_form" type="text" />
             </div>
             <div className="input_box_modal" onClick={openModal}>
-              <label htmlFor="">
+              <label>
                 Билдируунун темасы<span>*</span>
               </label>
               <div className="input_arrow">
