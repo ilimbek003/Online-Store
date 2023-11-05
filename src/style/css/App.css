@@ -358,6 +358,7 @@ button {
 .all_title_one {
   font-weight: 400 !important;
   text-align: center;
+  width: 300px!important;
 }
 
 .from_btn {

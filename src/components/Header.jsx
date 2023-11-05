@@ -8,8 +8,10 @@ import "../style/css/main.css"
 import PersonalArea from "../pages/PersonalArea";
 import {HiArrowLongLeft} from "react-icons/hi2";
 import {AiOutlineNotification} from "react-icons/ai"
+import {useNavigate} from "react-router-dom";
 
 const Header = () => {
+    const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false);
     const [isOpens, setIsOpens] = useState(false);
 
@@ -18,12 +20,11 @@ const Header = () => {
             <div className="container">
                 <div className="nav">
                     <div className="container d-flex justify-content-between align-items-center">
-                        <FiUser className="fi" onClick={() => setIsOpen(true)}/>
+                        <FiUser className="fi" onClick={() => navigate("/dashboard") }/>
                         <img className="images" src={bekbekei} alt="Бекбекей"/>
                         <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                     </div>
                 </div>
-                <PersonalArea isOpen={isOpen} setIsOpen={setIsOpen}/>
             </div>
             {
                 isOpens === true && (

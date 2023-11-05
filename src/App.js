@@ -16,16 +16,17 @@ import MessagePage from "./pages/MessagePage";
 import Settings from "./pages/Settings";
 import DeliveryAddress from "./pages/DeliveryAddress";
 import NewAddress from "./pages/NewAddress";
+import Cart from "./pages/Cart";
+import PersonalArea from "./pages/PersonalArea";
 
 const App = () => {
-  const [modal, setModal] = useState(false);
   const [shop, setShop] = useState(false)
   const [modals ,setModals] = useState(false)
 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Main modal={modal} setModal={setModal} />} />
+        <Route path="/" element={<Main  />} />
         <Route path="promotion" element={<Promotion />} />
         <Route path="/special-details" element={<SpecialDetails />} />
         <Route path="/special-details-id/:id" element={<SpecialDetailsId />} />
@@ -44,6 +45,8 @@ const App = () => {
         />}/>
         <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
         <Route path="filter" element={<Filter/>}/>
+        <Route path="cart" element={<Cart/>}/>
+        <Route path="/dashboard" element={<PersonalArea/>} />
       </Routes>
       <Footer />
     </div>
