@@ -20,13 +20,14 @@ import Cart from "./pages/Cart";
 import PersonalArea from "./pages/PersonalArea";
 import Project from "./pages/Project";
 import QrCode from "./pages/QrCode";
+import MyCouponDetails from "./pages/MyCouponDetails";
+import MyCouponDetailsId from "./pages/MyCouponDetailsId";
 
 const App = () => {
-
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Main  />} />
+        <Route path="/" element={<Main />} />
         <Route path="promotion" element={<Promotion />} />
         <Route path="/special-details" element={<SpecialDetails />} />
         <Route path="/special-details-id/:id" element={<SpecialDetailsId />} />
@@ -37,9 +38,14 @@ const App = () => {
         <Route path="/settings" element={<Settings />} />
         <Route path="/delivery-address" element={<DeliveryAddress />} />
         <Route path="/new-address" element={<NewAddress />} />
-        <Route path="/dashboard" element={<PersonalArea/>} />
-        <Route path="shop-all/*" element={<Project/>} />
-        <Route path="qr-cod" element={<QrCode/>}/>
+        <Route path="/dashboard" element={<PersonalArea />} />
+        <Route path="shop-all/*" element={<Project />} />
+        <Route path="/qr-cod" element={<QrCode />} />
+        <Route path="/my-coupon-details" element={<MyCouponDetails />} />
+        <Route
+          path="/my-coupon-details-id/:id"
+          element={<MyCouponDetailsId/>}
+        />
       </Routes>
       <Footer />
     </div>

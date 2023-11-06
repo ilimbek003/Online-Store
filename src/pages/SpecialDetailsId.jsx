@@ -43,7 +43,7 @@ const SpecialDetailsId = () => {
             <p>сунуштардын шарттары</p>
             <IoMdClose
               className="fi"
-              onClick={() => navigate("/promotion")}
+              onClick={() => navigate(-1)}
               size={22}
               style={{ cursor: "pointer" }}
             />

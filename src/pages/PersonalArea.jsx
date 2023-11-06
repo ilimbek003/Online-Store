@@ -56,7 +56,7 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div className="area_all" onClick={() => navigate(`/orders`)}>
+                        <div className="area_all" onClick={() => navigate(`/my-coupon-details-id`)}>
                             <div className="bell">
                                 <div className="bi">
                                     {" "}
