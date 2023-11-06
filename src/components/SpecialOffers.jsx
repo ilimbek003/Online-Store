@@ -10,7 +10,7 @@ import hleb from "../../src/img/hleb.jpg";
 const recoment = [
   {
     id: 1,
-    image:kola ,
+    image: kola,
   },
   {
     id: 2,
