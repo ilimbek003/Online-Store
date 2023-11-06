@@ -53,7 +53,7 @@ const SpecialOffers = () => {
               className="special_box"
             >
               <div className="div_box">
-                <img className="special_image" src={el.image} alt="" />
+                <img className="special_image" src={el.image} alt="" loading="lazy" />
               </div>
             </div>
           ))}

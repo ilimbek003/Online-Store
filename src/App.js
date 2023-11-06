@@ -43,8 +43,8 @@ const App = () => {
         <Route path="/qr-cod" element={<QrCode />} />
         <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
-          path="/my-coupon-details-id:/id"
-          element={<MyCouponDetailsId />}
+          path="/my-coupon-details-id/:id"
+          element={<MyCouponDetailsId/>}
         />
       </Routes>
       <Footer />
