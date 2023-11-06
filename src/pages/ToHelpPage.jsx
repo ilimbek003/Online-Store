@@ -19,7 +19,7 @@ const ToHelpPage = () => {
             <HiArrowLongLeft
               className="fi"
               style={{ cursor: "pointer" }}
-              onClick={() => navigate("/promotion")}
+              onClick={() => navigate(-1)}
               size={20}
             />
             <p>Колдоо</p>

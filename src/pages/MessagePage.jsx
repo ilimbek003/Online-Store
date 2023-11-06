@@ -74,7 +74,9 @@ const MessagePage = () => {
             </p>
             <p
               className={two ? "active_page" : ""}
-              onClick={() => setOne(false) || setTwo(true)}
+              onClick={() =>
+                setOne(false) || setTwo(true) || navigate("/scrool-page")
+              }
             >
               Тарыхы
             </p>

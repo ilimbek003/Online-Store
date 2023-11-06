@@ -29,7 +29,7 @@ const MyCouponDetails = () => {
       <div className="my_coupon_details">
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
-            <HiArrowLongLeft
+            <HiArrowLongLeft className="fi"
               style={{ cursor: "pointer" }}
               onClick={() => navigate(-1)}
               size={22}
