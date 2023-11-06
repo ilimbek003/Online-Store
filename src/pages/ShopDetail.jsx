@@ -74,6 +74,18 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                     onClick={() => navigate(`/shop-all/product/${el.id}`)}
                                 >
                                     <img src={el.images} alt=""/>
+                                    {
+                                        (plus[el.id] || 0) === 0 ? "" :
+                                            <div
+                                                className={
+                                                    localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                        ? 'hover_blocks'
+                                                        : ''
+                                                }
+                                            >
+                                                <h1>{plus[el.id]}</h1>
+                                            </div>
+                                    }
                                 </div>
                                 <div className="all">
                                     <h3 className="title_one mt">{el.title}</h3>
@@ -111,10 +123,10 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             />
                                         }
                                         <p className={
-                                               localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
-                                                   ? 'fi_ones'
-                                                   : 'title_one font'
-                                           }
+                                            localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                ? 'fi_ones'
+                                                : 'title_one font'
+                                        }
                                         >
 
                                             {
@@ -131,6 +143,14 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         />
                                     </div>
                                 </div>
+                                {
+                                    (plus[el.id] || 0) === 0 ? "" :
+                                        <div className="container">
+                                            <button className="btn_button" onClick={() => navigate("/shop-all/basket")}>
+                                                {plus[el.id]} - {plus[el.id] * el.price}
+                                            </button>
+                                        </div>
+                                }
                             </div>
                         ))}
                     </div>
