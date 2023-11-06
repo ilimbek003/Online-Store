@@ -5,6 +5,7 @@ import ShopDetail from "./ShopDetail";
 import Search from "./Search";
 import Filter from "./Filter";
 import Cart from "./Cart";
+import Basket from "../pages/Basket"
 
 const Project = () => {
     const [modals, setModals] = useState(false)
@@ -78,6 +79,12 @@ const Project = () => {
                 <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
                 <Route path="filter" element={<Filter/>}/>
                 <Route path="cart" element={<Cart saveToLocalStorage={saveToLocalStorage}/>}/>
+                <Route path="basket" element={<Basket
+                    saveToLocalStorage={saveToLocalStorage}
+                    plus={plus}
+                    handlePlus={handlePlus}
+                    handleMinus={handleMinus}
+                />}/>
             </Routes>
         </div>
     );
