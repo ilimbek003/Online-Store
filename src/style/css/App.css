@@ -117,6 +117,10 @@ h6 {
     font-weight: 300;
 }
 
+.nav_line {
+    border-bottom: 1px solid #cccccc;
+}
+
 .sapn {
     font-size: 16px;
     font-weight: 300;
@@ -201,7 +205,7 @@ button {
             rgb(237, 241, 241)
     );
     border-radius: 10px;
-    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, .08);
     padding: 10px;
     cursor: pointer;
     position: relative;
@@ -293,18 +297,6 @@ button {
     font-weight: 400;
 }
 
-.line {
-    width: 100%;
-    border-bottom: 1px solid #cccccc;
-    position: fixed;
-    z-index: 9999;
-    top: 120px;
-    left: 0;
-    right: 0;
-    height: 0.5px;
-    background: #cccccc;
-    margin: 8px 0 0 0;
-}
 
 .slider {
     width: 100%;
@@ -374,7 +366,7 @@ button {
     border: none;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, .08);
     padding: 5px;
     margin: 0 auto;
     display: flex;
@@ -388,12 +380,13 @@ button {
     width: 100%;
     height: 140px;
 }
-.hover_blocks{
+
+.hover_blocks {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,0.50);
+    background: rgba(0, 0, 0, 0.50);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -401,7 +394,8 @@ button {
     height: 100%;
     border-radius: 15px;
 }
-.hover_blocks h1{
+
+.hover_blocks h1 {
     color: #ffffff;
 }
 
@@ -434,7 +428,12 @@ button {
     color: var(--orange);
     float: right;
     font-weight: 600;
-    margin: 0 0 10px 0;
+    margin: 0 0 0 0;
+}
+
+.img_block {
+    width: 100% !important;
+    height: 80px !important;
 }
 
 .project span {
@@ -463,11 +462,19 @@ button {
     height: 30px;
     border-radius: 20px;
     background-color: #ffffff;
-    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, .08);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+}
+.pluses{
+    width: 85px!important;
+    height: 25px!important;
+}
+.act{
+    width: 85px!important;
+    height: 25px!important;
 }
 
 .active_plus {
@@ -475,14 +482,14 @@ button {
     height: 30px;
     border-radius: 20px;
     background-color: var(--orange);
-    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, .08);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px;
 }
 
-.fi_ones{
+.fi_ones {
     color: #ffffff;
 }
 
@@ -519,7 +526,7 @@ button {
             rgb(255, 255, 255) 36%,
             rgb(237, 241, 241)
     );
-    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, .08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -616,4 +623,20 @@ input[type="checkbox"]:before {
 .ionic p {
     color: #706f6f !important;
     text-align: center;
+}
+
+.carts {
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #cccccc;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-0 * var(--bs-gutter-y)) !important;
+    margin-right: calc(-.0 * var(--bs-gutter-x)) !important;
+    margin-left: calc(-.0 * var(--bs-gutter-x)) !important;
 }
