@@ -37,7 +37,7 @@ const Settings = () => {
       <div className="settings">
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
-            <HiArrowLongLeft onClick={() => navigate("/")} className="fi" />
+            <HiArrowLongLeft onClick={() => navigate(-1)} className="fi" />
             <p>Настройки</p>
             <TbFileSettings className="fi" />
           </div>

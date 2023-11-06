@@ -9,10 +9,7 @@ const NewAddress = () => {
       <div className="new_address">
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
-            <HiArrowLongLeft
-              onClick={() => navigate("/delivery-address")}
-              className="fi"
-            />
+            <HiArrowLongLeft onClick={() => navigate(-1)} className="fi" />
             <p>Адрес доставки</p>
             <span></span>
           </div>
