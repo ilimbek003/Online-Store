@@ -578,7 +578,7 @@ input#file-upload-button {
 .message_page .message_btn {
   margin-top: 20px;
   border: none;
-  background: rgba(21, 10, 10, 0.434);
+  background: #8d99ae;
   border-radius: 10px;
   color: #fff;
 }

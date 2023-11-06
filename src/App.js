@@ -19,6 +19,7 @@ import NewAddress from "./pages/NewAddress";
 import Cart from "./pages/Cart";
 import PersonalArea from "./pages/PersonalArea";
 import Project from "./pages/Project";
+import QrCode from "./pages/QrCode";
 
 const App = () => {
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/new-address" element={<NewAddress />} />
         <Route path="/dashboard" element={<PersonalArea/>} />
         <Route path="shop-all/*" element={<Project/>} />
+        <Route path="qr-cod" element={<QrCode/>}/>
       </Routes>
       <Footer />
     </div>
