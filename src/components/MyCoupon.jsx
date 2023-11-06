@@ -35,7 +35,7 @@ const MyCoupon = () => {
                         className="title_h4"
                         onClick={() => navigate("/my-coupon-details")}
                     >
-                        Бардыгы <MdOutlineKeyboardArrowRight size={18}/>
+                        Бардыгы <MdOutlineKeyboardArrowRight style={{cursor:'pointer'}} size={18}/>
                     </h4>
                 </div>
                 <div className="coupon_block_all">

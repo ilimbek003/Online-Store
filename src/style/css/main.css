@@ -85,7 +85,7 @@ p {
   padding: 15px 15px 15px 15px;
   cursor: pointer;
   margin: 0 20px 20px 0;
-  box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
 }
 .coupon_block_all {
   display: flex;
@@ -108,17 +108,17 @@ p {
   -webkit-box-shadow: transparent;
   background-color: transparent;
 }
-.coupon_block_all .title_goods img {
+.title_goods img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-.coupon_block_all .text_box img {
+.text_box img {
   width: 30px;
   height: 30px;
   margin: -21px 0 0 0;
 }
-.coupon_block_all .text_box .pro {
+.text_box .pro {
   width: 150px;
 }
 
@@ -712,4 +712,11 @@ input#file-upload-button {
   font-weight: 600;
   background: #8d99ae;
   margin-top: 30px;
+}
+
+/* MyCouponDetails */
+.coupon_details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
 }
