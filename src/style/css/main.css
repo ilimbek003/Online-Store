@@ -24,13 +24,11 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 50px;
   background: #ffffff;
-  z-index: 998;
-  padding: 5px 0 0 0;
+  border-top: 1px solid #ddd;
   margin: 0 auto;
   width: 90%;
-  max-width: 784px;
+  padding: 10px;
 }
 #footer .navs {
   display: flex;
