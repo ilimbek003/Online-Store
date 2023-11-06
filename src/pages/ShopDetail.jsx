@@ -4,9 +4,10 @@ import axios from "axios";
 import {HiArrowLongLeft, HiOutlineArrowsUpDown} from "react-icons/hi2";
 import {BsBookmark, BsSearch} from "react-icons/bs";
 import {FiFilter} from "react-icons/fi";
-import {AiOutlineClose, AiOutlinePlus} from "react-icons/ai";
+import {AiOutlineClose, AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import "../style/css/modal.css"
-const ShopDetail = ({data, setData, saveToLocalStorage}) => {
+
+const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handleMinus}) => {
     const {id} = useParams();
     const [tabs, setTabs] = useState([]);
     const navigate = useNavigate();
@@ -94,15 +95,39 @@ const ShopDetail = ({data, setData, saveToLocalStorage}) => {
                                             onClick={() => saveToLocalStorage(el.id)}
                                         />
                                     </div>
-                                    <div className="plus ">
-                                        {/*<AiOutlineMinus*/}
-                                        {/*    className="fi"*/}
-                                        {/*/>*/}
-                                        <p className="title_one font">
-                                            Кошуу
+                                    <div className={
+                                        localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                            ? 'active_plus'
+                                            : 'plus'
+                                    }>
+                                        {
+                                            (plus[el.id] || 0) === 0 ? "" : <AiOutlineMinus
+                                                className={
+                                                    localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                        ? 'fi_ones'
+                                                        : 'fi'
+                                                }
+                                                onClick={() => handleMinus(el.id)}
+                                            />
+                                        }
+                                        <p className={
+                                               localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                   ? 'fi_ones'
+                                                   : 'title_one font'
+                                           }
+                                        >
+
+                                            {
+                                                (plus[el.id] || 0) === 0 ? " Кошуу" : plus[el.id]
+                                            }
                                         </p>
                                         <AiOutlinePlus
-                                            className="fi ai_out"
+                                            className={
+                                                localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                    ? 'fi_ones'
+                                                    : 'fi ai_out'
+                                            }
+                                            onClick={() => handlePlus(el.id)}
                                         />
                                     </div>
                                 </div>

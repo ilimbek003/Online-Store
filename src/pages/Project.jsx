@@ -10,6 +10,10 @@ const Project = () => {
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
+    const [shopCart, setShopCart] = useState([]);
+    const [plus, setPlus] = useState({})
+
+
     const saveToLocalStorage = (id) => {
         const itemToAdd = data.find(item => item.id === id);
         if (itemToAdd) {
@@ -24,8 +28,41 @@ const Project = () => {
             setCart(updatedCart);
             localStorage.setItem('cart', JSON.stringify(updatedCart));
         }
-        console.log(itemToAdd)
     };
+
+
+    const handlePlus = (id) => {
+        const itemTo = data.find((el) => el.id === id)
+        if (itemTo) {
+            setShopCart((prevShopCart) => {
+                const updatedCart = [...prevShopCart, itemTo]
+                localStorage.setItem('shopCart', JSON.stringify(updatedCart))
+                localStorage.setItem(`activePlus_${itemTo.id}`, 'active_plus');
+                return updatedCart
+            })
+            setPlus((prevPlus) => {
+                return {...prevPlus, [id]: (prevPlus[id] || 0) + 1}
+            })
+        }
+    }
+
+
+    const handleMinus = (id) => {
+        const itemTo = data.find((el) => el.id === id)
+        if (itemTo) {
+            setShopCart((prevShopCart) => {
+                const updatedCart = [...prevShopCart, itemTo]
+                localStorage.removeItem('shopCart')
+                localStorage.removeItem(`activePlus_${itemTo.id}`);
+                return updatedCart
+            })
+            setPlus((prevPlus) => {
+                return {...prevPlus, [id]: (prevPlus[id] || 0) - 1}
+            })
+        }
+    }
+
+
     return (
         <div>
             <Routes>
@@ -34,6 +71,9 @@ const Project = () => {
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}
+                    plus={plus}
+                    handlePlus={handlePlus}
+                    handleMinus={handleMinus}
                 />}/>
                 <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
                 <Route path="filter" element={<Filter/>}/>

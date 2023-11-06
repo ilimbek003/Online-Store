@@ -201,7 +201,7 @@ button {
             rgb(237, 241, 241)
     );
     border-radius: 10px;
-    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
     padding: 10px;
     cursor: pointer;
     position: relative;
@@ -245,7 +245,7 @@ button {
     border: none;
     background: #f4f2f2;
     color: #000;
-    font-size: 14px!important;
+    font-size: 14px !important;
     font-weight: 400;
     width: 100% !important;
     height: 30px !important;
@@ -389,7 +389,7 @@ button {
     border: none;
     background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
     padding: 5px;
     margin: 0 auto;
     display: flex;
@@ -461,13 +461,27 @@ button {
     height: 30px;
     border-radius: 20px;
     background-color: #ffffff;
-    -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-    box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 8px;
+}
+
+.active_plus {
+    width: 77px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: var(--orange);
+    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.fi_ones{
+    color: #ffffff;
 }
 
 .ai_out {
@@ -503,7 +517,7 @@ button {
             rgb(255, 255, 255) 36%,
             rgb(237, 241, 241)
     );
-    box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+    box-shadow:0 0.2rem 0.525rem 0 rgba(0,0,0,.08);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -588,6 +602,7 @@ input[type="checkbox"]:before {
 .ionic img {
     width: 50%;
 }
+
 .ionic h3 {
     color: #000 !important;
     text-align: center;
@@ -595,7 +610,12 @@ input[type="checkbox"]:before {
     font-size: 20px;
     margin: 0 0 5px 0;
 }
+
 .ionic p {
     color: #706f6f !important;
     text-align: center;
 }
+
+/*{*/
+/*    0 0.2rem 0.525rem 0 rgba(0,0,0,.08)*/
+/*}*/
