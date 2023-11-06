@@ -41,7 +41,7 @@ const MyCouponDetailsId = () => {
             <span></span>
             <h4 className="my_coupon_text">Купон</h4>
             <IoMdClose
-              onClick={() => navigate("/")}
+              onClick={() => navigate(-1)}
               className="icons"
               style={{ cursor: "pointer" }}
               size={20}

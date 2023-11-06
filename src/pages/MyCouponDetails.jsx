@@ -25,40 +25,42 @@ const coupon = [
 const MyCouponDetails = () => {
   const navigate = useNavigate();
   return (
-    <div className="my_coupon_details">
-      <div className="nav">
-        <div className="container d-flex justify-content-between align-items-center ">
-          <HiArrowLongLeft
-            style={{ cursor: "pointer" }}
-            onClick={() => navigate("/")}
-            size={22}
-          />
-          <p>Бардык купондор</p>
-          <span></span>
+    <div id="modal">
+      <div className="my_coupon_details">
+        <div className="nav">
+          <div className="container d-flex justify-content-between align-items-center ">
+            <HiArrowLongLeft
+              style={{ cursor: "pointer" }}
+              onClick={() => navigate(-1)}
+              size={22}
+            />
+            <p>Бардык купондор</p>
+            <span></span>
+          </div>
         </div>
-      </div>
-      <div className="container">
-        <div className=" coupon_details">
-          {coupon.map((el, id) => (
-            <div
-              key={id}
-              className="coupon_box"
-              onClick={() => navigate(`/my-coupon-details-id/${el.id}`)}
-            >
-              <div className="title_goods">
-                <img src={el.image} alt="" />
-              </div>
-              <div className="text_box">
-                <h3 className="title_h5 mt-4">{el.skidka}</h3>
-                <div className="d-flex align-items-center">
-                  <p className="title_h6 pro">{el.date}</p>
-                  <div className="or_cod_little">
-                    <img src={el.qr_cod} alt="" />
+        <div className="container">
+          <div className=" coupon_details">
+            {coupon.map((el, id) => (
+              <div
+                key={id}
+                className="coupon_box"
+                onClick={() => navigate(`/my-coupon-details-id/${el.id}`)}
+              >
+                <div className="title_goods">
+                  <img src={el.image} alt="" />
+                </div>
+                <div className="text_box">
+                  <h3 className="title_h5 mt-4">{el.skidka}</h3>
+                  <div className="d-flex align-items-center">
+                    <p className="title_h6 pro">{el.date}</p>
+                    <div className="or_cod_little">
+                      <img src={el.qr_cod} alt="" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

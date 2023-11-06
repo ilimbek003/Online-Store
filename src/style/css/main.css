@@ -145,9 +145,7 @@ p {
   width: 100%;
   padding: 10px;
   background: white;
-  -webkit-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
-  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -174,7 +172,7 @@ p {
   background: white;
   width: 50px;
   height: 50px;
-  box-shadow: 0 2px 4px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -188,9 +186,7 @@ p {
   border-radius: 20px;
   min-height: 300px;
   padding: 20px;
-  -webkit-box-shadow: 1px 1px 4px 1px rgba(34, 60, 80, 0.2);
-  -moz-box-shadow: 1px 1px 4px 1px rgba(34, 60, 80, 0.2);
-  box-shadow: 1px 1px 4px 1px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -485,13 +481,12 @@ p {
   margin-top: 20px;
   color: #ff5c00;
 }
-
 .contact_box {
   border-radius: 50%;
   background: white;
   width: 60px;
   height: 60px;
-  box-shadow: 4px 4px 8px 0 rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   display: grid;
   align-items: center;
   justify-content: center;
