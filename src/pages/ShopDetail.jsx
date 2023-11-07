@@ -76,7 +76,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         (plus[el.id] || 0) === 0 ? "" :
                                             <div
                                                 className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                         ? 'hover_blocks'
                                                         : ''
                                                 }
@@ -98,7 +98,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                     <div className="marks">
                                         <BsBookmark
                                             className={
-                                                localStorage.getItem(`activeItem_${el.id}`) === 'active'
+                                                localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                     ? 'active'
                                                     : ''
                                             }
@@ -106,14 +106,14 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         />
                                     </div>
                                     <div className={
-                                        localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                             ? 'active_plus'
                                             : 'plus'
                                     }>
                                         {
                                             (plus[el.id] || 0) === 0 ? "" : <AiOutlineMinus
                                                 className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                         ? 'fi_ones'
                                                         : 'fi'
                                                 }
@@ -121,7 +121,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             />
                                         }
                                         <p className={
-                                            localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                 ? 'fi_ones'
                                                 : 'title_one font'
                                         }
@@ -138,7 +138,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         </p>
                                         <AiOutlinePlus
                                             className={
-                                                localStorage.getItem(`activePlus_${el.id}`) === 'active_plus'
+                                                localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                     ? 'fi_ones'
                                                     : 'fi ai_out'
                                             }

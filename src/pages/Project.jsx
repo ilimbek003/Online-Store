@@ -14,7 +14,6 @@ const Project = () => {
     const [shopCart, setShopCart] = useState([]);
     const [plus, setPlus] = useState({})
 
-
     const saveToLocalStorage = (id) => {
         const itemToAdd = data.find(item => item.id === id);
         if (itemToAdd) {
@@ -38,7 +37,7 @@ const Project = () => {
             setShopCart((prevShopCart) => {
                 const updatedCart = [...prevShopCart, itemTo]
                 localStorage.setItem('shopCart', JSON.stringify(updatedCart))
-                localStorage.setItem(`activePlus_${itemTo.id}`, 'active_plus');
+                localStorage.setItem(`activePlus_${itemTo.id}`, `${itemTo.id}`);
                 return updatedCart
             })
             setPlus((prevPlus) => {
@@ -49,19 +48,29 @@ const Project = () => {
 
 
     const handleMinus = (id) => {
-        const itemTo = data.find((el) => el.id === id)
-        if (itemTo) {
+        const itemIndex = shopCart.findIndex((item) => item.id === id);
+        if (itemIndex !== -1) {
             setShopCart((prevShopCart) => {
-                const updatedCart = [...prevShopCart, itemTo]
-                localStorage.removeItem('shopCart')
-                localStorage.removeItem(`activePlus_${itemTo.id}`);
-                return updatedCart
-            })
+                const updatedCart = [...prevShopCart];
+                updatedCart.splice(itemIndex, 1);
+                localStorage.setItem('shopCart', JSON.stringify(updatedCart));
+                return updatedCart;
+            });
             setPlus((prevPlus) => {
-                return {...prevPlus, [id]: (prevPlus[id] || 0) - 1}
-            })
+                return { ...prevPlus, [id]: (prevPlus[id] || 0) - 1 };
+            });
         }
-    }
+
+        // Проверяем, если элемент с данным id не найден в updatedCart, то удаляем ключ
+        const datas = JSON.parse(localStorage.getItem('shopCart'));
+        if (!datas.some((elem) => String(elem.id) === String(id))) {
+            localStorage.removeItem(`activePlus_${id}`);
+        }
+    };
+
+
+
+
 
 
     return (
