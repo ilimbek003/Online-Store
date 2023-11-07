@@ -1,37 +1,43 @@
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Thin.ttf");
+  src: url("../../fonts/Gilroy-Thin.ttf");
   font-weight: 100;
 }
-
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Light.ttf");
+  src: url("../../fonts/Gilroy-UltraLight.ttf");
+  font-weight: 200;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url("../../fonts/Gilroy-Light.ttf");
   font-weight: 300;
 }
-
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Regular.ttf");
+  src: url("../../fonts/Gilroy-Regular.ttf");
   font-weight: 400;
 }
-
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Medium.ttf");
+  src: url("../../fonts/Gilroy-Medium.ttf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Bold.ttf");
-  font-weight: 700;
+  src: url("../../fonts/Gilroy-Semibold.ttf");
+  font-weight: 600;
 }
-
 @font-face {
   font-family: Gilroy;
-  src: url("../../fonts/Roboto-Black.ttf");
-  font-weight: 900;
+  src: url("../../fonts/Gilroy-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url("../../fonts/Gilroy-Extrabold.ttf");
+  font-weight: 800;
 }
 
 * {
@@ -40,7 +46,6 @@
   box-sizing: border-box;
   font-family: Gilroy, sans-serif;
 }
-
 :root {
   --orange: #ff640d;
   --green: #04c700;
