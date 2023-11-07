@@ -43,7 +43,7 @@ const App = () => {
         <Route path="shop-all/*" element={<Project />} />
         <Route path="/qr-cod" element={<QrCode />} />
         <Route path="/my-coupon-details" element={<MyCouponDetails />} />
-        <Route path="/scrool-page" element={<ScroolPage/>}/>
+        <Route path="/scrool-page" element={<ScroolPage />}/>
         <Route
           path="/my-coupon-details-id/:id"
           element={<MyCouponDetailsId />}
