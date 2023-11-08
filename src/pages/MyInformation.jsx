@@ -9,6 +9,7 @@ const MyInformation = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cityModal, setCityModal] = useState(false);
+  
 
   const openCityModal = () => {
     setCityModal(true);
