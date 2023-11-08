@@ -688,10 +688,10 @@ input[type="checkbox"]:before {
   display: flex;
   align-items: center;
   justify-content: center;
+
   background: #ffffff;
   border: 1px solid var(--orange);
   position: absolute;
-
   margin: -15px 0 0 18px;
 }
 .margin_top_log{
