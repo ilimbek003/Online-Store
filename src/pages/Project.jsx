@@ -8,7 +8,6 @@ import Cart from "./Cart";
 import Basket from "../pages/Basket"
 import Product from "./Product";
 import axios from "axios";
-import FilterPrice from "./FilterPrice";
 import {useNavigate} from "react-router-dom";
 
 const MIN = 50;
@@ -98,14 +97,6 @@ const Project = () => {
             <Routes>
                 <Route path="shop" element={<Shop/>}/>
                 <Route path="shop/:id" element={<ShopDetail
-                    data={data}
-                    setData={setData}
-                    saveToLocalStorage={saveToLocalStorage}
-                    plus={plus}
-                    handlePlus={handlePlus}
-                    handleMinus={handleMinus}
-                />}/>
-                <Route path="filter-price" element={<FilterPrice
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}
