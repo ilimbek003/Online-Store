@@ -123,6 +123,7 @@ const Basket = ({handlePlus, plus, handleMinus}) => {
                                                         </div>
                                                     </div>
                                             }
+
                                         </div>
                                     )
                                 }
