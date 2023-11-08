@@ -41,7 +41,9 @@ const Project = () => {
                 return updatedCart
             })
             setPlus((prevPlus) => {
-                return {...prevPlus, [id]: (prevPlus[id] || 0) + 1}
+                const newPlus = {...prevPlus, [id]: (prevPlus[id] || 0) + 1};
+                localStorage.setItem('plus', JSON.stringify(newPlus));
+                return newPlus;
             })
         }
     }
@@ -61,7 +63,7 @@ const Project = () => {
                 return updatedCart;
             });
             setPlus((prevPlus) => {
-                return { ...prevPlus, [id]: (prevPlus[id] || 0) - 1 };
+                return {...prevPlus, [id]: (prevPlus[id] || 0) - 1};
             });
         }
     };

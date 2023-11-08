@@ -28,7 +28,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
     useEffect(() => {
         handleId(id);
     }, [id]);
-
+    const mun = JSON.parse(localStorage.getItem('plus'));
     return (
         <>
             <div id="modal">
@@ -111,16 +111,6 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             ? 'active_plus'
                                             : 'plus'
                                     }>
-                                        {/*{*/}
-                                        {/*    (plus[el.id] || 0) !== 0 && <AiOutlineMinus*/}
-                                        {/*        className={*/}
-                                        {/*            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`*/}
-                                        {/*                ? 'fi_ones'*/}
-                                        {/*                : 'fi'*/}
-                                        {/*        }*/}
-                                        {/*        onClick={() => handleMinus(el.id)}*/}
-                                        {/*    />*/}
-                                        {/*}*/}
                                         {
                                             localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
                                                 <AiOutlineMinus
@@ -130,10 +120,14 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         }
                                         {
                                             localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                <p className="'fi_ones'"> {plus[el.id]}
+                                                <p className="fi_ones">
+                                                    {Object.entries(mun).map(([key, value]) => (
+                                                        <span key={key}>{value}</span>
+                                                    ))}
                                                     <span>шт</span>
                                                 </p>
-                                                : <p className='title_one font'>
+                                                :
+                                                <p className='title_one font'>
                                                     Кошуу
                                                 </p>
                                         }
