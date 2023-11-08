@@ -961,7 +961,7 @@ input#file-upload-button {
   text-align: center;
   line-height: 1.2;
 }
-.acaunt_block_modal button{
+.acaunt_block_modal button {
   background: var(--orange);
   color: #fff;
   border: none;
