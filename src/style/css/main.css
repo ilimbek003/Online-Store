@@ -480,9 +480,10 @@ p {
 }
 
 .top {
-  padding-top: 40px;
+  padding-top: 60px;
+  padding-bottom: 30px;
+  background: #ffffff;
 }
-
 .get_details_block {
   width: 100%;
   padding: 5px;
@@ -974,6 +975,4 @@ input#file-upload-button {
   font-weight: 600;
   margin-top: 15px;
 }
-
-
 
