@@ -74,16 +74,10 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                 >
                                     <img src={el.images} alt=""/>
                                     {
-                                        (plus[el.id] || 0) === 0 ? "" :
-                                            <div
-                                                className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                        ? 'hover_blocks'
-                                                        : ''
-                                                }
-                                            >
-                                                <h1>{plus[el.id]}</h1>
-                                            </div>
+                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                            <div className='hover_blocks'>
+                                                <h1>{mun[el.id]}</h1>
+                                            </div> : ""
                                     }
                                 </div>
                                 <div className="all">
@@ -120,17 +114,19 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                         }
                                         {
                                             localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                <p className="fi_ones">
-                                                    {Object.entries(mun).map(([key, value]) => (
-                                                        <span key={key}>{value[el.id]}</span>
-                                                    ))}
-                                                    <span>шт</span>
-                                                </p>
-                                                :
-                                                <p className='title_one font'>
-                                                    Кошуу
-                                                </p>
+                                                (
+                                                    <p className="fi_ones">
+                                                        <span key={el.id}>{mun[el.id]}</span>
+                                                        <span>шт</span>
+                                                    </p>
+                                                ) :
+                                                (
+                                                    <p className='title_one font'>
+                                                        Кошуу
+                                                    </p>
+                                                )
                                         }
+
                                         <AiOutlinePlus
                                             className={
                                                 localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
