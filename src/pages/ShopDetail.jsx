@@ -111,32 +111,32 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             ? 'active_plus'
                                             : 'plus'
                                     }>
+                                        {/*{*/}
+                                        {/*    (plus[el.id] || 0) !== 0 && <AiOutlineMinus*/}
+                                        {/*        className={*/}
+                                        {/*            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`*/}
+                                        {/*                ? 'fi_ones'*/}
+                                        {/*                : 'fi'*/}
+                                        {/*        }*/}
+                                        {/*        onClick={() => handleMinus(el.id)}*/}
+                                        {/*    />*/}
+                                        {/*}*/}
                                         {
-                                            (plus[el.id] || 0) !== 0 && <AiOutlineMinus
-                                                className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                        ? 'fi_ones'
-                                                        : 'fi'
-                                                }
-                                                onClick={() => handleMinus(el.id)}
-                                            />
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                <AiOutlineMinus
+                                                    className='fi_ones'
+                                                    onClick={() => handleMinus(el.id)}
+                                                /> : ''
                                         }
-                                        <p className={
-                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                ? 'fi_ones'
-                                                : 'title_one font'
+                                        {
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                <p className="'fi_ones'"> {plus[el.id]}
+                                                    <span>шт</span>
+                                                </p>
+                                                : <p className='title_one font'>
+                                                    Кошуу
+                                                </p>
                                         }
-                                        >
-
-                                            {
-                                                (plus[el.id] || 0) === 0 ? "Кошуу" : plus[el.id]
-                                            }
-                                            <span>
-                                                {
-                                                    (plus[el.id] || 0) === 0 ? "" : "шт"
-                                                }
-                                            </span>
-                                        </p>
                                         <AiOutlinePlus
                                             className={
                                                 localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
