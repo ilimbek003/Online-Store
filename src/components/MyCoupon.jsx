@@ -32,7 +32,7 @@ const MyCoupon = () => {
         <div className="d-flex align-items-center justify-content-between mt-4">
           <h6 className="title_h6 navs_one">Менин купондорум</h6>
           <h4
-            className="title_h4"
+            className="title_h4  display"
             onClick={() => navigate("/my-coupon-details")}
           >
             Бардыгы{" "}

@@ -23,6 +23,7 @@ import QrCode from "./pages/QrCode";
 import MyCouponDetails from "./pages/MyCouponDetails";
 import MyCouponDetailsId from "./pages/MyCouponDetailsId";
 import ScroolPage from "./pages/ScroolPage";
+import MyInformation from "./pages/MyInformation";
 
 const App = () => {
   return (
@@ -43,11 +44,12 @@ const App = () => {
         <Route path="shop-all/*" element={<Project />} />
         <Route path="/qr-cod" element={<QrCode />} />
         <Route path="/my-coupon-details" element={<MyCouponDetails />} />
-        <Route path="/scrool-page" element={<ScroolPage />}/>
+        <Route path="/scrool-page" element={<ScroolPage />} />
         <Route
           path="/my-coupon-details-id/:id"
           element={<MyCouponDetailsId />}
         />
+        <Route path="my-information" element={<MyInformation />} />
       </Routes>
       <Footer />
     </div>
