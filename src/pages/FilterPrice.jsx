@@ -7,7 +7,7 @@ import {FiFilter} from "react-icons/fi";
 import {AiOutlineClose, AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import "../style/css/modal.css"
 
-const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus}) => {
+const FilterPrice = ({data, setData, saveToLocalStorage, handlePlus, plus, handleMinus}) => {
     const {id} = useParams();
     const [tabs, setTabs] = useState([]);
     const navigate = useNavigate();
@@ -198,4 +198,4 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus}
     );
 };
 
-export default ShopDetail;
+export default FilterPrice;

@@ -8,10 +8,13 @@ import Cart from "./Cart";
 import Basket from "../pages/Basket"
 import Product from "./Product";
 import axios from "axios";
+import FilterPrice from "./FilterPrice";
+import {useNavigate} from "react-router-dom";
 
 const MIN = 50;
 const MAX = 5000;
 const Project = () => {
+    const navigate = useNavigate()
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
@@ -77,32 +80,32 @@ const Project = () => {
         }
     };
 
-    useEffect(() => {
+    const calculateMinMax = () => {
         const url = `https://nurbektmusic.pythonanywhere.com/product/list/filter?price_from=${requests.budget[0]}&price_to=${requests.budget[1]}`;
         axios.get(url)
             .then(response => {
                 const filteredProducts = response.data;
+                setData(filteredProducts);
+                navigate('/shop-all/filter-price');
             })
             .catch(error => {
                 console.error("Ошибка при получении данных:", error);
             });
-    }, [requests]);
-
-    const calculateMinMax = () => {
-        if (data.length > 0) {
-            const minPrice = Math.min(...data.map((el) => el.price));
-            const maxPrice = Math.max(...data.map((el) => el.price));
-            setRequests({budget: [minPrice, maxPrice]});
-            console.log('MIN:', minPrice);
-            console.log('MAX:', maxPrice);
-        }
     };
-
+    console.log(data)
     return (
         <div>
             <Routes>
                 <Route path="shop" element={<Shop/>}/>
                 <Route path="shop/:id" element={<ShopDetail
+                    data={data}
+                    setData={setData}
+                    saveToLocalStorage={saveToLocalStorage}
+                    plus={plus}
+                    handlePlus={handlePlus}
+                    handleMinus={handleMinus}
+                />}/>
+                <Route path="filter-price" element={<FilterPrice
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}
