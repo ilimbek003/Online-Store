@@ -21,7 +21,6 @@ const MessagePage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-  const [isWishSelected, setIsWishSelected] = useState("");
 
   const handleCheckboxChange = (value) => {
     if (selectedOption === value) {
