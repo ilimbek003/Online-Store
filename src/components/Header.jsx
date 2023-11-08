@@ -19,9 +19,9 @@ const Header = () => {
         <div>
             <div className="container">
                 <div className="nav">
-                    <div className="container d-flex justify-content-between align-items-center">
+                    <div className="container nav_content">
                         <FiUser className="fi" onClick={() => navigate("/dashboard") }/>
-                        <img className="images" src={bekbekei} alt="Бекбекей"/>
+                         <h3 className="hello">Привет, Илимбек</h3>
                         <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                     </div>
                 </div>

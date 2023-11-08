@@ -6,6 +6,7 @@ import Header from "./Header";
 import MyCoupon from "./MyCoupon";
 import QrCode from "../pages/QrCode";
 import { useNavigate } from "react-router";
+import {DiVisualstudio} from "react-icons/di"
 
 const Main = () => {
     const [ qrCode, setQrCode ] = useState(false)
@@ -14,8 +15,17 @@ const Main = () => {
         <>
             <Header/>
             <div className="container">
+                <div className="margin_top"></div>
+                <div className="margin_top_all">
+                    <div className="margin_top_log">
+                        <DiVisualstudio className="dio"/>
+                    </div>
+                </div>
                 <div className="bonus_block_all" onClick={() => navigate('/qr-cod')}>
-                    <h1 className="title_h1">26 бонус</h1>
+                    <div>
+                        <h4 className='title_h'>Бонусная карта</h4>
+                        <h1 className="title_ha">26 <span>бонус</span></h1>
+                    </div>
                     <img src={qar} alt=""/>
                 </div>
             </div>

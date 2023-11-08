@@ -122,7 +122,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
                                                 <p className="fi_ones">
                                                     {Object.entries(mun).map(([key, value]) => (
-                                                        <span key={key}>{value}</span>
+                                                        <span key={key}>{value[el.id]}</span>
                                                     ))}
                                                     <span>шт</span>
                                                 </p>
