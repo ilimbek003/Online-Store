@@ -16,15 +16,21 @@ const DeliveryAddress = () => {
           </div>
         </div>
         <div className="container">
-          <div className="address_add" onClick={() => navigate("/new-address")}>
-            <h6>Адрес доставки</h6>
-            <p className="add_block">
-              <span className="add">+ </span> Добавить
-            </p>
-          </div>
-          <div className="page_empty">
-            <h2>Здесь пока пусто</h2>
-            <p>Здесь будут храниться ваши адреса</p>
+          <div className="delivery_block">
+            <div
+              className="address_add"
+              onClick={() => navigate("/new-address")}
+            >
+              <h6>Адрес доставки</h6>
+              <p className="add_block">
+                <span className="add">+ </span> Добавить
+              </p>
+            </div>
+            <div className="page_empty">
+              <h2>Здесь пока пусто</h2>
+              <p>Здесь будут храниться ваши адреса</p>
+            </div>
+            <div></div>
           </div>
         </div>
       </div>
