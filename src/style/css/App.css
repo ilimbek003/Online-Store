@@ -631,7 +631,7 @@ input[type="checkbox"]:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 130px 0 0 0;
+  margin: 80px 0 0 0;
 }
 .ionic_block {
   width: 100%;
@@ -645,26 +645,28 @@ input[type="checkbox"]:before {
 
 .ionic img {
   width: 50%;
+  margin-bottom: -15px;
 }
 .buy_block {
   width: 100%;
-  height: 100%;
+  min-height: 580px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between ;
+  justify-content: space-between;
 }
 .ionic h3 {
   color: #000 !important;
   text-align: center;
   font-weight: 600;
-  font-size: 20px;
-  margin: 0 0 5px 0;
-}
+  font-size: 22px;
+  margin: 10px 0 5px 0;
 
+}
 .ionic p {
   color: #706f6f;
   text-align: center;
+  line-height: 1.2;
 }
 
 .carts {
