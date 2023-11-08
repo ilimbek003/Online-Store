@@ -4,25 +4,24 @@ import { useNavigate } from "react-router";
 import { TbCalendar } from "react-icons/tb";
 import icons from "../img/39ecb5044ff738dd9a74c9174b026b8e.jpg";
 
-const MyOrders = () => {
+const BuyHistory = () => {
   const navigate = useNavigate();
   return (
     <div id="modal">
-      <div className="my_orders">
+      <div className="buy_history">
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
-            <p>Mенин буюртмаларым</p>
+            <p>Сатып алуулардын тарыхы</p>
             <TbCalendar className="fi" />
           </div>
         </div>
         <div className="container">
-          <div className="ionic ionic_block">
-            <div></div>
+          <div className="ionic buy_block">
             <div className="ionic_box1">
               <img src={icons} alt="" />
               <h3>Бул жер азырынча бош</h3>
-              <p>Бул жер сиз буюртма берген товарлар корсотулот</p>
+              <p>Сатып алган нерселериниз бул жерде корсотулот</p>
             </div>
             <button className="ionic_button">
               <h5 className="ionic_button_text">Тарыхты корсотуу</h5>
@@ -37,4 +36,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default BuyHistory;

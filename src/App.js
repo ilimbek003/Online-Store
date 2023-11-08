@@ -25,6 +25,7 @@ import MyCouponDetailsId from "./pages/MyCouponDetailsId";
 import ScroolPage from "./pages/ScroolPage";
 import MyInformation from "./pages/MyInformation";
 import MyOrders from "./pages/MyOrders";
+import BuyHistory from "./pages/BuyHistory";
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
         />
         <Route path="/my-information" element={<MyInformation />} />
         <Route path="/my-orders" element={<MyOrders />} />
+        <Route path="/buy-history" element={<BuyHistory/>}/>
       </Routes>
       <Footer />
     </div>

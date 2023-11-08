@@ -1,6 +1,17 @@
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-   font-weight: 0!important;
-   color: var(--bs-heading-color);
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 0 !important;
+  color: var(--bs-heading-color);
 }
 .title_h1 {
   max-width: 50px;
@@ -14,18 +25,18 @@
   color: var(--orange);
   font-weight: 500;
 }
-.title_h{
+.title_h {
   font-size: 15px;
   font-weight: 600;
   color: #ffffff;
 }
-.title_ha{
+.title_ha {
   font-size: 22px;
   font-weight: 600;
   color: #ffffff;
   margin: 60px 0 0 0;
 }
-.title_ha span{
+.title_ha span {
   font-size: 16px;
   font-weight: 400;
   color: #ffffff;
@@ -36,7 +47,7 @@
   color: #000;
   font-weight: 400;
 }
-.hello{
+.hello {
   font-size: 18px;
   font-weight: 500;
   margin: 1px 0 0 0;
@@ -517,7 +528,7 @@ button {
   margin: 0 auto;
   padding: 10px 0;
 }
-.nav_content{
+.nav_content {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -616,7 +627,16 @@ input[type="checkbox"]:before {
 
 .ionic {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 130px 0 0 0;
+}
+.ionic_block {
+  width: 100%;
   height: 100vh;
+  margin: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -626,7 +646,14 @@ input[type="checkbox"]:before {
 .ionic img {
   width: 50%;
 }
-
+.buy_block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between ;
+}
 .ionic h3 {
   color: #000 !important;
   text-align: center;
@@ -682,7 +709,7 @@ input[type="checkbox"]:before {
   height: 1px;
   background: #8d99ae;
 }
-.margin_top_all{
+.margin_top_all {
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -695,7 +722,7 @@ input[type="checkbox"]:before {
   position: absolute;
   margin: -15px 0 0 18px;
 }
-.margin_top_log{
+.margin_top_log {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -704,7 +731,7 @@ input[type="checkbox"]:before {
   align-items: center;
   justify-content: center;
 }
-.dio{
+.dio {
   font-size: 25px;
   color: #ffffff;
 }
