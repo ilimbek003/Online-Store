@@ -4,6 +4,7 @@ import { HiMiniArrowRightOnRectangle } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
+import {TbFileSettings} from 'react-icons/tb'
 const MyInformation = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -54,7 +55,7 @@ const MyInformation = () => {
           <div className="container d-flex justify-content-between align-items-center ">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
             <p className="big">Менин маалыматтарым</p>
-            <HiMiniArrowRightOnRectangle className="fi" />
+            <TbFileSettings className="fi" />
           </div>
         </div>
         <div className="container">

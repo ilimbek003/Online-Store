@@ -2,7 +2,7 @@ import React from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { TbCalendar } from "react-icons/tb";
-import icons from "../img/39ecb5044ff738dd9a74c9174b026b8e.jpg";
+import korzina from "../../src/img/korzina.jpeg";
 
 const BuyHistory = () => {
   const navigate = useNavigate();
@@ -19,7 +19,9 @@ const BuyHistory = () => {
         <div className="container">
           <div className="ionic buy_block">
             <div className="ionic_box1">
-              <img src={icons} alt="" />
+              <div className="block_border">
+                <img src={korzina} alt="" />
+              </div>
               <h3>Бул жер азырынча бош</h3>
               <p>Сатып алган нерселериниз бул жерде корсотулот</p>
             </div>
