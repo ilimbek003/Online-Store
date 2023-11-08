@@ -10,6 +10,7 @@ const MyInformation = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [cityModal, setCityModal] = useState(false);
     const [selectedOption, setSelectedOption] = useState("");
+
     const [option, setOption] = useState("");
 
     const openCityModal = () => {
