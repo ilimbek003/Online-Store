@@ -690,6 +690,7 @@ input[type="checkbox"]:before {
   right: 0;
   background: #eae9e9;
   width: 100%;
+
   min-height: 100px;
 }
 .btn_butto {
