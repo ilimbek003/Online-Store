@@ -1,5 +1,5 @@
 import React from 'react';
-import {AiOutlineHome} from 'react-icons/ai';
+import {AiOutlineHome, AiOutlineQrcode} from 'react-icons/ai';
 import {BsShop} from "react-icons/bs"
 import {LuBadgePercent} from 'react-icons/lu'
 import {NavLink} from 'react-router-dom';
@@ -22,9 +22,12 @@ const Footer = () => {
                         <span>Дyкон</span>
                     </NavLink>
                 </div>
-                <NavLink to="/qr-cod">
-                    <img className="footer_qr_code" src={qrCode} alt=""/>
-                </NavLink>
+                <div className="flex_block">
+                    <NavLink to="/qr-cod" activeClassName="active">
+                        <AiOutlineQrcode className="fi  code"/>
+                        <span className="spamn">Моя карта</span>
+                    </NavLink>
+                </div>
                 <div className="flex_block">
                     <NavLink to="/promotion" activeClassName="active">
                         <LuBadgePercent className="fi ai"/>

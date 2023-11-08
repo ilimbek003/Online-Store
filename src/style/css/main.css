@@ -40,9 +40,9 @@ p {
   justify-content: space-between;
   margin: 0 auto;
 }
-
-.footer_qr_code {
-  width: 50px;
+.code{
+  font-size: 25px!important;
+  color: #787676!important;
 }
 
 #footer .flex_block a {
@@ -58,7 +58,10 @@ p {
   font-weight: 400;
   font-style: normal;
   color: var(--orange);
-  margin: 3px 0 0 0;
+  margin: 2px 0 0 0;
+}
+.spamn{
+  margin: 0 0 0 0 !important;
 }
 
 .ai {
@@ -71,7 +74,9 @@ p {
   color: var(--orange) !important;
   font-size: 23px !important;
 }
-
+.active .code{
+  color: var(--orange) !important;
+}
 .active span {
   color: #000 !important;
   font-size: 12px;
