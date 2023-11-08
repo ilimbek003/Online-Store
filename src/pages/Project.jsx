@@ -11,7 +11,7 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
 const MIN = 50;
-const MAX = 5000;
+const MAX = 3000;
 const Project = () => {
     const navigate = useNavigate()
     const [modals, setModals] = useState(false)
@@ -85,13 +85,15 @@ const Project = () => {
             .then(response => {
                 const filteredProducts = response.data;
                 setData(filteredProducts);
-                navigate('/shop-all/filter-price');
+                const el = filteredProducts[0];
+                navigate(`/shop-all/shop/${el.id} `);
             })
             .catch(error => {
                 console.error("Ошибка при получении данных:", error);
             });
     };
-    console.log(data)
+
+
     return (
         <div>
             <Routes>
