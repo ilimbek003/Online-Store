@@ -54,23 +54,17 @@ const Project = () => {
                 const updatedCart = [...prevShopCart];
                 updatedCart.splice(itemIndex, 1);
                 localStorage.setItem('shopCart', JSON.stringify(updatedCart));
+                const isItemStillInCart = updatedCart.some((item) => item.id === id);
+                if (!isItemStillInCart) {
+                    localStorage.removeItem(`activePlus_${id}`);
+                }
                 return updatedCart;
             });
             setPlus((prevPlus) => {
                 return { ...prevPlus, [id]: (prevPlus[id] || 0) - 1 };
             });
         }
-
-        // Проверяем, если элемент с данным id не найден в updatedCart, то удаляем ключ
-        const datas = JSON.parse(localStorage.getItem('shopCart'));
-        if (!datas.some((elem) => String(elem.id) === String(id))) {
-            localStorage.removeItem(`activePlus_${id}`);
-        }
     };
-
-
-
-
 
 
     return (

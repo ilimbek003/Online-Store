@@ -13,7 +13,6 @@ const Basket = ({handlePlus, plus, handleMinus}) => {
     const uniqueIds = new Set();
     const idCounts = {};
 
-// Пройдитесь по массиву и подсчитайте количество данных для каждого id
     plusCartFromLocalStorage.forEach((el) => {
         if (!idCounts[el.id]) {
             idCounts[el.id] = 1;
