@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "../style/css/main.css";
 import "../style/css/App.css";
 import "../style/css/modal.css";
-import bekbekei from "../img/2.png";
 import { HiArrowLongLeft, HiMiniArrowRightOnRectangle } from "react-icons/hi2";
 import { IoIosArrowForward } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
@@ -16,6 +15,16 @@ import { useNavigate } from "react-router-dom";
 import { BiBell } from "react-icons/bi";
 
 const PersonalArea = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const isOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const closeOpenModal = () => {
+    setOpenModal(false);
+  };
+
   const navigate = useNavigate();
 
   return (
@@ -25,8 +34,25 @@ const PersonalArea = () => {
           <div className="container nav_content">
             <HiArrowLongLeft className="fi" onClick={() => navigate("/")} />
             <h3 className="hello">Привет, Илимбек</h3>
-            <HiMiniArrowRightOnRectangle className="fi" />
+            <HiMiniArrowRightOnRectangle
+              className="fi"
+              onClick={() => isOpenModal()}
+            />
           </div>
+          {openModal === true && (
+            <div className="filters_oll" onClick={closeOpenModal}>
+              <div className="order">
+                <div className="acaunt_block_modal">
+                  <h3>Акаунттан чыгуу?</h3>
+                  <p>
+                    3 кайрадан авторизациядан <br /> отушунуз керек
+                  </p>
+                  <button>Ооба, чыгам </button>
+                  <h4>Жок, калам</h4>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
         <div className="container">
           <div className="top_one">
@@ -110,7 +136,7 @@ const PersonalArea = () => {
             <div onClick={() => navigate(`/to-help-page`)} className="area_all">
               <div className="bell">
                 <div className="bi">
-                  <BsQuestionCircle className="be"/>
+                  <BsQuestionCircle className="be" />
                 </div>
                 <h3 className="mt-2">Жардам</h3>
               </div>
