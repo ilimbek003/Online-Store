@@ -39,7 +39,7 @@ const PersonalArea = () => {
                   {" "}
                   <FiUser className="be" />{" "}
                 </div>
-                <h3 className="mt-2">Мои данные </h3>
+                <h3 className="mt-2">Менин маалыматтарым </h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -61,14 +61,14 @@ const PersonalArea = () => {
             </div>
             <div
               className="area_all"
-              onClick={() => navigate(`/my-coupon-details-id`)}
+              onClick={() => navigate(`/my-orders`)}
             >
               <div className="bell">
                 <div className="bi">
                   {" "}
                   <HiOutlineNewspaper className="be" />{" "}
                 </div>
-                <h3>Мои заказы</h3>
+                <h3>Менин буюртмаларым</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -80,7 +80,7 @@ const PersonalArea = () => {
                   {" "}
                   <TbHistory className="be" />{" "}
                 </div>
-                <h3 className="mt-2">История покупок</h3>
+                <h3 className="mt-2">Сатып алуулардын тарыхы</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -91,7 +91,7 @@ const PersonalArea = () => {
                 <div className="bi">
                   <IoSettingsSharp className="be" />{" "}
                 </div>
-                <h3 className="mt-2"> Настройка </h3>
+                <h3 className="mt-2"> Жондоолор</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -105,7 +105,7 @@ const PersonalArea = () => {
                 <div className="bi">
                   <TbTruckDelivery className="be" />{" "}
                 </div>
-                <h3>Адрес доставки</h3>
+                <h3>Жеткируу дпреги</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -116,7 +116,7 @@ const PersonalArea = () => {
                 <div className="bi">
                   <BsQuestionCircle className="be" />{" "}
                 </div>
-                <h3 className="mt-2">Помощь</h3>
+                <h3 className="mt-2">Жардам</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />

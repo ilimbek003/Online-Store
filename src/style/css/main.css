@@ -40,9 +40,9 @@ p {
   justify-content: space-between;
   margin: 0 auto;
 }
-.code{
-  font-size: 25px!important;
-  color: #787676!important;
+.code {
+  font-size: 25px !important;
+  color: #787676 !important;
 }
 
 #footer .flex_block a {
@@ -60,7 +60,7 @@ p {
   color: var(--orange);
   margin: 2px 0 0 0;
 }
-.spamn{
+.spamn {
   margin: 0 0 0 0 !important;
 }
 
@@ -74,7 +74,7 @@ p {
   color: var(--orange) !important;
   font-size: 23px !important;
 }
-.active .code{
+.active .code {
   color: var(--orange) !important;
 }
 .active span {
@@ -938,4 +938,23 @@ nav {
 .infor_block {
   margin-top: 0px !important;
   background: #e9ecef !important;
+}
+
+.ionic_box1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ionic_button {
+  border: none;
+  background: var(--orange);
+}
+.ionic_button_text {
+  font-size: 18px;
+  margin-bottom: 0px !important;
+  color: #fff;
+}
+.ionic_button_date {
+  color: #fff !important;
+  font-size: 14px;
 }

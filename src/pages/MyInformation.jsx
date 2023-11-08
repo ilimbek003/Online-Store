@@ -4,7 +4,6 @@ import { HiMiniArrowRightOnRectangle } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
-import { Modal } from "bootstrap";
 const MyInformation = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -21,7 +20,7 @@ const MyInformation = () => {
   };
 
   const checkboxChange = (value) => {
-    if (setOption === value) {
+    if (option === value) {
       setOption("");
     } else {
       setOption(value);
@@ -117,7 +116,7 @@ const MyInformation = () => {
                     <label className="detial">
                       <input
                         type="radio"
-                        value={radioChange}
+                        value="Кыргыз"
                         checked={selectedOption === "Кыргыз"}
                         onChange={() => handleCheckboxChange("Кыргыз")}
                         onClick={closeModal}
@@ -162,7 +161,7 @@ const MyInformation = () => {
                     style={{}}
                     className="input_option"
                     type="button"
-                    value={selectedOption}
+                    value={option}
                   />
                   <MdKeyboardArrowDown
                     onClick={openCityModal}
@@ -316,7 +315,7 @@ const MyInformation = () => {
                     </label>
                   </div>
                 </div>
-              )}    
+              )}
               <div className="toggle_block toogle_block_inform">
                 <p>Уй-жаныбарларынын болушу</p>
                 <label className="switch">
