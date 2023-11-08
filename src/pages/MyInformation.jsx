@@ -9,7 +9,8 @@ const MyInformation = () => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [cityModal, setCityModal] = useState(false);
-  
+  const [selectedOption, setSelectedOption] = useState("");
+  const [option, setOption] = useState("");
 
   const openCityModal = () => {
     setCityModal(true);
@@ -17,6 +18,18 @@ const MyInformation = () => {
 
   const closeCityModal = () => {
     setCityModal(false);
+  };
+
+  const checkboxChange = (value) => {
+    if (setOption === value) {
+      setOption("");
+    } else {
+      setOption(value);
+    }
+  };
+
+  const radioChange = (event) => {
+    setOption(event.target.value);
   };
 
   const openModal = () => {
@@ -33,10 +46,6 @@ const MyInformation = () => {
     } else {
       setSelectedOption(value);
     }
-  };
-  const [selectedOption, setSelectedOption] = useState("");
-  const handleRadioChange = (event) => {
-    setSelectedOption(event.target.value);
   };
 
   return (
@@ -108,7 +117,7 @@ const MyInformation = () => {
                     <label className="detial">
                       <input
                         type="radio"
-                        value="Кыргыз"
+                        value={radioChange}
                         checked={selectedOption === "Кыргыз"}
                         onChange={() => handleCheckboxChange("Кыргыз")}
                         onClick={closeModal}
@@ -179,8 +188,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Бишкек"
-                        checked={selectedOption === "Бишкек"}
-                        onChange={() => handleCheckboxChange("Бишкек")}
+                        checked={option === "Бишкек"}
+                        onChange={() => checkboxChange("Бишкек")}
                         onClick={closeCityModal}
                       />
                       <p>Бишкек</p>
@@ -189,8 +198,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Кант"
-                        checked={selectedOption === "Кант"}
-                        onChange={() => handleCheckboxChange("Кант")}
+                        checked={option === "Кант"}
+                        onChange={() => checkboxChange("Кант")}
                         onClick={closeCityModal}
                       />
                       <p>Кант</p>
@@ -199,8 +208,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Токмок"
-                        checked={selectedOption === "Токмок"}
-                        onChange={() => handleCheckboxChange("Токмок")}
+                        checked={option === "Токмок"}
+                        onChange={() => checkboxChange("Токмок")}
                         onClick={closeCityModal}
                       />
                       <p>Токмок</p>
@@ -209,8 +218,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Чолпон-Ата"
-                        checked={selectedOption === "Чолпон-Ата"}
-                        onChange={() => handleCheckboxChange("Чолпон-Ата")}
+                        checked={option === "Чолпон-Ата"}
+                        onChange={() => checkboxChange("Чолпон-Ата")}
                         onClick={closeCityModal}
                       />
                       <p>Чолпон-Ата</p>
@@ -219,8 +228,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Кара_Балта"
-                        checked={selectedOption === "Кара_Балта"}
-                        onChange={() => handleCheckboxChange("Кара_Балта")}
+                        checked={option === "Кара_Балта"}
+                        onChange={() => checkboxChange("Кара_Балта")}
                         onClick={closeCityModal}
                       />
                       <p>Кара_Балта</p>
@@ -229,8 +238,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Сокулук"
-                        checked={selectedOption === "Сокулук"}
-                        onChange={() => handleCheckboxChange("Сокулук")}
+                        checked={option === "Сокулук"}
+                        onChange={() => checkboxChange("Сокулук")}
                         onClick={closeCityModal}
                       />
                       <p>Сокулук</p>
@@ -239,8 +248,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Бостери"
-                        checked={selectedOption === "Бостери"}
-                        onChange={() => handleCheckboxChange("Бостери")}
+                        checked={option === "Бостери"}
+                        onChange={() => checkboxChange("Бостери")}
                         onClick={closeCityModal}
                       />
                       <p>Бостери</p>
@@ -249,8 +258,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Балыкчы"
-                        checked={selectedOption === "Балыкчы"}
-                        onChange={() => handleCheckboxChange("Балыкчы")}
+                        checked={option === "Балыкчы"}
+                        onChange={() => checkboxChange("Балыкчы")}
                         onClick={closeCityModal}
                       />
                       <p>Балыкчы</p>
@@ -259,8 +268,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Беловодское"
-                        checked={selectedOption === "Беловодское"}
-                        onChange={() => handleCheckboxChange("Беловодское")}
+                        checked={option === "Беловодское"}
+                        onChange={() => checkboxChange("Беловодское")}
                         onClick={closeCityModal}
                       />
                       <p>Беловодское</p>
@@ -269,8 +278,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Ош"
-                        checked={selectedOption === "Ош"}
-                        onChange={() => handleCheckboxChange("Ош")}
+                        checked={option === "Ош"}
+                        onChange={() => checkboxChange("Ош")}
                         onClick={closeCityModal}
                       />
                       <p>Ош</p>
@@ -279,8 +288,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Каракол"
-                        checked={selectedOption === "Каракол"}
-                        onChange={() => handleCheckboxChange("Каракол")}
+                        checked={option === "Каракол"}
+                        onChange={() => checkboxChange("Каракол")}
                         onClick={closeCityModal}
                       />
                       <p>Каракол</p>
@@ -289,8 +298,8 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Базар-Коргон"
-                        checked={selectedOption === "Базар-Коргон"}
-                        onChange={() => handleCheckboxChange("Базар-Коргон")}
+                        checked={option === "Базар-Коргон"}
+                        onChange={() => checkboxChange("Базар-Коргон")}
                         onClick={closeCityModal}
                       />
                       <p>Базар-Коргон</p>
@@ -299,15 +308,15 @@ const MyInformation = () => {
                       <input
                         type="radio"
                         value="Башка"
-                        checked={selectedOption === "Башка"}
-                        onChange={() => handleCheckboxChange("Башка")}
+                        checked={option === "Башка"}
+                        onChange={() => checkboxChange("Башка")}
                         onClick={closeCityModal}
                       />
                       <p>Башка</p>
                     </label>
                   </div>
                 </div>
-              )}
+              )}    
               <div className="toggle_block toogle_block_inform">
                 <p>Уй-жаныбарларынын болушу</p>
                 <label className="switch">
