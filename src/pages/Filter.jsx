@@ -8,10 +8,7 @@ import "../style/css/main.css"
 import axios from "axios";
 
 const Filter = ({requests, setRequests, MIN, MAX,calculateMinMax}) => {
-
-
     const navigate = useNavigate()
-
     return (
         <div id="modal_one">
             <div className="nav">
