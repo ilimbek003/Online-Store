@@ -139,6 +139,20 @@ h6 {
   font-size: 14px;
   font-weight: 400;
 }
+.input_form_all{
+  width: 100%;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+.input_form_all::placeholder {
+  font-size: 14px;
+  font-weight: 400;
+}
 
 .input_form[type="search"] {
   background-color: #f9f9f9;
@@ -165,7 +179,7 @@ h6 {
 .all_title {
   width: 0 !important;
   font-weight: 400 !important;
-  margin-left: -100px;
+  margin: -2px 100px 0 0;
 }
 
 .btn {
@@ -631,7 +645,7 @@ input[type="checkbox"]:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 80px 0 0 0;
+  padding: 80px 0 0 0;
 }
 .ionic_block {
   width: 100%;

@@ -1,18 +1,15 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {HiArrowLongLeft} from "react-icons/hi2";
 import Slider from "react-slider";
 import {AiOutlineDelete} from "react-icons/ai"
 import {useNavigate} from "react-router-dom";
 import "../style/css/App.css"
 import "../style/css/main.css"
+import axios from "axios";
 
-const MIN = 50;
-const MAX = 20000;
-const Filter = () => {
-    const [values, setValues] = useState([MIN, MAX]);
-    const [requests, setRequests] = useState({
-        budget: [MIN, MAX],
-    });
+const Filter = ({requests, setRequests, MIN, MAX,calculateMinMax}) => {
+
+
     const navigate = useNavigate()
     return (
         <div id="modal_one">
@@ -54,7 +51,7 @@ const Filter = () => {
                 </div>
             </div>
             <div className="container">
-                <button className="btn_button all_btn">Колдонуу</button>
+                <button className="btn_button all_btn" onClick={calculateMinMax}>Колдонуу</button>
             </div>
         </div>
     );

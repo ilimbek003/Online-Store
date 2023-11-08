@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Shop from "./Shop";
 import ShopDetail from "./ShopDetail";
@@ -6,14 +6,20 @@ import Search from "./Search";
 import Filter from "./Filter";
 import Cart from "./Cart";
 import Basket from "../pages/Basket"
+import Product from "./Product";
+import axios from "axios";
 
+const MIN = 50;
+const MAX = 5000;
 const Project = () => {
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
     const [shopCart, setShopCart] = useState([]);
     const [plus, setPlus] = useState({})
-
+    const [requests, setRequests] = useState({
+        budget: [MIN, MAX],
+    });
     const saveToLocalStorage = (id) => {
         const itemToAdd = data.find(item => item.id === id);
         if (itemToAdd) {
@@ -29,8 +35,6 @@ const Project = () => {
             localStorage.setItem('cart', JSON.stringify(updatedCart));
         }
     };
-
-
     const handlePlus = (id) => {
         const itemTo = data.find((el) => el.id === id)
         if (itemTo) {
@@ -46,9 +50,8 @@ const Project = () => {
                 return newPlus;
             })
         }
+        console.log(itemTo)
     }
-
-
     const handleMinus = (id) => {
         const itemIndex = shopCart.findIndex((item) => item.id === id);
         if (itemIndex !== -1) {
@@ -74,6 +77,26 @@ const Project = () => {
         }
     };
 
+    useEffect(() => {
+        const url = `https://nurbektmusic.pythonanywhere.com/product/list/filter?price_from=${requests.budget[0]}&price_to=${requests.budget[1]}`;
+        axios.get(url)
+            .then(response => {
+                const filteredProducts = response.data;
+            })
+            .catch(error => {
+                console.error("Ошибка при получении данных:", error);
+            });
+    }, [requests]);
+
+    const calculateMinMax = () => {
+        if (data.length > 0) {
+            const minPrice = Math.min(...data.map((el) => el.price));
+            const maxPrice = Math.max(...data.map((el) => el.price));
+            setRequests({budget: [minPrice, maxPrice]});
+            console.log('MIN:', minPrice);
+            console.log('MAX:', maxPrice);
+        }
+    };
 
     return (
         <div>
@@ -88,9 +111,27 @@ const Project = () => {
                     handleMinus={handleMinus}
                 />}/>
                 <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
-                <Route path="filter" element={<Filter/>}/>
-                <Route path="cart" element={<Cart saveToLocalStorage={saveToLocalStorage}/>}/>
+                <Route path="filter" element={<Filter
+                    calculateMinMax={calculateMinMax}
+                    data={data}
+                    requests={requests}
+                    setRequests={setRequests}
+                    MIN={MIN}
+                    MAX={MAX}
+                />}/>
+                <Route path="cart" element={<Cart
+                    saveToLocalStorage={saveToLocalStorage}
+                    plus={plus}
+                    handlePlus={handlePlus}
+                    handleMinus={handleMinus}
+                />}/>
                 <Route path="basket" element={<Basket
+                    saveToLocalStorage={saveToLocalStorage}
+                    plus={plus}
+                    handlePlus={handlePlus}
+                    handleMinus={handleMinus}
+                />}/>
+                <Route path="product" element={<Product
                     saveToLocalStorage={saveToLocalStorage}
                     plus={plus}
                     handlePlus={handlePlus}

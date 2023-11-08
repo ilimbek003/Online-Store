@@ -1,0 +1,104 @@
+import React, {useEffect, useState} from 'react';
+import {HiArrowLongLeft} from "react-icons/hi2";
+import {useNavigate, useParams} from "react-router-dom";
+import axios from "axios";
+import {BsBookmark} from "react-icons/bs";
+import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
+import "../style/css/App.css"
+import "../style/css/main.css"
+import "../style/css/modal.css"
+
+const Product = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
+    const {id} = useParams();
+    const [datas, setDatas] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        axios.get(`https://nurbektmusic.pythonanywhere.com/product/${id}`)
+            .then((response) => setDatas(response.data))
+            .catch();
+    }, [id]);
+    const mun = JSON.parse(localStorage.getItem('plus'));
+    console.log(datas)
+    return (
+        <div id="modal">
+            <div className="nav">
+                <div className="container d-flex justify-content-between align-items-center">
+                    <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
+                    <h4 className="title_h5 all_title_one">Товар</h4>
+                </div>
+            </div>
+            <div className="container">
+                <div className="block_shop">
+                    <div className="blocks">
+                        <img src={datas.images} alt=""/>
+                    </div>
+                    <h3 className="product_title">{datas.title}</h3>
+                    <div className="all">
+                        <div className="code">
+                            <p>АРТ: {datas.product_code}</p>
+                            <p>
+                                <span>{datas.pack}</span>
+                            </p>
+                        </div>
+                        <div className="flex">
+                            <div className="marks">
+                                <BsBookmark
+                                    className={
+                                        localStorage.getItem(`activeItem_${datas.id}`) === `active`
+                                            ? 'active'
+                                            : ''
+                                    }
+                                    onClick={() => saveToLocalStorage(datas.id)}
+                                />
+                            </div>
+                            <div className={
+                                localStorage.getItem(`activePlus_${datas.id}`) === `${datas.id}`
+                                    ? 'active_plus'
+                                    : 'plus'
+                            }>
+                                {
+                                    localStorage.getItem(`activePlus_${datas.id}`) === `${datas.id}` ?
+                                        <AiOutlineMinus
+                                            className='fi_ones'
+                                            onClick={() => handleMinus(datas.id)}
+                                        /> : ''
+                                }
+                                {
+                                    localStorage.getItem(`activePlus_${datas.id}`) === `${datas.id}` ?
+                                        (
+                                            <p className="fi_ones">
+                                                <span key={datas.id}>{mun[datas.id]}</span>
+                                                <span>шт</span>
+                                            </p>
+                                        ) :
+                                        (
+                                            <p className='title_one font'>
+                                                Кошуу
+                                            </p>
+                                        )
+                                }
+                                {
+                                    localStorage.getItem(`activePlus_${datas.id}`) === `${datas.id}` ?
+                                        <AiOutlinePlus className='fi_ones' onClick={() => handlePlus(datas.id)}/>
+                                        :
+                                        <AiOutlinePlus className='fi ai_out' onClick={() => handlePlus(datas.id)}/>
+                                }
+                            </div>
+                            {
+                                (plus[datas.id] || 0) === 0 ? "" :
+                                    <div className="container">
+                                        <button className="btn_button" onClick={() => navigate("/shop-all/basket")}>
+                                            {plus[datas.id]} - {plus[datas.id] * datas.price}
+                                        </button>
+                                    </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Product;

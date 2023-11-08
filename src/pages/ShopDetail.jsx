@@ -126,25 +126,14 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                                     </p>
                                                 )
                                         }
-
-                                        <AiOutlinePlus
-                                            className={
-                                                localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                    ? 'fi_ones'
-                                                    : 'fi ai_out'
-                                            }
-                                            onClick={() => handlePlus(el.id)}
-                                        />
+                                        {
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                <AiOutlinePlus className='fi_ones' onClick={() => handlePlus(el.id)}/>
+                                                :
+                                                <AiOutlinePlus className='fi ai_out' onClick={() => handlePlus(el.id)}/>
+                                        }
                                     </div>
                                 </div>
-                                {
-                                    (plus[el.id] || 0) === 0 ? "" :
-                                        <div className="container">
-                                            <button className="btn_button" onClick={() => navigate("/shop-all/basket")}>
-                                                {plus[el.id]} - {plus[el.id] * el.price}
-                                            </button>
-                                        </div>
-                                }
                             </div>
                         ))}
                     </div>

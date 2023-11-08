@@ -16,7 +16,7 @@ const Shop = () => {
         <>
             <div className="nav" onClick={() =>  navigate('/shop-all/search')}>
                 <div className="container d-flex justify-content-between align-items-center">
-                    <input className="input_form" type="text" placeholder="Товарларды табуу"/>
+                    <input className="input_form_all" type="text" placeholder="Товарларды табуу"/>
                 </div>
             </div>
             <div className="container">
