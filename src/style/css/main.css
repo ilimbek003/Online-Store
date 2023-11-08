@@ -771,7 +771,7 @@ input#file-upload-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 70px 0 0 0;
+  padding: 70px 0 0 0;
 }
 .to_help_page {
   padding-top: 50px;
