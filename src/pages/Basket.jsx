@@ -32,7 +32,7 @@ const Basket = ({handlePlus, plus, handleMinus}) => {
             </div>
             <div className="container">
                 {
-                    plus === 0 ? "" : (
+                    plusCartFromLocalStorage === [] ? navigate(-1) : (
                         <div className="mt-4 carts">
                             {plusCartFromLocalStorage.map((el, id) => {
                                 if (!uniqueIds.has(el.id)) {
@@ -101,11 +101,26 @@ const Basket = ({handlePlus, plus, handleMinus}) => {
                                             </div>
                                             {
                                                 (plus[el.id] || 0) === 0 ? "" :
-                                                    <div className="container">
-                                                        <button className="btn_button"
-                                                                onClick={() => navigate("/shop-all/basket")}>
-                                                            {plus[el.id]} - {plus[el.id] * el.price}
-                                                        </button>
+                                                    <div className="cart_price">
+                                                        <div className="container">
+                                                            <div className="d-flex justify-content-between mt-4">
+                                                                <p>Сумма</p>
+                                                                <h6 className="mt-1">{el.price} сом</h6>
+                                                            </div>
+                                                            <div className="d-flex justify-content-between mt-2">
+                                                                <p>Жеткируу</p>
+                                                                <h6 className="mt-1">220 сом</h6>
+                                                            </div>
+                                                            <div className="line mt-3"/>
+                                                            <div className="d-flex justify-content-between mt-3">
+                                                                <p>Бардыгы</p>
+                                                                <h6 className="mt-1">220 сом</h6>
+                                                            </div>
+                                                            <button className="btn_butto mt-3"
+                                                                    onClick={() => navigate("/shop-all/basket")}>
+                                                                Буйрутма беруу
+                                                            </button>
+                                                        </div>
                                                     </div>
                                             }
                                         </div>

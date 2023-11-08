@@ -28,6 +28,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
     useEffect(() => {
         handleId(id);
     }, [id]);
+
     return (
         <>
             <div id="modal">
@@ -98,7 +99,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                     <div className="marks">
                                         <BsBookmark
                                             className={
-                                                localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
+                                                localStorage.getItem(`activeItem_${el.id}`) === `active`
                                                     ? 'active'
                                                     : ''
                                             }
@@ -111,7 +112,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, plus, handle
                                             : 'plus'
                                     }>
                                         {
-                                            (plus[el.id] || 0) === 0 ? "" : <AiOutlineMinus
+                                            (plus[el.id] || 0) !== 0 && <AiOutlineMinus
                                                 className={
                                                     localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
                                                         ? 'fi_ones'
