@@ -24,7 +24,7 @@ p {
 
 #footer {
   position: fixed;
-  bottom: 10px;
+  bottom: 15px;
   left: 0;
   right: 0;
   background: #ffffff;
@@ -44,6 +44,9 @@ p {
 .code {
   font-size: 25px !important;
   color: #787676 !important;
+}
+.flex_block{
+  width: 25%;
 }
 
 #footer .flex_block a {

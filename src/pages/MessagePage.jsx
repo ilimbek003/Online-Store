@@ -14,7 +14,7 @@ const MessagePage = () => {
     const [two, setTwo] = useState(false);
     const [comment, setComment] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
-
+    const [scrollX, setScrollX] = useState(0);
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -32,17 +32,6 @@ const MessagePage = () => {
     const handleRadioChange = (event) => {
         setSelectedOption(event.target.value);
     }
-    const someThreshold = 200;
-    const handleScroll = () => {
-        const scrollY = window.scrollX;
-        if (scrollY > someThreshold) {
-            setOne(false);
-            setTwo(true);
-        } else {
-            setOne(true);
-            setTwo(false);
-        }
-    };
     const handlePhotoChange = (e) => {
         const file = e.target.files[0];
         if (file && file.type.startsWith("image/") && file.size <= 5000000) {
@@ -56,13 +45,6 @@ const MessagePage = () => {
             e.target.value = null;
         }
     };
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
     return (
         <div id="modal">
