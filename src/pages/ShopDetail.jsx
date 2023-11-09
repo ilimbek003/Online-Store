@@ -38,38 +38,40 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus}
     return (
         <>
             <div id="modal">
-                <div className="nav nav_line">
-                    <div className="container d-flex justify-content-between align-items-center">
-                        <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
-                        <h4 className="title_h5 all_title_one">
-                            {/*{data && data[0] && data[0].name}*/}
-                            Name
-                        </h4>
-                        <BsSearch className="fi" onClick={() => navigate('/shop-all/search')}/>
-                    </div>
-                    <div className="container d-flex  align-items-center mt-3 scroll">
-                        {
-                            tabs.map((el) => (
-                                <div className="from_btn" key={el.id}>
-                                    <button className="btn_tabs">{el.name}</button>
-                                </div>
-                            ))
-                        }
-                    </div>
-                    <div className="container mt-3">
-                        <div className="filter">
-                            <div className="dnow d-flex align-items-center"
-                                 onClick={() => navigate('/shop-all/filter')}>
-                                <FiFilter className="icons"/>
-                                <h6 className="title_one mt_one">Фильтр</h6>
-                            </div>
-                            <div className="dnow d-flex align-items-center" onClick={() => setFilter(true)}>
-                                <HiOutlineArrowsUpDown className="icons"/>
-                                <h6 className="title_one mt_one">Иретоо</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               <div className="nav_line">
+                   <div className="nav">
+                       <div className="container d-flex justify-content-between align-items-center">
+                           <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
+                           <h4 className="title_h5 all_title_one">
+                               {/*{data && data[0] && data[0].name}*/}
+                               Name
+                           </h4>
+                           <BsSearch className="fi" onClick={() => navigate('/shop-all/search')}/>
+                       </div>
+                       <div className="container d-flex  align-items-center mt-3 scroll">
+                           {
+                               tabs.map((el) => (
+                                   <div className="from_btn" key={el.id}>
+                                       <button className="btn_tabs">{el.name}</button>
+                                   </div>
+                               ))
+                           }
+                       </div>
+                       <div className="container mt-2">
+                           <div className="filter">
+                               <div className="dnow d-flex align-items-center"
+                                    onClick={() => navigate('/shop-all/filter')}>
+                                   <FiFilter className="icons"/>
+                                   <h6 className="title_one mt_one">Фильтр</h6>
+                               </div>
+                               <div className="dnow d-flex align-items-center" onClick={() => setFilter(true)}>
+                                   <HiOutlineArrowsUpDown className="icons"/>
+                                   <h6 className="title_one mt_one">Иретоо</h6>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
                 <div className="container">
                     <div className="row row_one">
                         {data.map((el) => (

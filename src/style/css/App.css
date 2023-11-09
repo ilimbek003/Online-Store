@@ -168,6 +168,17 @@ h6 {
 
 .nav_line {
   border-bottom: 1px solid #cccccc;
+  min-height: 131px!important;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 5px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  z-index: 998;
+  margin: 0 auto;
 }
 
 .sapn {
@@ -537,7 +548,7 @@ button {
   display: flex;
   align-items: center;
   position: fixed;
-  top: 0;
+  top: 5px;
   left: 0;
   right: 0;
   background: #ffffff;
