@@ -31,18 +31,18 @@ const Product = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
             <div className="container">
                 <div className="block_shop">
                     <div className="blocks">
-                        <img src={datas.images} alt=""/>
+                        <img className="date_img" src={datas.images} alt=""/>
                     </div>
                     <h3 className="product_title">{datas.title}</h3>
-                    <div className="all">
+                    <div className="all_alls">
                         <div className="code">
-                            <p>АРТ: {datas.product_code}</p>
-                            <p>
+                            <p className="project_product">АРТ: {datas.product_code}</p>
+                            <p className="project_product">
                                 <span>{datas.pack}</span>
                             </p>
                         </div>
                         <div className="flex">
-                            <div className="marks">
+                            <div className="marks main_left">
                                 <BsBookmark
                                     className={
                                         localStorage.getItem(`activeItem_${datas.id}`) === `active`
@@ -94,6 +94,10 @@ const Product = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                                     </div>
                             }
                         </div>
+                    </div>
+                    <div className="all_alls">
+                        <p className="project_product">Цена</p>
+                        <span className="price_data">{datas.price} сом</span>
                     </div>
                 </div>
             </div>

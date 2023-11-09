@@ -129,7 +129,7 @@ const Project = () => {
                     handlePlus={handlePlus}
                     handleMinus={handleMinus}
                 />}/>
-                <Route path="product" element={<Product
+                <Route path="product/:id" element={<Product
                     saveToLocalStorage={saveToLocalStorage}
                     plus={plus}
                     handlePlus={handlePlus}
