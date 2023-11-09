@@ -10,6 +10,7 @@ import Storis from "../Storis/Storis";
 const Main = () => {
     const [qrCode, setQrCode] = useState(false)
     const navigate = useNavigate()
+
     return (
         <>
             <Header/>
