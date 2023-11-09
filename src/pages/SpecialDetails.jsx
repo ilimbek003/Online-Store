@@ -49,7 +49,7 @@ const SpecialDetails = () => {
           </div>
         </div>
         <div className="container">
-          <div className="special_details_block_all top">
+          <div className="special_details_block_all top_all">
             {recoment.map((el, id) => (
               <div
                 key={id}

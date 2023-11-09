@@ -73,7 +73,7 @@ const GetShotDetails = () => {
           </div>
         </div>
         <div className="container">
-          <div className="get_details_block_all top">
+          <div className="get_details_block_all top_all ">
             {shot.map((el, id) => (
               <div
                 key={id}
