@@ -4,18 +4,20 @@ import "../style/css/App.css";
 import qar from "../img/qr-код.gif";
 import Header from "./Header";
 import MyCoupon from "./MyCoupon";
-import QrCode from "../pages/QrCode";
-import { useNavigate } from "react-router";
-import {DiVisualstudio} from "react-icons/di"
-
+import {useNavigate} from "react-router";
+import {DiVisualstudio} from 'react-icons/di';
+import Storis from "../Storis/Storis";
 const Main = () => {
-    const [ qrCode, setQrCode ] = useState(false)
+    const [qrCode, setQrCode] = useState(false)
     const navigate = useNavigate()
+
     return (
         <>
             <Header/>
             <div className="container">
-                <div className="margin_top"></div>
+                <div className="margin_top">
+                    <Storis/>
+                </div>
                 <div className="margin_top_all">
                     <div className="margin_top_log">
                         <DiVisualstudio className="dio"/>
@@ -29,7 +31,7 @@ const Main = () => {
                     <img src={qar} alt=""/>
                 </div>
             </div>
-            <MyCoupon/> 
+            <MyCoupon/>
         </>
     );
 };

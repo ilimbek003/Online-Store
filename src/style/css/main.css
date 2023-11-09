@@ -14,7 +14,8 @@ p {
   cursor: pointer;
 }
 .margin_top {
-  margin-top: 140px;
+  margin-top: 70px;
+  margin-bottom: 40px;
 }
 .bonus_block_all img {
   max-width: 160px;
@@ -97,7 +98,7 @@ p {
   gap: 15px;
   padding: 15px 15px 15px 15px;
   cursor: pointer;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 120px 0;
   box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
 }
 
@@ -199,8 +200,8 @@ p {
 .bi {
   border-radius: 50%;
   background: white;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   display: flex;
   align-items: center;
@@ -208,7 +209,7 @@ p {
 }
 
 .be {
-  font-size: 23px;
+  font-size: 21px;
   color: var(--orange);
 }
 
@@ -541,6 +542,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 40px 0 0 0;
 }
 
 .worker_box img {
@@ -706,7 +708,7 @@ input#file-upload-button {
   display: flex;
   align-items: center;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   border-bottom: 3px solid rgba(0, 0, 0, 0.678);
 }

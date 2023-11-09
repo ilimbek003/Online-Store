@@ -9,11 +9,13 @@ import Basket from "../pages/Basket"
 import Product from "./Product";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const MIN = 50;
 const MAX = 3000;
 const Project = () => {
     const navigate = useNavigate()
+    const {id} = useParams();
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
