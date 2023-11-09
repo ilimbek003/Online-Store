@@ -113,7 +113,6 @@ const Cart = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                             </div>
                         )
                     }
-
                 </div>
             </>
         </div>

@@ -88,7 +88,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .project {
@@ -763,4 +763,16 @@ input[type="checkbox"]:before {
 .dio {
   font-size: 25px;
   color: #ffffff;
+}
+.btn_tabs_active{
+  border: none;
+  background: var(--orange);
+  color: #ffffff;
+  font-size: 14px !important;
+  font-weight: 400;
+  width: 100% !important;
+  height: 30px !important;
+  border-radius: 15px !important;
+  padding: 0 5px;
+  margin: 0 10px 0 0;
 }
