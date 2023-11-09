@@ -85,6 +85,7 @@ const Product = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                                         <AiOutlinePlus className='fi ai_out' onClick={() => handlePlus(datas.id)}/>
                                 }
                             </div>
+
                             {
                                 (plus[datas.id] || 0) === 0 ? "" :
                                     <div className="container">
