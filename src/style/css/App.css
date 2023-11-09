@@ -267,9 +267,15 @@ button {
 }
 
 .row_one {
-    padding: 130px 0 0 0;
+    padding: 130px 0 30px 0;
+    height: 110%;
+    background: #ffffff;
 }
-
+.row_two{
+  padding: 20px 0 30px 0;
+  height: 110%;
+  background: #ffffff;
+}
 .image-container {
     position: relative;
 }
@@ -831,8 +837,9 @@ input[type="checkbox"]:before {
     font-weight: 500;
     margin: 30px 0 10px 0;
 }
-.price_data{
-  color: var(--orange);
-  font-weight: 600;
-  font-size: 18px;
+
+.price_data {
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 18px;
 }
