@@ -12,7 +12,7 @@ const BuyHistory = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
-            <p>Сатып алуулардын тарыхы</p>
+            <p className="header_name">Сатып алуулардын тарыхы</p>
             <TbCalendar className="fi" />
           </div>
         </div>

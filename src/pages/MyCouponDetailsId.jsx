@@ -39,7 +39,7 @@ const MyCouponDetailsId = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
             <span></span>
-            <h4 className="my_coupon_text">Купон</h4>
+            <p className="header_name">Купон</p>
             <IoMdClose
               onClick={() => navigate(-1)}
               className="icons"

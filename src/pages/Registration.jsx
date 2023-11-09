@@ -124,7 +124,7 @@ const Registration = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
             <span></span>
-            <p className="big">Каттоо</p>
+            <p className="header_name">Каттоо</p>
             <span></span>
           </div>
         </div>
@@ -679,9 +679,10 @@ const Registration = () => {
                 <input type="checkbox" />
                 <p>
                   Шарттар менен макулмун
-                  <h4>Лоялдуулук программасы</h4>
+                  <h6>Лоялдуулук программасы</h6>
                 </p>
               </div>
+              <button className="phone_btn phone_add">Улантуу</button>
             </form>
           </div>
         </div>

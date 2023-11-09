@@ -54,7 +54,7 @@ const MyInformation = () => {
             <div className="nav">
                 <div className="container d-flex justify-content-between align-items-center ">
                     <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
-                    <p className="big">Менин маалыматтарым</p>
+                    <p className="header_name">Менин маалыматтарым</p>
                     <TbFileSettings className="fi"/>
                 </div>
             </div>

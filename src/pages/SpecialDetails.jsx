@@ -44,7 +44,7 @@ const SpecialDetails = () => {
               onClick={() => navigate("/promotion")}
               size={20}
             />
-            <p>Бардык сунуштар</p>
+            <p className="header_name">Бардык сунуштар</p>
             <span></span>
           </div>
         </div>

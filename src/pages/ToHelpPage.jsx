@@ -22,7 +22,7 @@ const ToHelpPage = () => {
               onClick={() => navigate(-1)}
               size={20}
             />
-            <p>Колдоо</p>
+            <p className="header_name">Колдоо</p>
             <span></span>
           </div>
         </div>

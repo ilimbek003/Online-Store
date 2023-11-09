@@ -57,7 +57,7 @@ const MessagePage = () => {
                             onClick={() => navigate("/promotion")}
                             size={20}
                         />
-                        <p>Кайтарым байланыш</p>
+                        <p className="header_name">Кайтарым байланыш</p>
                         <span></span>
                     </div>
                 </div>

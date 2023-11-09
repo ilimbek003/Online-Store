@@ -13,10 +13,10 @@ const QrCode = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1) } />
-            <h3 className="title_h3">
-              Сиздин Бекбекйдик картаныз <br />{" "}
+            <p className="title_h3">
+              Сиздин Bewkbekei картаныз <br />{" "}
               <span className="sapn">2700 0081 1499 7</span>
-            </h3>
+            </p>
             <HiMiniArrowRightOnRectangle className="fi" />
           </div>
         </div>

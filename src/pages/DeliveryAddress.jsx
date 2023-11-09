@@ -11,7 +11,7 @@ const DeliveryAddress = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
             <HiArrowLongLeft onClick={() => navigate(-1)} className="fi" />
-            <p>Адрес доставки</p>
+            <p className="header_name">Адрес доставки</p>
             <span></span>
           </div>
         </div>

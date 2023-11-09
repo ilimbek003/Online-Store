@@ -267,17 +267,11 @@ button {
 }
 
 .row_one {
-<<<<<<< HEAD
-  padding: 130px 0 0 0;
+  padding: 130px 0 30px 0;
+  height: 110%;
+  background: #ffffff;
 }
-=======
-    padding: 130px 0 30px 0;
-    height: 110%;
->>>>>>> 525d1fc50add9b131d26c6fa7121a09dd8a553a6
-
-    background: #ffffff;
-}
-.row_two{
+.row_two {
   padding: 20px 0 30px 0;
   height: 110%;
   background: #ffffff;
@@ -688,7 +682,6 @@ input[type="checkbox"]:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 0 0 0;
 }
 
 .ionic_block {
@@ -843,17 +836,9 @@ input[type="checkbox"]:before {
   font-weight: 500;
   margin: 30px 0 10px 0;
 }
-<<<<<<< HEAD
+
 .price_data {
   color: var(--orange);
   font-weight: 600;
   font-size: 18px;
 }
-=======
-
-.price_data {
-    color: var(--orange);
-    font-weight: 600;
-    font-size: 18px;
-}
->>>>>>> 525d1fc50add9b131d26c6fa7121a09dd8a553a6

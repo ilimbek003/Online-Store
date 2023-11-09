@@ -40,7 +40,7 @@ const SpecialDetailsId = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center ">
             <span></span>
-            <p>сунуштардын шарттары</p>
+            <p className="header_name">сунуштардын шарттары</p>
             <IoMdClose
               className="fi"
               onClick={() => navigate(-1)}

@@ -34,7 +34,7 @@ const MyCouponDetails = () => {
               onClick={() => navigate(-1)}
               size={22}
             />
-            <p>Бардык купондор</p>
+            <p className="header_name">Бардык купондор</p>
             <span></span>
           </div>
         </div>

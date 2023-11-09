@@ -12,7 +12,7 @@ const MyOrders = () => {
         <div className="nav">
           <div className="container d-flex justify-content-between align-items-center">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
-            <p>Mенин буюртмаларым</p>
+            <p className="header_name">Mенин буюртмаларым</p>
             <TbCalendar className="fi" />
           </div>
         </div>
