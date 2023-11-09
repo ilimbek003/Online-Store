@@ -42,6 +42,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             setSubCat(data[e].sub_cat);
         }
     };
+    // console.log( data ? data.sub_cat : data.sub_cat )
     const mun = JSON.parse(localStorage.getItem('plus'));
     return (
         <>
@@ -84,85 +85,79 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     </div>
                 </div>
                 <div className="container">
+
                     <div className="row row_one">
                         {data.map((el) => (
-                            <div>
-                                {
-                                    sub_cat === el.sub_cat && (
-                                        <div className="col-6 mt-4" key={el.id}>
-                                            <div
-                                                className="blocks"
-                                                onClick={() => navigate(`/shop-all/product/${el.id}`)}
-                                            >
-                                                <img src={el.images} alt=""/>
-                                                {
-                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                        <div className='hover_blocks'>
-                                                            <h1>{mun[el.id]}</h1>
-                                                        </div> : ""
-                                                }
-                                            </div>
-                                            <div className="all">
-                                                <h3 className="title_one mt">{el.title}</h3>
-                                                <div className="d-flex  justify-content-between mt-2">
-                                                    <p className="project">
-                                                        <span>{el.pack}</span>
+                            <div className="col-6 mt-4" key={el.id}>
+                                <div
+                                    className="blocks"
+                                    onClick={() => navigate(`/shop-all/product/${el.id}`)}
+                                >
+                                    <img src={el.images} alt=""/>
+                                    {
+                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                            <div className='hover_blocks'>
+                                                <h1>{mun[el.id]}</h1>
+                                            </div> : ""
+                                    }
+                                </div>
+                                <div className="all">
+                                    <h3 className="title_one mt">{el.title}</h3>
+                                    <div className="d-flex  justify-content-between mt-2">
+                                        <p className="project">
+                                            <span>{el.pack}</span>
+                                        </p>
+                                        <h2>{el.price} сом</h2>
+                                    </div>
+                                </div>
+                                <div className="flex mt-2">
+                                    <div className="marks">
+                                        <BsBookmark
+                                            className={
+                                                localStorage.getItem(`activeItem_${el.id}`) === `active`
+                                                    ? 'active'
+                                                    : ''
+                                            }
+                                            onClick={() => saveToLocalStorage(el.id)}
+                                        />
+                                    </div>
+                                    <div className={
+                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
+                                            ? 'active_plus'
+                                            : 'plus'
+                                    }>
+                                        {
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                <AiOutlineMinus
+                                                    className='fi_ones'
+                                                    onClick={() => handleMinus(el.id)}
+                                                /> : ''
+                                        }
+                                        {
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                (
+                                                    <p className="fi_ones">
+                                                        <span key={el.id}>{mun[el.id]}</span>
+                                                        <span>шт</span>
                                                     </p>
-                                                    <h2>{el.price} сом</h2>
-                                                </div>
-                                            </div>
-                                            <div className="flex mt-2">
-                                                <div className="marks">
-                                                    <BsBookmark
-                                                        className={
-                                                            localStorage.getItem(`activeItem_${el.id}`) === `active`
-                                                                ? 'active'
-                                                                : ''
-                                                        }
-                                                        onClick={() => saveToLocalStorage(el.id)}
-                                                    />
-                                                </div>
-                                                <div className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                        ? 'active_plus'
-                                                        : 'plus'
-                                                }>
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            <AiOutlineMinus
-                                                                className='fi_ones'
-                                                                onClick={() => handleMinus(el.id)}
-                                                            /> : ''
-                                                    }
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            (
-                                                                <p className="fi_ones">
-                                                                    <span key={el.id}>{mun[el.id]}</span>
-                                                                    <span>шт</span>
-                                                                </p>
-                                                            ) :
-                                                            (
-                                                                <p className='title_one font'>
-                                                                    Кошуу
-                                                                </p>
-                                                            )
-                                                    }
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            <AiOutlinePlus className='fi_ones'
-                                                                           onClick={() => handlePlus(el.id)}/>
-                                                            :
-                                                            <AiOutlinePlus className='fi ai_out'
-                                                                           onClick={() => handlePlus(el.id)}/>
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    )
-                                }
+                                                ) :
+                                                (
+                                                    <p className='title_one font'>
+                                                        Кошуу
+                                                    </p>
+                                                )
+                                        }
+                                        {
+                                            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
+                                                <AiOutlinePlus className='fi_ones'
+                                                               onClick={() => handlePlus(el.id)}/>
+                                                :
+                                                <AiOutlinePlus className='fi ai_out'
+                                                               onClick={() => handlePlus(el.id)}/>
+                                        }
+                                    </div>
+                                </div>
                             </div>
-
                         ))}
                     </div>
                 </div>

@@ -151,7 +151,7 @@ input:checked + .slider_toggle:before {
   background: #ffffff;
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  animation: slideIn 1s;
+  animation: slideIn 0.5s;
   position: absolute;
   bottom: 55px;
 }

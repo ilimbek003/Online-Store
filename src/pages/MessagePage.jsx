@@ -61,7 +61,7 @@ const MessagePage = () => {
                         <span></span>
                     </div>
                 </div>
-                <div className="container">
+                <div className="container row_two">
                     <div className="message_title">
                         <p
                             className={one ? "active_page" : ""}
