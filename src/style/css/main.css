@@ -542,6 +542,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 40px 0 0 0;
 }
 
 .worker_box img {
@@ -707,7 +708,7 @@ input#file-upload-button {
   display: flex;
   align-items: center;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
   border-bottom: 3px solid rgba(0, 0, 0, 0.678);
 }
