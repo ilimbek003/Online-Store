@@ -9,7 +9,7 @@ const StorisContent = ({ data }) => {
   return (
     <>
       <div onClick={() => setStatus(true) || setView(true)} className="storis_content">
-        <img style={{ border: view ? "2px solid #FF640DFF" : "2px solid var(--blue)" }} src={data.img} alt="" />
+        <img style={{ border: "3px solid #FF640DFF" }} src={data.img} alt="" />
       </div>
       {status ? data ? (
         <div className="status">
