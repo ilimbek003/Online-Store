@@ -14,7 +14,7 @@ const Promotion = () => {
     axios
       .get(`/product/card-type/`)
       .then((response) => {
-        setBuy(response.buy);
+        setBuy(response.data);
       })
       .catch((error) => {
         console.log("Error:", error);
