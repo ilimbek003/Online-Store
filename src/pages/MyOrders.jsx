@@ -18,7 +18,6 @@ const MyOrders = () => {
         </div>
         <div className="container">
           <div className="ionic ionic_block">
-            <div></div>
             <div className="ionic_box1">
               <img src={icons} alt="" />
               <h3>Бул жер азырынча бош</h3>
