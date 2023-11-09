@@ -57,6 +57,12 @@ const PersonalArea = () => {
         <div className="container">
           <div className="top_one">
             <h1 className="title_h2 one">Добрый день Илияс уулу </h1>
+            <button
+              onClick={() => navigate("/registration-phone")}
+              className="registr_btn person_btn"
+            >
+              Кируу
+            </button>
             <div
               className="area_all"
               onClick={() => navigate(`/my-information`)}
