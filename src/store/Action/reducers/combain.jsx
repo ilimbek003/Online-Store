@@ -7,4 +7,8 @@ export const rootReducer = combineReducers({
   post_forgot: postForgot,
   code: codeReducer,
 });
-  
+
+
+
+
+

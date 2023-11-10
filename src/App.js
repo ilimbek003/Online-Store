@@ -20,8 +20,9 @@ import MyCouponDetailsId from "./pages/MyCouponDetailsId";
 import MyInformation from "./pages/MyInformation";
 import MyOrders from "./pages/MyOrders";
 import BuyHistory from "./pages/BuyHistory";
-import RegistrationPhone from "./pages/RegistrationPhone";
+import RegistrationQuestionnaire from "./pages/RegistrationQuestionnaire";
 import Registration from "./pages/Registration";
+import Login from "./pages/Login";
 
 const App = () => {
   const location = useLocation();
@@ -56,8 +57,12 @@ const App = () => {
         <Route path="/my-information" element={<MyInformation />} />
         <Route path="/my-orders" element={<MyOrders />} />
         <Route path="/buy-history" element={<BuyHistory />} />
-        <Route path="/registration-phone" element={<RegistrationPhone />} />
         <Route path="/registration" element={<Registration />} />
+        <Route
+          path="/registration-questionnare"
+          element={<RegistrationQuestionnaire />}
+        />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </div>
