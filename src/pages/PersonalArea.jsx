@@ -33,7 +33,7 @@ const PersonalArea = () => {
         <div className="nav">
           <div className="container nav_content">
             <HiArrowLongLeft className="fi" onClick={() => navigate("/")} />
-            <h3 className="hello">Привет, Илимбек</h3>
+            <h3 className="hello">Салам, Илимбек</h3>
             <HiMiniArrowRightOnRectangle
               className="fi"
               onClick={() => isOpenModal()}
@@ -61,7 +61,7 @@ const PersonalArea = () => {
               onClick={() => navigate("/registration-phone")}
               className="registr_btn person_btn"
             >
-              Кируу
+              Кирүү
             </button>
             <div
               className="area_all"
@@ -119,7 +119,7 @@ const PersonalArea = () => {
                 <div className="bi">
                   <IoSettingsSharp className="be" />
                 </div>
-                <h3 className="mt-2"> Жондоолор</h3>
+                <h3 className="mt-2">Жөндөөлөр</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />
@@ -133,7 +133,7 @@ const PersonalArea = () => {
                 <div className="bi">
                   <TbTruckDelivery className="be" />
                 </div>
-                <h3>Жеткируу дареги</h3>
+                <h3>Жеткирүү дареги</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />

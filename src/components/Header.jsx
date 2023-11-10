@@ -21,7 +21,7 @@ const Header = () => {
                 <div className="nav">
                     <div className="container nav_content">
                         <FiUser className="fi" onClick={() => navigate("/dashboard") }/>
-                         <h3 className="hello">Привет, Илимбек</h3>
+                         <h3 className="hello">Салам, Илимбек</h3>
                         <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                     </div>
                 </div>

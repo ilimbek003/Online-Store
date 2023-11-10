@@ -22,7 +22,7 @@ const Main = () => {
           onClick={() => navigate("/registration-phone")}
           className="registr_btn"
         >
-          Кируу
+          Кирүү
         </button>
         <div className="margin_top_all">
           <div className="margin_top_log">
