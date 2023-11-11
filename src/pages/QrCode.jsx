@@ -14,7 +14,7 @@ const QrCode = () => {
         <div className="container d-flex justify-content-between align-items-center">
           <span></span>
           <p className="qr_cod_header">
-            Сиздин Bewkbekei картаныз <br />{" "}
+            Сиздин Bekbekei картаныз <br />{" "}
             <span className="sapn">2700 0081 1499 7</span>
           </p>
           <LiaQuestionCircleSolid

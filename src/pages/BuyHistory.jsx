@@ -23,10 +23,10 @@ const BuyHistory = () => {
                 <img src={korzina} alt="" />
               </div>
               <h3>Бул жер азырынча бош</h3>
-              <p>Сатып алган нерселериниз бул жерде корсотулот</p>
+              <p>Сатып алган нерселериниз бул жерде көрсөтүлөт</p>
             </div>
             <button className="ionic_button">
-              <h5 className="ionic_button_text">Тарыхты корсотуу</h5>
+              <h5 className="ionic_button_text">Тарыхты көрсөтүү</h5>
               <p className="ionic_button_date">
                 01.10.2023 дан 31.10.2023 чейин
               </p>

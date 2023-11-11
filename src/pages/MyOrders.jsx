@@ -21,10 +21,10 @@ const MyOrders = () => {
             <div className="ionic_box1">
               <img src={icons} alt="" />
               <h3>Бул жер азырынча бош</h3>
-              <p>Бул жер сиз буюртма берген товарлар корсотулот</p>
+              <p>Бул жерде сиз буюртма берген товарлар көрсөтүлөт</p>
             </div>
             <button className="ionic_button">
-              <h5 className="ionic_button_text">Тарыхты корсотуу</h5>
+              <h5 className="ionic_button_text">Тарыхты көрсөтүү</h5>
               <p className="ionic_button_date">
                 01.10.2023 дан 31.10.2023 чейин
               </p>

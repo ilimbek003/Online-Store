@@ -101,7 +101,7 @@ const MessagePage = () => {
                                 </div>
                                 <div className="input_box_modal" onClick={openModal}>
                                     <label>
-                                        Билдируунун темасы<span>*</span>
+                                        Билдиүүнүн темасы<span>*</span>
                                     </label>
                                     <div className="input_arrow">
                                         <input type="button" value={selectedOption}/>
@@ -159,7 +159,7 @@ const MessagePage = () => {
                                 )}
                                 <div className="input_box">
                                     <label className="photo_span" htmlFor="">
-                                        Фото тиркоо <span>макс 5, 10 МБ чейин </span>
+                                        Фото тирөө <span>макс 5, 10 МБ чейин </span>
                                     </label>
                                     <label>
                                         <div className="input_arrow">
@@ -168,7 +168,7 @@ const MessagePage = () => {
                                                 style={{cursor: "pointer", marginLeft: "auto"}}
                                                 size={30}
                                             />
-                                            Фото тиркоо
+                                            Фото тирөө
                                         </div>
                                         <input
                                             className="input_form"
@@ -184,17 +184,17 @@ const MessagePage = () => {
                                     )}
                                 </div>
                                 <div className="input_box">
-                                    <label htmlFor="">Билдируунун тексти* </label>
+                                    <label htmlFor="">Билдирүүнүн тексти* </label>
                                     <textarea
                                         type="text"
                                         value={comment}
                                         onChange={(e) => setComment(e.target.value)}
                                         className="text_ares"
-                                        placeholder="Билдируунузду жазыныз"
+                                        placeholder="Билдирүүңүздү жазыныз"
                                         required
                                     ></textarea>
                                 </div>
-                                <button className="message_btn">Билдируу жиберуу</button>
+                                <button className="message_btn">Билдирүү жиберүү</button>
                             </form>
                         )
                     }
@@ -203,7 +203,7 @@ const MessagePage = () => {
                             <div className="ionic">
                                 <img src={icons} alt=""/>
                                 <h3>Бул жер азырынча бош</h3>
-                                <p>Бул жер дукондогу белгиленген <br/> товарлар корсотулор</p>
+                                <p>Бул жер дүкөндөгү белгиленген <br/> товарлар көрсөтүлөт</p>
                             </div>
                         )
                     }
