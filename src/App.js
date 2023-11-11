@@ -23,6 +23,7 @@ import BuyHistory from "./pages/BuyHistory";
 import RegistrationQuestionnaire from "./pages/RegistrationQuestionnaire";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
+import ResetThePassword from "./pages/ResetThePassword";
 
 const App = () => {
   const location = useLocation();
@@ -63,6 +64,7 @@ const App = () => {
           element={<RegistrationQuestionnaire />}
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset-the-password" element={<ResetThePassword />} />
       </Routes>
       <Footer />
     </div>

@@ -19,7 +19,7 @@ const Main = () => {
           <Storis />
         </div>
         <button
-          onClick={() => navigate("/registration-phone")}
+          onClick={() => navigate("/registration")}
           className="registr_btn"
         >
           Кирүү

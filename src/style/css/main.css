@@ -590,6 +590,7 @@ input#file-upload-button {
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  position: relative;
 }
 .message_page .input_box2 textarea::placeholder {
   font-size: 14px;
@@ -906,6 +907,7 @@ input#file-upload-button {
   color: #fff;
   font-size: 18px;
   background: #8d99ae;
+  margin-top: 20px;
 }
 .registration h2 {
   font-weight: 600;
@@ -963,4 +965,23 @@ input#file-upload-button {
   background: var(--orange);
   color: #fff;
   margin-top: 10px;
+}
+.reset_password_block {
+  padding-top: 60px;
+}
+.reset_password_block p {
+  line-height: 1.1;
+  text-align: center;
+}
+.reset_btn {
+  margin-top: 25px;
+}
+.span-icon {
+  z-index: 1;
+  position: absolute;
+  top: 30px;
+  right: 8px;
+  font-size: 20px;
+  color: var(--orange);
+  cursor: pointer;
 }
