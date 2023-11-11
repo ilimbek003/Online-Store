@@ -24,7 +24,7 @@ const Shop = () => {
                     {
                         data.map((el) => (
                             <div className="shops" key={el.id}
-                                 onClick={() => navigate(`/shop-all/shop/${el.id} `)}>
+                                 onClick={() => navigate(`/shop-all/shop/${el.id}`)}>
                                 <h5 className="title_one">{el.name}</h5>
                                 <div className="img_container">
                                     <img src={el.image} alt=""/>

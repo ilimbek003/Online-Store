@@ -632,7 +632,7 @@ button {
   justify-content: space-between;
 }
 
-input[type="checkbox"] {
+.mt_bt input[type="checkbox"] {
   position: relative;
   border: 2px solid #000;
   background: none;
@@ -644,21 +644,20 @@ input[type="checkbox"] {
   vertical-align: text-top;
   height: 15px;
   width: 15px;
-  -webkit-appearance: none;
   opacity: 0.5;
   border-radius: 50%;
 }
 
-input[type="checkbox"]:hover {
+.mt_bt  input[type="checkbox"]:hover {
   opacity: 1;
 }
 
-input[type="checkbox"]:checked {
+.mt_bt  input[type="checkbox"]:checked {
   background-color: #000;
   opacity: 1;
 }
 
-input[type="checkbox"]:before {
+.mt_bt  input[type="checkbox"]:before {
   content: "";
   position: absolute;
   right: 50%;
