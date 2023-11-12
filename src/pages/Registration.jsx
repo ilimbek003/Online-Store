@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
 import bekbekei from "../../src/img/2.png";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
+import IMask from "imask";
 
 const Registration = () => {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
+
+  useEffect(() => {
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+      const masked = IMask(phoneInput, {
+        mask: "+996 (000) 00-00-00",
+      });
+    }
+  }, []);
 
   return (
     <div id="modal">
@@ -45,8 +55,8 @@ const Registration = () => {
                   Номер телефона <span>*</span>
                 </label>
                 <input
+                  id="phone" 
                   className="input_form new_add_input"
-                  type="number"
                   placeholder="996"
                 />
               </div>
@@ -73,7 +83,10 @@ const Registration = () => {
                   className="input_form new_add_input"
                   type={visible2 ? "text" : "password"}
                 />
-                <span className="span-icon" onClick={() => setVisible2(!visible2)}>
+                <span
+                  className="span-icon"
+                  onClick={() => setVisible2(!visible2)}
+                >
                   {visible2 ? <FaEye /> : <FaEyeSlash />}
                 </span>
               </div>

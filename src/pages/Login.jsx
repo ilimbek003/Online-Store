@@ -1,10 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
-import {FaEye} from 'react-icons/fa'
-import {FaEyeSlash} from 'react-icons/fa'
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
+import IMask from "imask";
 
 const Login = () => {
+  useEffect(() => {
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+      const masked = IMask(phoneInput, {
+        mask: "+996 (000) 00-00-00",
+      });
+    }
+  }, []);
+
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
   return (
@@ -24,8 +34,8 @@ const Login = () => {
                 Номер телефона <span>*</span>
               </label>
               <input
+                id="phone"
                 className="input_form new_add_input"
-                type="number"
                 placeholder="996"
               />
             </div>
