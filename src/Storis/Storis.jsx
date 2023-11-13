@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "./Storis.css"
 import StorisContent from './StorisContent'
 import axios from 'axios'
-
+import {url} from "../Api";
 
 const Storis = () => {
     const [stories, setStories] = useState([])
 
     useEffect(() => {
-        axios.get("https://hit-travel.org/stories")
+        axios.get(url + "/stories")
             .then((response) => {
                 setStories(response.data);
             })
