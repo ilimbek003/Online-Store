@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router";
 import {LiaQuestionCircleSolid} from "react-icons/lia";
 import bekbekei from "../../src/img/2.png";
@@ -6,6 +6,7 @@ import {HiArrowLongLeft} from "react-icons/hi2";
 import {FaEye} from "react-icons/fa";
 import {FaEyeSlash} from "react-icons/fa";
 import {useDispatch} from "react-redux";
+import IMask from "imask";
 import {registerUser} from "../Redux/slice/authReducer"
 
 const Registration = () => {
@@ -22,6 +23,14 @@ const Registration = () => {
             confirm_password: '',
             password: ''
         });
+    useEffect(() => {
+        const phoneInput = document.getElementById("phone");
+        if (phoneInput) {
+            const masked = IMask(phoneInput, {
+                mask: "+996 (000) 00-00-00",
+            });
+        }
+    }, []);
 
     const handleSubmit = async event => {
         event.preventDefault();
@@ -86,7 +95,7 @@ const Registration = () => {
                                     </label>
                                     <input
                                         className="input_form new_add_input"
-                                        type="number"
+                                        id="phone"
                                         placeholder="996"
                                         value={userData.phone}
                                         onChange={(e) => setUserData({
@@ -130,18 +139,18 @@ const Registration = () => {
                                     />
                                     <span className="span-icon" onClick={() => setVisible2(!visible2)}>
                   {visible2 ? <FaEye/> : <FaEyeSlash/>}
-                </span>
+                                    </span>
                                 </div>
                                 <button onSubmit={handleSubmit} className="phone_btn">
                                     Регистрация
                                 </button>
                             </form>
-                        </div>
-                        <div>
-                            <p className="come_in">
-                                Уже есть акаунт?{" "}
-                                <span onClick={() => navigate("/login")}> Войти</span>
-                            </p>
+                            <div>
+                                <p className="come_in">
+                                    Уже есть акаунт?{" "}
+                                    <span onClick={() => navigate("/login")}> Войти</span>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

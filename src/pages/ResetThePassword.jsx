@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
+import IMask from "imask";
 const ResetThePassword = () => {
+  useEffect(() => {
+    const phoneInput = document.getElementById("phone");
+    if (phoneInput) {
+      const masked = IMask(phoneInput, {
+        mask: "+996 (000) 00-00-00",
+      });
+    }
+  }, []);
+
   const [inputData, setInputDtata] = useState({
     phone: "",
     first_name: "",
@@ -9,7 +19,7 @@ const ResetThePassword = () => {
     password: "",
     confirm_password: "",
   });
-  
+
   const navigate = useNavigate();
   return (
     <div className="reset_the_password">
@@ -28,9 +38,9 @@ const ResetThePassword = () => {
               Номер телефон <span>*</span>
             </label>
             <input
+              id="phone"
               className="input_form new_add_input"
-              type="number"
-              placeholder=""
+              placeholder="996"
             />
           </div>
           <button className="forgot_btn reset_btn">Отправить</button>
