@@ -98,7 +98,11 @@ const MessagePage = () => {
                 <label>
                   Телефон <span>*</span>
                 </label>
-                <input id="phone" className="input_form" placeholder="996" />
+                <input
+                  id="phone"
+                  className="input_form"
+                  placeholder="Введите номер"
+                />
               </div>
               <div className="input_box">
                 <label>
