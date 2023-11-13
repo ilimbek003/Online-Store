@@ -985,3 +985,6 @@ input#file-upload-button {
   color: var(--orange);
   cursor: pointer;
 }
+#phone {
+  background: #e9ecef;  
+}
