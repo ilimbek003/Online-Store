@@ -156,6 +156,7 @@ const Registration = () => {
                 </div>
             </div>
         </div>
+
     );
 };
 
