@@ -50,11 +50,11 @@ const App = () => {
         <Route path="/dashboard" element={<PersonalArea />} />
         <Route path="shop-all/*" element={<Project />} />
         <Route path="/qr-cod" element={<QrCode />} />
-        <Route path="/my-coupon-details" element={<MyCouponDetails />} />
+        {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
           path="/my-coupon-details-id/:id"
           element={<MyCouponDetailsId />}
-        />
+        /> */}
         <Route path="/my-information" element={<MyInformation />} />
         <Route path="/my-orders" element={<MyOrders />} />
         <Route path="/buy-history" element={<BuyHistory />} />
