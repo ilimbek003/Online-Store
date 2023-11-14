@@ -7,6 +7,7 @@ import { LiaTelegramPlane } from "react-icons/lia";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsChatRightText } from "react-icons/bs";
 import ihsan from "../../src/img/ihsan.jpg";
+import { PiLockKey } from "react-icons/pi";
 
 const ToHelpPage = () => {
   const navigate = useNavigate();
@@ -70,11 +71,9 @@ const ToHelpPage = () => {
                 </div>
               </div>
               <div>
-                <div
-                  className="contact_box"
-                  onClick={() => navigate("/message-page")}
-                >
-                  <BsChatRightText size={23} />
+                <div className="contact_box">
+                  <BsChatRightText className="" size={23} />
+                  <PiLockKey className="key" />
                 </div>
                 <div>
                   <p className="title_h6" style={{ marginTop: "8px" }}>

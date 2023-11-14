@@ -59,6 +59,10 @@ const GetShotDetailsId = () => {
               el.id == id ? (
                 <div className="special_details_box">
                   <img className="special_image" src={el.image} alt="" />
+                  <p>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    In, temporibus!
+                  </p>
                 </div>
               ) : (
                 ""
