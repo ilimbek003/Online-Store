@@ -45,19 +45,11 @@ const App = () => {
         <Route path="/to-help-page" element={<ToHelpPage />} />
         <Route path="/message-page" element={<MessagePage />} />
         <Route path="/settings" element={<Settings />} />
-        <Route path="/delivery-address" element={<DeliveryAddress />} />
         <Route path="/new-address" element={<NewAddress />} />
         <Route path="/dashboard" element={<PersonalArea />} />
         <Route path="shop-all/*" element={<Project />} />
         <Route path="/qr-cod" element={<QrCode />} />
-        {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
-        <Route
-          path="/my-coupon-details-id/:id"
-          element={<MyCouponDetailsId />}
-        /> */}
         <Route path="/my-information" element={<MyInformation />} />
-        <Route path="/my-orders" element={<MyOrders />} />
-        <Route path="/buy-history" element={<BuyHistory />} />
         <Route path="/registration" element={<Registration />} />
         <Route
           path="/registration-questionnare"
@@ -65,6 +57,14 @@ const App = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-the-password" element={<ResetThePassword />} />
+        {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
+        <Route
+          path="/my-coupon-details-id/:id"
+          element={<MyCouponDetailsId />}
+        /> */}
+        {/* <Route path="/my-orders" element={<MyOrders />} /> */}
+        {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
+        {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
       </Routes>
       <Footer />
     </div>
