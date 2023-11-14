@@ -40,7 +40,7 @@ const ResetThePassword = () => {
             <input
               id="phone"
               className="input_form new_add_input"
-              placeholder="996"
+              placeholder="Введите номер"
             />
           </div>
           <button className="forgot_btn reset_btn">Отправить</button>

@@ -92,48 +92,12 @@ const PersonalArea = () => {
                 <IoIosArrowForward className="be" />
               </div>
             </div>
-            <div className="area_all" onClick={() => navigate(`/my-orders`)}>
-              <div className="bell">
-                <div className="bi">
-                  <HiOutlineNewspaper className="be" />
-                </div>
-                <h3>Менин буюртмаларым</h3>
-              </div>
-              <div className="lo">
-                <IoIosArrowForward className="be" />
-              </div>
-            </div>
-            <div className="area_all" onClick={() => navigate("/buy-history")}>
-              <div className="bell">
-                <div className="bi">
-                  <TbHistory className="be" />
-                </div>
-                <h3 className="mt-2">Сатып алуулардын тарыхы</h3>
-              </div>
-              <div className="lo">
-                <IoIosArrowForward className="be" />
-              </div>
-            </div>
             <div className="area_all" onClick={() => navigate(`/settings`)}>
               <div className="bell">
                 <div className="bi">
                   <IoSettingsSharp className="be" />
                 </div>
                 <h3 className="mt-2">Жөндөөлөр</h3>
-              </div>
-              <div className="lo">
-                <IoIosArrowForward className="be" />
-              </div>
-            </div>
-            <div
-              className="area_all"
-              onClick={() => navigate("/delivery-address")}
-            >
-              <div className="bell">
-                <div className="bi">
-                  <TbTruckDelivery className="be" />
-                </div>
-                <h3>Жеткирүү дареги</h3>
               </div>
               <div className="lo">
                 <IoIosArrowForward className="be" />

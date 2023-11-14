@@ -7,12 +7,13 @@ import MyCoupon from "./MyCoupon";
 import { useNavigate } from "react-router";
 import { DiVisualstudio } from "react-icons/di";
 import Storis from "../Storis/Storis";
+import GetShot from "./GetShot";
 const Main = () => {
   const [qrCode, setQrCode] = useState(false);
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="main-block">
       <Header />
       <div className="container">
         <div className="margin_top">
@@ -39,8 +40,9 @@ const Main = () => {
           <img src={qar} alt="" />
         </div>
       </div>
-      <MyCoupon />
-    </>
+      <GetShot />
+      {/* <MyCoupon /> */}
+    </div>
   );
 };
 

@@ -2,6 +2,9 @@ h4,
 p {
   margin-bottom: 0 !important;
 }
+.main-block {
+  margin-bottom: 100px;
+}
 .bonus_block_all {
   display: flex;
   justify-content: space-between;
@@ -11,6 +14,7 @@ p {
   border-radius: 15px;
   padding: 15px 15px;
   cursor: pointer;
+  margin-bottom: -65px;
 }
 .margin_top {
   margin-top: 70px;
@@ -90,7 +94,7 @@ p {
   gap: 15px;
   padding: 15px 15px 15px 15px;
   cursor: pointer;
-  margin: 0 20px 20px 0;
+  margin: 0 20px 120px 0;
   box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
 }
 .coupon_block_all {
@@ -266,73 +270,6 @@ p {
   height: 240px;
   padding: 5px;
 }
-.date {
-  width: 120px;
-  height: 20px;
-  border: 2px solid var(--green);
-  border-radius: 5px;
-}
-.the_time {
-  color: var(--orange);
-}
-.shot_news {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  background: var(--orange);
-}
-.shot_news_block {
-  width: 100%;
-  margin-top: 20px;
-  position: relative;
-}
-.shot_news img {
-  width: 90px;
-  height: 90px;
-}
-.price_all {
-  width: 80px;
-  height: 85px;
-  background: var(--green);
-  position: absolute;
-  top: 90px;
-  right: 15px;
-  border-radius: 5px;
-  border-top-right-radius: 20px;
-}
-.cheap_price {
-  width: 100%;
-  height: 40px;
-  background: var(--orange);
-  margin-top: -2px;
-  border-radius: 5px;
-}
-.cheap_price_text {
-  font-size: 25px;
-  color: white;
-  margin: 0 auto;
-}
-.precent_box {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: red;
-  position: absolute;
-  top: -25px;
-  right: -5px;
-}
-.precent_text {
-  font-size: 16px;
-  color: white;
-}
-.none {
-  position: absolute;
-  width: 50px;
-  height: 1.2px;
-  background: #fff;
-  transform: rotate(-15deg);
-  top: 15px;
-}
 
 /* SpecialOffers */
 
@@ -414,38 +351,6 @@ p {
 .get_shot_details {
   padding-bottom: 100px;
 }
-.get_details_block_all {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.top_all {
-  padding-top: 40px;
-}
-.top {
-  padding-top: 60px;
-  padding-bottom: 30px;
-  background: #ffffff;
-}
-.get_details_block {
-  width: 100%;
-  padding: 5px;
-  margin-top: 25px;
-}
-.price_details {
-  top: 80px;
-}
-.relative_block {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-.relative {
-  width: 260px;
-  position: relative;
-  display: flex;
-}
-
 /* ToHelpPage */
 .guestions_block_all {
   width: 100%;
@@ -979,12 +884,12 @@ input#file-upload-button {
 .span-icon {
   z-index: 1;
   position: absolute;
-  top: 30px;
+  top: 26px;
   right: 8px;
   font-size: 20px;
   color: var(--orange);
   cursor: pointer;
 }
 #phone {
-  background: #e9ecef;  
+  background: #e9ecef !important;
 }
