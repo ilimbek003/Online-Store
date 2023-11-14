@@ -902,6 +902,8 @@ input#file-upload-button {
 }
 
 .phone_block_all {
+    background: #ffffff;
+    height: 100%;
     width: 100%;
     height: 100vh;
     display: flex;

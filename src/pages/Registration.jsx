@@ -5,7 +5,7 @@ import bekbekei from "../../src/img/2.png";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import IMask from "imask";
 import { registerUser } from "../Redux/slice/authReducer";
 
@@ -15,6 +15,8 @@ const Registration = () => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const loading = useSelector((state) => state.auth.loading);
+  const message = useSelector((state) => state.auth.user);
   const [userData, setUserData] = useState({
     last_name: "",
     first_name: "",
@@ -34,6 +36,7 @@ const Registration = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(registerUser(userData));
+    alert(message)
   };
 
   return (
@@ -148,7 +151,7 @@ const Registration = () => {
                   </span>
                 </div>
                 <button onSubmit={handleSubmit} className="phone_btn">
-                  {isLoading ? "заргуска..." : "Регистрация"}
+                  {loading ? "заргуска..." : "Регистрация"}
                 </button>
               </form>
               <div>
