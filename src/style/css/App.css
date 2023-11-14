@@ -216,6 +216,7 @@ h6 {
 label {
   font-size: 14px;
   font-weight: 400;
+  margin-bottom: 4px;
 }
 
 label span {
@@ -576,7 +577,7 @@ button {
   display: flex;
   align-items: center;
   position: fixed;
-  top: 5px;
+  top: 0;
   left: 0;
   right: 0;
   background: #ffffff;
@@ -648,16 +649,16 @@ button {
   border-radius: 50%;
 }
 
-.mt_bt  input[type="checkbox"]:hover {
+.mt_bt input[type="checkbox"]:hover {
   opacity: 1;
 }
 
-.mt_bt  input[type="checkbox"]:checked {
+.mt_bt input[type="checkbox"]:checked {
   background-color: #000;
   opacity: 1;
 }
 
-.mt_bt  input[type="checkbox"]:before {
+.mt_bt input[type="checkbox"]:before {
   content: "";
   position: absolute;
   right: 50%;

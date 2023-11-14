@@ -36,19 +36,19 @@ const GetShotDetails = () => {
 
   return (
     <div id="modal">
-      <div className="get_shot_details">
-        <div className="nav">
-          <div className="container d-flex justify-content-between align-items-center ">
-            <HiArrowLongLeft
-              className="fi"
-              style={{ cursor: "pointer" }}
-              onClick={() => navigate(-1)}
-              size={20}
-            />
-            <p>Бардык акциялар</p>
-            <span></span>
-          </div>
+      <div className="nav">
+        <div className="container d-flex justify-content-between align-items-center ">
+          <HiArrowLongLeft
+            className="fi"
+            style={{ cursor: "pointer" }}
+            onClick={() => navigate(-1)}
+            size={20}
+          />
+          <p>Бардык акциялар</p>
+          <span></span>
         </div>
+      </div>
+      <div className="get_shot_details top">
         <div className="container">
           <div className="get_details_block_all top_all">
             {shot.map((el, id) => (
