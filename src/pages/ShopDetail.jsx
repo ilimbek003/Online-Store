@@ -6,9 +6,10 @@ import {BsBookmark, BsSearch} from "react-icons/bs";
 import {FiFilter} from "react-icons/fi";
 import {AiOutlineClose, AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import "../style/css/modal.css"
+import {url} from "../Api";
 
 const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus, calculateTabs}) => {
-    const {id} = useParams();
+    const { cat } = useParams();
     const [tabs, setTabs] = useState([]);
     const [sub_cat, setSubCat] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -16,7 +17,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
     const [filter, setFilter] = useState(false)
     useEffect(() => {
         axios
-            .get(`https://nurbektmusic.pythonanywhere.com/product/by-cat/${id}`)
+            .get(url + `/product/list?cat=${cat}`)
             .then(response => {
                 const categoryProducts = response.data;
                 setData(categoryProducts);
@@ -24,25 +25,8 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             .catch(error => {
                 console.error("Ошибка при получении данных:", error);
             });
-    }, [id]);
+    }, [cat]);
 
-    const handleId = (selectedId) => {
-        axios
-            .get(`https://nurbektmusic.pythonanywhere.com/product/list/sub_cat/${selectedId}`)
-            .then((response) => setTabs(response.data))
-            .catch();
-    };
-
-    useEffect(() => {
-        handleId(id);
-    }, [id]);
-    const handleButtonClick = (e) => {
-        setSelectedIndex(e);
-        if (data[e]) {
-            setSubCat(data[e].sub_cat);
-        }
-    };
-    // console.log( data ? data.sub_cat : data.sub_cat )
     const mun = JSON.parse(localStorage.getItem('plus'));
     return (
         <>
@@ -57,18 +41,18 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             </h4>
                             <BsSearch className="fi" onClick={() => navigate('/shop-all/search')}/>
                         </div>
-                        <div className="container d-flex  align-items-center mt-3 scroll">
-                            {
-                                tabs.map((el, index) => (
-                                    <div className="from_btn" key={el.id}>
-                                        <button key={el.id}
-                                                onClick={() => handleButtonClick(index)}
-                                                className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}
-                                        >{el.name}</button>
-                                    </div>
-                                ))
-                            }
-                        </div>
+                        {/*<div className="container d-flex  align-items-center mt-3 scroll">*/}
+                        {/*    {*/}
+                        {/*        tabs.map((el, index) => (*/}
+                        {/*            <div className="from_btn" key={el.id}>*/}
+                        {/*                <button key={el.id}*/}
+                        {/*                        onClick={() => handleButtonClick(index)}*/}
+                        {/*                        className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}*/}
+                        {/*                >{el.name}</button>*/}
+                        {/*            </div>*/}
+                        {/*        ))*/}
+                        {/*    }*/}
+                        {/*</div>*/}
                         <div className="container mt-3">
                             <div className="filter">
                                 <div className="dnow d-flex align-items-center"
@@ -93,7 +77,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                     className="blocks"
                                     onClick={() => navigate(`/shop-all/product/${el.id}`)}
                                 >
-                                    <img src={el.images} alt=""/>
+                                    <img src={el.img} alt=""/>
                                     {
                                         localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
                                             <div className='hover_blocks'>
