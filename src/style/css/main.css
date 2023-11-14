@@ -706,6 +706,11 @@ input#file-upload-button {
 }
 
 /* MyInformation */
+.input_form_block {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
 .toogle_block_inform {
   background: #e9ecef !important
   ;
@@ -892,4 +897,7 @@ input#file-upload-button {
 }
 #phone {
   background: #e9ecef !important;
+}
+.top {
+  margin-top: 60px;
 }

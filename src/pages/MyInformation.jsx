@@ -68,7 +68,7 @@ const MyInformation = () => {
         </div>
       </div>
       <div className="container">
-        <div className="top">
+        <div className="input_form_block top">
           <form>
             <div className="input_box">
               <label>Авторизация телефону</label>
