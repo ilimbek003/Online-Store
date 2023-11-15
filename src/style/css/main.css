@@ -904,15 +904,12 @@ input#file-upload-button {
   color: #fff;
   border: none;
 }
-
 .person_btn {
   margin-bottom: 20px;
 }
-
 .phone_block_all {
   padding-top: 80px;
 }
-
 .phone_block_all {
   background: #ffffff;
   height: 100%;
@@ -922,27 +919,22 @@ input#file-upload-button {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .phone_block {
   width: 100%;
 }
-
 .phone_block h1 {
   line-height: 1.1;
   font-weight: 600;
   margin-bottom: 20px;
 }
-
 .phone_block p {
   margin-top: 20px;
   line-height: 1.1;
 }
-
 .phone_block input {
   background: #e9ecef;
   border: none;
 }
-
 .phone_btn {
   border: none;
   color: #fff;
@@ -950,40 +942,33 @@ input#file-upload-button {
   background: #8d99ae;
   margin-top: 20px;
 }
-
 .registration h2 {
   font-weight: 600;
 }
-
 .input_checkbox_block {
   width: 100%;
   display: flex;
   margin-top: 15px;
   line-height: 1.1;
 }
-
 .input_checkbox_block input[type="checkbox"] {
   width: 16px;
   height: 16px;
   border-radius: 0px !important;
   cursor: pointer;
 }
-
 .input_checkbox_block p > h6 {
   font-weight: 600;
   font-size: 18px;
 }
-
 .phone_add {
   margin-top: 10px;
 }
-
 .header_name {
   font-size: 17px;
   font-weight: 500;
   letter-spacing: 0.3px;
 }
-
 .come_in {
   display: flex;
   align-items: center;
@@ -992,18 +977,15 @@ input#file-upload-button {
   margin-top: 10px;
   font-weight: 400;
 }
-
 .come_in span {
   color: var(--orange);
   margin-left: 2px;
   font-weight: 500;
   cursor: pointer;
 }
-
 .login_block {
   padding-top: 50px;
 }
-
 .forgot_password {
   font-size: 14px;
   margin-top: 10px;
@@ -1011,31 +993,26 @@ input#file-upload-button {
   font-weight: 500;
   cursor: pointer;
 }
-
 .forgot_btn {
   border: none;
   background: var(--orange);
   color: #fff;
   margin-top: 10px;
 }
-
 .reset_password_block {
   padding-top: 60px;
 }
-
 .reset_password_block p {
   line-height: 1.1;
   text-align: center;
 }
-
 .reset_btn {
   margin-top: 25px;
 }
-
 .span-icon {
   z-index: 1;
   position: absolute;
-  top: 26px;
+  top: 31px;
   right: 8px;
   font-size: 20px;
   color: var(--orange);
