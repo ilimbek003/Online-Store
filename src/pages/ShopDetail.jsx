@@ -141,6 +141,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             </div>
                             <div className="container">
                                 <button
+                                    type="button"
                                     className="btn_button all_btn"
                                     onClick={handleButtonClick}
                                 >
