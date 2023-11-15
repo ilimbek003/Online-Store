@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Shop from "./Shop";
 import ShopDetail from "./ShopDetail";
 import Search from "./Search";
-import Filter from "./Filter";
+
 import Cart from "./Cart";
 import Basket from "../pages/Basket"
 import Product from "./Product";
@@ -11,19 +11,15 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {useParams} from "react-router-dom";
 
-const MIN = 50;
-const MAX = 3000;
+
 const Project = () => {
     const navigate = useNavigate()
-    const {id} = useParams();
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
     const [shopCart, setShopCart] = useState([]);
     const [plus, setPlus] = useState({})
-    const [requests, setRequests] = useState({
-        budget: [MIN, MAX],
-    });
+
     const saveToLocalStorage = (id) => {
         const itemToAdd = data.find(item => item.id === id);
         if (itemToAdd) {
@@ -81,27 +77,12 @@ const Project = () => {
         }
     };
 
-    const calculateMinMax = () => {
-        const url = `https://nurbektmusic.pythonanywhere.com/product/list/filter?price_from=${requests.budget[0]}&price_to=${requests.budget[1]}`;
-        axios.get(url)
-            .then(response => {
-                const filteredProducts = response.data;
-                setData(filteredProducts);
-                const el = filteredProducts[0];
-                navigate(`/shop-all/shop/${el.id} `);
-            })
-            .catch(error => {
-                console.error("Ошибка при получении данных:", error);
-            });
-    };
-
-
 
     return (
         <div>
             <Routes>
                 <Route path="shop" element={<Shop/>}/>
-                <Route path="shop/:cat" element={<ShopDetail
+                <Route path="/shop/:cat" element={<ShopDetail
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}
@@ -110,14 +91,6 @@ const Project = () => {
                     handleMinus={handleMinus}
                 />}/>
                 <Route path="search" element={<Search modal={modals} setModal={setModals}/>}/>
-                <Route path="filter" element={<Filter
-                    calculateMinMax={calculateMinMax}
-                    data={data}
-                    requests={requests}
-                    setRequests={setRequests}
-                    MIN={MIN}
-                    MAX={MAX}
-                />}/>
                 <Route path="cart" element={<Cart
                     saveToLocalStorage={saveToLocalStorage}
                     plus={plus}
