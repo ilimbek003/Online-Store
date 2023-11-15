@@ -9,7 +9,7 @@ import { LiaQuestionCircleSolid } from "react-icons/lia";
 const QrCode = () => {
   const navigate = useNavigate();
   return (
-    <>
+    <div id="modal">
       <div className="nav">
         <div className="container d-flex justify-content-between align-items-center">
           <span></span>
@@ -26,7 +26,7 @@ const QrCode = () => {
       <div className="block container ">
         <img className="qar" src={qar} alt="" />
       </div>
-    </>
+    </div>
   );
 };
 
