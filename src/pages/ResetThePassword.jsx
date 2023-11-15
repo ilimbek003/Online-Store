@@ -2,7 +2,32 @@ import React, { useEffect, useState } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import IMask from "imask";
+import { useDispatch, useSelector } from "react-redux";
+import { forgotUser } from "../Redux/slice/ForgotSlice";
+import Loading from "../UI/Loading/Loading";
+
 const ResetThePassword = () => {
+  // states
+  const [phone, setPhone] = useState("");
+  const navigate = useNavigate();
+
+  // redus state
+  const { loading, error } = useSelector((state) => state.user);
+  const handleForgotEvent = (e) => {
+    e.preventDefault();
+    let forgorCredential = {
+      phone,
+    };
+    dispatch(forgotUser(forgorCredential)).then((result) => {
+      if (result.payload) {
+        setPhone("");
+        navigate("/");
+      }
+    });
+  };
+
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
     if (phoneInput) {
@@ -12,15 +37,6 @@ const ResetThePassword = () => {
     }
   }, []);
 
-  const [inputData, setInputDtata] = useState({
-    phone: "",
-    first_name: "",
-    last_name: "",
-    password: "",
-    confirm_password: "",
-  });
-
-  const navigate = useNavigate();
   return (
     <div className="reset_the_password">
       <div className="nav">
@@ -31,7 +47,7 @@ const ResetThePassword = () => {
         </div>
       </div>
       <div className="container">
-        <div className="reset_password_block">
+        <form className="reset_password_block" onSubmit={handleForgotEvent}>
           <p>укажите ваш номер телефон который използовался при регистрации</p>
           <div className="input_box">
             <label>
@@ -41,13 +57,25 @@ const ResetThePassword = () => {
               id="phone"
               className="input_form new_add_input"
               placeholder="Введите номер"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
             />
           </div>
-          <button className="forgot_btn reset_btn">Отправить</button>
-        </div>
+          <button
+            disabled={loading}
+            type="sumbit"
+            className="forgot_btn reset_btn"
+          >
+            {loading ? <Loading /> : "Oтправить"}
+          </button>
+          {error && (
+            <div className="alert alert-danger" role="alert">
+              {error}
+            </div>
+          )}
+        </form>
       </div>
     </div>
   );
 };
-
 export default ResetThePassword;
