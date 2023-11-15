@@ -78,7 +78,6 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     </div>
                 </div>
                 <div className="container">
-
                     <div className="row row_one">
                         {data.map((el) => (
                             <div className="col-6 mt-4" key={el.id}>
