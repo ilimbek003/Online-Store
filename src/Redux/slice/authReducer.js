@@ -5,7 +5,9 @@ import { url } from "../../Api";
 const initialState = {
   user: null,
   error: null,
-  loading: false, 
+  loading: false,
+  message: "",
+  phone:""
 };
 
 const authReducer = createSlice({
@@ -19,6 +21,8 @@ const authReducer = createSlice({
     registerSuccess(state, action) {
       state.loading = false;
       state.user = action.payload;
+      state.message = action.payload.message;
+      state.phone = action.payload.phone
     },
     registerFailure(state, action) {
       state.loading = false;

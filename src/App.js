@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -24,8 +24,10 @@ import RegistrationQuestionnaire from "./pages/RegistrationQuestionnaire";
 import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import ResetThePassword from "./pages/ResetThePassword";
+import Activation from "./pages/Activation";
 
 const App = () => {
+
   const location = useLocation();
   const handleScroll = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -57,6 +59,7 @@ const App = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/reset-the-password" element={<ResetThePassword />} />
+        <Route path="/activation" element={<Activation/>} />
         {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
           path="/my-coupon-details-id/:id"
@@ -65,6 +68,7 @@ const App = () => {
         {/* <Route path="/my-orders" element={<MyOrders />} /> */}
         {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
         {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
+
       </Routes>
       <Footer />
     </div>

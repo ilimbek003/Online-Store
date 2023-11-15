@@ -847,3 +847,24 @@ button {
   font-weight: 600;
   font-size: 18px;
 }
+.activation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 102px;
+}
+.activation form {
+  width: 100%;
+}
+.activation input{
+  background: #e9ecef;
+  border: none!important;
+}
+.activation p {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  color: black;
+  padding: 0 0 5px 0;
+}

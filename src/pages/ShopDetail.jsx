@@ -9,7 +9,7 @@ import "../style/css/modal.css"
 import {url} from "../Api";
 
 const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus, calculateTabs}) => {
-    const { cat } = useParams();
+    const {cat} = useParams();
     const [tabs, setTabs] = useState([]);
     const [sub_cat, setSubCat] = useState(null);
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -26,7 +26,17 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                 console.error("Ошибка при получении данных:", error);
             });
     }, [cat]);
-
+    useEffect(() => {
+        axios
+            .get(url + `/product/sub-categories/${cat}`)
+            .then(response => {
+                const categoryProducts = response.data;
+                setTabs(categoryProducts);
+            })
+            .catch(error => {
+                console.error("Ошибка при получении данных:", error);
+            });
+    }, [cat]);
     const mun = JSON.parse(localStorage.getItem('plus'));
     return (
         <>
@@ -41,18 +51,17 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             </h4>
                             <BsSearch className="fi" onClick={() => navigate('/shop-all/search')}/>
                         </div>
-                        {/*<div className="container d-flex  align-items-center mt-3 scroll">*/}
-                        {/*    {*/}
-                        {/*        tabs.map((el, index) => (*/}
-                        {/*            <div className="from_btn" key={el.id}>*/}
-                        {/*                <button key={el.id}*/}
-                        {/*                        onClick={() => handleButtonClick(index)}*/}
-                        {/*                        className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}*/}
-                        {/*                >{el.name}</button>*/}
-                        {/*            </div>*/}
-                        {/*        ))*/}
-                        {/*    }*/}
-                        {/*</div>*/}
+                        <div className="container d-flex  align-items-center mt-3 scroll">
+                            {
+                                tabs.map((el, index) => (
+                                    <div className="from_btn" key={el.id}>
+                                        <button key={el.id}
+                                                className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}
+                                        >{el.name}</button>
+                                    </div>
+                                ))
+                            }
+                        </div>
                         <div className="container mt-3">
                             <div className="filter">
                                 <div className="dnow d-flex align-items-center"
