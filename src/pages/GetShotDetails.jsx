@@ -44,7 +44,7 @@ const GetShotDetails = () => {
             onClick={() => navigate(-1)}
             size={20}
           />
-          <p>Бардык акциялар</p>
+          <p className="header_name">Бардык акциялар</p>
           <span></span>
         </div>
       </div>
