@@ -3,7 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import Shop from "./Shop";
 import ShopDetail from "./ShopDetail";
 import Search from "./Search";
-
+import Filter from "./Filter";
 import Cart from "./Cart";
 import Basket from "../pages/Basket"
 import Product from "./Product";
@@ -82,7 +82,7 @@ const Project = () => {
         <div>
             <Routes>
                 <Route path="shop" element={<Shop/>}/>
-                <Route path="/shop-all/shop/:cat" element={<ShopDetail
+                <Route path="shop/:cat" element={<ShopDetail
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}

@@ -7,34 +7,59 @@ import {FiFilter} from "react-icons/fi";
 import {AiOutlineClose, AiOutlineDelete, AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import "../style/css/modal.css"
 import {url} from "../Api";
-import Filter from "./Filter";
+import Search from "./Search";
 import Slider from "react-slider";
 
 const MIN = 40;
 const MAX = 500;
 const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus, calculateTabs}) => {
     const [tabs, setTabs] = useState([]);
-    const {cat, pricefrom, priceto} = useParams();
+    const {cat, name} = useParams();
+    const [query, setQuery] = useState('');
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigate = useNavigate();
+    const [sub_cat, setSubCat] = useState(null);
     const [filter, setFilter] = useState(false)
     const [filters, setFilters] = useState(false)
+    const [search, setSearch] = useState(false)
+
     const [requests, setRequests] = useState({
         budget: [MIN, MAX],
     });
+    const api = "product/list"
     useEffect(() => {
-        axios
-            .get(url + `/product/list?cat=${cat}&pricefrom=${MIN}&priceto=${MAX}`)
-            .then(response => {
-                const categoryProducts = response.data;
-                setData(categoryProducts);
-            })
-            .catch(error => {
-                console.error("Ошибка при получении данных:", error);
-            });
-    }, [cat, requests.budget[0], requests.budget[1]]);
+        axios.get(
+            `${url}/${api}?cat=${cat}`)
+            .then((response) => setData(response.data))
 
-    const prices = data && data.map(el => el.price)
+    }, [])
+    const fetchData = async (subCatId) => {
+        try {   
+            const response = await axios.get(
+                `${url}/${api}?pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}&search=${encodeURIComponent(query)}&sub_cat=${subCatId}`
+            );
+            const categoryProducts = response.data;
+            setData(categoryProducts);
+        } catch (error) {
+            console.error("Ошибка при получении данных:", error);
+        } finally {
+            setFilters(false);
+            setSearch(false);
+        }
+    };
+
+    const handleSearchButtonClick = () => {
+        fetchData();
+    };
+    const handleTabClick = (selectedId) => {
+        setSubCat(selectedId);
+        setSelectedIndex(tabs.findIndex((el) => el.id === selectedId));
+        fetchData(selectedId);
+    };
+    const handleInputChange = (event) => {
+        setQuery(event.target.value);
+    };
+
 
     useEffect(() => {
         axios
@@ -59,21 +84,25 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                 {/*{data && data[0] && data[0].name}*/}
                                 Name
                             </h4>
-                            <BsSearch className="fi" onClick={() => navigate('/shop-all/search')}/>
+                            <BsSearch className="fi" onClick={() => setSearch(true)}/>
                         </div>
-                        <div className="container d-flex  align-items-center mt-3 scroll">
+                        <div className="container d-flex  align-items-center  scroll">
                             {
                                 tabs.map((el, index) => (
                                     <div className="from_btn" key={el.id}>
-                                        <button key={el.id}
-                                                className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}
-                                        >{el.name}</button>
+                                        <button
+                                            key={el.id}
+                                            className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}
+                                            onClick={() => handleTabClick(el.id)}
+                                        >
+                                            {el.name}
+                                        </button>
                                     </div>
                                 ))
                             }
                         </div>
 
-                        <div className="container mt-3">
+                        <div className="container">
                             <div className="filter">
                                 <div className="dnow d-flex align-items-center"
                                      onClick={() => setFilters(true)}>
@@ -88,6 +117,31 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         </div>
                     </div>
                 </div>
+                {
+                    search === true && (
+                        <div id="modal_one">
+                            <div className="nav">
+                                <div className="container d-flex justify-content-between align-items-center">
+                                    <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
+                                    <h4 className="title_h5 all_title">Издоо</h4>
+                                    <div/>
+                                </div>
+                                <div className="container">
+                                    <input
+                                        className="input_form_all mt-4"
+                                        type="text"
+                                        placeholder="Поиск..."
+                                        value={query}
+                                        onChange={handleInputChange}
+                                    />
+                                    <button className="btn_button all_btn" onClick={handleSearchButtonClick}>
+                                        Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                }
                 {
                     filters === true && (
                         <div id="modal_one">
@@ -131,6 +185,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             <div className="container">
                                 <button
                                     className="btn_button all_btn"
+                                    onClick={fetchData}
                                 >
                                     Колдонуу
                                 </button>
@@ -158,7 +213,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                     <h3 className="title_one mt">{el.title}</h3>
                                     <div className="d-flex align-items-center justify-content-between mt-2">
                                         <p className="project">
-                                            <span>{el.pack}</span>
+                                            <span>{el.price_for} шт </span>
                                         </p>
                                         <h2>{el.price} сом</h2>
                                         <div className="marks">
