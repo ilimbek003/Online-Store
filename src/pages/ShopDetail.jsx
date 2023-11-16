@@ -14,7 +14,7 @@ const MIN = 40;
 const MAX = 500;
 const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus, calculateTabs}) => {
     const [tabs, setTabs] = useState([]);
-    const {cat} = useParams();
+    const {cat, pricefrom, priceto} = useParams();
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigate = useNavigate();
     const [filter, setFilter] = useState(false)
@@ -23,29 +23,18 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
         budget: [MIN, MAX],
     });
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get(`${url}/product/list?cat=${cat}&pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}`);
+        axios
+            .get(url + `/product/list?cat=${cat}&pricefrom=${MIN}&priceto=${MAX}`)
+            .then(response => {
                 const categoryProducts = response.data;
                 setData(categoryProducts);
-            } catch (error) {
+            })
+            .catch(error => {
                 console.error("Ошибка при получении данных:", error);
-            }
-        };
-
-        fetchData();
+            });
     }, [cat, requests.budget[0], requests.budget[1]]);
 
-
-    const handleButtonClick = () => {
-        setRequests({
-            ...requests,
-            budget: [MIN, MAX],
-        });
-        if (filters) {
-            navigate(`/shop-all/shop/${cat}/${requests.budget[0]}/${requests.budget[1]}`)
-        }
-    };
+    const prices = data && data.map(el => el.price)
 
     useEffect(() => {
         axios
@@ -141,9 +130,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             </div>
                             <div className="container">
                                 <button
-                                    type="button"
                                     className="btn_button all_btn"
-                                    onClick={handleButtonClick}
                                 >
                                     Колдонуу
                                 </button>

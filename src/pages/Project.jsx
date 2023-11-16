@@ -82,7 +82,7 @@ const Project = () => {
         <div>
             <Routes>
                 <Route path="shop" element={<Shop/>}/>
-                <Route path="/shop/:cat" element={<ShopDetail
+                <Route path="/shop-all/shop/:cat" element={<ShopDetail
                     data={data}
                     setData={setData}
                     saveToLocalStorage={saveToLocalStorage}
