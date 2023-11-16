@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { url } from "../../Api";
-import { useNavigate } from "react-router";
+
 
 const initialState = {
   user: null,
@@ -34,8 +32,6 @@ const authReducer = createSlice({
 export const { registerStart, registerSuccess, registerFailure } =
   authReducer.actions;
 
-export const registerUser = (userData) => async (dispatch) => {
-
-};
+export const registerUser = (userData) => async (dispatch) => {};
 
 export default authReducer.reducer;

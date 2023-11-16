@@ -42,18 +42,6 @@ const Registration = ({ Alert }) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (message !== "") {
-  //     alert("Успешно");
-  //   }
-  // }, [message]);
-
-  // useEffect(() => {
-  //   if (error !== "") {
-  //     alert("Ошибка");
-  //   }
-  // }, [error]);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     localStorage.setItem("phone", userData.phone);
@@ -62,7 +50,6 @@ const Registration = ({ Alert }) => {
       try {
         const response = await axios.post(url + "/auth/register", userData);
         dispatch(registerSuccess(response.data));
-        console.log(response.data);
         if (response.data.phone) {
           Alert(response.data.phone, "error");
         }
@@ -70,7 +57,7 @@ const Registration = ({ Alert }) => {
           Alert(response.data.non_field_errors, "error");
         }
         if (response.data.response == true) {
-          Alert("Text", "success");
+          Alert("Ползователь успешно зарегистрирован", "success");
           navigate("/activation");
         }
       } catch (error) {
@@ -199,10 +186,9 @@ const Registration = ({ Alert }) => {
                   {isLoading ? <Loading /> : "Регистрация"}
                 </button>
               </form>
-              <div>
-                <p className="come_in">
-                  Уже есть акаунт? <span> Войти</span>
-                </p>
+              <div className="come_in" onClick={() => navigate("/login")}>
+                Уже есть акаунт?
+                <span> Войти</span>
               </div>
             </div>
           </div>

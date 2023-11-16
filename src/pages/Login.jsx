@@ -1,12 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import IMask from "imask";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../Redux/slice/UserSlice";
 import Loading from "../UI/Loading/Loading";
+import { url } from "../Api";
+import axios from "axios";
+import {
+  registerFailure,
+  registerSuccess,
+} from "../Redux/slice/activationReduser";
 
 const Login = ({ Alert }) => {
   useEffect(() => {
@@ -26,13 +31,28 @@ const Login = ({ Alert }) => {
   const [password, setPassword] = useState("");
   //
   const { loading, error } = useSelector((state) => state.user);
+
   const dispatch = useDispatch();
-  const handleLoginEvent = (e) => {
+
+  const handleLoginEvent = async (e) => {
     e.preventDefault();
     let userCredential = {
       phone,
       password,
     };
+    try {
+      const response = await axios.post(url + "/auth/login", userCredential);
+      localStorage.setItem("user", JSON.stringify(response));
+      if (response.data.response === true) {
+        Alert("Код подтверждения успешно отправлен");
+      }
+      if (response.data.response === false) {
+        Alert(response.data.message, "error");
+      }
+    } catch (error) {
+      console.error(error);
+      dispatch(registerFailure(error.message));
+    }
     dispatch(loginUser(userCredential)).then((result) => {
       if (result.payload) {
         setPhone("");
@@ -87,7 +107,7 @@ const Login = ({ Alert }) => {
             >
               Забыли пароль?
             </p>
-            <button disabled={ loading } type="sumbit" className="forgot_btn">
+            <button disabled={loading} type="submit" className="forgot_btn">
               {loading ? <Loading /> : "Войти"}
             </button>
             {error && (
@@ -98,7 +118,7 @@ const Login = ({ Alert }) => {
             <p className="come_in">
               Еще нет аккаунта?
               <span onClick={() => navigate("/registration")}>
-                Зарегистрироватся
+                Зарегистрироваться
               </span>
             </p>
           </form>

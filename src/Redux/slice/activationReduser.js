@@ -33,17 +33,6 @@ const activationReducer = createSlice({
 export const { registerStart, registerSuccess, registerFailure } =
   activationReducer.actions;
 
-export const registerCode = (userData) => async (dispatch) => {
-  dispatch(registerStart());
-  try {
-    const response = await axios.post(
-      url + "/auth/verify-phone",
-      userData
-    );
-    dispatch(registerSuccess(response.data));
-  } catch (error) {
-    dispatch(registerFailure(error.message));
-  }
-};
+export const registerCode = (userData) => async (dispatch) => {};
 
 export default activationReducer.reducer;
