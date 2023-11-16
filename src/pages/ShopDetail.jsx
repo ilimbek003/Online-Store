@@ -15,10 +15,11 @@ const MAX = 500;
 const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus, calculateTabs}) => {
     const [tabs, setTabs] = useState([]);
     const {cat, name} = useParams();
-    const [query, setQuery] = useState('');
+    const [query, setQuery] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigate = useNavigate();
     const [sub_cat, setSubCat] = useState(null);
+    const [title, setTitle] = useState("");
     const [filter, setFilter] = useState(false)
     const [filters, setFilters] = useState(false)
     const [search, setSearch] = useState(false)
@@ -34,9 +35,13 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
 
     }, [])
     const fetchData = async (subCatId) => {
-        try {   
+        try {
             const response = await axios.get(
-                `${url}/${api}?pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}&search=${encodeURIComponent(query)}&sub_cat=${subCatId}`
+                `${url}/${api}?pricefrom=
+                ${requests.budget[0]}
+                &priceto=${requests.budget[1]}
+                &search=${encodeURIComponent(query)}
+                &sub_cat=${subCatId}&ordering=${-title}`
             );
             const categoryProducts = response.data;
             setData(categoryProducts);
@@ -55,6 +60,15 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
         setSubCat(selectedId);
         setSelectedIndex(tabs.findIndex((el) => el.id === selectedId));
         fetchData(selectedId);
+    };
+    const handleTitle = (event) => {
+        const selectedTitle = event.target.value;
+        const selectedProduct = data.find((el) => el.title === selectedTitle);
+        if (selectedProduct) {
+            setTitle(selectedTitle);
+            fetchData(sub_cat, selectedTitle);
+        }
+        console.log(title)
     };
     const handleInputChange = (event) => {
         setQuery(event.target.value);
@@ -101,7 +115,6 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                 ))
                             }
                         </div>
-
                         <div className="container">
                             <div className="filter">
                                 <div className="dnow d-flex align-items-center"
@@ -271,53 +284,59 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                 </div>
             </div>
             {
-                filter === true && (
-                    <div className="filters_oll" onClick={() => setFilter(false)}>
-                        <div className="order" onClick={(e) => e.stopPropagation()}>
-                            <div className="container">
-                                <div className="d-flex justify-content-between">
-                                    <h6 className="title_h3 orders">Иретоо</h6>
-                                    <AiOutlineClose className="icons" onClick={() => setFilter(false)}/>
+                data.map((el) => (
+                    <div>
+                        {
+                            filter === true && (
+                                <div className="filters_oll" onClick={() => setFilter(false)}>
+                                    <div className="order" onClick={(e) => e.stopPropagation()}>
+                                        <div className="container">
+                                            <div className="d-flex justify-content-between">
+                                                <h6 className="title_h3 orders">Иретоо</h6>
+                                                <AiOutlineClose className="icons" onClick={() => setFilter(false)}/>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">По умолчение</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">Сначала популярные</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">Сначала акционный</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">Сначала дешевые</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">Сначала дорогие</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value="yes"/>
+                                                <h6 className="title_one m-lg-2">По алфавиту от А до Я</h6>
+                                            </div>
+                                            <div className="d-flex mt_bt">
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                       value={el.title} onClick={handleTitle}/>
+                                                <h6 className="title_one m-lg-2">По алфавиту от Я до А</h6>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">По умолчение</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">Сначала популярные</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">Сначала акционный</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">Сначала дешевые</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">Сначала дорогие</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">По алфавиту от А до Я</h6>
-                                </div>
-                                <div className="d-flex mt_bt">
-                                    <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                           value="yes"/>
-                                    <h6 className="title_one m-lg-2">По алфавиту от Я до А</h6>
-                                </div>
-                            </div>
-                        </div>
+                            )
+                        }
                     </div>
-                )
+                ))
             }
         </>
     );
