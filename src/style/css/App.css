@@ -155,13 +155,14 @@ h6 {
 
 .input_form_all {
   width: 100%;
-  height: 40px;
+  height: 46px;
   border-radius: 10px;
   padding: 0 10px 0 10px;
   box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
   border: none;
   outline: none;
   font-size: 16px;
+  margin: 10px 0 0 0;
 }
 
 .input_form_all::placeholder {
@@ -183,15 +184,10 @@ h6 {
 
 .nav_line {
   border-bottom: 1px solid #cccccc;
-  min-height: 131px !important;
+  height: 20%;
   width: 100%;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 5px;
-  left: 0;
-  right: 0;
   background: #ffffff;
+  position: fixed;
   z-index: 998;
   margin: 0 auto;
 }
@@ -224,15 +220,7 @@ label span {
   color: red;
 }
 
-button {
-  width: 100%;
-  height: 45px;
-  font-weight: 500;
-  font-size: 18px !important;
-  border-radius: 10px !important;
-  outline: none !important;
-  cursor: pointer !important;
-}
+
 
 .images {
   width: 20%;
@@ -258,7 +246,7 @@ button {
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 15px;
   grid-auto-flow: dense;
-  margin-top: 68px;
+  margin-top: 77px;
 }
 
 .all_shop .shops {
@@ -273,7 +261,7 @@ button {
 }
 
 .row_one {
-  padding: 130px 0 30px 0;
+  padding:  130px 0 30px 0;
   height: 110%;
   background: #ffffff;
 }
@@ -318,16 +306,14 @@ button {
   color: #000;
   font-size: 14px !important;
   font-weight: 400;
-  width: 100% !important;
-  height: 30px !important;
   border-radius: 15px !important;
-  padding: 0 5px;
-  margin: 0 10px 0 0;
+  padding: 5px 10px;
 }
 
 .scroll {
   width: 100%;
   overflow-x: scroll;
+  padding: 20px 0 5px 0;
 }
 
 .scroll .tabs::-webkit-scrollbar-track {
@@ -423,6 +409,9 @@ button {
 
 .from_btn {
   margin: 0 13px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .blocks {
@@ -808,11 +797,8 @@ button {
   color: #ffffff;
   font-size: 14px !important;
   font-weight: 400;
-  width: 100% !important;
-  height: 30px !important;
   border-radius: 15px !important;
-  padding: 0 5px;
-  margin: 0 10px 0 0;
+  padding: 5px 10px;
 }
 
 .block_shop {
