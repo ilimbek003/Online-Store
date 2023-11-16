@@ -43,8 +43,10 @@ const Login = ({ Alert }) => {
     try {
       const response = await axios.post(url + "/auth/login", userCredential);
       localStorage.setItem("user", JSON.stringify(response));
+      dispatch(registerSuccess(response.data));
       if (response.data.response === true) {
-        Alert("Код подтверждения успешно отправлен");
+        navigate("/");
+        Alert("Код подтверждения успешно отправлен", "success");
       }
       if (response.data.response === false) {
         Alert(response.data.message, "error");
