@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import { url } from "../../Api";
-import { useNavigate } from "react-router";
+
 
 const initialState = {
   user: null,
@@ -34,15 +32,6 @@ const authReducer = createSlice({
 export const { registerStart, registerSuccess, registerFailure } =
   authReducer.actions;
 
-export const registerUser = (userData) => async (dispatch) => {
-  dispatch(registerStart());
-  try {
-    const response = await axios.post(url + "/auth/register", userData);
-  
-    dispatch(registerSuccess(response.data));
-  } catch (error) {
-    dispatch(registerFailure(error.message));
-  }
-};
+export const registerUser = (userData) => async (dispatch) => {};
 
 export default authReducer.reducer;

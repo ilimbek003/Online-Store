@@ -5,17 +5,8 @@ import { useNavigate } from "react-router";
 
 export const forgotUser = createAsyncThunk(
   "phone/forgotUser",
-  async (forgotCredentials) => {
-    const request = await axios.post(
-      url + "/auth/reset-password",
-      forgotCredentials
-    );
-    const response = await request.data.data;
-    localStorage.setItem("user", JSON.stringify(response));
-    return response;
-  }
 );
-
+  
 const forgorSlice = createSlice({
   name: "user",
   initialState: {

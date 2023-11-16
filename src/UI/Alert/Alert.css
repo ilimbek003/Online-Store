@@ -1,4 +1,4 @@
-.alert {
+.alertAlert {
   top: 20px;
   left: 50%;
   transform: translate(-50%);
@@ -9,12 +9,12 @@
   width: 90%;
   min-height: 50px;
   border-radius: 10px;
-  background: var(--white);
+  background: #fff;
   display: flex;
   align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   animation: alertProps 0.1s ease-out !important;
-  z-index: 9999;
+  z-index: 99999999999999;
 }
 @keyframes alertProps {
   0% {
@@ -26,59 +26,59 @@
     top: 20px;
   }
 }
-.alert .icon_div {
+.alertAlert .icon_div {
   width: 75px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.alert .iks {
+.alertAlert .iks {
   width: 75px;
   min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.alert .text_div {
+.alertAlert .text_div {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
 }
-.alert .cray {
+.alertAlert .cray {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 10px;
   min-height: 50px;
   background: red;
 }
-.alert p {
-  color: var(--black) !important;
+.alertAlert p {
+  color: #000 !important;
   font-size: 14px !important;
   font-weight: 500 !important;
 }
-.alert .icon.red {
+.alertAlert .icon.red {
   color: red;
 }
-.alert .cray.red {
+.alertAlert .cray.red {
   background: red;
 }
-.alert .icon.green {
+.alertAlert .icon.green {
   color: green;
 }
-.alert .cray.green {
+.alertAlert .cray.green {
   background: green;
 }
-.alert .icon.yellow {
+.alertAlert .icon.yellow {
   color: yellow;
 }
-.alert .cray.yellow {
+.alertAlert .cray.yellow {
   background: yellow;
 }
-.alert .icon.blue {
+.alertAlert .icon.blue {
   color: blue;
 }
-.alert .cray.blue {
+.alertAlert .cray.blue {
   background: blue;
 }

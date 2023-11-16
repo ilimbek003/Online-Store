@@ -11,10 +11,13 @@ import { useDispatch, useSelector } from "react-redux";
 import IMask from "imask";
 import {
   registerFailure,
+  registerStart,
   registerSuccess,
   registerUser,
 } from "../Redux/slice/authReducer";
 import Loading from "../UI/Loading/Loading";
+import axios from "axios";
+import { url } from "../Api";
 
 const Registration = ({ Alert }) => {
   const navigate = useNavigate();
@@ -39,22 +42,29 @@ const Registration = ({ Alert }) => {
     }
   }, []);
 
-  // useEffect(() => {
-  //   if (message !== "") {
-  //     alert("Успешно");
-  //   }
-  // }, [message]);
-
-  // useEffect(() => {
-  //   if (error !== "") {
-  //     alert("Ошибка");
-  //   }
-  // }, [error]);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     localStorage.setItem("phone", userData.phone);
-    dispatch(registerUser(userData));
+    if (userData) {
+      dispatch(registerStart());
+      try {
+        const response = await axios.post(url + "/auth/register", userData);
+        dispatch(registerSuccess(response.data));
+        if (response.data.phone) {
+          Alert(response.data.phone, "error");
+        }
+        if (response.data.non_field_errors) {
+          Alert(response.data.non_field_errors, "error");
+        }
+        if (response.data.response == true) {
+          Alert("Ползователь успешно зарегистрирован", "success");
+          navigate("/activation");
+        }
+      } catch (error) {
+        dispatch(registerFailure(error.message));
+        Alert("Text", "error");
+      }
+    }
   };
 
   return (
@@ -176,11 +186,9 @@ const Registration = ({ Alert }) => {
                   {isLoading ? <Loading /> : "Регистрация"}
                 </button>
               </form>
-              <div>
-                <p className="come_in">
-                  Уже есть акаунт?{" "}
-                  <span onClick={() => navigate("/login")}> Войти</span>
-                </p>
+              <div className="come_in" onClick={() => navigate("/login")}>
+                Уже есть акаунт?
+                <span> Войти</span>
               </div>
             </div>
           </div>
