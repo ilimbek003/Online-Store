@@ -14,6 +14,7 @@ import {
   registerSuccess,
   registerUser,
 } from "../Redux/slice/authReducer";
+import Loading from "../UI/Loading/Loading";
 
 const Registration = ({ Alert }) => {
   const navigate = useNavigate();
@@ -38,17 +39,17 @@ const Registration = ({ Alert }) => {
     }
   }, []);
 
-  useEffect(() => {
-    if (message !== "") {
-      alert("Успешно");
-    }
-  }, [message]);
+  // useEffect(() => {
+  //   if (message !== "") {
+  //     alert("Успешно");
+  //   }
+  // }, [message]);
 
-  useEffect(() => {
-    if (error !== "") {
-      alert("Ошибка");
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (error !== "") {
+  //     alert("Ошибка");
+  //   }
+  // }, [error]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -167,12 +168,16 @@ const Registration = ({ Alert }) => {
                     {visible2 ? <FaEye /> : <FaEyeSlash />}
                   </span>
                 </div>
-                <button onSubmit={handleSubmit} className="phone_btn">
-                  {isLoading ? "заргуска..." : "Регистрация"}
+                <button
+                  disabled={isLoading}
+                  onSubmit={handleSubmit}
+                  className="phone_btn"
+                >
+                  {isLoading ? <Loading /> : "Регистрация"}
                 </button>
               </form>
               <div>
-                <p className="come_in" onClick={() => navigate("/activation")}>
+                <p className="come_in">
                   Уже есть акаунт?{" "}
                   <span onClick={() => navigate("/login")}> Войти</span>
                 </p>
