@@ -25,9 +25,9 @@ import Registration from "./pages/Registration";
 import Login from "./pages/Login";
 import ResetThePassword from "./pages/ResetThePassword";
 import Activation from "./pages/Activation";
-import { Alert } from "bootstrap";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AlertData } from "./UI/Alert/Alert";
 
 const App = () => {
   const [openAlert, setOpenAlert] = useState({
@@ -71,9 +71,9 @@ const App = () => {
 
   return (
     <>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       {openAlert.open && (
-        <Alert
+        <AlertData
           state={openAlert}
           setState={setOpenAlert}
           propsData={openAlert.props}

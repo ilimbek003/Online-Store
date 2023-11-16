@@ -15,7 +15,7 @@ export const forgotUser = createAsyncThunk(
     return response;
   }
 );
-
+  
 const forgorSlice = createSlice({
   name: "user",
   initialState: {

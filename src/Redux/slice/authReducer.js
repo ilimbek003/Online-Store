@@ -35,14 +35,7 @@ export const { registerStart, registerSuccess, registerFailure } =
   authReducer.actions;
 
 export const registerUser = (userData) => async (dispatch) => {
-  dispatch(registerStart());
-  try {
-    const response = await axios.post(url + "/auth/register", userData);
-  
-    dispatch(registerSuccess(response.data));
-  } catch (error) {
-    dispatch(registerFailure(error.message));
-  }
+
 };
 
 export default authReducer.reducer;

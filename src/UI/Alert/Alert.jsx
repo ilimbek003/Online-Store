@@ -5,14 +5,14 @@ import { BiErrorCircle } from "react-icons/bi";
 import { AiOutlineWarning } from "react-icons/ai";
 import { GrClose } from "react-icons/gr";
 
-export function Alert({ state, setState, propsData, text }) {
+export function AlertData({ state, setState, propsData, text }) {
   function FuncDelete() {
     setState({ ...state, open: false, opentwo: false });
   }
 
   return (
-    <div className="color">
-      <div className="alert">
+    <div className="colorALert">
+      <div className="alertAlert">
         {propsData == "success" && <div className="cray green"></div>}
         {propsData == "error" && <div className="cray red"></div>}
         {propsData == "info" && <div className="cray blue"></div>}
