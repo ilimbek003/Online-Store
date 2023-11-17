@@ -81,6 +81,7 @@ const Login = ({ Alert }) => {
                 Номер телефона <span>*</span>
               </label>
               <input
+                required
                 id="phone"
                 className="input_form new_add_input"
                 placeholder="996"
@@ -93,6 +94,7 @@ const Login = ({ Alert }) => {
                 Пароль <span>*</span>
               </label>
               <input
+                required
                 className="input_form new_add_input"
                 type={visible ? "text" : "password"}
                 placeholder="Пароль"

@@ -72,6 +72,7 @@ const ResetThePassword = ({ Alert }) => {
               Номер телефона <span>*</span>
             </label>
             <input
+              required
               id="phone"
               className="input_form new_add_input"
               placeholder="Введите номер"

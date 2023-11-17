@@ -45,6 +45,7 @@ const Registration = ({ Alert }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true);
     localStorage.setItem("phone", userData.phone);
     if (userData) {
       dispatch(registerStart());
@@ -61,9 +62,18 @@ const Registration = ({ Alert }) => {
           Alert("Ползователь успешно зарегистрирован", "success");
           navigate("/activation");
         }
+        if (
+          response.data.password ||
+          response.data.confirm_password ||
+          response.data.phone
+        ) {
+          setError(response.data);
+        }
+        setIsLoading(false);
       } catch (error) {
         dispatch(registerFailure(error.message));
         Alert("Text", "error");
+        setIsLoading(false);
       }
     }
   };
@@ -88,25 +98,10 @@ const Registration = ({ Alert }) => {
               <form onSubmit={handleSubmit}>
                 <div className="input_box">
                   <label>
-                    Фaмилия <span>*</span>
-                  </label>
-                  <input
-                    className="input_form new_add_input"
-                    type="text"
-                    value={userData.last_name}
-                    onChange={(e) =>
-                      setUserData({
-                        ...userData,
-                        last_name: e.target.value,
-                      })
-                    }
-                  />
-                </div>
-                <div className="input_box">
-                  <label>
                     Имя <span>*</span>
                   </label>
                   <input
+                    required
                     className="input_form new_add_input"
                     type="text"
                     value={userData.first_name}
@@ -121,9 +116,28 @@ const Registration = ({ Alert }) => {
                 </div>
                 <div className="input_box">
                   <label>
+                    Фaмилия <span>*</span>
+                  </label>
+                  <input
+                    required
+                    className="input_form new_add_input"
+                    type="text"
+                    value={userData.last_name}
+                    onChange={(e) =>
+                      setUserData({
+                        ...userData,
+                        last_name: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+
+                <div className="input_box">
+                  <label>
                     Номер телефона <span>*</span>
                   </label>
                   <input
+                    required
                     className="input_form new_add_input"
                     id="phone"
                     placeholder="Введите номер"
@@ -141,6 +155,7 @@ const Registration = ({ Alert }) => {
                     Пароль <span>*</span>
                   </label>
                   <input
+                    required
                     className="input_form new_add_input"
                     type={visible ? "text" : "password"}
                     value={userData.password}
@@ -157,15 +172,14 @@ const Registration = ({ Alert }) => {
                   >
                     {visible ? <FaEye /> : <FaEyeSlash />}
                   </span>
-                  {error.confirm_password && (
-                    <p className="red">{error.confirm_password}</p>
-                  )}
+                  {error.password && <p className="red">{error.password}</p>}
                 </div>
                 <div className="input_box">
                   <label>
                     Повторите пароль <span>*</span>
                   </label>
                   <input
+                    required
                     className="input_form new_add_input"
                     type={visible2 ? "text" : "password"}
                     value={userData.confirm_password}
@@ -182,6 +196,9 @@ const Registration = ({ Alert }) => {
                   >
                     {visible2 ? <FaEye /> : <FaEyeSlash />}
                   </span>
+                  {error.confirm_password && (
+                    <p className="red">{error.confirm_password}</p>
+                  )}
                 </div>
                 <button
                   disabled={isLoading}
