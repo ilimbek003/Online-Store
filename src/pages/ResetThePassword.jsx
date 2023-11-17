@@ -5,28 +5,46 @@ import IMask from "imask";
 import { useDispatch, useSelector } from "react-redux";
 import { forgotUser } from "../Redux/slice/ForgotSlice";
 import Loading from "../UI/Loading/Loading";
+import axios from "axios";
+import { url } from "../Api";
+import {
+  registerFailure,
+  registerSuccess,
+} from "../Redux/slice/activationReduser";
 
-const ResetThePassword = () => {
+const ResetThePassword = ({ Alert }) => {
   // states
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
-  // redus state
+  // redux state
   const { loading, error } = useSelector((state) => state.user);
-  const handleForgotEvent = (e) => {
+  const dispatch = useDispatch();
+
+  const handleForgotEvent = async (e) => {
     e.preventDefault();
-    let forgorCredential = {
+    let forgotCredential = {
       phone,
     };
-    dispatch(forgotUser(forgorCredential)).then((result) => {
-      if (result.payload) {
-        setPhone("");
-        navigate("/");
+    try {
+      const response = await axios.post(
+        url + "/auth/reset-password",
+        forgotCredential
+      );
+      localStorage.setItem("user", JSON.stringify(response.data));
+      dispatch(registerSuccess(response.data));
+      if (response.data.response === true) {
+        navigate("/registration");
+        Alert("Код подтверждения успешно отправлен", "success");
       }
-    });
+      if (response.data.response === false) {
+        Alert(response.data.message, "error");
+      }
+    } catch (error) {
+      console.error(error);
+      dispatch(registerFailure(error.message));
+    }
   };
-
-  const dispatch = useDispatch();
 
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
@@ -48,10 +66,10 @@ const ResetThePassword = () => {
       </div>
       <div className="container">
         <form className="reset_password_block" onSubmit={handleForgotEvent}>
-          <p>укажите ваш номер телефон который използовался при регистрации</p>
+          <p>укажите ваш номер телефон который использовался при регистрации</p>
           <div className="input_box">
             <label>
-              Номер телефон <span>*</span>
+              Номер телефона <span>*</span>
             </label>
             <input
               id="phone"
@@ -63,10 +81,10 @@ const ResetThePassword = () => {
           </div>
           <button
             disabled={loading}
-            type="sumbit"
+            type="submit"
             className="forgot_btn reset_btn"
           >
-            {loading ? <Loading /> : "Oтправить"}
+            {loading ? <Loading /> : "Отправить"}
           </button>
           {error && (
             <div className="alert alert-danger" role="alert">
@@ -78,4 +96,5 @@ const ResetThePassword = () => {
     </div>
   );
 };
+
 export default ResetThePassword;
