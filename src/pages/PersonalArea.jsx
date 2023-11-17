@@ -60,10 +60,7 @@ const PersonalArea = () => {
                     )}
                 </div>
                 <div className="container">
-                    <div className="top_one">
-                        {
-                            token ? <h1 className="title_h2 one">Добрый день Илияс уулу </h1> : ""
-                        }
+                    <div className="top_one one">
                         {
                             token ? "" : (
                                 <button
@@ -83,7 +80,7 @@ const PersonalArea = () => {
                                     {" "}
                                     <FiUser className="be"/>{" "}
                                 </div>
-                                <h3 className="mt-2">Менин маалыматтарым </h3>
+                                <h3 className="mt-2">Мои данные </h3>
                             </div>
                             <div className="lo">
                                 <IoIosArrowForward className="be"/>
@@ -97,7 +94,7 @@ const PersonalArea = () => {
                                 <div className="bi">
                                     <FaRegBookmark className="be"/>
                                 </div>
-                                <h3 className="mt-2">Тандалган таварлар</h3>
+                                <h3 className="mt-2">Избранные товары</h3>
                             </div>
                             <div className="lo">
                                 <IoIosArrowForward className="be"/>
@@ -108,7 +105,7 @@ const PersonalArea = () => {
                                 <div className="bi">
                                     <IoSettingsSharp className="be"/>
                                 </div>
-                                <h3 className="mt-2">Жөндөөлөр</h3>
+                                <h3 className="mt-2">Настройка</h3>
                             </div>
                             <div className="lo">
                                 <IoIosArrowForward className="be"/>
@@ -119,7 +116,7 @@ const PersonalArea = () => {
                                 <div className="bi">
                                     <BsQuestionCircle className="be"/>
                                 </div>
-                                <h3 className="mt-2">Жардам</h3>
+                                <h3 className="mt-2">Помощь</h3>
                             </div>
                             <div className="lo">
                                 <IoIosArrowForward className="be"/>

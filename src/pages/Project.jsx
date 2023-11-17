@@ -13,7 +13,6 @@ import {useParams} from "react-router-dom";
 
 
 const Project = () => {
-    const navigate = useNavigate()
     const [modals, setModals] = useState(false)
     const [data, setData] = useState([]);
     const [cart, setCart] = useState([]);
@@ -33,8 +32,10 @@ const Project = () => {
             }
             setCart(updatedCart);
             localStorage.setItem('cart', JSON.stringify(updatedCart));
+            console.log('Cart updated:', updatedCart);
         }
     };
+
     const handlePlus = (id) => {
         const itemTo = data.find((el) => el.id === id)
         if (itemTo) {
@@ -50,7 +51,6 @@ const Project = () => {
                 return newPlus;
             })
         }
-        console.log(itemTo)
     }
     const handleMinus = (id) => {
         const itemIndex = shopCart.findIndex((item) => item.id === id);

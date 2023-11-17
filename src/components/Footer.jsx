@@ -13,13 +13,13 @@ const Footer = () => {
                 <div className="flex_block">
                     <NavLink exact to="/" activeClassName="active">
                         <AiOutlineHome className="fi ai"/>
-                        <span>Башкы</span>
+                        <span>Главная</span>
                     </NavLink>
                 </div>
                 <div className="flex_block">
                     <NavLink to="/shop-all/shop" activeClassName="active">
                         <BsShop className="fi ai"/>
-                        <span>Дyкон</span>
+                        <span>Магазин</span>
                     </NavLink>
                 </div>
                 <div className="flex_block">
@@ -31,7 +31,7 @@ const Footer = () => {
                 <div className="flex_block">
                     <NavLink to="/promotion" activeClassName="active">
                         <LuBadgePercent className="fi ai"/>
-                        <span>Акциялар</span>
+                        <span>Акции</span>
                     </NavLink>
                 </div>
             </div>
