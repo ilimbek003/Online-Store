@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import ActivationCode from "../../pages/ActivationCode";
 
 const initialState = {
   code: null,
@@ -7,7 +8,7 @@ const initialState = {
   message: "",
 };
 
-const activationReducer = createSlice({
+const activationCode = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -29,8 +30,8 @@ const activationReducer = createSlice({
 });
 
 export const { registerStart, registerSuccess, registerFailure } =
-  activationReducer.actions;
+  ActivationCode.actions;
 
-export const registerCode = (userData) => async (dispatch) => {};
+export const ActivationCode = (userData) => async (dispatch) => {};
 
-export default activationReducer.reducer;
+export default activationCode.reducer;

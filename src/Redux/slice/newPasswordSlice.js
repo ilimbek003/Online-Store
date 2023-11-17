@@ -1,13 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  code: null,
+  user: null,
   error: null,
   loading: false,
   message: "",
+  phone: "",
 };
 
-const activationReducer = createSlice({
+const newPassword = createSlice({
   name: "auth",
   initialState,
   reducers: {
@@ -17,7 +18,7 @@ const activationReducer = createSlice({
     },
     registerSuccess(state, action) {
       state.loading = false;
-      state.code = action.payload;
+      state.user = action.payload;
       state.message = action.payload.message;
       state.phone = action.payload.phone;
     },
@@ -27,10 +28,9 @@ const activationReducer = createSlice({
     },
   },
 });
-
 export const { registerStart, registerSuccess, registerFailure } =
-  activationReducer.actions;
+  newPassword.actions;
 
-export const registerCode = (userData) => async (dispatch) => {};
+export const newPasswordUser = (userData) => async (dispatch) => {};
 
-export default activationReducer.reducer;
+export default newPassword.reducer;
