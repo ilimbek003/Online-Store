@@ -311,7 +311,7 @@ label span {
 .scroll {
   width: 100%;
   overflow-x: scroll;
-  padding: 20px 0 5px 0;
+  padding: 15px 0 0px 0;
 }
 
 .scroll .tabs::-webkit-scrollbar-track {
@@ -335,7 +335,7 @@ label span {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  margin: 20px 0 0 0;
+  margin: 15px 0 0 0;
 }
 button {
   width: 100%;
