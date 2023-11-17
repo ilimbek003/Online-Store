@@ -27,6 +27,7 @@ import ResetThePassword from "./pages/ResetThePassword";
 import Activation from "./pages/Activation";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertData } from "./UI/Alert/Alert";
+import ActivationCode from "./pages/ActivationCode";
 
 const App = () => {
   const [openAlert, setOpenAlert] = useState({
@@ -110,11 +111,16 @@ const App = () => {
             element={<RegistrationQuestionnaire />}
           />
           <Route path="/login" element={<Login Alert={FuncAlert} />} />
-          <Route path="/reset-the-password" element={<ResetThePassword Alert={FuncAlert} />} />
+          <Route
+            path="/reset-the-password"
+            element={<ResetThePassword Alert={FuncAlert} />}
+          />
           <Route
             path="/activation"
             element={<Activation Alert={FuncAlert} />}
           />
+          <Route path="/activation-code" element={<ActivationCode Alert={FuncAlert}/>} />
+
           {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
           path="/my-coupon-details-id/:id"

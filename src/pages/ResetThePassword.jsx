@@ -13,14 +13,11 @@ import {
 } from "../Redux/slice/activationReduser";
 
 const ResetThePassword = ({ Alert }) => {
-  // states
   const [phone, setPhone] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-
-  // redux state
-  const { loading, error } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const { error } = useSelector((state) => state.user);
 
   const handleForgotEvent = async (e) => {
     e.preventDefault();
@@ -33,19 +30,18 @@ const ResetThePassword = ({ Alert }) => {
         url + "/auth/reset-password",
         forgotCredential
       );
-      localStorage.setItem("user", JSON.stringify(response.data));
-      dispatch(registerSuccess(response.data));
       if (response.data.response === true) {
-        navigate("/registration");
+        localStorage.setItem("phone", JSON.stringify(phone));
+        dispatch(registerSuccess(response.data));
+        navigate("/activation-code");
         Alert("Код подтверждения успешно отправлен", "success");
-      }
-      if (response.data.response === false) {
+      } else {
         Alert(response.data.message, "error");
       }
-      setIsLoading(false);
     } catch (error) {
       console.error(error);
       dispatch(registerFailure(error.message));
+    } finally {
       setIsLoading(false);
     }
   };
