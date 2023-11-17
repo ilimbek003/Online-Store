@@ -100,13 +100,13 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             {
                                 tabs.map((el, index) => (
                                     <div className="from_btn" key={el.id}>
-                                        <button
+                                        <div
                                             key={el.id}
                                             className={index === selectedIndex ? 'btn_tabs_active' : 'btn_tabs'}
                                             onClick={() => handleTabClick(el.id)}
                                         >
                                             {el.name}
-                                        </button>
+                                        </div>
                                     </div>
                                 ))
                             }
