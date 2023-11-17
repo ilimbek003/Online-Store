@@ -110,7 +110,7 @@ const App = () => {
             element={<RegistrationQuestionnaire />}
           />
           <Route path="/login" element={<Login Alert={FuncAlert} />} />
-          <Route path="/reset-the-password" element={<ResetThePassword />} />
+          <Route path="/reset-the-password" element={<ResetThePassword Alert={FuncAlert} />} />
           <Route
             path="/activation"
             element={<Activation Alert={FuncAlert} />}
