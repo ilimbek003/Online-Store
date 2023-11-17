@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
 import { url } from "../Api";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   registerFailure,
   registerStart,
@@ -17,50 +17,61 @@ const NewResetThePassword = ({ Alert }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState({});
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
-  const [local, setLocal] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [token, setToken] = useState(sessionStorage.getItem("token") || "");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setLocal(token);
-    }
-  }, []);
-
-  const headers = {
-    Authorization: `Token ${local}`,
+  const handleLogout = () => {
+    sessionStorage.removeItem("token");
+    setToken("");
   };
 
-  const handleNewSumbit = async (event) => {
+  const handleNewSubmit = async (event) => {
     event.preventDefault();
-    let newPasswordCredential = {
+    setIsLoading(true);
+
+    const newPasswordCredential = {
       password,
       confirm_password,
     };
 
     dispatch(registerStart());
     try {
+      const headers = {
+        Authorization: `Token ${token}`,
+      };
+
       const response = await axios.post(
-        url + "/auth/change-password",
+        `${url}/auth/change-password`,
         newPasswordCredential,
         { headers }
       );
-      dispatch(registerSuccess(response.data));
-      if (response.data.response == true) {
-        Alert("Ползователь успешно зарегистрирован", "success");
+
+      const authToken = response.data.token;
+      sessionStorage.setItem("token", authToken);
+      setToken(authToken);
+
+      if (response.data.response === true) {
+        Alert("Пользователь успешно зарегистрирован", "success");
         navigate("/");
       }
+
       if (response.data.password || response.data.confirm_password) {
         setError(response.data);
       }
-      setIsLoading(false);
+
+      if (response.data.response === false) {
+        Alert(response.data.message, "error");
+      }
+
+      dispatch(registerSuccess(response.data));
     } catch (error) {
       dispatch(registerFailure(error.message));
-      Alert("Text", "error");
+      Alert("Ошибка", "error");
+    } finally {
       setIsLoading(false);
     }
   };
@@ -76,7 +87,7 @@ const NewResetThePassword = ({ Alert }) => {
           </div>
         </div>
         <div className="container">
-          <form onSubmit={handleNewSumbit}>
+          <form onSubmit={handleNewSubmit}>
             <div className="input_box">
               <label>
                 Пароль <span>*</span>
