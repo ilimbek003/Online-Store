@@ -17,7 +17,6 @@ import bekbekei from "../../src/img/2.png";
 
 const PersonalArea = () => {
     const [openModal, setOpenModal] = useState(false);
-
     const isOpenModal = () => {
         setOpenModal(true);
     };
@@ -48,12 +47,12 @@ const PersonalArea = () => {
                         <div className="filters_oll" onClick={closeOpenModal}>
                             <div className="order">
                                 <div className="acaunt_block_modal">
-                                    <h3>Акаунттан чыгуу?</h3>
+                                    <h3>Выйти из аккаунта?</h3>
                                     <p>
-                                        3 кайрадан авторизациядан <br/> отушунуз керек
+                                        3 нужно пройти авторизацию <br/> еще раз
                                     </p>
-                                    <button>Ооба, чыгам</button>
-                                    <h4>Жок, калам</h4>
+                                    <button onClick={() => localStorage.removeItem('token')}>Да, я выйду</button>
+                                    <h4>Нет, я останусь</h4>
                                 </div>
                             </div>
                         </div>
