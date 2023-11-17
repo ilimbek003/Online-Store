@@ -32,8 +32,11 @@ const Activation = ({ Alert }) => {
         navigate("/");
         Alert("Верификация прошло успешно", "success");
       }
-      if(response.data.response=== false) {
-    Alert(response.data.message, 'error')
+      if (response.data.response === false) {
+        Alert(response.data.message, "error");
+      }
+      if (response.data.token) {
+        localStorage.setItem("token", response.data.token);
       }
     } catch (error) {
       dispatch(registerFailure(error.message));

@@ -1029,3 +1029,10 @@ input#file-upload-button {
 .top {
   margin-top: 60px;
 }
+.red {
+  text-align: end;
+  font-weight: 400;
+  font-size: 13px;
+  color: red;
+  margin-top: 0px !important;
+}
