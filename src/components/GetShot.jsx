@@ -43,12 +43,12 @@ const GetShot = ({token}) => {
                     <div className="get_shot">
                         <div className="container">
                             <div className="title">
-                                <p>Сатып алууга шашыл</p>
+                                <p>Успей купить</p>
                                 <h4
                                     className="title_add"
                                     onClick={() => navigate("/get-shot-details")}
                                 >
-                                    Бардыгы <MdOutlineKeyboardArrowRight size={20}/>
+                                    Все <MdOutlineKeyboardArrowRight size={20}/>
                                 </h4>
                             </div>
                             <div className="get_block_all">

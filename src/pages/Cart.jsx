@@ -1,6 +1,6 @@
 import React from 'react';
-import {HiArrowLongLeft } from "react-icons/hi2";
-import {BsBookmark } from "react-icons/bs";
+import {HiArrowLongLeft} from "react-icons/hi2";
+import {BsBookmark} from "react-icons/bs";
 import {AiOutlineMinus, AiOutlinePlus} from "react-icons/ai";
 import {useNavigate} from "react-router-dom";
 import icons from "../img/39ecb5044ff738dd9a74c9174b026b8e.jpg"
@@ -31,7 +31,7 @@ const Cart = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                                                 className="blocks"
                                                 onClick={() => navigate(`/shop-all/product/${el.id}`)}
                                             >
-                                                <img src={el.images} alt=""/>
+                                                <img src={el.img} alt=""/>
                                                 {
                                                     localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
                                                         <div className='hover_blocks'>
@@ -41,66 +41,68 @@ const Cart = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                                             </div>
                                             <div className="all">
                                                 <h3 className="title_one mt">{el.title}</h3>
-                                                <div className="d-flex  justify-content-between mt-2">
+                                                <div
+                                                    className="d-flex align-items-center  justify-content-between mt-2">
                                                     <p className="project">
-                                                        <span>{el.pack}</span>
+                                                        <span>{el.price_for} шт </span>
                                                     </p>
                                                     <h2>{el.price} сом</h2>
-                                                </div>
-                                            </div>
-                                            <div className="flex mt-2">
-                                                <div className="marks">
-                                                    <BsBookmark
-                                                        className={
-                                                            localStorage.getItem(`activeItem_${el.id}`) === `active`
-                                                                ? 'active'
-                                                                : ''
-                                                        }
-                                                        onClick={() => saveToLocalStorage(el.id)}
-                                                    />
-                                                </div>
-                                                <div className={
-                                                    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`
-                                                        ? 'active_plus'
-                                                        : 'plus'
-                                                }>
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            <AiOutlineMinus
-                                                                className='fi_ones'
-                                                                onClick={() => handleMinus(el.id)}
-                                                            /> : ''
-                                                    }
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            (
-                                                                <p className="fi_ones">
-                                                                    <span key={el.id}>{mun[el.id]}</span>
-                                                                    <span>шт</span>
-                                                                </p>
-                                                            ) :
-                                                            (
-                                                                <p className='title_one font'>
-                                                                    Кошуу
-                                                                </p>
-                                                            )
-                                                    }
-                                                    {
-                                                        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?
-                                                            <AiOutlinePlus className='fi_ones' onClick={() => handlePlus(el.id)}/>
-                                                            :
-                                                            <AiOutlinePlus className='fi ai_out' onClick={() => handlePlus(el.id)}/>
-                                                    }
-                                                </div>
-                                            </div>
-                                            {
-                                                (plus[el.id] || 0) === 0 ? "" :
-                                                    <div className="container">
-                                                        <button className="btn_button" onClick={() => navigate("/shop-all/basket")}>
-                                                            {plus[el.id]} - {plus[el.id] * el.price}
-                                                        </button>
+                                                    <div className="marks">
+                                                        <BsBookmark
+                                                            className={
+                                                                localStorage.getItem(`activeItem_${el.id}`) === `active` ? 'active' : ''
+                                                            }
+                                                            onClick={() => saveToLocalStorage(el.id)}
+                                                        />
                                                     </div>
-                                            }
+                                                </div>
+                                            </div>
+                                            {/*<div className="flex mt-2">*/}
+                                            {/*    <div className={*/}
+                                            {/*        localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`*/}
+                                            {/*            ? 'active_plus'*/}
+                                            {/*            : 'plus'*/}
+                                            {/*    }>*/}
+                                            {/*        {*/}
+                                            {/*            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?*/}
+                                            {/*                <AiOutlineMinus*/}
+                                            {/*                    className='fi_ones'*/}
+                                            {/*                    onClick={() => handleMinus(el.id)}*/}
+                                            {/*                /> : ''*/}
+                                            {/*        }*/}
+                                            {/*        {*/}
+                                            {/*            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?*/}
+                                            {/*                (*/}
+                                            {/*                    <p className="fi_ones">*/}
+                                            {/*                        <span key={el.id}>{mun[el.id]}</span>*/}
+                                            {/*                        <span>шт</span>*/}
+                                            {/*                    </p>*/}
+                                            {/*                ) :*/}
+                                            {/*                (*/}
+                                            {/*                    <p className='title_one font'>*/}
+                                            {/*                        Кошуу*/}
+                                            {/*                    </p>*/}
+                                            {/*                )*/}
+                                            {/*        }*/}
+                                            {/*        {*/}
+                                            {/*            localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?*/}
+                                            {/*                <AiOutlinePlus className='fi_ones'*/}
+                                            {/*                               onClick={() => handlePlus(el.id)}/>*/}
+                                            {/*                :*/}
+                                            {/*                <AiOutlinePlus className='fi ai_out'*/}
+                                            {/*                               onClick={() => handlePlus(el.id)}/>*/}
+                                            {/*        }*/}
+                                            {/*    </div>*/}
+                                            {/*</div>*/}
+                                            {/*{*/}
+                                            {/*    (plus[el.id] || 0) === 0 ? "" :*/}
+                                            {/*        <div className="container">*/}
+                                            {/*            <button className="btn_button"*/}
+                                            {/*                    onClick={() => navigate("/shop-all/basket")}>*/}
+                                            {/*                {plus[el.id]} - {plus[el.id] * el.price}*/}
+                                            {/*            </button>*/}
+                                            {/*        </div>*/}
+                                            {/*}*/}
                                         </div>
                                     ))}
                                 </div>
