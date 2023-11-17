@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import "./Storis.css"
 import StorisContent from './StorisContent'
 import axios from 'axios'
 import {url} from "../Api";
 
-const Storis = () => {
+const Storis = ({token}) => {
     const [stories, setStories] = useState([])
 
     useEffect(() => {
@@ -18,13 +18,20 @@ const Storis = () => {
     }, [])
 
     return (
-        <div className='storis'>
-            <div className="storis_block">
-                {stories && stories.map((el, id) =>
-                    <StorisContent key={id} data={el} />
-                )}
-            </div>
-        </div>
+        <>
+            {
+                token ?
+                    <div className='storis'>
+                        <div className="storis_block">
+                            {stories && stories.map((el, id) =>
+                                <StorisContent key={id} data={el}/>
+                            )}
+                        </div>
+                    </div> : (
+                        ""
+                    )
+            }
+        </>
     )
 }
 
