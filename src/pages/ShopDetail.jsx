@@ -34,10 +34,28 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             .then((response) => setData(response.data))
 
     }, [])
+
     const fetchData = async (subCatId, selectedTitle) => {
         try {
             const response = await axios.get(
                 `${url}/${api}?pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}&search=${query}&sub_cat=${subCatId}`
+            );
+            const categoryProducts = response.data;
+            setData(categoryProducts);
+        } catch (error) {
+            console.error("Ошибка при получении данных:", error);
+        } finally {
+            setFilters(false);
+            setSearch(false);
+            setRequests({
+                budget: [MIN, MAX],
+            })
+        }
+    };
+    const filtersData = async (subCatId, selectedTitle) => {
+        try {
+            const response = await axios.get(
+                `${url}/${api}?pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}&search=${query}`
             );
             const categoryProducts = response.data;
             setData(categoryProducts);
@@ -194,7 +212,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             <div className="container">
                                 <button
                                     className="btn_button all_btn"
-                                    onClick={fetchData}
+                                    onClick={filtersData}
                                 >
                                     Колдонуу
                                 </button>
