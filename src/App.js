@@ -28,6 +28,7 @@ import Activation from "./pages/Activation";
 import "react-toastify/dist/ReactToastify.css";
 import { AlertData } from "./UI/Alert/Alert";
 import ActivationCode from "./pages/ActivationCode";
+import NewResetThePassword from "./pages/NewResetThePassword";
 
 const App = () => {
   const [openAlert, setOpenAlert] = useState({
@@ -119,8 +120,11 @@ const App = () => {
             path="/activation"
             element={<Activation Alert={FuncAlert} />}
           />
-          <Route path="/activation-code" element={<ActivationCode Alert={FuncAlert}/>} />
-
+          <Route
+            path="/activation-code"
+            element={<ActivationCode Alert={FuncAlert} />}
+          />
+          <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
           {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
           path="/my-coupon-details-id/:id"

@@ -22,11 +22,15 @@ const Activation = ({ Alert }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const phone = localStorage.getItem("phone");
+    let activationCredential = {
+      phone,
+      code,
+    };
     try {
-      const response = await axios.post(url + "/auth/verify-phone", {
-        phone,
-        code,
-      });
+      const response = await axios.post(
+        url + "/auth/verify-phone",
+        activationCredential
+      );
       dispatch(registerSuccess(response.data));
       if (response.data.response === true) {
         navigate("/");
