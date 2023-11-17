@@ -15,6 +15,7 @@ import {
 const ResetThePassword = ({ Alert }) => {
   // states
   const [phone, setPhone] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   // redux state
@@ -23,6 +24,7 @@ const ResetThePassword = ({ Alert }) => {
 
   const handleForgotEvent = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let forgotCredential = {
       phone,
     };
@@ -40,9 +42,11 @@ const ResetThePassword = ({ Alert }) => {
       if (response.data.response === false) {
         Alert(response.data.message, "error");
       }
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
       dispatch(registerFailure(error.message));
+      setIsLoading(false);
     }
   };
 
@@ -81,11 +85,11 @@ const ResetThePassword = ({ Alert }) => {
             />
           </div>
           <button
-            disabled={loading}
+            disabled={isLoading}
             type="submit"
             className="forgot_btn reset_btn"
           >
-            {loading ? <Loading /> : "Отправить"}
+            {isLoading ? <Loading /> : "Отправить"}
           </button>
           {error && (
             <div className="alert alert-danger" role="alert">
