@@ -33,6 +33,7 @@ const shot = [
 
 const GetShot = () => {
   const navigate = useNavigate();
+  const token = JSON.parse(localStorage.getItem('token'));
   return (
     <div className="get_shot">
       <div className="container">
