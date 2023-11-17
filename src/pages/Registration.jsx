@@ -25,7 +25,8 @@ const Registration = ({ Alert }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const { message, error, phone } = useSelector((state) => state.auth);
+  const { message, phone } = useSelector((state) => state.auth);
+  const [error, setError] = useState([]);
   const [userData, setUserData] = useState({
     last_name: "",
     first_name: "",
@@ -116,6 +117,7 @@ const Registration = ({ Alert }) => {
                       })
                     }
                   />
+                  {error.last_name && <p className="red">{error.last_name}</p>}
                 </div>
                 <div className="input_box">
                   <label>
@@ -155,6 +157,9 @@ const Registration = ({ Alert }) => {
                   >
                     {visible ? <FaEye /> : <FaEyeSlash />}
                   </span>
+                  {error.confirm_password && (
+                    <p className="red">{error.confirm_password}</p>
+                  )}
                 </div>
                 <div className="input_box">
                   <label>
@@ -181,7 +186,7 @@ const Registration = ({ Alert }) => {
                 <button
                   disabled={isLoading}
                   onSubmit={handleSubmit}
-                  className="phone_btn"
+                  className=" phone_btn"
                 >
                   {isLoading ? <Loading /> : "Регистрация"}
                 </button>
