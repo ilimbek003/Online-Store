@@ -39,6 +39,9 @@ const ActivationCode = ({ Alert }) => {
       if (response.data.response === false) {
         Alert(response.data.message, "error");
       }
+      if (response.data.token) {
+        localStorage.setItem("token", JSON.stringify(response.data.token));
+      }
     } catch (error) {
       dispatch(registerFailure(error.message));
       setIsLoading(false);

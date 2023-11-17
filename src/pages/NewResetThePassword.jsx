@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { FaEye } from "react-icons/fa";
@@ -20,9 +20,20 @@ const NewResetThePassword = ({ Alert }) => {
   const [error, setError] = useState([]);
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
+  const [local, setLocal] = useState("");
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setLocal(token);
+    }
+  }, []);
+
+  const headers = {
+    Authorization: `Token ${local}`,
+  };
 
   const handleNewSumbit = async (event) => {
     event.preventDefault();
@@ -35,7 +46,8 @@ const NewResetThePassword = ({ Alert }) => {
     try {
       const response = await axios.post(
         url + "/auth/change-password",
-        newPasswordCredential
+        newPasswordCredential,
+        { headers }
       );
       dispatch(registerSuccess(response.data));
       if (response.data.response == true) {
