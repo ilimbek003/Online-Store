@@ -18,7 +18,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
     const [query, setQuery] = useState([]);
     const [selectedIndex, setSelectedIndex] = useState(0);
     const navigate = useNavigate();
-    const [sub_cat, setSubCat] = useState(null);
+    const [sub_cat, setSubCat] = useState(0);
     const [title, setTitle] = useState("");
     const [filter, setFilter] = useState(false)
     const [filters, setFilters] = useState(false)
@@ -34,14 +34,10 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             .then((response) => setData(response.data))
 
     }, [])
-    const fetchData = async (subCatId) => {
+    const fetchData = async (subCatId, selectedTitle) => {
         try {
             const response = await axios.get(
-                `${url}/${api}?pricefrom=
-                ${requests.budget[0]}
-                &priceto=${requests.budget[1]}
-                &search=${encodeURIComponent(query)}
-                &sub_cat=${subCatId}&ordering=${-title}`
+                `${url}/${api}?pricefrom=${requests.budget[0]}&priceto=${requests.budget[1]}&search=${query}&sub_cat=${subCatId}`
             );
             const categoryProducts = response.data;
             setData(categoryProducts);
@@ -68,8 +64,8 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             setTitle(selectedTitle);
             fetchData(sub_cat, selectedTitle);
         }
-        console.log(title)
     };
+
     const handleInputChange = (event) => {
         setQuery(event.target.value);
     };
@@ -326,8 +322,13 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                                 <h6 className="title_one m-lg-2">По алфавиту от А до Я</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
-                                                       value={el.title} onClick={handleTitle}/>
+                                                <input
+                                                    id="wp-comment-cookies-consent"
+                                                    name="wp-comment-cookies-consent"
+                                                    type="checkbox"
+                                                    value={el.title}
+                                                    onClick={handleTitle}
+                                                />
                                                 <h6 className="title_one m-lg-2">По алфавиту от Я до А</h6>
                                             </div>
                                         </div>
