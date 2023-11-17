@@ -88,7 +88,8 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             <div id="modal">
                 <div className="nav_line">
                     <div className="nav">
-                        <div className="container d-flex justify-content-between align-items-center">
+                        <div className="container d-flex justify-content-between align-items-center"
+                             style={{margin: "7px 0 0 0"}}>
                             <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                             <h4 className="title_h5 all_title_one">
                                 {/*{data && data[0] && data[0].name}*/}
@@ -292,32 +293,38 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                                 <AiOutlineClose className="icons" onClick={() => setFilter(false)}/>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">По умолчение</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">Сначала популярные</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">Сначала акционный</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">Сначала дешевые</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">Сначала дорогие</h6>
                                             </div>
                                             <div className="d-flex mt_bt">
-                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox"
+                                                <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
+                                                       type="checkbox"
                                                        value="yes"/>
                                                 <h6 className="title_one m-lg-2">По алфавиту от А до Я</h6>
                                             </div>
