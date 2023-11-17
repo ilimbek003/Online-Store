@@ -88,8 +88,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
             <div id="modal">
                 <div className="nav_line">
                     <div className="nav">
-                        <div className="container d-flex justify-content-between align-items-center"
-                             style={{margin: "7px 0 0 0"}}>
+                        <div className="container d-flex justify-content-between align-items-center ner">
                             <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                             <h4 className="title_h5 all_title_one">
                                 {/*{data && data[0] && data[0].name}*/}
