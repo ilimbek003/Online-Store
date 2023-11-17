@@ -908,7 +908,9 @@ input#file-upload-button {
   margin-top: -60px;
   color: #fff;
   border: none;
+  border-radius: 10px;
 }
+
 .person_btn {
   margin-bottom: 20px;
 }
