@@ -38,7 +38,7 @@ p {
   background: #ffffff;
   margin: 0 auto;
   width: 90%;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 10px;
   box-shadow: 0 0.2rem 0.525rem 0 rgba(0, 0, 0, 0.08);
 }
@@ -908,7 +908,9 @@ input#file-upload-button {
   margin-top: -60px;
   color: #fff;
   border: none;
+  border-radius: 10px;
 }
+
 .person_btn {
   margin-bottom: 20px;
 }
