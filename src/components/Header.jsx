@@ -14,14 +14,18 @@ const Header = () => {
     const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false);
     const [isOpens, setIsOpens] = useState(false);
-
+    const token = JSON.parse(localStorage.getItem('token'));
     return (
         <div>
             <div className="container">
                 <div className="nav">
                     <div className="container nav_content">
-                        <FiUser className="fi" onClick={() => navigate("/dashboard") }/>
-                         <h3 className="hello">Салам, Илимбек</h3>
+                        <FiUser className="fi" onClick={() => navigate("/dashboard")}/>
+                        {
+                            token ? <h3 className="hello">Привет, Илимбек</h3> : (
+                                <img src={bekbekei} alt=""/>
+                            )
+                        }
                         <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                     </div>
                 </div>
