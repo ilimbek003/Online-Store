@@ -905,7 +905,6 @@ input#file-upload-button {
 .registr_btn {
   background: var(--orange);
   margin-bottom: 40px;
-  margin-top: -60px;
   color: #fff;
   border: none;
   border-radius: 10px;

@@ -29,6 +29,7 @@ const Login = ({ Alert }) => {
   // states
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   //
   const { loading, error } = useSelector((state) => state.user);
 
@@ -36,6 +37,7 @@ const Login = ({ Alert }) => {
 
   const handleLoginEvent = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     let userCredential = {
       phone,
       password,
@@ -51,9 +53,11 @@ const Login = ({ Alert }) => {
       if (response.data.response === false) {
         Alert(response.data.message, "error");
       }
+      setIsLoading(false);
     } catch (error) {
       console.error(error);
       dispatch(registerFailure(error.message));
+      setIsLoading(false);
     }
     dispatch(loginUser(userCredential)).then((result) => {
       if (result.payload) {
@@ -111,8 +115,8 @@ const Login = ({ Alert }) => {
             >
               Забыли пароль?
             </p>
-            <button disabled={loading} type="submit" className="forgot_btn">
-              {loading ? <Loading /> : "Войти"}
+            <button disabled={isLoading} type="submit" className="forgot_btn">
+              {isLoading ? <Loading /> : "Войти"}
             </button>
             {error && (
               <div className="alert alert-danger" role="alert">
