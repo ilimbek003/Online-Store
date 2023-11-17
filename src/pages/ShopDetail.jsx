@@ -305,39 +305,63 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             <AiOutlineClose className="icons" onClick={() => setFilter(false)}/>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                onClick={() => setFilter(false)}
+                                type="checkbox"
+                                value="yes" x
+                            />
                             <h6 className="title_one m-lg-2">По умолчение</h6>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                type="checkbox"
+                                value="yes"
+                                onClick={() => setFilter(false)}
+                            />
                             <h6 className="title_one m-lg-2">Сначала популярные</h6>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                type="checkbox"
+                                value="yes"
+                                onClick={() => setFilter(false)}
+                            />
                             <h6 className="title_one m-lg-2">Сначала акционный</h6>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                type="checkbox"
+                                value="yes"
+                                onClick={() => setFilter(false)}
+                            />
                             <h6 className="title_one m-lg-2">Сначала дешевые</h6>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                type="checkbox"
+                                value="yes"
+                                onClick={() => setFilter(false)}
+                            />
                             <h6 className="title_one m-lg-2">Сначала дорогие</h6>
                         </div>
                         <div className="d-flex mt_bt">
-                            <input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent"
-                                   type="checkbox"
-                                   value="yes"/>
+                            <input
+                                id="wp-comment-cookies-consent"
+                                name="wp-comment-cookies-consent"
+                                type="checkbox"
+                                value="yes"
+                                onClick={() => setFilter(false)}
+                            />
                             <h6 className="title_one m-lg-2">По алфавиту от А до Я</h6>
                         </div>
                         <div className="d-flex mt_bt">
@@ -346,6 +370,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                 name="wp-comment-cookies-consent"
                                 type="checkbox"
                                 value={el.title}
+                                onClick={() => setFilter(false)}
                             />
                             <h6 className="title_one m-lg-2">По алфавиту от Я до А</h6>
                         </div>
