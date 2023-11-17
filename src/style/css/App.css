@@ -813,6 +813,15 @@ button {
 .block_shop {
     margin: 80px 0 0 0;
 }
+.search-button{
+    height: 45px;
+    margin: 50px auto;
+    background: #ff640d;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
 
 .all_alls {
     display: flex;

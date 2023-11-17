@@ -176,7 +176,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             value={query}
                             onChange={handleInputChange}
                         />
-                        <button className="btn_button all_btn" onClick={handleSearchButtonClick}>
+                        <button className="search-button" onClick={handleSearchButtonClick}>
                             Search
                         </button>
                     </div>
