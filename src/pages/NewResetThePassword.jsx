@@ -29,7 +29,6 @@ const NewResetThePassword = ({ Alert }) => {
     if (token) {
       setLocal(token);
     }
-    console.log(token)
   }, []);
 
   const headers = {
@@ -48,7 +47,7 @@ const NewResetThePassword = ({ Alert }) => {
       const response = await axios.post(
         url + "/auth/change-password",
         newPasswordCredential,
-        { headers: headers }
+        { headers }
       );
       dispatch(registerSuccess(response.data));
       if (response.data.response == true) {
