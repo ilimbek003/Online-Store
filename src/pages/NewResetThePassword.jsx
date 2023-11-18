@@ -28,16 +28,13 @@ const NewResetThePassword = ({Alert}) => {
     const headers = {
         Authorization: `Token ${local}`
     }
-
     const handleNewSubmit = async (event) => {
         event.preventDefault();
         setIsLoading(true);
-
         const newPasswordCredential = {
             password,
             confirm_password,
         };
-
         dispatch(registerStart());
         try {
 
@@ -46,22 +43,17 @@ const NewResetThePassword = ({Alert}) => {
                 newPasswordCredential,
                 {headers}
             );
-
-
             if (response.data.response === true) {
                 Alert("Пользователь успешно зарегистрирован", "success");
                 navigate("/");
             }
-
             if (response.data.password || response.data.confirm_password) {
                 setError(response.data);
             }
-
             if (response.data.response === false) {
                 Alert(response.data.message, "success");
                 navigate("/login");
             }
-
             dispatch(registerSuccess(response.data));
         } catch (error) {
             dispatch(registerFailure(error.message));
