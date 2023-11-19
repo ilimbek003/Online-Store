@@ -32,6 +32,7 @@ import NewResetThePassword from "./pages/NewResetThePassword";
 import {useNavigate} from "react-router";
 import mobile from "./img/mobile.svg"
 import Slider from "react-slick";
+import ToComeIn from "./components/ToComeIn";
 
 
 const App = () => {
@@ -154,86 +155,9 @@ const App = () => {
                             <Footer/>
                         </div>
                     </div> : (
-                        <div className="background_register_login">
-                            <Routes>
-                                <Route
-                                    path="/registration"
-                                    element={<Registration Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/registration-questionnare"
-                                    element={<RegistrationQuestionnaire/>}
-                                />
-                                <Route path="/login" element={<Login Alert={FuncAlert}/>}/>
-                                <Route
-                                    path="/reset-the-password"
-                                    element={<ResetThePassword Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/activation"
-                                    element={<Activation Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/activation-code"
-                                    element={<ActivationCode Alert={FuncAlert}/>}
-                                />
-                                <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
-                            </Routes>
-                            <div className="container">
-                                <Slider {...settings}>
-                                    <div className="mobile">
-                                        <img src={mobile} alt=""/>
-                                        <h5>Все операции в единой платформе</h5>
-                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
-                                            фиатные деньги
-                                            в
-                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
-                                            единой
-                                            платформе.</p>
-                                    </div>
-                                    <div className="mobile">
-                                        <img src={mobile} alt=""/>
-                                        <h5>Все операции в единой платформе</h5>
-                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
-                                            фиатные деньги
-                                            в
-                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
-                                            единой
-                                            платформе.</p>
-                                    </div>
-                                    <div className="mobile">
-                                        <img src={mobile} alt=""/>
-                                        <h5>Все операции в единой платформе</h5>
-                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
-                                            фиатные деньги
-                                            в
-                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
-                                            единой
-                                            платформе.</p>
-                                    </div>
-                                </Slider>
-                                <div>
-                                    <div className="register_login">
-                                        <div>
-                                            <button
-                                                onClick={() => navigate("/registration")}
-                                                className="registr_btn all_register_btn"
-                                            >
-                                                Регистрация
-                                            </button>
-                                        </div>
-                                        <div>
-                                            <button
-                                                onClick={() => navigate("/login")}
-                                                className="registr_btn"
-                                            >
-                                                Войти
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <Routes>
+                            <Route path="to-come-in" element={<ToComeIn/>}/>
+                        </Routes>
                     )
             }
         </>

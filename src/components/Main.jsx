@@ -21,16 +21,6 @@ const Main = () => {
                     <Storis token={token}/>
                 </div>
                 {
-                    token ? "" : (
-                        <button
-                            onClick={() => navigate("/registration")}
-                            className="registr_btn"
-                        >
-                            Войти
-                        </button>
-                    )
-                }
-                {
                     token ?
                         <div>
                             <div className="margin_top_all">
