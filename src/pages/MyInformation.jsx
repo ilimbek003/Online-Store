@@ -18,9 +18,13 @@ const MyInformation = () => {
 
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [cityModal, setCityModal] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [option, setOption] = useState("");
+  const [chekbox, setChekbox] = useState(false);
+  const [select, setSelect] = useState(false);
+  const [selectOne, setSelectOne] = useState(false);
+  const [selectTwo, setSelectTwo] = useState(false);
+  const [selectThree, setSelectThree] = useState(false);
+  const [selectFour, setSelectFour] = useState(false);
+  const [selectFife, setSelectFife] = useState(false);
 
   return (
     <div id="modal">
@@ -63,6 +67,16 @@ const MyInformation = () => {
               <input className="input_form new_add_input" type="text" />
             </div>
             <div className="input_box">
+              <div
+                className="select_input"
+                onClick={() =>
+                  setSelect(!select) ||
+                  setSelectOne(false) ||
+                  setSelectTwo(false) ||
+                  setSelectThree(false) ||
+                  setSelectFour(false)
+                }
+              ></div>
               <label>Тили</label>
               <div className="toggle_block infor_block">
                 <input style={{}} className="input_option" type="button" />
@@ -74,14 +88,58 @@ const MyInformation = () => {
               </div>
             </div>
             <div className="input_box">
+              <div
+                className="select_input"
+                onClick={() =>
+                  setSelect(false) ||
+                  setSelectOne(!selectOne) ||
+                  setSelectTwo(false) ||
+                  setSelectThree(false) ||
+                  setSelectFour(false)
+                }
+              ></div>
               <label>Уй-булолук абалы</label>
-              <input className="input_form new_add_input" type="text" />
+              <div className="toggle_block infor_block">
+                <input className="input_option" type="button" />
+                <MdKeyboardArrowDown
+                  className="right_icons"
+                  style={{ cursor: "pointer" }}
+                  size={30}
+                />
+              </div>
             </div>
             <div className="input_box">
+              <div
+                className="select_input"
+                onClick={() =>
+                  setSelect(false) ||
+                  setSelectOne(false) ||
+                  setSelectTwo(!selectTwo) ||
+                  setSelectThree(false) ||
+                  setSelectFour(false)
+                }
+              ></div>
               <label>Социалдык абалы</label>
-              <input className="input_form new_add_input" type="text" />
+              <div className="toggle_block infor_block">
+                <input className="input_option" type="button" />
+                <MdKeyboardArrowDown
+                  className="right_icons"
+                  style={{ cursor: "pointer" }}
+                  size={30}
+                />
+              </div>
             </div>
             <div className="input_box">
+              <div
+                className="select_input"
+                onClick={() =>
+                  setSelect(false) ||
+                  setSelectOne(false) ||
+                  setSelectTwo(false) ||
+                  setSelectThree(!selectThree) ||
+                  setSelectFour(false)
+                }
+              ></div>
               <label>Жашаган шаары</label>
               <div className="toggle_block infor_block">
                 <input className="input_option" type="button" />
@@ -114,3 +172,53 @@ const MyInformation = () => {
 };
 
 export default MyInformation;
+
+//    <div className="input_box">
+// <div
+// onClick={() =>
+//   setToursTwo(!toursTwo) ||
+//   setToursThree(false) ||
+//   setToursFour(false) ||
+//   setToursFife(false) ||
+//   setTours(false) ||
+//   setChekbox(false)
+// }
+// className="select_input"
+// ></div>
+// <input
+// value={dataTours.transport}
+// disabled={true}
+// onChange={(e) =>
+//   setDataTours({ ...dataTours, transport: e.target.value })
+// }
+// type="text"
+// placeholder={t("key17")}
+// className="category_box"
+// />
+// <RiArrowDownSLine
+// onClick={() => setToursTwo(!toursTwo)}
+// className="icon"
+// size={25}
+// />
+// {toursTwo && (
+// <Select>
+//   {list.transport &&
+//     list.transport &&
+//     list.transport.map((el) => (
+//       <div
+//         key={el.id}
+//         onClick={() => {
+//           setDataTours({
+//             ...dataTours,
+//             transport: el.name,
+//           });
+//           setToursTwo(false);
+//         }}
+//         className="select_box"
+//       >
+//         {el.name}
+//       </div>
+//     ))}
+// </Select>
+// )}
+// </div>
