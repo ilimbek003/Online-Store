@@ -965,7 +965,7 @@ input#file-upload-button {
   border: none;
   color: #fff;
   font-size: 18px;
-  background: #8d99ae;
+  background: var(--orange);
   margin-top: 20px;
 }
 
