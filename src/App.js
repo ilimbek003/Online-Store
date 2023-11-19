@@ -29,23 +29,11 @@ import "react-toastify/dist/ReactToastify.css";
 import {AlertData} from "./UI/Alert/Alert";
 import ActivationCode from "./pages/ActivationCode";
 import NewResetThePassword from "./pages/NewResetThePassword";
-import {useNavigate} from "react-router";
-import mobile from "./img/mobile.svg"
-import Slider from "react-slick";
 import ToComeIn from "./components/ToComeIn";
 
 
 const App = () => {
-    const settings = {
-        focusOnSelect: true,
-        infinite: true,
-        dots:true,
-        arrows:false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        speed: 500
-    };
-    const navigate = useNavigate();
+
     const [openAlert, setOpenAlert] = useState({
         open: false,
         props: "",
@@ -121,6 +109,20 @@ const App = () => {
                                 <Route path="shop-all/*" element={<Project/>}/>
                                 <Route path="/qr-cod" element={<QrCode/>}/>
                                 <Route path="/my-information" element={<MyInformation/>}/>
+                                {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
+        <Route
+          path="/my-coupon-details-id/:id"
+          element={<MyCouponDetailsId />}
+        /> */}
+                                {/* <Route path="/my-orders" element={<MyOrders />} /> */}
+                                {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
+                                {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
+                            </Routes>
+                            <Footer/>
+                        </div>
+                    </div> : (
+                        <div className="background_register_login">
+                            <Routes>
                                 <Route
                                     path="/registration"
                                     element={<Registration Alert={FuncAlert}/>}
@@ -143,21 +145,13 @@ const App = () => {
                                     element={<ActivationCode Alert={FuncAlert}/>}
                                 />
                                 <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
-                                {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
-        <Route
-          path="/my-coupon-details-id/:id"
-          element={<MyCouponDetailsId />}
-        /> */}
-                                {/* <Route path="/my-orders" element={<MyOrders />} /> */}
-                                {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
-                                {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
                             </Routes>
-                            <Footer/>
+                            <div className="container">
+                                <Routes>
+                                    <Route path="to-come-in" element={<ToComeIn/>}/>
+                                </Routes>
+                            </div>
                         </div>
-                    </div> : (
-                        <Routes>
-                            <Route path="to-come-in" element={<ToComeIn/>}/>
-                        </Routes>
                     )
             }
         </>

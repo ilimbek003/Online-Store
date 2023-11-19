@@ -884,6 +884,7 @@ button {
     position: absolute;
     width: 90%;
     bottom: 0;
+    right: 19px;
 }
 
 .register_login div {

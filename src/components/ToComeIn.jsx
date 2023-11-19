@@ -1,43 +1,22 @@
 import React from 'react';
-import {Route, Routes} from "react-router-dom";
-import Registration from "../pages/Registration";
-import RegistrationQuestionnaire from "../pages/RegistrationQuestionnaire";
-import Login from "../pages/Login";
-import ResetThePassword from "../pages/ResetThePassword";
-import Activation from "../pages/Activation";
-import ActivationCode from "../pages/ActivationCode";
-import NewResetThePassword from "../pages/NewResetThePassword";
 import Slider from "react-slick";
 import mobile from "../img/mobile.svg";
+import {useNavigate} from "react-router";
 
 const ToComeIn = () => {
+    const settings = {
+        focusOnSelect: true,
+        infinite: true,
+        dots: true,
+        arrows: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 500
+    };
+    const navigate = useNavigate();
     return (
         <>
             <div className="background_register_login">
-                <Routes>
-                    <Route
-                        path="/registration"
-                        element={<Registration Alert={FuncAlert}/>}
-                    />
-                    <Route
-                        path="/registration-questionnare"
-                        element={<RegistrationQuestionnaire/>}
-                    />
-                    <Route path="/login" element={<Login Alert={FuncAlert}/>}/>
-                    <Route
-                        path="/reset-the-password"
-                        element={<ResetThePassword Alert={FuncAlert}/>}
-                    />
-                    <Route
-                        path="/activation"
-                        element={<Activation Alert={FuncAlert}/>}
-                    />
-                    <Route
-                        path="/activation-code"
-                        element={<ActivationCode Alert={FuncAlert}/>}
-                    />
-                    <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
-                </Routes>
                 <div className="container">
                     <Slider {...settings}>
                         <div className="mobile">

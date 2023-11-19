@@ -51,7 +51,7 @@ const PersonalArea = () => {
                                     <p>
                                         3 нужно пройти авторизацию <br/> еще раз
                                     </p>
-                                    <button onClick={() => localStorage.removeItem('token')}>Да, я выйду</button>
+                                    <button onClick={() => localStorage.removeItem('token') || navigate("/to-come-in")}>Да, я выйду</button>
                                     <h4>Нет, я останусь</h4>
                                 </div>
                             </div>
@@ -60,16 +60,6 @@ const PersonalArea = () => {
                 </div>
                 <div className="container">
                     <div className="top_one one">
-                        {
-                            token ? "" : (
-                                <button
-                                    onClick={() => navigate("/registration")}
-                                    className="registr_btn person_btn"
-                                >
-                                    Войти
-                                </button>
-                            )
-                        }
                         <div
                             className="area_all"
                             onClick={() => navigate(`/my-information`)}
