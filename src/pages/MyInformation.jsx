@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { AiOutlineClose } from "react-icons/ai";
 import { TbFileSettings } from "react-icons/tb";
 import IMask from "imask";
+import Select from "../UI/Loading/Select/Select";
 
 const MyInformation = () => {
   useEffect(() => {
@@ -36,8 +37,8 @@ const MyInformation = () => {
         </div>
       </div>
       <div className="container">
-        <div className="input_form_block top">
-          <form>
+        <form action="">
+          <div className="input_form_block top">
             <div className="input_box">
               <label>Авторизация телефону</label>
               <input
@@ -85,6 +86,11 @@ const MyInformation = () => {
                   style={{ cursor: "pointer" }}
                   size={30}
                 />
+                {select && (
+                  <Select>
+                    <div>Ihsan</div>
+                  </Select>
+                )}
               </div>
             </div>
             <div className="input_box">
@@ -106,6 +112,11 @@ const MyInformation = () => {
                   style={{ cursor: "pointer" }}
                   size={30}
                 />
+                {selectOne && (
+                  <Select>
+                    <div>Dida</div>
+                  </Select>
+                )}
               </div>
             </div>
             <div className="input_box">
@@ -127,6 +138,11 @@ const MyInformation = () => {
                   style={{ cursor: "pointer" }}
                   size={30}
                 />
+                {selectTwo && (
+                  <Select>
+                    <h1>hhhh</h1>
+                  </Select>
+                )}
               </div>
             </div>
             <div className="input_box">
@@ -150,22 +166,22 @@ const MyInformation = () => {
                 />
               </div>
             </div>
-            <div className="toggle_block toogle_block_inform">
-              <p>Уй-жаныбарларынын болушу</p>
-              <label className="switch">
-                <input type="checkbox" />
-                <span className="slider_toggle round"></span>
-              </label>
-            </div>
-            <div className="toggle_block toogle_block_inform bottom_tom">
-              <p>Унаанын болушу</p>
-              <label className="switch">
-                <input type="checkbox" />
-                <span className="slider_toggle round"></span>
-              </label>
-            </div>
-          </form>
-        </div>
+          </div>
+          <div className="toggle_block toogle_block_inform">
+            <p>Уй-жаныбарларынын болушу</p>
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider_toggle round"></span>
+            </label>
+          </div>
+          <div className="toggle_block toogle_block_inform bottom_tom">
+            <p>Унаанын болушу</p>
+            <label className="switch">
+              <input type="checkbox" />
+              <span className="slider_toggle round"></span>
+            </label>
+          </div>
+        </form>
       </div>
     </div>
   );
