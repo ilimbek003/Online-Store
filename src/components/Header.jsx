@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {FiUser} from "react-icons/fi"
 import {BiBell} from "react-icons/bi"
-import bekbekei from "../img/2.png"
+import bekbekei from "../img/bekbekei-h-logo.svg"
 import '../style/css/App.css'
 import '../style/css/media.css'
 import "../style/css/main.css"
@@ -21,11 +21,7 @@ const Header = () => {
                 <div className="nav">
                     <div className="container nav_content">
                         <FiUser className="fi" onClick={() => navigate("/dashboard")}/>
-                        {
-                            token ? <h3 className="hello">Привет, Илимбек</h3> : (
-                                <img src={bekbekei} alt=""/>
-                            )
-                        }
+                        <img src={bekbekei} alt=""/>
                         <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                     </div>
                 </div>
