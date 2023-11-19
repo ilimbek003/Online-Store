@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { Routes, Route, useLocation } from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 import Promotion from "./pages/Promotion";
 import SpecialDetails from "./pages/SpecialDetails";
 import SpecialDetailsId from "./pages/SpecialDetailsId";
@@ -26,118 +26,218 @@ import Login from "./pages/Login";
 import ResetThePassword from "./pages/ResetThePassword";
 import Activation from "./pages/Activation";
 import "react-toastify/dist/ReactToastify.css";
-import { AlertData } from "./UI/Alert/Alert";
+import {AlertData} from "./UI/Alert/Alert";
 import ActivationCode from "./pages/ActivationCode";
 import NewResetThePassword from "./pages/NewResetThePassword";
+import {useNavigate} from "react-router";
+import mobile from "./img/mobile.svg"
+import Slider from "react-slick";
+
 
 const App = () => {
-  const [openAlert, setOpenAlert] = useState({
-    open: false,
-    props: "",
-    text: "",
-  });
-  const location = useLocation();
+    const settings = {
+        focusOnSelect: true,
+        infinite: true,
+        dots:true,
+        arrows:false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 500
+    };
+    const navigate = useNavigate();
+    const [openAlert, setOpenAlert] = useState({
+        open: false,
+        props: "",
+        text: "",
+    });
+    const location = useLocation();
 
-  const handleScroll = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+    const handleScroll = () => {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    };
 
-  useEffect(() => {
-    handleScroll();
-  }, [location]);
+    useEffect(() => {
+        handleScroll();
+    }, [location]);
 
-  function FuncAlert(text, props) {
-    setTimeout(() => {
-      setOpenAlert({
-        ...openAlert,
-        open: true,
-        text: text,
-        props: props,
-      });
-    }, 200);
-    setOpenAlert({ ...openAlert, open: false });
-  }
-
-  useEffect(() => {
-    if (openAlert.open) {
-      const timeoutId = setTimeout(() => {
-        setOpenAlert({ ...openAlert, open: false });
-      }, 3000);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
+    function FuncAlert(text, props) {
+        setTimeout(() => {
+            setOpenAlert({
+                ...openAlert,
+                open: true,
+                text: text,
+                props: props,
+            });
+        }, 200);
+        setOpenAlert({...openAlert, open: false});
     }
-  }, [openAlert.open]);
 
-  return (
-    <>
-      {/* <ToastContainer /> */}
-      {openAlert.open && (
-        <AlertData
-          state={openAlert}
-          setState={setOpenAlert}
-          propsData={openAlert.props}
-          text={openAlert.text}
-        />
-      )}
-      <div>
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="promotion" element={<Promotion />} />
-          <Route path="/special-details" element={<SpecialDetails />} />
-          <Route
-            path="/special-details-id/:id"
-            element={<SpecialDetailsId />}
-          />
-          <Route path="/get-shot-details" element={<GetShotDetails />} />
-          <Route
-            path="/get-shot-details-id/:id"
-            element={<GetShotDetailsId />}
-          />
-          <Route path="/to-help-page" element={<ToHelpPage />} />
-          <Route path="/message-page" element={<MessagePage />} />
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/new-address" element={<NewAddress />} />
-          <Route path="/dashboard" element={<PersonalArea />} />
-          <Route path="shop-all/*" element={<Project />} />
-          <Route path="/qr-cod" element={<QrCode />} />
-          <Route path="/my-information" element={<MyInformation />} />
-          <Route
-            path="/registration"
-            element={<Registration Alert={FuncAlert} />}
-          />
-          <Route
-            path="/registration-questionnare"
-            element={<RegistrationQuestionnaire />}
-          />
-          <Route path="/login" element={<Login Alert={FuncAlert} />} />
-          <Route
-            path="/reset-the-password"
-            element={<ResetThePassword Alert={FuncAlert} />}
-          />
-          <Route
-            path="/activation"
-            element={<Activation Alert={FuncAlert} />}
-          />
-          <Route
-            path="/activation-code"
-            element={<ActivationCode Alert={FuncAlert} />}
-          />
-          <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
-          {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
+    useEffect(() => {
+        if (openAlert.open) {
+            const timeoutId = setTimeout(() => {
+                setOpenAlert({...openAlert, open: false});
+            }, 3000);
+
+            return () => {
+                clearTimeout(timeoutId);
+            };
+        }
+    }, [openAlert.open]);
+    const token = JSON.parse(localStorage.getItem('token'));
+    return (
+        <>
+            {
+                token ?
+                    <div>
+                        {/* <ToastContainer /> */}
+                        {openAlert.open && (
+                            <AlertData
+                                state={openAlert}
+                                setState={setOpenAlert}
+                                propsData={openAlert.props}
+                                text={openAlert.text}
+                            />
+                        )}
+                        <div>
+                            <Routes>
+                                <Route path="/" element={<Main/>}/>
+                                <Route path="promotion" element={<Promotion/>}/>
+                                <Route path="/special-details" element={<SpecialDetails/>}/>
+                                <Route
+                                    path="/special-details-id/:id"
+                                    element={<SpecialDetailsId/>}
+                                />
+                                <Route path="/get-shot-details" element={<GetShotDetails/>}/>
+                                <Route
+                                    path="/get-shot-details-id/:id"
+                                    element={<GetShotDetailsId/>}
+                                />
+                                <Route path="/to-help-page" element={<ToHelpPage/>}/>
+                                <Route path="/message-page" element={<MessagePage/>}/>
+                                <Route path="/settings" element={<Settings/>}/>
+                                <Route path="/new-address" element={<NewAddress/>}/>
+                                <Route path="/dashboard" element={<PersonalArea/>}/>
+                                <Route path="shop-all/*" element={<Project/>}/>
+                                <Route path="/qr-cod" element={<QrCode/>}/>
+                                <Route path="/my-information" element={<MyInformation/>}/>
+                                <Route
+                                    path="/registration"
+                                    element={<Registration Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/registration-questionnare"
+                                    element={<RegistrationQuestionnaire/>}
+                                />
+                                <Route path="/login" element={<Login Alert={FuncAlert}/>}/>
+                                <Route
+                                    path="/reset-the-password"
+                                    element={<ResetThePassword Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/activation"
+                                    element={<Activation Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/activation-code"
+                                    element={<ActivationCode Alert={FuncAlert}/>}
+                                />
+                                <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
+                                {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
         <Route
           path="/my-coupon-details-id/:id"
           element={<MyCouponDetailsId />}
         /> */}
-          {/* <Route path="/my-orders" element={<MyOrders />} /> */}
-          {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
-          {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
-        </Routes>
-        <Footer />
-      </div>
-    </>
-  );
+                                {/* <Route path="/my-orders" element={<MyOrders />} /> */}
+                                {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
+                                {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
+                            </Routes>
+                            <Footer/>
+                        </div>
+                    </div> : (
+                        <div className="background_register_login">
+                            <Routes>
+                                <Route
+                                    path="/registration"
+                                    element={<Registration Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/registration-questionnare"
+                                    element={<RegistrationQuestionnaire/>}
+                                />
+                                <Route path="/login" element={<Login Alert={FuncAlert}/>}/>
+                                <Route
+                                    path="/reset-the-password"
+                                    element={<ResetThePassword Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/activation"
+                                    element={<Activation Alert={FuncAlert}/>}
+                                />
+                                <Route
+                                    path="/activation-code"
+                                    element={<ActivationCode Alert={FuncAlert}/>}
+                                />
+                                <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
+                            </Routes>
+                            <div className="container">
+                                <Slider {...settings}>
+                                    <div className="mobile">
+                                        <img src={mobile} alt=""/>
+                                        <h5>Все операции в единой платформе</h5>
+                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
+                                            фиатные деньги
+                                            в
+                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
+                                            единой
+                                            платформе.</p>
+                                    </div>
+                                    <div className="mobile">
+                                        <img src={mobile} alt=""/>
+                                        <h5>Все операции в единой платформе</h5>
+                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
+                                            фиатные деньги
+                                            в
+                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
+                                            единой
+                                            платформе.</p>
+                                    </div>
+                                    <div className="mobile">
+                                        <img src={mobile} alt=""/>
+                                        <h5>Все операции в единой платформе</h5>
+                                        <p>Пополняйте и выводите фиатные средства или криптовалюту, конвертируйте
+                                            фиатные деньги
+                                            в
+                                            криптовалюту и наоборот, заказывайте криптокарты и даже бизнес-джеты в
+                                            единой
+                                            платформе.</p>
+                                    </div>
+                                </Slider>
+                                <div>
+                                    <div className="register_login">
+                                        <div>
+                                            <button
+                                                onClick={() => navigate("/registration")}
+                                                className="registr_btn all_register_btn"
+                                            >
+                                                Регистрация
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <button
+                                                onClick={() => navigate("/login")}
+                                                className="registr_btn"
+                                            >
+                                                Войти
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+            }
+        </>
+    );
 };
 
 export default App;

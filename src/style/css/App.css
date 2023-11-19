@@ -331,7 +331,7 @@ label span {
 .scroll::-webkit-scrollbar-thumb {
     border-radius: 0;
     -webkit-box-shadow: transparent;
-    background-color:transparent;
+    background-color: transparent;
 }
 
 .filter {
@@ -813,7 +813,8 @@ button {
 .block_shop {
     margin: 80px 0 0 0;
 }
-.search-button{
+
+.search-button {
     height: 45px;
     margin: 30px auto;
     background: #ff640d;
@@ -875,4 +876,75 @@ button {
     text-align: center;
     color: black;
     padding: 0 0 5px 0;
+}
+
+.register_login {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 90%;
+    bottom: 0;
+}
+
+.register_login div {
+    width: 100%;
+    margin: 0 5px 0 5px;
+}
+
+.all_register_btn {
+    background: transparent !important;
+    border: 1px solid #000;
+    color: #000;
+}
+
+.background_register_login {
+    width: 100%;
+    min-height: 100vh;
+    background: #ffffff;
+}
+
+.mobile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    animation: ili;
+}
+
+
+.mobile img {
+    width: 150px;
+    margin: 100px auto 30px;
+}
+
+.mobile h5 {
+    color: #000;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 auto 10px;
+    text-align: center;
+}
+
+.mobile p {
+    color: #000;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    width: 318px;
+    line-height: 1;
+    margin: 0 auto;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -55px !important;
+}
+
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: black  !important;
+}
+
+.slick-dots li button:before {
+    font-size: 8px !important;
 }
