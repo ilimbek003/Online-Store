@@ -1,0 +1,31 @@
+.select {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  padding: 7px;
+  background: #fff;
+  box-shadow: 5px 10px 15px #0000007a;
+  overflow-x: hidden;
+  /* border-radius: 10px; */
+  animation: selectAnimate 0.3s ease;
+  z-index: 99999;
+}
+@keyframes selectAnimate {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 150px;
+  }
+}
+.select .select_box {
+  width: 100%;
+  padding: 4px 7px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.select .select_box:hover {
+  background: #0000002c;
+}
