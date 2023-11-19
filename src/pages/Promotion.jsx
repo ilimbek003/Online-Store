@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
-import bekbekei from "../../src/img/2.png";
+import bekbekei from "../../src/img/bekbekei-h-logo.svg";
 import GetShot from "../components/GetShot";
 import SpecialOffers from "../components/SpecialOffers";
 import { useNavigate } from "react-router";

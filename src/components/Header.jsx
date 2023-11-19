@@ -5,25 +5,19 @@ import bekbekei from "../img/bekbekei-h-logo.svg"
 import '../style/css/App.css'
 import '../style/css/media.css'
 import "../style/css/main.css"
-import PersonalArea from "../pages/PersonalArea";
 import {HiArrowLongLeft} from "react-icons/hi2";
-import {AiOutlineNotification} from "react-icons/ai"
 import {useNavigate} from "react-router-dom";
 
 const Header = () => {
     const navigate = useNavigate()
-    const [isOpen, setIsOpen] = useState(false);
     const [isOpens, setIsOpens] = useState(false);
-    const token = JSON.parse(localStorage.getItem('token'));
     return (
         <div>
-            <div className="container">
-                <div className="nav">
-                    <div className="container nav_content">
-                        <FiUser className="fi" onClick={() => navigate("/dashboard")}/>
-                        <img src={bekbekei} alt=""/>
-                        <BiBell className="fi" onClick={() => setIsOpens(true)}/>
-                    </div>
+            <div className="nav">
+                <div className="container nav_content">
+                    <FiUser className="fi" onClick={() => navigate("/dashboard")}/>
+                    <img src={bekbekei} alt=""/>
+                    <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                 </div>
             </div>
             {
@@ -32,7 +26,7 @@ const Header = () => {
                         <div className="nav">
                             <div className="container d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => setIsOpens(false)}/>
-                                <h4 className="title_h5 all_title mt-2">Кабарлоо</h4>
+                                <h4 className="title_h5 all_title">Кабарлоо</h4>
                                 <div/>
                             </div>
                         </div>

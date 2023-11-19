@@ -3,6 +3,8 @@ import "../style/css/App.css"
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {url} from "../Api";
+import bekbekei from "../img/bekbekei-h-logo.svg";
+import {HiArrowLongLeft} from "react-icons/hi2";
 
 const Shop = () => {
     const [data, setData] = useState([])
@@ -14,9 +16,11 @@ const Shop = () => {
     }, [])
     return (
         <>
-            <div className="nav" onClick={() =>  navigate('/shop-all/search')}>
-                <div className="container d-flex justify-content-between align-items-center">
-                    <input className="input_form_all" type="text" placeholder="Товарларды табуу"/>
+            <div className="nav">
+                <div className="container nav_content">
+                    <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
+                    <img src={bekbekei} alt=""/>
+                    <div/>
                 </div>
             </div>
             <div className="container">
