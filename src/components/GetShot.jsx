@@ -33,7 +33,7 @@ const shot = [
     },
 ];
 
-const GetShot = ({token}) => {
+const GetShot = ({token ,buy}) => {
     const navigate = useNavigate();
 
     return (
@@ -52,7 +52,7 @@ const GetShot = ({token}) => {
                                 </h4>
                             </div>
                             <div className="get_block_all">
-                                {shot.map((el, id) => (
+                                {buy.map((el, id) => (
                                     <div
                                         key={id}
                                         onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
