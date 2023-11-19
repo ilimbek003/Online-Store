@@ -884,6 +884,7 @@ button {
     position: absolute;
     width: 90%;
     bottom: 0;
+    right: 19px;
 }
 
 .register_login div {
@@ -899,7 +900,6 @@ button {
 
 .background_register_login {
     width: 100%;
-    min-height: 100vh;
     background: #ffffff;
 }
 

@@ -13,7 +13,7 @@ import {TbTruckDelivery} from "react-icons/tb";
 import {BsQuestionCircle} from "react-icons/bs";
 import {useNavigate} from "react-router-dom";
 import {BiBell} from "react-icons/bi";
-import bekbekei from "../../src/img/2.png";
+import bekbekei from "../../src/img/bekbekei-h-logo.svg";
 
 const PersonalArea = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -33,11 +33,7 @@ const PersonalArea = () => {
                 <div className="nav">
                     <div className="container nav_content">
                         <HiArrowLongLeft className="fi" onClick={() => navigate("/")}/>
-                        {
-                            token ? <h3 className="hello">Привет, Илимбек</h3> : (
-                                <img src={bekbekei} alt=""/>
-                            )
-                        }
+                        <img src={bekbekei} alt=""/>
                         <HiMiniArrowRightOnRectangle
                             className="fi"
                             onClick={() => isOpenModal()}
@@ -51,7 +47,10 @@ const PersonalArea = () => {
                                     <p>
                                         3 нужно пройти авторизацию <br/> еще раз
                                     </p>
-                                    <button onClick={() => localStorage.removeItem('token')}>Да, я выйду</button>
+                                    <button
+                                        onClick={() => localStorage.removeItem('token') || navigate("/to-come-in")}>Да,
+                                        я выйду
+                                    </button>
                                     <h4>Нет, я останусь</h4>
                                 </div>
                             </div>
@@ -60,16 +59,6 @@ const PersonalArea = () => {
                 </div>
                 <div className="container">
                     <div className="top_one one">
-                        {
-                            token ? "" : (
-                                <button
-                                    onClick={() => navigate("/registration")}
-                                    className="registr_btn person_btn"
-                                >
-                                    Войти
-                                </button>
-                            )
-                        }
                         <div
                             className="area_all"
                             onClick={() => navigate(`/my-information`)}
