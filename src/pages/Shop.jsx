@@ -3,6 +3,7 @@ import "../style/css/App.css"
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import {url} from "../Api";
+import Header from "../components/Header";
 
 const Shop = () => {
     const [data, setData] = useState([])
@@ -14,11 +15,7 @@ const Shop = () => {
     }, [])
     return (
         <>
-            <div className="nav" onClick={() =>  navigate('/shop-all/search')}>
-                <div className="container d-flex justify-content-between align-items-center">
-                    <input className="input_form_all" type="text" placeholder="Товарларды табуу"/>
-                </div>
-            </div>
+            <Header/>
             <div className="container">
                 <div className="all_shop">
                     {
