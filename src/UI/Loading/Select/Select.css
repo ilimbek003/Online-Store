@@ -29,3 +29,11 @@
 .select .select_box:hover {
   background: #0000002c;
 }
+.select_input {
+  top: 0;
+  position: absolute;
+  background: #00000000;
+  height: 42px;
+  cursor: pointer;
+}
+
