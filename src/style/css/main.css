@@ -583,12 +583,17 @@ input#file-upload-button {
   margin-top: 15px;
   position: relative;
 }
-
+.select_input {
+  top: 0;
+  position: absolute;
+  background: #00000000;
+  height: 42px;
+  cursor: pointer;
+}
 .message_page .input_box2 textarea::placeholder {
   font-size: 14px;
   font-weight: 400;
 }
-
 .message_page .message_btn {
   margin-top: 20px;
   border: none;

@@ -26,7 +26,9 @@ const MyInformation = () => {
   const [selectThree, setSelectThree] = useState(false);
   const [selectFour, setSelectFour] = useState(false);
   const [selectFife, setSelectFife] = useState(false);
-
+  const toggleSelect = () => {
+    setSelect(!select);
+  };
   return (
     <div id="modal">
       <div className="nav">
@@ -71,17 +73,14 @@ const MyInformation = () => {
               <div
                 className="select_input"
                 onClick={() =>
-                  setSelect(!select) ||
-                  setSelectOne(false) ||
-                  setSelectTwo(false) ||
-                  setSelectThree(false) ||
-                  setSelectFour(false)
+                  setSelect(!select)
                 }
               ></div>
               <label>Тили</label>
               <div className="toggle_block infor_block">
                 <input style={{}} className="input_option" type="button" />
-                <MdKeyboardArrowDown
+                <MdKeyboardArrowDown 
+                onClick={toggleSelect}
                   className="right_icons"
                   style={{ cursor: "pointer" }}
                   size={30}
@@ -139,9 +138,13 @@ const MyInformation = () => {
                   size={30}
                 />
                 {selectTwo && (
-                  <Select>
-                    <h1>hhhh</h1>
-                  </Select>
+                  <div className="input_modal_option">
+                    <Select>
+                      <h1>hhhh</h1>
+                      <h1>hhhh</h1>
+                      <h1>hhhh</h1>
+                    </Select>
+                  </div>
                 )}
               </div>
             </div>
