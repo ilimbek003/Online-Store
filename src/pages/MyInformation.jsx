@@ -8,7 +8,23 @@ import IMask from "imask";
 import Select from "../UI/Loading/Select/Select";
 import { RiArrowDownSLine } from "react-icons/ri";
 
+const data = [
+  {
+    id: 1,
+    name: "Студент",
+  },
+  {
+    id: 2,
+    name: "Хозяйка",
+  },
+  {
+    id: 3,
+    name: "Ст",
+  },
+];
+
 const MyInformation = () => {
+  const [value, setValue] = useState("");
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
     if (phoneInput) {
@@ -17,6 +33,10 @@ const MyInformation = () => {
       });
     }
   });
+
+  function handleSelect(event) {
+    setValue(event.target.value);
+  }
 
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,9 +47,7 @@ const MyInformation = () => {
   const [selectThree, setSelectThree] = useState(false);
   const [selectFour, setSelectFour] = useState(false);
   const [selectFife, setSelectFife] = useState(false);
-  const toggleSelect = () => {
-    setSelect(!select);
-  };
+
   return (
     <div id="modal">
       <div className="nav">
@@ -79,7 +97,6 @@ const MyInformation = () => {
               <div className="toggle_block infor_block">
                 <input style={{}} className="input_option" type="button" />
                 <MdKeyboardArrowDown
-                  onClick={toggleSelect}
                   className="right_icons"
                   style={{ cursor: "pointer" }}
                   size={30}
@@ -106,15 +123,12 @@ const MyInformation = () => {
               <div className="toggle_block infor_block">
                 <input className="input_option" type="button" />
                 <MdKeyboardArrowDown
+                  onClick={() => setSelectOne(!selectOne)}
                   className="right_icons"
                   style={{ cursor: "pointer" }}
                   size={30}
                 />
-                {selectOne && (
-                  <Select>
-                    <div>Dida</div>
-                  </Select>
-                )}
+                {selectOne && <Select></Select>}
               </div>
             </div>
             <div className="input_box">
@@ -151,10 +165,10 @@ const MyInformation = () => {
               <div
                 className="select_input"
                 onClick={() =>
+                  setSelectThree(!selectThree && true) ||
                   setSelect(false) ||
                   setSelectOne(false) ||
                   setSelectTwo(false) ||
-                  setSelectThree(!selectThree) ||
                   setSelectFour(false)
                 }
               ></div>
@@ -162,10 +176,18 @@ const MyInformation = () => {
               <div className="toggle_block infor_block">
                 <input className="input_option" type="button" />
                 <MdKeyboardArrowDown
+                  onClick={() => setSelectThree(!selectThree)}
                   className="right_icons"
                   style={{ cursor: "pointer" }}
                   size={30}
                 />
+                {selectThree && (
+                  <Select>
+                    <div className="select_box">
+                      <h1>ihsna</h1>
+                    </div>
+                  </Select>
+                )}
               </div>
             </div>
           </div>
