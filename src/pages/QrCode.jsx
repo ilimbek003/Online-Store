@@ -20,7 +20,7 @@ const QrCode = () => {
     useEffect(() => {
         dispatch(getDate());
     }, [dispatch]);
-    console.log(data)
+
 
     return (
         <>
