@@ -13,8 +13,6 @@ const GetShot = ({ token }) => {
     useEffect(() => {
         dispatch(fetchData());
     }, [dispatch]);
-
-
     return (
         <>
             {
