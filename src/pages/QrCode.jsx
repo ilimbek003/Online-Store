@@ -5,14 +5,18 @@ import "../style/css/modal.css";
 import {HiArrowLongLeft, HiMiniArrowRightOnRectangle} from "react-icons/hi2";
 import {useNavigate} from "react-router";
 import {LiaQuestionCircleSolid} from "react-icons/lia";
-import {getDate} from "../Redux/reduser/getData";
-import {useDispatch, useSelector} from "react-redux";
 import qar from "../img/qr-код.gif";
+import {useDispatch, useSelector} from "react-redux";
+import {auth} from "../Redux/reduser/auth";
 
 const QrCode = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const token = localStorage.getItem('token') ? localStorage.getItem('token') : false;
-
+    const {user} = useSelector(state => state.users);
+    useEffect(() => {
+        dispatch(auth());
+    }, [dispatch]);
     return (
         <>
             {
@@ -23,7 +27,7 @@ const QrCode = () => {
                                 <HiArrowLongLeft className="fi" onClick={() => navigate("/")}/>
                                 <p className="qr_cod_header">
                                     Сиздин Bekbekei картаныз <br/>{" "}
-                                    <span className="sapn">312+996 (707) 84-87-24</span>
+                                    <span className="sapn">{user.bonus_id}</span>
                                 </p>
                                 <LiaQuestionCircleSolid
                                     className="fi"
@@ -32,7 +36,7 @@ const QrCode = () => {
                             </div>
                         </div>
                         <div className="block container ">
-                            <img className="qar" src={qar} alt=""/>
+                            <img className="qar" src={user.qrimg} alt=""/>
                         </div>
                     </div> : (
                         ""

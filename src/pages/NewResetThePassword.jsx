@@ -50,7 +50,7 @@ const NewResetThePassword = ({ Alert }) => {
       }
       if (response.data.response === false) {
         Alert(response.data.message, "success");
-        navigate("/login");
+        navigate("/personal/login");
       }
       dispatch(registerSuccess(response.data));
     } catch (error) {

@@ -74,7 +74,7 @@ const Login = ({Alert}) => {
                     <div className="container d-flex justify-content-between align-items-center ">
                         <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
                         <p className="header_name">Войти</p>
-                        <span></span>
+                        <div/>
                     </div>
                 </div>
                 <div className="container">
@@ -110,7 +110,7 @@ const Login = ({Alert}) => {
                         </div>
                         <p
                             className="forgot_password"
-                            onClick={() => navigate("/reset-the-password")}
+                            onClick={() => navigate("/personal/reset-the-password")}
                         >
                             Забыли пароль?
                         </p>
@@ -124,7 +124,7 @@ const Login = ({Alert}) => {
                         )}
                         <p className="come_in">
                             Еще нет аккаунта?
-                            <span onClick={() => navigate("/registration")}>
+                            <span onClick={() => navigate("/personal/registration")}>
                 Зарегистрироваться
               </span>
                         </p>

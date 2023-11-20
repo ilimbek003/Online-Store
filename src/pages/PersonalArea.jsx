@@ -99,7 +99,7 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div onClick={() => navigate(`/to-help-page`)} className="area_all">
+                        <div onClick={() => navigate(`/personal/to-help-page`)} className="area_all">
                             <div className="bell">
                                 <div className="bi">
                                     <BsQuestionCircle className="be"/>

@@ -3,7 +3,8 @@ import authReducer from "./slice/authReducer";
 import activationReduser from "./slice/activationReduser";
 import UserSlice from "./slice/UserSlice";
 import myReducer from "./slice/mySlice"
-import myData from "./slice/getShop"
+import userInfo from "./slice/userInfo"
+
 export const store = configureStore(
     {
         reducer: {
@@ -11,7 +12,7 @@ export const store = configureStore(
             code: activationReduser,
             user: UserSlice,
             myData: myReducer,
-            getDatas:myData
+            users: userInfo,
         }
     }
 )
