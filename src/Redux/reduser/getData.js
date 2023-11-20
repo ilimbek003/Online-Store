@@ -9,7 +9,7 @@ export const getDate = () => async (dispatch) => {
             headers: {
                 Authorization: `Token ${token}`,
             },
-        });
+        }  );
         dispatch(fetchDataSuccess(response.data));
     } catch (error) {
         console.error('Error fetching data:', error);
