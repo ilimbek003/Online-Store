@@ -1,12 +1,17 @@
-import {url} from "../../Api";
-import {fetchDataSuccess} from "../slice/getShop";
+import axios from 'axios';
+import { url } from '../../Api';
+import { fetchDataSuccess } from '../slice/getShop';
 
-export const getDate = (id) => async (dispatch) => {
+export const getDate = () => async (dispatch) => {
     try {
-        const response = await fetch(url + `/card/${id}`);
-        const data = await response.json();
-        dispatch(fetchDataSuccess(data));
+        const token = localStorage.getItem('tokens');
+        const response = await axios.get(url + '/auth/user-info', {
+            headers: {
+                Authorization: `Token ${token}`,
+            },
+        });
+        dispatch(fetchDataSuccess(response.data));
     } catch (error) {
+        console.error('Error fetching data:', error);
     }
 };
-

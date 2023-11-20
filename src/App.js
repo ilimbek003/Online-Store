@@ -91,11 +91,6 @@ const App = () => {
                             <Routes>
                                 <Route path="/" element={<Main/>}/>
                                 <Route path="promotion" element={<Promotion/>}/>
-                                <Route path="/special-details" element={<SpecialDetails/>}/>
-                                <Route
-                                    path="/special-details-id/:id"
-                                    element={<SpecialDetailsId/>}
-                                />
                                 <Route path="/get-shot-details" element={<GetShotDetails/>}/>
                                 <Route
                                     path="/get-shot-details-id/:id"
