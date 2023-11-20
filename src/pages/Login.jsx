@@ -110,7 +110,7 @@ const Login = ({Alert}) => {
                         </div>
                         <p
                             className="forgot_password"
-                            onClick={() => navigate("/reset-the-password")}
+                            onClick={() => navigate("/personal/reset-the-password")}
                         >
                             Забыли пароль?
                         </p>
@@ -124,7 +124,7 @@ const Login = ({Alert}) => {
                         )}
                         <p className="come_in">
                             Еще нет аккаунта?
-                            <span onClick={() => navigate("/registration")}>
+                            <span onClick={() => navigate("/personal/registration")}>
                 Зарегистрироваться
               </span>
                         </p>

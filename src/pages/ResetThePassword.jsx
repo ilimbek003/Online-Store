@@ -33,7 +33,7 @@ const ResetThePassword = ({ Alert }) => {
       if (response.data.response === true) {
         localStorage.setItem("phone", JSON.stringify(phone));
         dispatch(registerSuccess(response.data));
-        navigate("/activation-code");
+        navigate("/personal/activation-code");
         Alert("Код подтверждения успешно отправлен", "success");
       } else {
         Alert(response.data.message, "error");

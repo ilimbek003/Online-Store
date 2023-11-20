@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import {Routes, Route, useLocation} from "react-router-dom";
+import {Routes, Route, useLocation, Navigate} from "react-router-dom";
 import Promotion from "./pages/Promotion";
 import SpecialDetails from "./pages/SpecialDetails";
 import SpecialDetailsId from "./pages/SpecialDetailsId";
@@ -30,22 +30,21 @@ import {AlertData} from "./UI/Alert/Alert";
 import ActivationCode from "./pages/ActivationCode";
 import NewResetThePassword from "./pages/NewResetThePassword";
 import ToComeIn from "./components/ToComeIn";
+import AllProject from "./pages/AllProject";
 import {useNavigate} from "react-router";
 
 
 const App = () => {
-    const navigate = useNavigate()
     const [openAlert, setOpenAlert] = useState({
         open: false,
         props: "",
         text: "",
     });
     const location = useLocation();
-
+    const navigate = useNavigate()
     const handleScroll = () => {
         window.scrollTo({top: 0, behavior: "smooth"});
     };
-
     useEffect(() => {
         handleScroll();
     }, [location]);
@@ -73,8 +72,13 @@ const App = () => {
             };
         }
     }, [openAlert.open]);
-    const token = localStorage.getItem('token') ? localStorage.getItem('token') : false;
 
+    const token = localStorage.getItem('token');
+    useEffect(() => {
+        if (!token){
+            navigate('/personal/to-come-in')
+        }
+    },[token])
     return (
         <>
             {
@@ -93,6 +97,11 @@ const App = () => {
                             <Routes>
                                 <Route path="/" element={<Main/>}/>
                                 <Route path="promotion" element={<Promotion/>}/>
+                                <Route path="/special-details" element={<SpecialDetails/>}/>
+                                <Route
+                                    path="/special-details-id/:id"
+                                    element={<SpecialDetailsId/>}
+                                />
                                 <Route path="/get-shot-details" element={<GetShotDetails/>}/>
                                 <Route
                                     path="/get-shot-details-id/:id"
@@ -106,11 +115,11 @@ const App = () => {
                                 <Route path="shop-all/*" element={<Project/>}/>
                                 <Route path="/qr-cod" element={<QrCode/>}/>
                                 <Route path="/my-information" element={<MyInformation/>}/>
-                                {/* <Route path="/my-coupon-details" element={<MyCouponDetails />} />
-        <Route
-          path="/my-coupon-details-id/:id"
-          element={<MyCouponDetailsId />}
-        /> */}
+                                {/*<Route path="/my-coupon-details" element={<MyCouponDetails/>}/>*/}
+                                {/*<Route*/}
+                                {/*    path="/my-coupon-details-id/:id"*/}
+                                {/*    element={<MyCouponDetailsId/>}*/}
+                                {/*/>*/}
                                 {/* <Route path="/my-orders" element={<MyOrders />} /> */}
                                 {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
                                 {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
@@ -120,34 +129,8 @@ const App = () => {
                     </div> : (
                         <div className="background_register_login">
                             <Routes>
-                                <Route
-                                    path="/registration"
-                                    element={<Registration Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/registration-questionnare"
-                                    element={<RegistrationQuestionnaire/>}
-                                />
-                                <Route path="/login" element={<Login Alert={FuncAlert}/>}/>
-                                <Route
-                                    path="/reset-the-password"
-                                    element={<ResetThePassword Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/activation"
-                                    element={<Activation Alert={FuncAlert}/>}
-                                />
-                                <Route
-                                    path="/activation-code"
-                                    element={<ActivationCode Alert={FuncAlert}/>}
-                                />
-                                <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
+                                <Route path="personal/*" element={<AllProject FuncAlert={FuncAlert}/>}/>
                             </Routes>
-                            <div className="container">
-                                <Routes>
-                                    <Route path="to-come-in" element={<ToComeIn/>}/>
-                                </Routes>
-                            </div>
                         </div>
                     )
             }

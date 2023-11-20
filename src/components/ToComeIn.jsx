@@ -54,7 +54,7 @@ const ToComeIn = () => {
                         <div className="register_login">
                             <div>
                                 <button
-                                    onClick={() => navigate("/registration")}
+                                    onClick={() => navigate("/personal/registration")}
                                     className="registr_btn all_register_btn"
                                 >
                                     Регистрация
@@ -62,7 +62,7 @@ const ToComeIn = () => {
                             </div>
                             <div>
                                 <button
-                                    onClick={() => navigate("/login")}
+                                    onClick={() => navigate("/personal/login")}
                                     className="registr_btn"
                                 >
                                     Войти
