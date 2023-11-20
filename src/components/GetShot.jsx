@@ -1,40 +1,19 @@
-import React from "react";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
 import {MdOutlineKeyboardArrowRight} from "react-icons/md";
 import {useNavigate} from "react-router";
 import "../style/css/main.css";
-import promotionkg from "../../src/img/promotionkg.jpg";
-import kola from "../../src/img/kola.jpg";
-import manty from "../../src/img/manty.jpg";
-import globus from "../../src/img/globus.jpg";
-import hleb from "../../src/img/hleb.jpg";
-import {DiVisualstudio} from "react-icons/di";
-import qar from "../img/qr-код.gif";
+import {fetchData} from "../Redux/reduser/fetchData"
 
-const shot = [
-    {
-        id: 1,
-        image: hleb,
-    },
-    {
-        id: 2,
-        image: globus,
-    },
-    {
-        id: 3,
-        image: kola,
-    },
-    {
-        id: 4,
-        image: promotionkg,
-    },
-    {
-        id: 5,
-        image: manty,
-    },
-];
 
-const GetShot = ({token ,buy}) => {
+const GetShot = ({token}) => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const {data} = useSelector(state => state.myData);
+
+    useEffect(() => {
+        dispatch(fetchData());
+    }, [dispatch]);
 
     return (
         <>
@@ -52,19 +31,15 @@ const GetShot = ({token ,buy}) => {
                                 </h4>
                             </div>
                             <div className="get_block_all">
-                                {buy.map((el, id) => (
+                                {data.slice(2).map((el, id) => (
                                     <div
                                         key={id}
-                                        onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
+                                        onClick={() => navigate(`/special-details-id/${el.id}`)}
                                         className="special_box"
                                     >
-                                        <div className="div_box">
-                                            <img
-                                                className="special_image"
-                                                src={el.image}
-                                                alt=""
-                                                loading="lazy"
-                                            />
+                                        <div className="div_box special_details_box">
+                                            <img className="special_image" src={el.img} alt="" loading="lazy"/>
+                                            <h5>{el.title}</h5>
                                         </div>
                                     </div>
                                 ))}

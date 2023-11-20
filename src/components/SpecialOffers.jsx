@@ -1,66 +1,50 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "../style/css/main.css";
-import { useNavigate } from "react-router";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import promotionkg from "../../src/img/promotionkg.jpg";
-import kola from "../../src/img/kola.jpg";
-import manty from "../../src/img/manty.jpg";
-import globus from "../../src/img/globus.jpg";
-import hleb from "../../src/img/hleb.jpg";
-const recoment = [
-  {
-    id: 1,
-    image: kola,
-  },
-  {
-    id: 2,
-    image: promotionkg,
-  },
-  {
-    id: 3,
-    image: hleb,
-  },
-  {
-    id: 4,
-    image: globus,
-  },
-  {
-    id: 5,
-    image: hleb,
-  },
-];
+import {useNavigate} from "react-router";
+import {MdOutlineKeyboardArrowRight} from "react-icons/md";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchData} from "../Redux/reduser/fetchData";
+
 
 const SpecialOffers = () => {
-  const navigate = useNavigate();
-  return (
-    <div className="special_offers">
-      <div className="container">
-        <div className="title title_top">
-          <p>Атайын сунуштар </p>
-          <h4
-            className="title_add"
-            onClick={() => navigate("/special-details")}
-          >
-            Бардыгы
-            <MdOutlineKeyboardArrowRight size={20} />
-          </h4>
-        </div>
-        <div className="special_block_all">
-          {recoment.map((el, id) => (
-            <div
-              key={id}
-              onClick={() => navigate(`/special-details-id/${el.id}`)}
-              className="special_box"
-            >
-              <div className="div_box">
-                <img className="special_image" src={el.image} alt="" loading="lazy" />
-              </div>
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const {data, loading, error} = useSelector(state => state.myData);
+
+    useEffect(() => {
+        dispatch(fetchData());
+    }, [dispatch]);
+
+    return (
+        <div className="special_offers">
+            <div className="container">
+                <div className="title title_top">
+                    <p>Атайын сунуштар </p>
+                    <h4
+                        className="title_add"
+                        onClick={() => navigate("/special-details")}
+                    >
+                        Бардыгы
+                        <MdOutlineKeyboardArrowRight size={20}/>
+                    </h4>
+                </div>
+                <div className="special_block_all">
+                    {data.map((el, id) => (
+                        <div
+                            key={id}
+                            onClick={() => navigate(`/special-details-id/${el.id}`)}
+                            className="special_box special_details_box"
+                        >
+                            <div className="div_box">
+                                <img className="special_image" src={el.img} alt="" loading="lazy"/>
+                                <h5>{el.title}</h5>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
-          ))}
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default SpecialOffers;

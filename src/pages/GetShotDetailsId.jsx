@@ -1,78 +1,50 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import "../style/css/main.css";
-import { useNavigate, useParams } from "react-router";
-import { IoMdClose } from "react-icons/io";
-import promotionkg from "../../src/img/promotionkg.jpg";
-import kola from "../../src/img/kola.jpg";
-import manty from "../../src/img/manty.jpg";
-import globus from "../../src/img/globus.jpg";
-import hleb from "../../src/img/hleb.jpg";
+import {useNavigate, useParams} from "react-router";
+import {IoMdClose} from "react-icons/io";
+import axios from "axios";
+import {url} from "../Api";
 
-const shot = [
-  {
-    id: 1,
-    image: hleb,
-  },
-  {
-    id: 2,
-    image: globus,
-  },
-  {
-    id: 3,
-    image: kola,
-  },
-  {
-    id: 4,
-    image: promotionkg,
-  },
-  {
-    id: 5,
-    image: manty,
-  },
-];
 
 const GetShotDetailsId = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  return (
-    <div id="modal">
-      <div className="get_shot_details_id">
-        <div className="nav">
-          <div className="container d-flex justify-content-between align-items-center ">
-            <span></span>
-            <p>Акциянын шарттары</p>
-            <IoMdClose
-              className="fi"
-              onClick={() => navigate(-1)}
-              size={22}
-              style={{ cursor: "pointer" }}
-            />
-          </div>
-        </div>
-        <div className="container">
-          <div className="details_title">
-            <h4>01.11-15.11</h4>
-            <h4>Успей купить</h4>
-          </div>
-          <div className="get_details_block_all">
-            {shot.map((el) =>
-              el.id == id ? (
-                <div className="special_details_box">
-                  <img className="special_image" src={el.image} alt="" />
-                  <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    In, temporibus!
-                  </p>
+    const {id} = useParams();
+    const navigate = useNavigate();
+    const [card, setCard] = useState([])
+    useEffect(() => {
+        axios.get(url + `/card/${id}`)
+            .then((response) => setCard(response.data))
+            .catch()
+    }, [])
+    return (
+        <div id="modal">
+            <div className="get_shot_details_id">
+                <div className="nav">
+                    <div className="container d-flex justify-content-between align-items-center ">
+                        <span></span>
+                        <p>
+                            Условия акции</p>
+                        <IoMdClose
+                            className="fi"
+                            onClick={() => navigate(-1)}
+                            size={22}
+                            style={{cursor: "pointer"}}
+                        />
+                    </div>
                 </div>
-              ) : (
-                ""
-              )
-            )}
-          </div>
+                <div className="container">
+                    <div className="details_title">
+                        <h4>01.11-15.11</h4>
+                        <h4>Успей купить</h4>
+                    </div>
+                    <div className="get_details_block_all">
+                        <div className="special_details_box">
+                            <img className="special_image" src={card.img} alt=""/>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default GetShotDetailsId;
