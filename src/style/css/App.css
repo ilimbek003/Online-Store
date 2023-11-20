@@ -886,9 +886,10 @@ button {
   display: flex;
   align-items: center;
   position: absolute;
-  width: 90%;
+  width: 100%;
   bottom: 0;
-  right: 19px;
+  right: 0;
+  left: 0;
 }
 
 .register_login div {
