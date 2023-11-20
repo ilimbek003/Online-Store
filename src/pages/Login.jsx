@@ -74,7 +74,7 @@ const Login = ({Alert}) => {
                     <div className="container d-flex justify-content-between align-items-center ">
                         <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
                         <p className="header_name">Войти</p>
-                        <span></span>
+                        <div/>
                     </div>
                 </div>
                 <div className="container">
