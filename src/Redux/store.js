@@ -11,7 +11,7 @@ export const store = configureStore(
             code: activationReduser,
             user: UserSlice,
             myData: myReducer,
-            getData:myData
+            getDatas:myData
         }
     }
 )

@@ -1,19 +1,19 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import {MdOutlineKeyboardArrowRight} from "react-icons/md";
-import {useNavigate} from "react-router";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { useNavigate } from "react-router";
 import "../style/css/main.css";
-import {fetchData} from "../Redux/reduser/fetchData"
+import { fetchData } from "../Redux/reduser/fetchData"
 
-
-const GetShot = ({token}) => {
+const GetShot = ({ token }) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const {data} = useSelector(state => state.myData);
+    const { data } = useSelector(state => state.myData);
 
     useEffect(() => {
         dispatch(fetchData());
     }, [dispatch]);
+
 
     return (
         <>
@@ -27,7 +27,7 @@ const GetShot = ({token}) => {
                                     className="title_add"
                                     onClick={() => navigate("/get-shot-details")}
                                 >
-                                    Все <MdOutlineKeyboardArrowRight size={20}/>
+                                    Все <MdOutlineKeyboardArrowRight size={20} />
                                 </h4>
                             </div>
                             <div className="get_block_all_block">
@@ -38,7 +38,7 @@ const GetShot = ({token}) => {
                                         className="special_box_blok"
                                     >
                                         <div className="div_box special_details_box">
-                                            <img className="special_image_block" src={el.img} alt="" loading="lazy"/>
+                                            <img className="special_image_block" src={el.img} alt="" loading="lazy" />
                                         </div>
                                     </div>
                                 ))}

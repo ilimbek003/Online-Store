@@ -73,7 +73,7 @@ const App = () => {
             };
         }
     }, [openAlert.open]);
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token') ? localStorage.getItem('token') : false;
 
     return (
         <>
