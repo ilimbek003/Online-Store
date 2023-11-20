@@ -29,7 +29,7 @@ const QrCode = () => {
                     <div id="modal">
                         <div className="nav">
                             <div className="container d-flex justify-content-between align-items-center">
-                                <span></span>
+                                <HiArrowLongLeft className="fi" onClick={() => navigate("/")}/>
                                 <p className="qr_cod_header">
                                     Сиздин Bekbekei картаныз <br/>{" "}
                                     <span className="sapn">{data.bonus_id}</span>

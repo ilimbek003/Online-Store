@@ -37,7 +37,6 @@ const SpecialOffers = () => {
                         >
                             <div className="div_box">
                                 <img className="special_image" src={el.img} alt="" loading="lazy"/>
-                                <h5>{el.title}</h5>
                             </div>
                         </div>
                     ))}
