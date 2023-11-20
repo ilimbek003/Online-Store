@@ -6,6 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { TbFileSettings } from "react-icons/tb";
 import IMask from "imask";
 import Select from "../UI/Loading/Select/Select";
+import { RiArrowDownSLine } from "react-icons/ri";
 
 const MyInformation = () => {
   useEffect(() => {
@@ -39,7 +40,7 @@ const MyInformation = () => {
         </div>
       </div>
       <div className="container">
-        <form action="">
+        <form >
           <div className="input_form_block top">
             <div className="input_box">
               <label>Авторизация телефону</label>
@@ -72,15 +73,13 @@ const MyInformation = () => {
             <div className="input_box">
               <div
                 className="select_input"
-                onClick={() =>
-                  setSelect(!select)
-                }
+                onClick={() => setSelect(!select)}
               ></div>
               <label>Тили</label>
               <div className="toggle_block infor_block">
                 <input style={{}} className="input_option" type="button" />
-                <MdKeyboardArrowDown 
-                onClick={toggleSelect}
+                <MdKeyboardArrowDown
+                  onClick={toggleSelect}
                   className="right_icons"
                   style={{ cursor: "pointer" }}
                   size={30}
@@ -140,9 +139,7 @@ const MyInformation = () => {
                 {selectTwo && (
                   <div className="input_modal_option">
                     <Select>
-                      <h1>hhhh</h1>
-                      <h1>hhhh</h1>
-                      <h1>hhhh</h1>
+                      <div className="select_box"></div>
                     </Select>
                   </div>
                 )}
