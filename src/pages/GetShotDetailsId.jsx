@@ -33,7 +33,7 @@ const GetShotDetailsId = () => {
                             <div className="dolor">
                                 <div className="dateto">
                                     <div className="container">
-                                        <h6>Аксия дейстувует до: {card.datefrom} - {card.dateto}</h6>
+                                        <h6>{card.date}</h6>
                                     </div>
                                 </div>
                                 <div className="container">

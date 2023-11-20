@@ -40,7 +40,6 @@ const Login = ({Alert}) => {
         };
         try {
             const response = await axios.post(url + "/auth/login", userCredential);
-            localStorage.setItem("user", JSON.stringify(response));
             dispatch(registerSuccess(response.data));
             if (response.data.response === true) {
                 navigate("/");
@@ -50,7 +49,7 @@ const Login = ({Alert}) => {
                 Alert(response.data.message, "error");
             }
             if (response.data.token) {
-                localStorage.setItem("token", JSON.stringify(response.data.token));
+                localStorage.setItem("token",(response.data.token));
             }
             setIsLoading(false);
         } catch (error) {

@@ -1,12 +1,18 @@
-import {url} from "../../Api";
-import {fetchDataSuccess} from "../slice/getShop";
+import axios from 'axios';
+import {url} from '../../Api';
+import {fetchDataSuccess} from '../slice/getShop';
+import {useState} from "react";
 
-export const getDate = (id) => async (dispatch) => {
+export const getDate = () => async (dispatch) => {
+    const [local, setLocal] = useState(localStorage.getItem("token"))
+
+
+    const headers = {
+        Authorization: `Token ${local}`
+    }
     try {
-        const response = await fetch(url + `/card/${id}`);
-        const data = await response.json();
-        dispatch(fetchDataSuccess(data));
+        const response = await axios.get(url + '/auth/user-info', {headers});
+        dispatch(fetchDataSuccess(response.data));
     } catch (error) {
     }
 };
-

@@ -232,7 +232,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     {data.map((el) => (<div className="col-6 mt-4" key={el.id}>
                         <div
                             className="blocks"
-                            // onClick={() => navigate(`/shop-all/product/${el.id}`)}
+                            onClick={() => navigate(`/shop-all/product/${el.id}`)}
                         >
                             <img src={el.img} alt=""/>
                             {/*{localStorage.getItem(`activePlus_${el.id}`) === `${el.id}` ?*/}
