@@ -9,6 +9,9 @@
   /* border-radius: 10px; */
   animation: selectAnimate 0.3s ease;
   z-index: 99999;
+  margin-top: 70px;
+  position: absolute;
+  left: 0;
 }
 @keyframes selectAnimate {
   0% {
@@ -17,7 +20,7 @@
   }
   100% {
     opacity: 1;
-    height: 150px;
+    min-height: 50px;
   }
 }
 .select .select_box {
@@ -36,4 +39,3 @@
   height: 42px;
   cursor: pointer;
 }
-
