@@ -32,7 +32,7 @@ const QrCode = () => {
                                 <span></span>
                                 <p className="qr_cod_header">
                                     Сиздин Bekbekei картаныз <br/>{" "}
-                                    <span className="sapn">2700 0081 1499 7</span>
+                                    <span className="sapn">{data.bonus_id}</span>
                                 </p>
                                 <LiaQuestionCircleSolid
                                     className="fi"
@@ -41,7 +41,7 @@ const QrCode = () => {
                             </div>
                         </div>
                         <div className="block container ">
-                            <img className="qar" src={qar} alt=""/>
+                            <img className="qar" src={data.qrimg} alt=""/>
                         </div>
                     </div> : (
                         ""
