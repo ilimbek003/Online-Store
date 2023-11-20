@@ -30,10 +30,11 @@ import {AlertData} from "./UI/Alert/Alert";
 import ActivationCode from "./pages/ActivationCode";
 import NewResetThePassword from "./pages/NewResetThePassword";
 import ToComeIn from "./components/ToComeIn";
+import {useNavigate} from "react-router";
 
 
 const App = () => {
-
+    const navigate = useNavigate()
     const [openAlert, setOpenAlert] = useState({
         open: false,
         props: "",
@@ -73,6 +74,7 @@ const App = () => {
         }
     }, [openAlert.open]);
     const token = JSON.parse(localStorage.getItem('token'));
+
     return (
         <>
             {

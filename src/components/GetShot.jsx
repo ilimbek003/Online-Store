@@ -30,16 +30,15 @@ const GetShot = ({token}) => {
                                     Все <MdOutlineKeyboardArrowRight size={20}/>
                                 </h4>
                             </div>
-                            <div className="get_block_all">
-                                {data.slice(2).map((el, id) => (
+                            <div className="get_block_all_block">
+                                {data.map((el, id) => (
                                     <div
                                         key={id}
                                         onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
-                                        className="special_box"
+                                        className="special_box_blok"
                                     >
                                         <div className="div_box special_details_box">
-                                            <img className="special_image" src={el.img} alt="" loading="lazy"/>
-                                            <h5>{el.title}</h5>
+                                            <img className="special_image_block" src={el.img} alt="" loading="lazy"/>
                                         </div>
                                     </div>
                                 ))}

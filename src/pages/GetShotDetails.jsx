@@ -43,7 +43,6 @@ const GetShotDetails = () => {
                                 className="special_details_box"
                             >
                                 <img className="special_image" src={el.img} alt=""/>
-                                <h5>{el.title}</h5>
                             </div>
                         ))}
                     </div>
