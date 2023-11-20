@@ -74,6 +74,11 @@ const App = () => {
         }
     }, [openAlert.open]);
     const token = JSON.parse(localStorage.getItem('token'));
+    useEffect(() => {
+        if (!token) {
+            navigate("/to-come-in");
+        }
+    }, [token, navigate]);
     return (
         <>
             {
