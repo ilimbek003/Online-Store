@@ -318,8 +318,23 @@ p {
 .special_image {
     width: 100%;
     height: 180px;
+    border-radius: 10px;
     object-fit: cover;
     object-position: center;
+}
+
+.fff_block {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 999;
+    top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: right;
 }
 
 .special_image_id {
@@ -330,21 +345,54 @@ p {
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
 }
 
 .dolor {
     position: fixed;
-    z-index: 999;
+    z-index: 1099;
     width: 100%;
     height: 70%;
-    background: red;
+    background: #ffffff;
     bottom: 0;
     left: 0;
     right: 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.dateto {
+    width: 100%;
+    height: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dateto h6 {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 2px 0 0 0;
 }
 
 .dolor.scrolled {
     height: 100%;
+}
+
+.card_title {
+    font-size: 25px !important;
+    margin: 10px 0 20px 0 !important;
+    font-weight: 600 !important;
+}
+
+.card_item {
+    font-weight: 500;
+    font-size: 16px;
+    color: #000;
 }
 
 
@@ -385,11 +433,14 @@ p {
 
 .special_details_box h5 {
     color: #000;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
-    margin: 5px 0 50px 0;
+    margin: 5px 0 30px 0;
 }
 
+.get_details_block_all {
+    margin: 70px 0 0 0;
+}
 
 .details_title {
     display: flex;

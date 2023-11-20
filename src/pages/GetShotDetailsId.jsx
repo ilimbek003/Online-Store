@@ -18,27 +18,29 @@ const GetShotDetailsId = () => {
     return (
         <div id="modal">
             <div className="get_shot_details_id">
-                <div className="nav">
-                    <div className="container d-flex justify-content-between align-items-center ">
-                        <span></span>
-                        <p>
-                            Условия акции</p>
-                        <IoMdClose
-                            className="fi"
-                            onClick={() => navigate(-1)}
-                            size={22}
-                            style={{cursor: "pointer"}}
-                        />
-                    </div>
-                </div>
                 <div className="container">
-                    <div className="details_title">
-                        <h4>01.11-15.11</h4>
-                        <h4>Успей купить</h4>
-                    </div>
-                    <div className="get_details_block_all">
+                    <div className="get_details_block_alls">
                         <div className="special_details_box">
-                            <img className="special_image" src={card.img} alt=""/>
+                            <div className="fff_block">
+                                <IoMdClose
+                                    className="fi"
+                                    onClick={() => navigate(-1)}
+                                    size={22}
+                                    style={{cursor: "pointer"}}
+                                />
+                            </div>
+                            <img className="special_image_id" src={card.img} alt=""/>
+                            <div className="dolor">
+                                <div className="dateto">
+                                    <div className="container">
+                                        <h6>Аксия дейстувует до: {card.datefrom} - {card.dateto}</h6>
+                                    </div>
+                                </div>
+                                <div className="container">
+                                    <h5 className="card_title">{card.title}</h5>
+                                    <p className="card_item">{card.text}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

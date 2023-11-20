@@ -34,7 +34,7 @@ const GetShot = ({token}) => {
                                 {data.slice(2).map((el, id) => (
                                     <div
                                         key={id}
-                                        onClick={() => navigate(`/special-details-id/${el.id}`)}
+                                        onClick={() => navigate(`/get-shot-details-id/${el.id}`)}
                                         className="special_box"
                                     >
                                         <div className="div_box special_details_box">
