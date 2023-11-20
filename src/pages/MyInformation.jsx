@@ -2,29 +2,31 @@ import React, { useEffect, useState } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { AiOutlineClose } from "react-icons/ai";
 import { TbFileSettings } from "react-icons/tb";
 import IMask from "imask";
-import Select from "../UI/Loading/Select/Select";
-import { RiArrowDownSLine } from "react-icons/ri";
 
 const data = [
   {
-    id: 1,
-    name: "Студент",
+    name: "1",
   },
   {
-    id: 2,
-    name: "Хозяйка",
+    name: "2",
   },
   {
-    id: 3,
-    name: "Ст",
+    name: "3",
+  },
+  {
+    name: "4",
+  },
+  {
+    name: "5",
   },
 ];
 
 const MyInformation = () => {
-  const [value, setValue] = useState("");
+  const [info, setInfo] = useState({
+    family: "",
+  });
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
     if (phoneInput) {
@@ -34,19 +36,7 @@ const MyInformation = () => {
     }
   });
 
-  function handleSelect(event) {
-    setValue(event.target.value);
-  }
-
   const navigate = useNavigate();
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [chekbox, setChekbox] = useState(false);
-  const [select, setSelect] = useState(false);
-  const [selectOne, setSelectOne] = useState(false);
-  const [selectTwo, setSelectTwo] = useState(false);
-  const [selectThree, setSelectThree] = useState(false);
-  const [selectFour, setSelectFour] = useState(false);
-  const [selectFife, setSelectFife] = useState(false);
 
   return (
     <div id="modal">
@@ -89,106 +79,60 @@ const MyInformation = () => {
               <input className="input_form new_add_input" type="text" />
             </div>
             <div className="input_box">
-              <div
-                className="select_input"
-                onClick={() => setSelect(!select)}
-              ></div>
               <label>Тили</label>
-              <div className="toggle_block infor_block">
-                <input style={{}} className="input_option" type="button" />
-                <MdKeyboardArrowDown
-                  className="right_icons"
-                  style={{ cursor: "pointer" }}
-                  size={30}
-                />
-                {select && (
-                  <Select>
-                    <div>Ihsan</div>
-                  </Select>
-                )}
-              </div>
+              <select
+                className="input_select "
+                onChange={(e) => setInfo({ ...info, family: e.target.value })}
+                value={info.family}
+              >
+                {data.map((el, id) => (
+                  <option key={id} value={el.name}>
+                    {el.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="input_box">
-              <div
-                className="select_input"
-                onClick={() =>
-                  setSelectOne(!selectOne) ||
-                  setSelect(false) ||
-                  setSelectTwo(false) ||
-                  setSelectThree(false) ||
-                  setSelectFour(false)
-                }
-              ></div>
               <label>Уй-булолук абалы</label>
-              <div className="toggle_block infor_block">
-                <input className="input_option" type="button" />
-                <MdKeyboardArrowDown
-                  onClick={() => setSelectOne(!selectOne)}
-                  className="right_icons"
-                  style={{ cursor: "pointer" }}
-                  size={30}
-                />
-                {selectOne && <Select></Select>}
-              </div>
+              <select
+                className="input_select "
+                onChange={(e) => setInfo({ ...info, family: e.target.value })}
+                value={info.family}
+              >
+                {data.map((el, id) => (
+                  <option key={id} value={el.name}>
+                    {el.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="input_box">
-              <div
-                className="select_input"
-                onClick={() =>
-                  setSelect(false) ||
-                  setSelectOne(false) ||
-                  setSelectTwo(!selectTwo) ||
-                  setSelectThree(false) ||
-                  setSelectFour(false)
-                }
-              ></div>
               <label>Социалдык абалы</label>
-              <div className="toggle_block infor_block">
-                <input className="input_option" type="checkbox" />
-                <MdKeyboardArrowDown
-                  className="right_icons"
-                  style={{ cursor: "pointer" }}
-                  size={30}
-                />
-                {selectTwo && (
-                  <div className="input_modal_option">
-                    <Select>
-                      <div className="select_box">
-                        <p>Студент</p>
-                      </div>
-                    </Select>
-                  </div>
-                )}
-              </div>
+              <select
+                className="input_select "
+                onChange={(e) => setInfo({ ...info, family: e.target.value })}
+                value={info.family}
+              >
+                {data.map((el, id) => (
+                  <option key={id} value={el.name}>
+                    {el.name}
+                  </option>
+                ))}
+              </select>
             </div>
             <div className="input_box">
-              <div
-                className="select_input"
-                onClick={() =>
-                  setSelectThree(!selectThree && true) ||
-                  setSelect(false) ||
-                  setSelectOne(false) ||
-                  setSelectTwo(false) ||
-                  setSelectFour(false)
-                }
-              ></div>
               <label>Жашаган шаары</label>
-              <div className="toggle_block infor_block">
-                <input className="input_option" type="button" />
-                <MdKeyboardArrowDown
-                  onClick={() => setSelectThree(!selectThree)}
-                  className="right_icons"
-                  style={{ cursor: "pointer" }}
-                  size={30}
-                />
-                {selectThree && (
-                  <Select>
-                    <div className="select_box">
-                      <h1>ihsna</h1>
-                    </div>
-                  </Select>
-                )}
-              </div>
+              <select
+                className="input_select "
+                onChange={(e) => setInfo({ ...info, family: e.target.value })}
+                value={info.family}
+              >
+                {data.map((el, id) => (
+                  <option key={id} value={el.name}>
+                    {el.name}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
           <div className="toggle_block toogle_block_inform">

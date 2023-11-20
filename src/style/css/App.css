@@ -598,7 +598,7 @@ button {
 }
 
 .qar {
-  width: 100%;
+  width: 90%; 
 }
 
 .marks {
@@ -954,20 +954,21 @@ button {
 .select_box {
   margin-top: -47px;
 }
-.category_box {
+
+.input_select {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 14px;
-  gap: 8px;
-  border: 1px solid #14ae5c;
-  background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(16, 24, 40, 0.05);
-  color: #0f0f0f;
+  height: 45px;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 24px;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0;
+  border: none;
   outline: none;
+  color: #081f2c;
+  border: 1px solid var(--blue);
+  padding: 0 4px;
+  background: #e9ecef !important;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  position: relative;
 }
