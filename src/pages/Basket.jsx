@@ -4,6 +4,7 @@ import "../style/css/App.css";
 import "../style/css/main.css";
 import "../style/css/modal.css";
 import { useNavigate } from "react-router-dom";
+
 import { BsBookmark } from "react-icons/bs";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 
