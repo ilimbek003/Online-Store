@@ -40,7 +40,7 @@ const MyInformation = () => {
         </div>
       </div>
       <div className="container">
-        <form >
+        <form>
           <div className="input_form_block top">
             <div className="input_box">
               <label>Авторизация телефону</label>
@@ -95,8 +95,8 @@ const MyInformation = () => {
               <div
                 className="select_input"
                 onClick={() =>
-                  setSelect(false) ||
                   setSelectOne(!selectOne) ||
+                  setSelect(false) ||
                   setSelectTwo(false) ||
                   setSelectThree(false) ||
                   setSelectFour(false)
@@ -130,7 +130,7 @@ const MyInformation = () => {
               ></div>
               <label>Социалдык абалы</label>
               <div className="toggle_block infor_block">
-                <input className="input_option" type="button" />
+                <input className="input_option" type="checkbox" />
                 <MdKeyboardArrowDown
                   className="right_icons"
                   style={{ cursor: "pointer" }}
@@ -139,7 +139,9 @@ const MyInformation = () => {
                 {selectTwo && (
                   <div className="input_modal_option">
                     <Select>
-                      <div className="select_box"></div>
+                      <div className="select_box">
+                        <p>Студент</p>
+                      </div>
                     </Select>
                   </div>
                 )}
