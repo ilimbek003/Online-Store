@@ -32,7 +32,7 @@ const Main = () => {
                                 <div>
                                     <h4 className="title_h">Бонусная карта</h4>
                                     <h1 className="title_ha">
-                                        26 <span>бонус</span>
+                                        0 <span>бонус</span>
                                     </h1>
                                 </div>
                                 <img src={qar} alt=""/>
