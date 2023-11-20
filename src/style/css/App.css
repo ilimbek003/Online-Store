@@ -912,7 +912,11 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  animation: ili;
+  transition: transform 1s;
+}
+
+.mobile:hover {
+  transform: scale(0.95);
 }
 
 .mobile img {
@@ -930,7 +934,7 @@ button {
 
 .mobile p {
   color: #000;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   text-align: center;
   line-height: 1;
