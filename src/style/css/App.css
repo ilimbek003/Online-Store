@@ -912,7 +912,7 @@ button {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: transform 1s;
+  transition: transform 0.8s;
 }
 
 .mobile:hover {
