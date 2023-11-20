@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "../style/css/main.css";
 import "../style/css/App.css";
 import qar from "../img/qr-код.gif";
@@ -8,11 +8,20 @@ import {useNavigate} from "react-router";
 import {DiVisualstudio} from "react-icons/di";
 import Storis from "../Storis/Storis";
 import GetShot from "./GetShot";
+import {useDispatch, useSelector} from "react-redux";
+import {getDate} from "../Redux/reduser/getData";
 
 const Main = () => {
     const [qrCode, setQrCode] = useState(false);
     const navigate = useNavigate();
+    const dispatch = useDispatch()
     const token = JSON.parse(localStorage.getItem('token'));
+    const {data} = useSelector(state => state.myData);
+
+    useEffect(() => {
+        dispatch(getDate());
+    }, [dispatch]);
+
     return (
         <div className="main-block">
             <Header/>
@@ -35,7 +44,7 @@ const Main = () => {
                                         0 <span>бонус</span>
                                     </h1>
                                 </div>
-                                <img src={qar} alt=""/>
+                                <img src={data.qrimg} alt=""/>
                             </div>
                         </div> : (
                             ""
