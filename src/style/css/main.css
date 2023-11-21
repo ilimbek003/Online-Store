@@ -242,8 +242,10 @@ p {
 }
 
 .title_add {
+    display: flex;
+    align-items: center;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     color: #04c700;
 }
 
@@ -326,9 +328,11 @@ p {
     overflow-y: hidden;
     display: flex;
 }
-.special_box_blok{
+
+.special_box_blok {
     margin: 0 20px 0 0;
 }
+
 .get_block_all_block::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0 rgba(22, 216, 113, 0);
     border-radius: 0;
@@ -427,8 +431,6 @@ p {
 }
 
 
-
-
 /* SpecialDetails */
 .special_details {
     width: 100%;
@@ -443,7 +445,7 @@ p {
 
 .special_details_box {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .special_details_box h5 {
@@ -1165,4 +1167,10 @@ input#file-upload-button {
 
 .new_btn {
     margin-top: 30px;
+}
+
+.text {
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
 }
