@@ -20,7 +20,7 @@ const GetShot = ({ token }) => {
                     <div className="get_shot">
                         <div className="container">
                             <div className="title">
-                                <p>Успей купить</p>
+                                <p className="text">Успей купить</p>
                                 <h4
                                     className="title_add"
                                     onClick={() => navigate("/get-shot-details")}

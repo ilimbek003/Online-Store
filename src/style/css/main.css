@@ -242,8 +242,10 @@ p {
 }
 
 .title_add {
+    display: flex;
+    align-items: center;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 500;
     color: #04c700;
 }
 
@@ -326,9 +328,11 @@ p {
     overflow-y: hidden;
     display: flex;
 }
-.special_box_blok{
+
+.special_box_blok {
     margin: 0 20px 0 0;
 }
+
 .get_block_all_block::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 0 rgba(22, 216, 113, 0);
     border-radius: 0;
@@ -427,8 +431,6 @@ p {
 }
 
 
-
-
 /* SpecialDetails */
 .special_details {
     width: 100%;
@@ -443,6 +445,7 @@ p {
 
 .special_details_box {
     width: 100%;
+    height: 300px;
     margin-top: 20px;
 }
 
@@ -510,7 +513,10 @@ p {
 }
 
 .support_text p {
-    line-height: 1.2;
+    color: #777;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
     margin-top: 5px;
 }
 
@@ -540,8 +546,18 @@ p {
     align-items: center;
     justify-content: space-around;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    margin-top: 20px;
+    margin-top: 30px;
+    gap: 10px;
     color: #ff5c00;
+}
+
+.to_contact a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
 }
 
 .contact_box {
@@ -979,13 +995,13 @@ input#file-upload-button {
     color: #fff;
     border: none;
     margin-top: 15px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 .acaunt_block_modal h4 {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 400;
     margin-top: 15px;
 }
 
@@ -1087,6 +1103,7 @@ input#file-upload-button {
     justify-content: center;
     text-align: center;
     margin-top: 10px;
+    gap: 10px;
     font-weight: 400;
 }
 
@@ -1102,10 +1119,10 @@ input#file-upload-button {
 }
 
 .forgot_password {
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
     color: var(--orange);
-    font-weight: 500;
+    font-weight: 400;
     cursor: pointer;
 }
 
@@ -1165,4 +1182,10 @@ input#file-upload-button {
 
 .new_btn {
     margin-top: 30px;
+}
+
+.text {
+    font-size: 16px;
+    color: #111;
+    font-weight: 500;
 }

@@ -40,11 +40,43 @@
   font-weight: 800;
 }
 
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-Medium.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Rubik;
+  src: url("../../fonts/Rubik-ExtraBold.ttf");
+  font-weight: 800;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Gilroy, sans-serif;
+  font-family: Rubik, Gilroy, sans-serif;
 }
 :root {
   --orange: #ff640d;
@@ -73,4 +105,53 @@
 }
 a {
   text-decoration: none;
+}
+
+* {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto !important;
+  -khtml-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0px;
+  height: 0px;
+  background-color: transparent !important;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+  width: 0px !important;
+  height: 0px !important;
+  background-color: transparent !important;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a,
+a:active,
+a:focus {
+  outline: 0;
+  -webkit-tap-highlight-color: transparent;
 }

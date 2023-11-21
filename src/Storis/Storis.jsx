@@ -22,6 +22,7 @@ const Storis = ({token}) => {
             {
                 token ?
                     <div className='storis'>
+                        <p className="text mb-2">Что нового?</p>
                         <div className="storis_block">
                             {stories && stories.map((el, id) =>
                                 <StorisContent key={id} data={el}/>

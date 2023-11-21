@@ -44,9 +44,9 @@ const PersonalArea = () => {
                             <div className="order">
                                 <div className="acaunt_block_modal">
                                     <h3>Выйти из аккаунта?</h3>
-                                    <p>
-                                        3 нужно пройти авторизацию <br/> еще раз
-                                    </p>
+                                    {/*<p>*/}
+                                    {/*    3 нужно пройти авторизацию <br/> еще раз*/}
+                                    {/*</p>*/}
                                     <button
                                         onClick={() => localStorage.removeItem('token') || navigate("/to-come-in")}>Да,
                                         я выйду
@@ -99,7 +99,7 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div onClick={() => navigate(`/personal/to-help-page`)} className="area_all">
+                        <div onClick={() => navigate(`/to-help-page`)} className="area_all">
                             <div className="bell">
                                 <div className="bi">
                                     <BsQuestionCircle className="be"/>

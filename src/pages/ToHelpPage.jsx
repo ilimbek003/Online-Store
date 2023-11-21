@@ -40,7 +40,7 @@ const ToHelpPage = () => {
                             </p>
                         </div>
                         <div className="to_contact">
-                            <div>
+                            <a href="#">
                                 <div className="contact_box">
                                     <FiPhone size={23}/>
                                 </div>
@@ -49,8 +49,8 @@ const ToHelpPage = () => {
                                         Позвонить
                                     </p>
                                 </div>
-                            </div>
-                            <div>
+                            </a>
+                            <a href="#" target="_blank">
                                 <div className="contact_box">
                                     <LiaTelegramPlane size={23}/>
                                 </div>
@@ -59,8 +59,8 @@ const ToHelpPage = () => {
                                         Telegram
                                     </p>
                                 </div>
-                            </div>
-                            <div>
+                            </a>
+                            <a href="#" target="_blank">
                                 <div className="contact_box">
                                     <BsWhatsapp size={23}/>
                                 </div>
@@ -69,8 +69,8 @@ const ToHelpPage = () => {
                                         Whatsapp
                                     </p>
                                 </div>
-                            </div>
-                            <div>
+                            </a>
+                            <a href="#" target="_blank">
                                 <div className="contact_box">
                                     <a href="mailto:vlad@htmlbook.ru" className="fi" >
                                         <IoMailOutline className="" size={23}/>
@@ -81,7 +81,7 @@ const ToHelpPage = () => {
                                         Написать
                                     </p>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
