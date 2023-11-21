@@ -104,6 +104,7 @@ const MyInformation = () => {
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
   const [local, setLocal] = useState("");
+  const [list, setList] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem("tokens");
@@ -139,6 +140,20 @@ const MyInformation = () => {
       });
     }
   });
+
+  useEffect(() => {
+    const token = localStorage.getItem("tokens");
+    if (token) {
+      axios
+        .get(url + "/auth/user-info")
+        .then((response) => {
+          setList(response.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }
+  }, []);
 
   const createPerson = async (e) => {
     e.preventDefault();
@@ -201,7 +216,7 @@ const MyInformation = () => {
                     id="phone"
                     className="input_form new_add_input"
                     placeholder="996"
-                    value={info.phone}
+                    value={info.phone && list.phone}
                     onChange={(e) =>
                       setInfo({ ...info, phone: e.target.value })
                     }
@@ -212,7 +227,7 @@ const MyInformation = () => {
                   <input
                     className="input_form new_add_input"
                     type="text"
-                    value={info.last_name}
+                    value={info.last_name}  
                     onChange={(e) =>
                       setInfo({ ...info, last_name: e.target.value })
                     }
