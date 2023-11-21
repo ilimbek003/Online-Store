@@ -86,7 +86,7 @@ const Registration = ({Alert}) => {
                         <img className="images" src={bekbekei} alt="Бекбекей"/>
                         <LiaQuestionCircleSolid
                             className="fi"
-                            onClick={() => navigate("/to-help-page")}
+                            onClick={() => navigate("/personal/to-help-page")}
                         />
                     </div>
                 </div>

@@ -8,6 +8,7 @@ import Activation from "./Activation";
 import ActivationCode from "./ActivationCode";
 import NewResetThePassword from "./NewResetThePassword";
 import ToComeIn from "../components/ToComeIn";
+import ToHelpPage from "./ToHelpPage";
 
 const AllProject = ({FuncAlert}) => {
     return (
@@ -35,6 +36,7 @@ const AllProject = ({FuncAlert}) => {
                     path="/activation-code"
                     element={<ActivationCode Alert={FuncAlert}/>}
                 />
+                <Route path="/to-help-page" element={<ToHelpPage/>}/>
                 <Route path="/new-reset-password" element={<NewResetThePassword Alert={FuncAlert}/>}/>
             </Routes>
 
