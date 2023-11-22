@@ -227,7 +227,7 @@ const MyInformation = () => {
                   <input
                     className="input_form new_add_input"
                     type="text"
-                    value={info.last_name}  
+                    value={info.last_name}
                     onChange={(e) =>
                       setInfo({ ...info, last_name: e.target.value })
                     }
