@@ -992,5 +992,17 @@ select {
   appearance: none;
   position: relative;
 }
-
-
+.select_arrow {
+  font-size: 30px;
+  position: absolute;
+  top: 34px;
+  right: 6px;
+}
+.hover_btn_active {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}

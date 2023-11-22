@@ -101,14 +101,14 @@ const dataSelect = {
   ],
 };
 
-const MyInformation = () => {
+const MyInformation = ({ Alert }) => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [info, setInfo] = useState({
     phone: "",
     first_name: "",
     last_name: "",
-    birthday: "2023-11-20",
+    birthday: "",
     gender: "",
     language: "",
     married: "",
@@ -168,20 +168,6 @@ const MyInformation = () => {
     }
   });
 
-  useEffect(() => {
-    const token = localStorage.getItem("tokens");
-    if (token) {
-      axios
-        .get(url + "/auth/user-info")
-        .then((response) => {
-          setList(response.data);
-        })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
-    }
-  }, []);
-
   const createPerson = async (e) => {
     e.preventDefault();
     if (local) {
@@ -208,17 +194,10 @@ const MyInformation = () => {
         );
         setLoading(false);
         if (newTourResponse.data.response === true) {
+          Alert("Успешно изменен", "success");
         }
       } catch (error) {
-        if (
-          error.response &&
-          error.response.data &&
-          error.response.data.errors
-        ) {
-          alert(error.response.data.errors);
-        } else {
-          alert("Произошла ошибка.");
-        }
+        Alert("Ошибка");
         setLoading(false);
       }
     }
@@ -234,6 +213,7 @@ const MyInformation = () => {
               <p className="header_name">Менин маалыматтарым</p>
               <TbFileSettings onClick={createPerson} className="fi" />
             </div>
+            <div className="hover_btn_active"></div>
           </div>
           <div className="form_alls">
             <div className="container">
@@ -256,6 +236,7 @@ const MyInformation = () => {
                     <div className="input_box">
                       <label>Фaмилия</label>
                       <input
+                        disabled={true}
                         className="input_form new_add_input"
                         type="text"
                         value={info.last_name}
@@ -267,6 +248,7 @@ const MyInformation = () => {
                     <div className="input_box">
                       <label>Имя</label>
                       <input
+                        disabled={true}
                         className="input_form new_add_input"
                         type="text"
                         value={info.first_name}
@@ -301,6 +283,7 @@ const MyInformation = () => {
                           </option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown className="select_arrow" />
                     </div>
                     <div className="input_box">
                       <label>Родной язык</label>
@@ -317,7 +300,7 @@ const MyInformation = () => {
                           </option>
                         ))}
                       </select>
-                      <MdOutlineKeyboardArrowDown />
+                      <MdOutlineKeyboardArrowDown className="select_arrow" />
                     </div>
                     <div className="input_box">
                       <label>Семейной положения</label>
@@ -332,6 +315,7 @@ const MyInformation = () => {
                           <option value={el.family}>{el.family}</option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown className="select_arrow" />
                     </div>
                     <div className="input_box">
                       <label>Социальный статус</label>
@@ -346,6 +330,7 @@ const MyInformation = () => {
                           <option value={el.status}>{el.status}</option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown className="select_arrow" />
                     </div>
                     <div className="input_box">
                       <label> Город проживания </label>
@@ -360,6 +345,7 @@ const MyInformation = () => {
                           <option value={el.city}>{el.city}</option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown className="select_arrow" />
                     </div>
                   </div>
                   <div className="toggle_block toogle_block_inform">
