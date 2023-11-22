@@ -234,147 +234,149 @@ const MyInformation = () => {
               <TbFileSettings onClick={createPerson} className="fi" />
             </div>
           </div>
-          <div className="container">
-            <form onSubmit={createPerson}>
-              <>
-                <div className="input_form_block top">
-                  <div className="input_box">
-                    <label>Телефон авторизации</label>
-                    <input
-                      disabled={true}
-                      id="phone"
-                      className="input_form new_add_input"
-                      placeholder="996"
-                      value={info.phone}
-                      onChange={(e) =>
-                        setInfo({ ...info, phone: e.target.value })
-                      }
-                    />
+          <div className="form_alls">
+            <div className="container">
+              <form onSubmit={createPerson}>
+                <>
+                  <div className="input_form_block top">
+                    <div className="input_box">
+                      <label>Телефон авторизации</label>
+                      <input
+                        disabled={true}
+                        id="phone"
+                        className="input_form new_add_input"
+                        placeholder="996"
+                        value={info.phone}
+                        onChange={(e) =>
+                          setInfo({ ...info, phone: e.target.value })
+                        }
+                      />
+                    </div>
+                    <div className="input_box">
+                      <label>Фaмилия</label>
+                      <input
+                        className="input_form new_add_input"
+                        type="text"
+                        value={info.last_name}
+                        onChange={(e) =>
+                          setInfo({ ...info, last_name: e.target.value })
+                        }
+                      />
+                    </div>
+                    <div className="input_box">
+                      <label>Имя</label>
+                      <input
+                        className="input_form new_add_input"
+                        type="text"
+                        value={info.first_name}
+                        onChange={(e) =>
+                          setInfo({ ...info, first_name: e.target.value })
+                        }
+                      />
+                    </div>
+                    <div className="input_box ">
+                      <label>Дата рождения</label>
+                      <input
+                        className="input_form new_add_input"
+                        type="date"
+                        value={info.birthday}
+                        onChange={(e) =>
+                          setInfo({ ...info, birthday: e.target.value })
+                        }
+                      />
+                    </div>
+                    <div className="input_box">
+                      <label>Пол</label>
+                      <select
+                        className="input_select"
+                        onChange={(e) =>
+                          setInfo({ ...info, gender: e.target.value })
+                        }
+                        value={info.gender}
+                      >
+                        {dataSelect.gender.map((el, id) => (
+                          <option key={id} value={el.gen}>
+                            {el.gen}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input_box">
+                      <label>Родной язык</label>
+                      <select
+                        className="input_select"
+                        onChange={(e) =>
+                          setInfo({ ...info, language: e.target.value })
+                        }
+                        value={info.language}
+                      >
+                        {dataSelect.language.map((el, id) => (
+                          <option key={id} value={el.name}>
+                            {el.leng}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input_box">
+                      <label>Семейной положения</label>
+                      <select
+                        className="input_select"
+                        onChange={(e) =>
+                          setInfo({ ...info, married: e.target.value })
+                        }
+                        value={info.married}
+                      >
+                        {dataSelect.married.map((el) => (
+                          <option value={el.family}>{el.family}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input_box">
+                      <label>Социальный статус</label>
+                      <select
+                        className="input_select"
+                        onChange={(e) =>
+                          setInfo({ ...info, status: e.target.value })
+                        }
+                        value={info.status}
+                      >
+                        {dataSelect.social_status.map((el) => (
+                          <option value={el.status}>{el.status}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="input_box">
+                      <label> Город проживания </label>
+                      <select
+                        className="input_select"
+                        onChange={(e) =>
+                          setInfo({ ...info, city: e.target.value })
+                        }
+                        value={info.city}
+                      >
+                        {dataSelect.city_accommodation.map((el) => (
+                          <option value={el.city}>{el.city}</option>
+                        ))}
+                      </select>
+                    </div>
                   </div>
-                  <div className="input_box">
-                    <label>Фaмилия</label>
-                    <input
-                      className="input_form new_add_input"
-                      type="text"
-                      value={info.last_name}
-                      onChange={(e) =>
-                        setInfo({ ...info, last_name: e.target.value })
-                      }
-                    />
+                  <div className="toggle_block toogle_block_inform">
+                    <p>Наличие домашних животных</p>
+                    <label className="switch">
+                      <input type="checkbox" />
+                      <span className="slider_toggle round"></span>
+                    </label>
                   </div>
-                  <div className="input_box">
-                    <label>Имя</label>
-                    <input
-                      className="input_form new_add_input"
-                      type="text"
-                      value={info.first_name}
-                      onChange={(e) =>
-                        setInfo({ ...info, first_name: e.target.value })
-                      }
-                    />
+                  <div className="toggle_block toogle_block_inform bottom_tom">
+                    <p>Наличие автомобиля</p>
+                    <label className="switch">
+                      <input type="checkbox" />
+                      <span className="slider_toggle round"></span>
+                    </label>
                   </div>
-                  <div className="input_box ">
-                    <label>Дата рождения</label>
-                    <input
-                      className="input_form new_add_input"
-                      type="date"
-                      value={info.birthday}
-                      onChange={(e) =>
-                        setInfo({ ...info, birthday: e.target.value })
-                      }
-                    />
-                  </div>
-                  <div className="input_box">
-                    <label>Пол</label>
-                    <select
-                      className="input_select"
-                      onChange={(e) =>
-                        setInfo({ ...info, gender: e.target.value })
-                      }
-                      value={info.gender}
-                    >
-                      {dataSelect.gender.map((el, id) => (
-                        <option key={id} value={el.gen}>
-                          {el.gen}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="input_box">
-                    <label>Родной язык</label>
-                    <select
-                      className="input_select"
-                      onChange={(e) =>
-                        setInfo({ ...info, language: e.target.value })
-                      }
-                      value={info.language}
-                    >
-                      {dataSelect.language.map((el, id) => (
-                        <option key={id} value={el.name}>
-                          {el.leng}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="input_box">
-                    <label>Семейной положения</label>
-                    <select
-                      className="input_select"
-                      onChange={(e) =>
-                        setInfo({ ...info, married: e.target.value })
-                      }
-                      value={info.married}
-                    >
-                      {dataSelect.married.map((el) => (
-                        <option value={el.family}>{el.family}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="input_box">
-                    <label>Социальный статус</label>
-                    <select
-                      className="input_select"
-                      onChange={(e) =>
-                        setInfo({ ...info, status: e.target.value })
-                      }
-                      value={info.status}
-                    >
-                      {dataSelect.social_status.map((el) => (
-                        <option value={el.status}>{el.status}</option>
-                      ))}
-                    </select>
-                  </div>
-                  <div className="input_box">
-                    <label> Город проживания </label>
-                    <select
-                      className="input_select"
-                      onChange={(e) =>
-                        setInfo({ ...info, city: e.target.value })
-                      }
-                      value={info.city}
-                    >
-                      {dataSelect.city_accommodation.map((el) => (
-                        <option value={el.city}>{el.city}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-                <div className="toggle_block toogle_block_inform">
-                  <p>Наличие домашних животных</p>
-                  <label className="switch">
-                    <input type="checkbox" />
-                    <span className="slider_toggle round"></span>
-                  </label>
-                </div>
-                <div className="toggle_block toogle_block_inform bottom_tom">
-                  <p>Наличие автомобиля</p>
-                  <label className="switch">
-                    <input type="checkbox" />
-                    <span className="slider_toggle round"></span>
-                  </label>
-                </div>
-              </>
-            </form>
+                </>
+              </form>
+            </div>
           </div>
         </div>
       ) : (

@@ -981,4 +981,16 @@ button {
   height: 100%;
   background: #fff;
 }
+.form_alls {
+  width: 100%;
+  background-color: #fff;
+  padding: 0 0 30px 0;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
 
