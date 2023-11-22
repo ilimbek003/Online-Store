@@ -161,14 +161,16 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     </div>
                 </div>
             </div>
-            {search === true && (<div id="modal_one">
-                <div className="nav">
-                    <div className="container d-flex justify-content-between align-items-center">
-                        <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
-                        <h4 className="title_h5 all_title">Издоо</h4>
-                        <div/>
+            {search === true && (
+                <div id="modal_one">
+                    <div className="nav">
+                        <div className="container d-flex justify-content-between align-items-center">
+                            <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
+                            <h4 className="title_h5 all_title">Издоо</h4>
+                            <div/>
+                        </div>
                     </div>
-                    <div className="container">
+                    <div className="container search_in">
                         <input
                             className="input_form_all mt-4"
                             type="text"
@@ -180,8 +182,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             Search
                         </button>
                     </div>
-                </div>
-            </div>)}
+                </div>)}
             {filters === true && (<div id="modal_one">
                 <div className="nav">
                     <div className="container">
@@ -247,15 +248,15 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                     <span>{el.price_for} шт </span>
                                 </p>
                                 <h2>{el.price} сом</h2>
-                                <div className="marks">
-                                    <BsBookmark
-                                        className={localStorage.getItem(`activeItem_${el.id}`) === `active` ? 'active' : ''}
-                                        onClick={() => saveToLocalStorage(el.id)}
-                                    />
-                                </div>
                             </div>
                         </div>
                         <div className="flex mt-2">
+                            {/*<div className="marks">*/}
+                            {/*    <BsBookmark*/}
+                            {/*        className={localStorage.getItem(`activeItem_${el.id}`) === `active` ? 'active' : ''}*/}
+                            {/*        onClick={() => saveToLocalStorage(el.id)}*/}
+                            {/*    />*/}
+                            {/*</div>*/}
                             {/*<div className={*/}
                             {/*    localStorage.getItem(`activePlus_${el.id}`) === `${el.id}`*/}
                             {/*        ? 'active_plus'*/}

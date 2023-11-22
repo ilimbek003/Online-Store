@@ -74,20 +74,20 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div
-                            className="area_all"
-                            onClick={() => navigate(`/shop-all/cart`)}
-                        >
-                            <div className="bell">
-                                <div className="bi">
-                                    <FaRegBookmark className="be"/>
-                                </div>
-                                <h3 className="mt-2">Избранные товары</h3>
-                            </div>
-                            <div className="lo">
-                                <IoIosArrowForward className="be"/>
-                            </div>
-                        </div>
+                        {/*<div*/}
+                        {/*    className="area_all"*/}
+                        {/*    onClick={() => navigate(`/shop-all/cart`)}*/}
+                        {/*>*/}
+                        {/*    <div className="bell">*/}
+                        {/*        <div className="bi">*/}
+                        {/*            <FaRegBookmark className="be"/>*/}
+                        {/*        </div>*/}
+                        {/*        <h3 className="mt-2">Избранные товары</h3>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="lo">*/}
+                        {/*        <IoIosArrowForward className="be"/>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                         <div className="area_all" onClick={() => navigate(`/settings`)}>
                             <div className="bell">
                                 <div className="bi">

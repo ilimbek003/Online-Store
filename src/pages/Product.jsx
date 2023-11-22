@@ -91,16 +91,16 @@ const Product = ({saveToLocalStorage, handlePlus, plus, handleMinus}) => {
                     <div className="all_alls">
                         <p className="project_product">Цена</p>
                         <span className="price_data">{datas.price} сом</span>
-                        <div className="marks main_left">
-                            <BsBookmark
-                                className={
-                                    localStorage.getItem(`activeItem_${datas.id}`) === `active`
-                                        ? 'active'
-                                        : ''
-                                }
-                                onClick={() => saveToLocalStorage(datas.id)}
-                            />
-                        </div>
+                        {/*<div className="marks main_left">*/}
+                        {/*    <BsBookmark*/}
+                        {/*        className={*/}
+                        {/*            localStorage.getItem(`activeItem_${datas.id}`) === `active`*/}
+                        {/*                ? 'active'*/}
+                        {/*                : ''*/}
+                        {/*        }*/}
+                        {/*        onClick={() => saveToLocalStorage(datas.id)}*/}
+                        {/*    />*/}
+                        {/*</div>*/}
                     </div>
                 </div>
             </div>
