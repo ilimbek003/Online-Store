@@ -8,6 +8,7 @@ import axios from "axios";
 import { url } from "../Api";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../Redux/reduser/auth";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 const dataSelect = {
   language: [
@@ -316,6 +317,7 @@ const MyInformation = () => {
                           </option>
                         ))}
                       </select>
+                      <MdOutlineKeyboardArrowDown />
                     </div>
                     <div className="input_box">
                       <label>Семейной положения</label>
