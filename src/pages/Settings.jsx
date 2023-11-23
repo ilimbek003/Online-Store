@@ -1,24 +1,38 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {HiArrowLongLeft} from "react-icons/hi2";
 import {useNavigate} from "react-router";
 import {TbFileSettings} from "react-icons/tb";
 import {AiOutlineClose} from "react-icons/ai";
 import {MdKeyboardArrowDown} from "react-icons/md";
+import {GoPencil} from "react-icons/go";
+import axios from "axios";
+import {url} from "../Api";
+import {useDispatch, useSelector} from "react-redux";
+import {auth} from "../Redux/reduser/auth";
 
 const Settings = () => {
     const navigate = useNavigate();
-
+    const dispatch = useDispatch();
+    const {user} = useSelector(state => state.users);
+    useEffect(() => {
+        dispatch(auth());
+    }, [dispatch]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [email, setEmail] = useState(false)
+    const [emails, setEmails] = useState(false)
+    const [email, setEmail] = useState("")
+    const [notification, setNotification] = useState(false)
+    const [local, setLocal] = useState(localStorage.getItem("tokens"));
+    console.log(user)
+    const headers = {
+        Authorization: `Token ${local}`,
+    };
     const openModal = () => {
         setIsModalOpen(true);
     };
-
     const closeModal = () => {
         setIsModalOpen(false);
     };
     const [isWishSelected, setIsWishSelected] = useState("");
-
     const handleCheckboxChange = (value) => {
         if (selectedOption === value) {
             setSelectedOption("");
@@ -30,7 +44,17 @@ const Settings = () => {
     const handleRadioChange = (event) => {
         setSelectedOption(event.target.value);
     };
-
+    const handleSubmit = async () => {
+        try {
+            const data = {
+                email: email,
+                notification: notification,
+            };
+            const response = await axios.post(url + "/auth/notification", data, {headers});
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return (
         <div id="modal">
             {" "}
@@ -39,7 +63,7 @@ const Settings = () => {
                     <div className="container d-flex justify-content-between align-items-center ">
                         <HiArrowLongLeft onClick={() => navigate(-1)} className="fi"/>
                         <p className="header_name">Настройки</p>
-                        <TbFileSettings className="fi"/>
+                        <TbFileSettings className="fi" onClick={handleSubmit}/>
                     </div>
                 </div>
                 <div className="container">
@@ -64,21 +88,28 @@ const Settings = () => {
                             <p>Получать уведомления</p>
                             <label className="switch">
                                 <input type="checkbox"/>
-                                <span className="slider_toggle round"></span>
+                                <span className="slider_toggle round" onClick={() => setNotification(true)}></span>
                             </label>
                         </div>
                         <div className="toggle_block">
                             <p>Получать письма на email</p>
                             <label className="switch">
                                 <input type="checkbox"/>
-                                <span className="slider_toggle round" onClick={() => setEmail(!email)}></span>
+                                <span className="slider_toggle round" onClick={() => setEmails(!emails)}></span>
                             </label>
                         </div>
                         <div>
                             {
-                                email && (
+                                emails && (
                                     <div>
-                                        <input className="toggle_block" style={{outline:"none", border:'none'}} type="text" placeholder="email"/>
+                                        <input
+                                            className="toggle_block"
+                                            style={{outline: "none", border: 'none'}}
+                                            type="text"
+                                            placeholder="email"
+                                            value={user.email === null ? email : user.email}
+                                            onChange={(e) => setEmail(e.target.value)}
+                                        />
                                     </div>
                                 )
                             }
