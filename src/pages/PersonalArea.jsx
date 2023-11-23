@@ -10,6 +10,7 @@ import {IoSettingsSharp} from "react-icons/io5";
 import {HiOutlineNewspaper} from "react-icons/hi2";
 import {TbHistory} from "react-icons/tb";
 import {TbTruckDelivery} from "react-icons/tb";
+import { RiErrorWarningLine } from "react-icons/ri";
 import { IoSettingsOutline } from "react-icons/io5";
 import {BsQuestionCircle} from "react-icons/bs";
 import {useNavigate} from "react-router-dom";
@@ -111,12 +112,12 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
-                        <div onClick={() => navigate(`/to-help-page`)} className="area_all">
+                        <div onClick={() => navigate(`/application`)} className="area_all">
                             <div className="bell">
                                 <div className="bi">
-                                    <BsQuestionCircle className="be"/>
+                                    <RiErrorWarningLine className="be"/>
                                 </div>
-                                <h3 className="mt-2">О пи</h3>
+                                <h3 className="mt-2">О приложении</h3>
                             </div>
                             <div className="lo">
                                 <IoIosArrowForward className="be"/>
