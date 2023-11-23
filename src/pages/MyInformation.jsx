@@ -13,7 +13,7 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 const dataSelect = {
   language: [
     {
-      family: "",
+      leng: "--",
     },
     {
       leng: "Кыргызча",
@@ -24,6 +24,9 @@ const dataSelect = {
   ],
   gender: [
     {
+      gen: "--",
+    },
+    {
       gen: "Мужской",
     },
     {
@@ -32,7 +35,7 @@ const dataSelect = {
   ],
   married: [
     {
-      family: "",
+      family: "--",
     },
     {
       family: "Холост/не замужем",
@@ -43,7 +46,10 @@ const dataSelect = {
   ],
   social_status: [
     {
-      status: "Домохозяйка",
+      status: "--",
+    },
+    {
+      status: "--",
     },
     {
       status: "Студент",
@@ -65,6 +71,9 @@ const dataSelect = {
     },
   ],
   city_accommodation: [
+    {
+      city: "--",
+    },
     {
       city: "Бишкек",
     },
