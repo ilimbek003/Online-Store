@@ -42,11 +42,11 @@ const Login = ({ Alert }) => {
     try {
       const response = await axios.post(url + "/auth/login", userCredential);
       dispatch(registerSuccess(response.data));
-      if (response.data.response === true) {
+      if (response.data.response == true) {
         navigate("/");
         Alert(response.data.message, "success");
       }
-      if (response.data.response === false) {
+      if (response.data.response == false) {
         Alert(response.data.message, "error");
       }
       if (response.data.token) {
@@ -54,12 +54,10 @@ const Login = ({ Alert }) => {
         localStorage.setItem("tokens", response.data.token);
       }
       if (response.data.password) {
-        Alert(response.data.message, 'error')
         setError(response.data);
       }
       setIsLoading(false);
     } catch (error) {
-      console.error(error);
       dispatch(registerFailure(error.message));
       setIsLoading(false);
     }

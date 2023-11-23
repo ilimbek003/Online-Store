@@ -9,7 +9,7 @@ import ActivationCode from "./ActivationCode";
 import NewResetThePassword from "./NewResetThePassword";
 import ToComeIn from "../components/ToComeIn";
 import ToHelpPage from "./ToHelpPage";
-import { AlertData } from "../UI/Alert/Alert";  
+import { AlertData } from "../UI/Alert/Alert";
 
 const AllProject = ({ FuncAlert }) => {
   const [openAlert, setOpenAlert] = useState({
@@ -58,6 +58,10 @@ const AllProject = ({ FuncAlert }) => {
           <Routes>
             <Route path="to-come-in" element={<ToComeIn />} />
             <Route
+              path="/activation"
+              element={<Activation Alert={FuncAlert} />}
+            />
+            <Route
               path="/registration"
               element={<Registration Alert={FuncAlert} />}
             />
@@ -70,10 +74,7 @@ const AllProject = ({ FuncAlert }) => {
               path="/reset-the-password"
               element={<ResetThePassword Alert={FuncAlert} />}
             />
-            <Route
-              path="/activation"
-              element={<Activation Alert={FuncAlert} />}
-            />
+
             <Route
               path="/activation-code"
               element={<ActivationCode Alert={FuncAlert} />}
