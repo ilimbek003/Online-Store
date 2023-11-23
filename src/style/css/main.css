@@ -731,6 +731,70 @@ input#file-upload-button {
     background: #fff;
 }
 
+.cent {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 30px 0 30px 0;
+}
+.flex_one button{
+    margin: 0 5px 0 5px;
+}
+.flex_one button {
+    --border-radius: 16px;
+    --border-width: 2px;
+    appearance: none;
+    position: relative;
+    padding: 25px 2em;
+    border: 0;
+    background-color: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 2em;
+    font-weight: 600;
+    color: #fff;
+}
+
+.flex_one button::after {
+    --m-i: linear-gradient(#000, #000);
+    --m-o: content-box, padding-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: var(--border-width);
+    border-radius: var(--border-radius);
+    background-image: conic-gradient(
+            #488cfb,
+            #29dbbc,
+            #ddf505,
+            #ff9f0e,
+            #e440bb,
+            #655adc,
+            #488cfb
+    );
+
+    mask-image: var(--m-i), var(--m-i);
+    mask-origin: var(--m-o);
+    mask-clip: var(--m-o);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    filter: hue-rotate(0);
+    animation: hue linear 500ms infinite;
+    animation-play-state: paused;
+    z-index: -1;
+}
+
+.flex_one button:hover::after {
+    animation-play-state: running;
+}
+
+@keyframes hue {
+    to {
+        filter: hue-rotate(1turn);
+    }
+}
+
 .settings_block {
     margin-top: 70px;
 }
@@ -1190,6 +1254,7 @@ input#file-upload-button {
     color: #111;
     font-weight: 500;
 }
-.search_in{
+
+.search_in {
     padding: 60px 0 0 0;
 }

@@ -19,6 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { AlertData } from "./UI/Alert/Alert";
 import AllProject from "./pages/AllProject";
 import { useNavigate } from "react-router";
+import AboutApplication from "./pages/AboutApplication";
 
 const App = () => {
   const [openAlert, setOpenAlert] = useState({
@@ -98,6 +99,7 @@ const App = () => {
               <Route path="/dashboard" element={<PersonalArea />} />
               <Route path="shop-all/*" element={<Project />} />
               <Route path="/qr-cod" element={<QrCode />} />
+              <Route path="/application" element={<AboutApplication />} />
               <Route
                 path="/my-information"
                 element={<MyInformation Alert={FuncAlert} />}
