@@ -44,7 +44,7 @@ const Login = ({ Alert }) => {
       dispatch(registerSuccess(response.data));
       if (response.data.response == true) {
         navigate("/");
-        Alert(response.data.message, "success");
+        Alert('ghjklghjkl;', "success");
       }
       if (response.data.response == false) {
         Alert(response.data.message, "error");

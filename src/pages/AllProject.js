@@ -81,7 +81,7 @@ const AllProject = ({ FuncAlert }) => {
             />
             <Route path="/to-help-page" element={<ToHelpPage />} />
             <Route
-              path="/new-reset-password"
+              path="/new-reset-the-password"
               element={<NewResetThePassword Alert={FuncAlert} />}
             />
           </Routes>
