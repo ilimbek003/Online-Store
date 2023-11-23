@@ -13,6 +13,9 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 const dataSelect = {
   language: [
     {
+      family: "",
+    },
+    {
       leng: "Кыргызча",
     },
     {
@@ -29,10 +32,13 @@ const dataSelect = {
   ],
   married: [
     {
-      family: "Холост",
+      family: "",
     },
     {
-      family: "Замужем",
+      family: "Холост/не замужем",
+    },
+    {
+      family: "Женат/замужем",
     },
   ],
   social_status: [
@@ -104,6 +110,7 @@ const dataSelect = {
 const MyInformation = ({ Alert }) => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
+  const [inputChanged, setInputChanged] = useState(false);
   const [info, setInfo] = useState({
     phone: "",
     first_name: "",
@@ -115,8 +122,8 @@ const MyInformation = ({ Alert }) => {
     status: "",
     city: "",
     children: true,
-    animal: true,
-    car: true,
+    animal: false,
+    car: false,
   });
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -149,15 +156,15 @@ const MyInformation = ({ Alert }) => {
         first_name: user.first_name,
         language: user.language,
         birthday: user.birthday,
-        married: user.married,
+        married: user.married == null ? "" : user.married,
         gender: user.gender,
         status: user.status,
         city: user.city,
+        animal: user.animal,
+        car: user.car,
       });
     }
   }, [user]);
-
-  console.log(user);
 
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
@@ -167,7 +174,6 @@ const MyInformation = ({ Alert }) => {
       });
     }
   });
-
   const createPerson = async (e) => {
     e.preventDefault();
     if (local) {
@@ -183,6 +189,8 @@ const MyInformation = ({ Alert }) => {
         married: info.married,
         status: info.status,
         city: info.city,
+        car: info.car,
+        animal: info.animal,
       };
       try {
         const newTourResponse = await axios.post(
@@ -193,6 +201,7 @@ const MyInformation = ({ Alert }) => {
           }
         );
         setLoading(false);
+        setInputChanged(false);
         if (newTourResponse.data.response === true) {
           Alert("Успешно изменен", "success");
         }
@@ -213,7 +222,7 @@ const MyInformation = ({ Alert }) => {
               <p className="header_name">Менин маалыматтарым</p>
               <TbFileSettings onClick={createPerson} className="fi" />
             </div>
-            <div className="hover_btn_active"></div>
+            <div className={`hover_btn ${inputChanged ? "active" : ""}`}></div>
           </div>
           <div className="form_alls">
             <div className="container">
@@ -236,24 +245,24 @@ const MyInformation = ({ Alert }) => {
                     <div className="input_box">
                       <label>Фaмилия</label>
                       <input
-                        disabled={true}
                         className="input_form new_add_input"
                         type="text"
                         value={info.last_name}
-                        onChange={(e) =>
-                          setInfo({ ...info, last_name: e.target.value })
-                        }
+                        onChange={(e) => {
+                          setInfo({ ...info, last_name: e.target.value });
+                          setInputChanged(true);
+                        }}
                       />
                     </div>
                     <div className="input_box">
                       <label>Имя</label>
                       <input
-                        disabled={true}
                         className="input_form new_add_input"
                         type="text"
                         value={info.first_name}
                         onChange={(e) =>
-                          setInfo({ ...info, first_name: e.target.value })
+                          setInfo({ ...info, first_name: e.target.value }) ||
+                          setInputChanged(true)
                         }
                       />
                     </div>
@@ -264,7 +273,8 @@ const MyInformation = ({ Alert }) => {
                         type="date"
                         value={info.birthday}
                         onChange={(e) =>
-                          setInfo({ ...info, birthday: e.target.value })
+                          setInfo({ ...info, birthday: e.target.value }) ||
+                          setInputChanged(true)
                         }
                       />
                     </div>
@@ -273,7 +283,8 @@ const MyInformation = ({ Alert }) => {
                       <select
                         className="input_select"
                         onChange={(e) =>
-                          setInfo({ ...info, gender: e.target.value })
+                          setInfo({ ...info, gender: e.target.value }) ||
+                          setInputChanged(true)
                         }
                         value={info.gender}
                       >
@@ -290,7 +301,8 @@ const MyInformation = ({ Alert }) => {
                       <select
                         className="input_select"
                         onChange={(e) =>
-                          setInfo({ ...info, language: e.target.value })
+                          setInfo({ ...info, language: e.target.value }) ||
+                          setInputChanged(true)
                         }
                         value={info.language}
                       >
@@ -307,7 +319,8 @@ const MyInformation = ({ Alert }) => {
                       <select
                         className="input_select"
                         onChange={(e) =>
-                          setInfo({ ...info, married: e.target.value })
+                          setInfo({ ...info, married: e.target.value }) ||
+                          setInputChanged(true)
                         }
                         value={info.married}
                       >
@@ -322,7 +335,8 @@ const MyInformation = ({ Alert }) => {
                       <select
                         className="input_select"
                         onChange={(e) =>
-                          setInfo({ ...info, status: e.target.value })
+                          setInfo({ ...info, status: e.target.value }) ||
+                          setInputChanged(true)
                         }
                         value={info.status}
                       >
@@ -337,7 +351,8 @@ const MyInformation = ({ Alert }) => {
                       <select
                         className="input_select"
                         onChange={(e) =>
-                          setInfo({ ...info, city: e.target.value })
+                          setInfo({ ...info, city: e.target.value }) ||
+                          setInputChanged(true)
                         }
                         value={info.city}
                       >
@@ -351,14 +366,28 @@ const MyInformation = ({ Alert }) => {
                   <div className="toggle_block toogle_block_inform">
                     <p>Наличие домашних животных</p>
                     <label className="switch">
-                      <input type="checkbox" />
+                      <input
+                        onClick={() =>
+                          setInfo({ ...info, animal: !info.animal }) ||
+                          setInputChanged(true)
+                        }
+                        type="checkbox"
+                        checked={info.animal}
+                      />
                       <span className="slider_toggle round"></span>
                     </label>
                   </div>
                   <div className="toggle_block toogle_block_inform bottom_tom">
                     <p>Наличие автомобиля</p>
                     <label className="switch">
-                      <input type="checkbox" />
+                      <input
+                        onClick={() =>
+                          setInfo({ ...info, car: !info.car }) ||
+                          setInputChanged(true)
+                        }
+                        type="checkbox"
+                        checked={info.car}
+                      />
                       <span className="slider_toggle round"></span>
                     </label>
                   </div>

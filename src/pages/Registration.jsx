@@ -100,7 +100,6 @@ const Registration = ({ Alert }) => {
                     Имя <span>*</span>
                   </label>
                   <input
-                    required
                     className="input_form new_add_input"
                     type="text"
                     value={userData.first_name}
@@ -118,7 +117,6 @@ const Registration = ({ Alert }) => {
                     Фaмилия <span>*</span>
                   </label>
                   <input
-                    required
                     className="input_form new_add_input"
                     type="text"
                     value={userData.last_name}
@@ -136,7 +134,6 @@ const Registration = ({ Alert }) => {
                     Номер телефона <span>*</span>
                   </label>
                   <input
-                    required
                     className="input_form new_add_input"
                     id="phone"
                     placeholder="Введите номер"
@@ -154,7 +151,6 @@ const Registration = ({ Alert }) => {
                     Пароль <span>*</span>
                   </label>
                   <input
-                    required
                     className="input_form new_add_input"
                     type={visible ? "text" : "password"}
                     value={userData.password}
@@ -178,7 +174,6 @@ const Registration = ({ Alert }) => {
                     Повторите пароль <span>*</span>
                   </label>
                   <input
-                    required
                     className="input_form new_add_input"
                     type={visible2 ? "text" : "password"}
                     value={userData.confirm_password}

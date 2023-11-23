@@ -998,11 +998,14 @@ select {
   top: 34px;
   right: 6px;
 }
-.hover_btn_active {
+.hover_btn {
   width: 10px;
   height: 10px;
   border-radius: 50%;
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 35px;
+}
+.hover_btn.active{
+  background: red;
 }

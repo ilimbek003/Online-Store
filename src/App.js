@@ -119,7 +119,7 @@ const App = () => {
           <Routes>
             <Route
               path="personal/*"
-              element={<AllProject FuncAlert={FuncAlert} />}
+              element={<AllProject Alert={FuncAlert} />}
             />
           </Routes>
         </div>
