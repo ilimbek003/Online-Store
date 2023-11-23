@@ -102,7 +102,6 @@ const dataSelect = {
 };
 
 const MyInformation = ({ Alert }) => {
-  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [info, setInfo] = useState({
     phone: "",
@@ -156,8 +155,6 @@ const MyInformation = ({ Alert }) => {
       });
     }
   }, [user]);
-
-  console.log(user);
 
   useEffect(() => {
     const phoneInput = document.getElementById("phone");

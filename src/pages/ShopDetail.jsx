@@ -183,17 +183,19 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         </button>
                     </div>
                 </div>)}
-            {filters === true && (<div id="modal_one">
-                <div className="nav">
-                    <div className="container">
-                        <div className="d-flex justify-content-between align-items-center">
-                            <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
-                            <h4 className="title_h5 all_title_one mt-2">Иреттоолор</h4>
-                            <AiOutlineDelete className="fi"/>
+            {filters === true && (
+                <div id="modal_one">
+                    <div className="nav">
+                        <div className="container">
+                            <div className="d-flex justify-content-between align-items-center">
+                                <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
+                                <h4 className="title_h5 all_title_one mt-2">Иреттоолор</h4>
+                                <AiOutlineDelete className="fi"/>
+                            </div>
                         </div>
                     </div>
-                    <div className="container">
-                        <h3 className="title_h4 mt-3" style={{color: '#000'}}>Баасы, сом</h3>
+                    <div className="container iner">
+                        <h3 className="title_h4 mt-5" style={{color: '#000'}}>Баасы, сом</h3>
                         <div className="renge mt-3">
                             <div className="d-flex align-items-center justify-content-between">
                                 <div className="d-flex align-items-center">
@@ -218,16 +220,15 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             />
                         </div>
                     </div>
-                </div>
-                <div className="container">
-                    <button
-                        className="btn_button all_btn"
-                        onClick={filtersData}
-                    >
-                        Колдонуу
-                    </button>
-                </div>
-            </div>)}
+                    <div className="container">
+                        <button
+                            className="btn_button all_btn"
+                            onClick={filtersData}
+                        >
+                            Колдонуу
+                        </button>
+                    </div>
+                </div>)}
             <div className="container">
                 <div className="row row_one">
                     {data.map((el) => (<div className="col-6 mt-4" key={el.id}>

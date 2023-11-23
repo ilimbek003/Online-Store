@@ -10,6 +10,7 @@ import {IoSettingsSharp} from "react-icons/io5";
 import {HiOutlineNewspaper} from "react-icons/hi2";
 import {TbHistory} from "react-icons/tb";
 import {TbTruckDelivery} from "react-icons/tb";
+import { IoSettingsOutline } from "react-icons/io5";
 import {BsQuestionCircle} from "react-icons/bs";
 import {useNavigate} from "react-router-dom";
 import {BiBell} from "react-icons/bi";
@@ -91,7 +92,7 @@ const PersonalArea = () => {
                         <div className="area_all" onClick={() => navigate(`/settings`)}>
                             <div className="bell">
                                 <div className="bi">
-                                    <IoSettingsSharp className="be"/>
+                                    <IoSettingsOutline className="be"/>
                                 </div>
                                 <h3 className="mt-2">Настройка</h3>
                             </div>

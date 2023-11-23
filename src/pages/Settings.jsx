@@ -44,18 +44,18 @@ const Settings = () => {
         </div>
         <div className="container">
           <div className="settings_block">
-            <h5 className="settings_title">Блокировка карты</h5>
-            <p className="settings_kart">
-              Ваша карта Bekbekei:{" "}
-              <span className="green">2 7000 08661 04</span>
-            </p>
-            <div className="toggle_block">
-              <p>Заблокировать карту</p>
-              <label className="switch">
-                <input type="checkbox" />
-                <span className="slider_toggle round"></span>
-              </label>
-            </div>
+            {/*<h5 className="settings_title">Блокировка карты</h5>*/}
+            {/*<p className="settings_kart">*/}
+            {/*  Ваша карта Bekbekei:{" "}*/}
+            {/*  <span className="green">2 7000 08661 04</span>*/}
+            {/*</p>*/}
+            {/*<div className="toggle_block">*/}
+            {/*  <p>Заблокировать карту</p>*/}
+            {/*  <label className="switch">*/}
+            {/*    <input type="checkbox" />*/}
+            {/*    <span className="slider_toggle round"></span>*/}
+            {/*  </label>*/}
+            {/*</div>*/}
             <h5 className="settings_title">Уведомления</h5>
             <p className="settings_kart">
               Акциялар жана атайын сунуштар тууралуу билдирме алыныз
