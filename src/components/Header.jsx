@@ -11,9 +11,7 @@ import {useNavigate} from "react-router-dom";
 const Header = ({user}) => {
     const navigate = useNavigate()
     const [isOpens, setIsOpens] = useState(false);
-    console.log(user)
     const token = localStorage.getItem('token') ? localStorage.getItem('token') : false;
-
     return (
         <div>
             <div className="nav">
