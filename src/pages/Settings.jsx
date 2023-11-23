@@ -60,17 +60,7 @@ const Settings = () => {
             console.error('Error:', error);
         }
     };
-    const handleDeleteAccount = async () => {
-        try {
-            const response = await axios.delete(url + "/auth/delete-account", {
-                headers,
-            });
-            localStorage.removeItem("tokens");
-            navigate("/login");
-        } catch (error) {
-            console.error("Error:", error);
-        }
-    };
+
 
     return (
         <div id="modal">
@@ -219,7 +209,11 @@ const Settings = () => {
                         {/*        </div>*/}
                         {/*    </div>*/}
                         {/*)}*/}
-                        <h5 className="settings_title akaunt_remove" onClick={handleDeleteAccount}>Удалить акаунт</h5>
+                        <h5
+                            className="settings_title akaunt_remove"
+                            onClick={() => localStorage.removeItem('token') || navigate("/to-come-in")}>Удалить
+                            акаунт
+                        </h5>
                     </div>
                 </div>
             </div>

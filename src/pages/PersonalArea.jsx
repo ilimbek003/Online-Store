@@ -111,6 +111,17 @@ const PersonalArea = () => {
                                 <IoIosArrowForward className="be"/>
                             </div>
                         </div>
+                        <div onClick={() => navigate(`/to-help-page`)} className="area_all">
+                            <div className="bell">
+                                <div className="bi">
+                                    <BsQuestionCircle className="be"/>
+                                </div>
+                                <h3 className="mt-2">О пи</h3>
+                            </div>
+                            <div className="lo">
+                                <IoIosArrowForward className="be"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
