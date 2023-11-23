@@ -14,18 +14,23 @@ const Settings = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const {user} = useSelector(state => state.users);
+    const [inputChanged, setInputChanged] = useState(false);
     useEffect(() => {
         dispatch(auth());
     }, [dispatch]);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [emails, setEmails] = useState(false)
+    const [receiveEmails, setReceiveEmails] = useState(false)
     const [email, setEmail] = useState("")
     const [notification, setNotification] = useState(false)
     const [local, setLocal] = useState(localStorage.getItem("tokens"));
-    console.log(user)
     const headers = {
         Authorization: `Token ${local}`,
     };
+    useEffect(() => {
+        if (user) {
+            setEmail(user.email || '');
+        }
+    }, [user]);
     const openModal = () => {
         setIsModalOpen(true);
     };
@@ -55,9 +60,20 @@ const Settings = () => {
             console.error('Error:', error);
         }
     };
+    const handleDeleteAccount = async () => {
+        try {
+            const response = await axios.delete(url + "/auth/delete-account", {
+                headers,
+            });
+            localStorage.removeItem("tokens");
+            navigate("/login");
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
     return (
         <div id="modal">
-            {" "}
             <div className="settings">
                 <div className="nav">
                     <div className="container d-flex justify-content-between align-items-center ">
@@ -87,27 +103,43 @@ const Settings = () => {
                         <div className="toggle_block">
                             <p>Получать уведомления</p>
                             <label className="switch">
-                                <input type="checkbox"/>
-                                <span className="slider_toggle round" onClick={() => setNotification(true)}></span>
+                                <input
+                                    type="checkbox"
+                                    checked={notification}
+                                    onChange={() => {
+                                        setNotification(!notification);
+                                        setInputChanged(true);
+                                    }}
+                                />
+                                <span className="slider_toggle round"></span>
                             </label>
                         </div>
                         <div className="toggle_block">
                             <p>Получать письма на email</p>
                             <label className="switch">
-                                <input type="checkbox"/>
-                                <span className="slider_toggle round" onClick={() => setEmails(!emails)}></span>
+                                <input
+                                    type="checkbox"
+                                    checked={receiveEmails}
+                                    onChange={() => {
+                                        setReceiveEmails(!receiveEmails);
+                                        setInputChanged(true);
+                                    }}
+                                />
+                                <span
+                                    className="slider_toggle round">
+                                </span>
                             </label>
                         </div>
                         <div>
                             {
-                                emails && (
+                                receiveEmails && (
                                     <div>
                                         <input
                                             className="toggle_block"
                                             style={{outline: "none", border: 'none'}}
                                             type="text"
                                             placeholder="email"
-                                            value={user.email === null ? email : user.email}
+                                            value={email}
                                             onChange={(e) => setEmail(e.target.value)}
                                         />
                                     </div>
@@ -125,69 +157,69 @@ const Settings = () => {
                                 <span className="slider_toggle round"></span>
                             </label>
                         </div>
-                        <div className="input_box_modal" onClick={openModal}>
-                            <label className="language">Интерфейстин тили</label>
-                            <div className="toggle_block">
-                                <input
-                                    style={{}}
-                                    className="input_option"
-                                    type="button"
-                                    value={selectedOption}
-                                />
-                                <MdKeyboardArrowDown
-                                    onClick={openModal}
-                                    className="right_icons"
-                                    style={{cursor: "pointer"}}
-                                    size={30}
-                                />
-                            </div>
-                        </div>
-                        {isModalOpen === true && (
-                            <div className="filters_oll">
-                                <div className="order">
-                                    <div className="modal_content">
-                                        <h3>Настройка приложения</h3>
-                                        <AiOutlineClose
-                                            className="close"
-                                            style={{border: "none", background: "none"}}
-                                            onClick={closeModal}
-                                            size={20}
-                                        />
-                                    </div>
-                                    <label className="detial">
-                                        <input
-                                            type="radio"
-                                            value="Кыргыз"
-                                            checked={selectedOption === "Кыргыз"}
-                                            onChange={() => handleCheckboxChange("Кыргыз")}
-                                            onClick={closeModal}
-                                        />
-                                        <p>Кыргыз</p>
-                                    </label>
-                                    <label className="detial">
-                                        <input
-                                            type="radio"
-                                            value="Орус"
-                                            checked={selectedOption === "Орус"}
-                                            onChange={() => handleCheckboxChange("Орус")}
-                                            onClick={closeModal}
-                                        />
-                                        <p>Орус</p>
-                                    </label>
-                                    <label className="detial">
-                                        <input
-                                            type="radio"
-                                            value="Англисче"
-                                            checked={selectedOption === "Англисче"}
-                                            onChange={() => handleCheckboxChange("Англисче")}
-                                            onClick={closeModal}
-                                        />
-                                        <p>Англисче</p>
-                                    </label>
-                                </div>
-                            </div>
-                        )}
-                        <h5 className="settings_title akaunt_remove">Удалить акаунт</h5>
+                        {/*// <div className="input_box_modal" onClick={openModal}>*/}
+                        {/*//     <label className="language">Интерфейстин тили</label>*/}
+                        {/*//     <div className="toggle_block">*/}
+                        {/*//         <input*/}
+                        {/*//             style={{}}*/}
+                        {/*//             className="input_option"*/}
+                        {/*            type="button"*/}
+                        {/*            value={selectedOption}*/}
+                        {/*        />*/}
+                        {/*        <MdKeyboardArrowDown*/}
+                        {/*            onClick={openModal}*/}
+                        {/*            className="right_icons"*/}
+                        {/*            style={{cursor: "pointer"}}*/}
+                        {/*            size={30}*/}
+                        {/*        />*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                        {/*{isModalOpen === true && (*/}
+                        {/*    <div className="filters_oll">*/}
+                        {/*        <div className="order">*/}
+                        {/*            <div className="modal_content">*/}
+                        {/*                <h3>Настройка приложения</h3>*/}
+                        {/*                <AiOutlineClose*/}
+                        {/*                    className="close"*/}
+                        {/*                    style={{border: "none", background: "none"}}*/}
+                        {/*                    onClick={closeModal}*/}
+                        {/*                    size={20}*/}
+                        {/*                />*/}
+                        {/*            </div>*/}
+                        {/*            <label className="detial">*/}
+                        {/*                <input*/}
+                        {/*                    type="radio"*/}
+                        {/*                    value="Кыргыз"*/}
+                        {/*                    checked={selectedOption === "Кыргыз"}*/}
+                        {/*                    onChange={() => handleCheckboxChange("Кыргыз")}*/}
+                        {/*                    onClick={closeModal}*/}
+                        {/*                />*/}
+                        {/*                <p>Кыргыз</p>*/}
+                        {/*            </label>*/}
+                        {/*            <label className="detial">*/}
+                        {/*                <input*/}
+                        {/*                    type="radio"*/}
+                        {/*                    value="Орус"*/}
+                        {/*                    checked={selectedOption === "Орус"}*/}
+                        {/*                    onChange={() => handleCheckboxChange("Орус")}*/}
+                        {/*                    onClick={closeModal}*/}
+                        {/*                />*/}
+                        {/*                <p>Орус</p>*/}
+                        {/*            </label>*/}
+                        {/*            <label className="detial">*/}
+                        {/*                <input*/}
+                        {/*                    type="radio"*/}
+                        {/*                    value="Англисче"*/}
+                        {/*                    checked={selectedOption === "Англисче"}*/}
+                        {/*                    onChange={() => handleCheckboxChange("Англисче")}*/}
+                        {/*                    onClick={closeModal}*/}
+                        {/*                />*/}
+                        {/*                <p>Англисче</p>*/}
+                        {/*            </label>*/}
+                        {/*        </div>*/}
+                        {/*    </div>*/}
+                        {/*)}*/}
+                        <h5 className="settings_title akaunt_remove" onClick={handleDeleteAccount}>Удалить акаунт</h5>
                     </div>
                 </div>
             </div>
