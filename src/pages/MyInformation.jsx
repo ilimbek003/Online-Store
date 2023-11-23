@@ -108,7 +108,6 @@ const dataSelect = {
 };
 
 const MyInformation = ({ Alert }) => {
-  const [data, setData] = useState([]);
   const navigate = useNavigate();
   const [inputChanged, setInputChanged] = useState(false);
   const [info, setInfo] = useState({

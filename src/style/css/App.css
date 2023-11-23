@@ -1006,6 +1006,14 @@ select {
   top: 15px;
   right: 35px;
 }
-.hover_btn.active{
+.hover_btn.active {
   background: red;
 }
+.iner {
+  padding: 25px 0 0 0;
+}
+
+
+
+
+

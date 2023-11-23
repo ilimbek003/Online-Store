@@ -54,6 +54,7 @@ const Login = ({ Alert }) => {
         localStorage.setItem("tokens", response.data.token);
       }
       if (response.data.password) {
+        Alert(response.data.message, 'error')
         setError(response.data);
       }
       setIsLoading(false);

@@ -7,7 +7,7 @@
 }
 
 .storis .storis_block {
-    gap: 15px;
+    gap: 10px;
     display: flex;
     overflow-y: hidden;
 }

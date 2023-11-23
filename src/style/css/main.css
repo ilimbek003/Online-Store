@@ -311,7 +311,7 @@ p {
 
 
 .div_box {
-    margin: 15px 0 0 0;
+    margin: 10px 0 0 0;
     width: 100%;
     height: 300px;
 }
@@ -446,7 +446,6 @@ p {
 .special_details_box {
     width: 100%;
     height: 300px;
-    margin-top: 20px;
 }
 
 .special_details_box h5 {
@@ -728,6 +727,8 @@ input#file-upload-button {
 /* settings */
 .settings {
     padding-bottom: 100px;
+    height: 100%;
+    background: #fff;
 }
 
 .settings_block {

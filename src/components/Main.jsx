@@ -23,7 +23,7 @@ const Main = () => {
 
     return (
         <div className="main-block">
-            <Header/>
+            <Header user={user}/>
             <div className="container">
                 <div className="margin_top">
                     <Storis token={token}/>
@@ -42,8 +42,8 @@ const Main = () => {
                                     <h1 className="title_ha">
                                         {user.bonus}
                                         <span>
-                                             {user.bonus === null ? "" :
-                                                 <span>бонус</span>
+                                             {user.bonus === null ? "0 бонус" :
+                                                 user.bonus
                                              }
                                         </span>
                                     </h1>

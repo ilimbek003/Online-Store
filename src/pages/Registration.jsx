@@ -58,7 +58,7 @@ const Registration = ({ Alert }) => {
           Alert(response.data.non_field_errors, "error");
         }
         if (response.data.response == true) {
-          Alert("Ползователь успешно зарегистрирован", "success");
+          Alert(response.data.message, "success");
           navigate("/personal/activation");
         }
         if (
