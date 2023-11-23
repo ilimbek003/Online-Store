@@ -12,12 +12,23 @@ const Header = ({user}) => {
     const navigate = useNavigate()
     const [isOpens, setIsOpens] = useState(false);
     console.log(user)
+    const token = localStorage.getItem('token') ? localStorage.getItem('token') : false;
+
     return (
         <div>
             <div className="nav">
                 <div className="container nav_content">
                     <FiUser className="fi" onClick={() => navigate("/dashboard")}/>
-                    <img src={bekbekei} alt=""/>
+                    {
+                        token ? <h2 style={{
+                            fontSize: "18px",
+                            color: "#000",
+                            fontWeight: '400',
+                            margin: "5px 0 0 0"
+                        }}>Привет {user.first_name}</h2> : (
+                            <img src={bekbekei} alt=""/>
+                        )
+                    }
                     <BiBell className="fi" onClick={() => setIsOpens(true)}/>
                 </div>
             </div>
