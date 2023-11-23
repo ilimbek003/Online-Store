@@ -8,9 +8,10 @@ import "../style/css/main.css"
 import {HiArrowLongLeft} from "react-icons/hi2";
 import {useNavigate} from "react-router-dom";
 
-const Header = () => {
+const Header = ({user}) => {
     const navigate = useNavigate()
     const [isOpens, setIsOpens] = useState(false);
+    console.log(user)
     return (
         <div>
             <div className="nav">

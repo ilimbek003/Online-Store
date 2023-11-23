@@ -23,7 +23,7 @@ const Main = () => {
 
     return (
         <div className="main-block">
-            <Header/>
+            <Header user={user}/>
             <div className="container">
                 <div className="margin_top">
                     <Storis token={token}/>

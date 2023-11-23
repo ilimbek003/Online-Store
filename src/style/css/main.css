@@ -727,6 +727,8 @@ input#file-upload-button {
 /* settings */
 .settings {
     padding-bottom: 100px;
+    height: 100%;
+    background: #fff;
 }
 
 .settings_block {
