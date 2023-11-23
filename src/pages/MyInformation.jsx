@@ -164,7 +164,7 @@ const MyInformation = ({ Alert }) => {
         first_name: user.first_name,
         language: user.language,
         birthday: user.birthday,
-        married: user.married == null ? "" : user.married,
+        married: user.married,
         gender: user.gender,
         status: user.status,
         city: user.city,

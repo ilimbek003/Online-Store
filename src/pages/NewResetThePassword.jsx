@@ -49,7 +49,7 @@ const NewResetThePassword = ({ Alert }) => {
         setError(response.data);
       }
       if (response.data.response === false) {
-        Alert(response.data.message, "success");
+        Alert(response.data.message, "error");
         navigate("/personal/login");
       }
       dispatch(registerSuccess(response.data));
