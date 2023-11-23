@@ -28,7 +28,7 @@ const PersonalArea = () => {
     };
 
     const navigate = useNavigate();
-    const token = JSON.parse(localStorage.getItem('token'));
+    const token = localStorage.getItem('token');
     return (
         <>
             <div id="modal">

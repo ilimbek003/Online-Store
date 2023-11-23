@@ -34,7 +34,7 @@ const ActivationCode = ({ Alert }) => {
       dispatch(registerSuccess(response.data));
       if (response.data.response === true) {
         Alert(response.data.message, "success");
-        navigate("/personal/new-reset-password");
+        navigate("/personal/new-reset-the-password");
       }
       setIsLoading(false);
       if (response.data.response === false) {
