@@ -22,7 +22,7 @@ const NewResetThePassword = ({ Alert }) => {
   const [confirm_password, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [local, setLocal] = useState(localStorage.getItem("token"));
+  const [local, setLocal] = useState(localStorage.getItem("token_block"));
 
   const headers = {
     Authorization: `Token ${local}`,
