@@ -35,7 +35,7 @@ const App = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [versons, setVersons] = useState([])
-    const [upDate, setUpDate] = useState(true)
+    const [upDate, setUpDate] = useState(false)
     const handleScroll = () => {
         window.scrollTo({top: 0, behavior: "smooth"});
     };
