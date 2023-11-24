@@ -45,6 +45,7 @@ const App = () => {
         handleScroll();
     }, [location]);
 
+
     function FuncAlert(text, props) {
         setTimeout(() => {
             setOpenAlert({
