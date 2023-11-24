@@ -802,24 +802,20 @@ input#file-upload-button {
   margin-bottom: 2px !important;
   margin-top: 20px;
 }
-
 .green {
   color: var(--green);
 }
-
 .settings_kart {
-  color: black;
+  color: #777;
   font-size: 14px;
   letter-spacing: 0.5px;
   line-height: 1;
 }
-
 .akaunt_remove {
   color: red;
   margin-top: 20px;
   cursor: pointer;
 }
-
 .input_option {
   border: none;
   display: flex;
