@@ -36,7 +36,7 @@ const App = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const [versons, setVersons] = useState([])
+    const [version, setVersion] = useState([])
     const [upDate, setUpDate] = useState(false)
     const handleScroll = () => {
         window.scrollTo({top: 0, behavior: "smooth"});
@@ -79,7 +79,7 @@ const App = () => {
         axios
             .get("https://hit-travel.org/versions")
             .then((response) => {
-                setVersons(response.data)
+                setVersion(response.data)
             })
             .catch((error) => {
                 console.log(error);
@@ -102,13 +102,13 @@ const App = () => {
                     <div className="verson_block">
                         <FaCloudArrowDown color="var(--orange)" size={75}/>
                         <h1>Доступно обновление</h1>
-                        <a href={versons.appstore} target="blank" className="dowload app">
+                        <a href={version.appstore} target="blank" className="dowload app">
                             <button className="button_form">
                                 <PiAppStoreLogoBold size={20}/>
                                 Обновить
                             </button>
                         </a>
-                        <a href={versons.googleplay} target="blank" className="dowload play">
+                        <a href={version.googleplay} target="blank" className="dowload play">
                             <button className="button_form">
                                 <FaGooglePlay size={20}/>
                                 Обновить
