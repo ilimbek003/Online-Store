@@ -25,6 +25,7 @@ import {PiAppStoreLogoBold} from "react-icons/pi"
 import {FaGooglePlay} from "react-icons/fa"
 import {FaCloudArrowDown} from "react-icons/fa6";
 import axios from "axios";
+import {url} from "./Api";
 
 const App = () => {
     const [openAlert, setOpenAlert] = useState({
@@ -78,7 +79,7 @@ const App = () => {
     }, [token]);
     useEffect(() => {
         axios
-            .get("https://hit-travel.org/versions")
+            .get(url + "/versions")
             .then((response) => {
                 setVersion(response.data)
             })
@@ -87,7 +88,7 @@ const App = () => {
             });
     }, [])
 
-    const versionConst = "1.0.21"
+    const versionConst = "1.0.0"
 
     useEffect(() => {
         if (version && version.version && String(versionConst).replaceAll('.', '') < String(version.version).replaceAll('.', '')) {

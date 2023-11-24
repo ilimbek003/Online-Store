@@ -23,7 +23,7 @@ const Header = ({user}) => {
                             color: "#000",
                             fontWeight: '400',
                             margin: "5px 0 0 0"
-                        }}>Привет {user.first_name}</h2> : (
+                        }}>Привет, {user.first_name}</h2> : (
                             <img src={bekbekei} alt=""/>
                         )
                     }
