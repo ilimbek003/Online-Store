@@ -36,7 +36,7 @@ const Header = ({user}) => {
                         <div className="nav">
                             <div className="container d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => setIsOpens(false)}/>
-                                <h4 className="title_h5 all_title">Кабарлоо</h4>
+                                <h4 className="title_h5 all_title">Уведомление</h4>
                                 <div/>
                             </div>
                         </div>

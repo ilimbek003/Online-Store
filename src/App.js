@@ -31,7 +31,6 @@ const App = () => {
   const [openAlert, setOpenAlert] = useState({
     open: false,
     props: "",
-
     text: "",
   });
 
@@ -76,26 +75,8 @@ const App = () => {
       navigate("/personal/to-come-in");
     }
   }, [token]);
-  useEffect(() => {
-    axios
-      .get("https://hit-travel.org/versions")
-      .then((response) => {
-        setVersion(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
-  const versionConst = "1.0.21";
 
-<<<<<<< HEAD
-    const token = localStorage.getItem("token");
-    useEffect(() => {
-        if (!token) {
-            navigate("/personal/to-come-in");
-        }
-    }, [token]);
     useEffect(() => {
         axios
             .get(url + "/versions")
@@ -198,112 +179,7 @@ const App = () => {
                 </div>
             )}
         </>
-    );
-=======
-  useEffect(() => {
-    if (
-      version &&
-      version.version &&
-      String(versionConst).replaceAll(".", "") <
-        String(version.version).replaceAll(".", "")
-    ) {
-      setUpDate(true);
-    }
-  }, [version]);
-
-  return (
-    <>
-      {upDate && (
-        <div className="verson">
-          <div className="verson_block">
-            <FaCloudArrowDown color="var(--orange)" size={75} />
-            <h1>Доступно обновление</h1>
-            <a href={version.appstore} target="blank" className="dowload app">
-              <button className="button_form">
-                <PiAppStoreLogoBold size={20} />
-                Обновить
-              </button>
-            </a>
-            <a
-              href={version.googleplay}
-              target="blank"
-              className="dowload play"
-            >
-              <button className="button_form">
-                <FaGooglePlay size={20} />
-                Обновить
-              </button>
-            </a>
-            <p onClick={() => setUpDate(false)} className="up_date">
-              Обновить позже
-            </p>
-          </div>
-        </div>
-      )}
-      {token ? (
-        <div>
-          {openAlert.open && (
-            <AlertData
-              state={openAlert}
-              setState={setOpenAlert}
-              propsData={openAlert.props}
-              text={openAlert.text}
-            />
-          )}
-          <div>
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="promotion" element={<Promotion />} />
-              <Route path="/special-details" element={<SpecialDetails />} />
-              <Route
-                path="/special-details-id/:id"
-                element={<SpecialDetailsId />}
-              />
-              <Route path="/get-shot-details" element={<GetShotDetails />} />
-              <Route
-                path="/get-shot-details-id/:id"
-                element={<GetShotDetailsId />}
-              />
-              <Route path="/to-help-page" element={<ToHelpPage />} />
-              <Route path="/message-page" element={<MessagePage />} />
-              <Route
-                path="/settings"
-                element={<Settings Alert={FuncAlert} />}
-              />
-              <Route path="/new-address" element={<NewAddress />} />
-              <Route path="/dashboard" element={<PersonalArea />} />
-              <Route path="shop-all/*" element={<Project />} />
-              <Route path="/qr-cod" element={<QrCode />} />
-              <Route path="/application" element={<AboutApplication />} />
-              <Route
-                path="/my-information"
-                element={<MyInformation Alert={FuncAlert} />}
-              />
-              {/*<Route path="/my-coupon-details" element={<MyCouponDetails/>}/>*/}
-              {/*<Route*/}
-              {/*    path="/my-coupon-details-id/:id"*/}
-              {/*    element={<MyCouponDetailsId/>}*/}
-              {/*/>*/}
-              {/* <Route path="/my-orders" element={<MyOrders />} /> */}
-              {/* <Route path="/buy-history" element={<BuyHistory />} /> */}
-              {/* <Routes path="/delivery-address" element={<DeliveryAddress />} /> */}
-            </Routes>
-            <Footer />
-          </div>
-        </div>
-      ) : (
-        <div className="background_register_login">
-          <Routes>
-            <Route
-              path="personal/*"
-              element={<AllProject Alert={FuncAlert} />}
-            />
-          </Routes>
-        </div>
-      )}
-    </>
-  );
->>>>>>> dea6f481e3a476af52e98d6e4ff6796985b420cd
+    )
 };
 
 export default App;
