@@ -110,7 +110,9 @@ const Registration = ({ Alert }) => {
                       })
                     }
                   />
-                  {error.last_name && <p className="red">{error.last_name}</p>}
+                  {error.first_name && (
+                    <p className="red">{error.first_name}</p>
+                  )}
                 </div>
                 <div className="input_box">
                   <label>
@@ -127,6 +129,7 @@ const Registration = ({ Alert }) => {
                       })
                     }
                   />
+                  {error.last_name && <p className="red">{error.last_name}</p>}
                 </div>
 
                 <div className="input_box">

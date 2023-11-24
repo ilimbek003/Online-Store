@@ -94,7 +94,10 @@ const App = () => {
               />
               <Route path="/to-help-page" element={<ToHelpPage />} />
               <Route path="/message-page" element={<MessagePage />} />
-              <Route path="/settings" element={<Settings Alert={FuncAlert}/>} />
+              <Route
+                path="/settings"
+                element={<Settings Alert={FuncAlert} />}
+              />
               <Route path="/new-address" element={<NewAddress />} />
               <Route path="/dashboard" element={<PersonalArea />} />
               <Route path="shop-all/*" element={<Project />} />
