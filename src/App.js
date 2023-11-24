@@ -30,6 +30,7 @@ const App = () => {
     const [openAlert, setOpenAlert] = useState({
         open: false,
         props: "",
+
         text: "",
     });
 
