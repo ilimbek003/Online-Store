@@ -17,6 +17,7 @@ const ResetThePassword = ({ Alert }) => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [errorCode, setErrorCode] = useState([]);
   const { error } = useSelector((state) => state.user);
 
   const handleForgotEvent = async (e) => {
@@ -37,6 +38,9 @@ const ResetThePassword = ({ Alert }) => {
         Alert(response.data.message, "success");
       } else {
         Alert(response.data.message, "error");
+      }
+      if (response.data.phone) {
+        setErrorCode(response.data);
       }
     } catch (error) {
       console.error(error);
@@ -72,13 +76,13 @@ const ResetThePassword = ({ Alert }) => {
               Номер телефона <span>*</span>
             </label>
             <input
-              required
               id="phone"
               className="input_form new_add_input"
               placeholder="Введите номер"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
+            {errorCode.phone && <p className="red">{errorCode.phone}</p>}
           </div>
           <button
             disabled={isLoading}

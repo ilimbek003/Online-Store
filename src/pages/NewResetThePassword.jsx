@@ -17,7 +17,7 @@ const NewResetThePassword = ({ Alert }) => {
   const [visible, setVisible] = useState(false);
   const [visible2, setVisible2] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState({});
+  const [error, setError] = useState([]);
   const [password, setPassword] = useState("");
   const [confirm_password, setConfirmPassword] = useState("");
   const dispatch = useDispatch();
@@ -42,15 +42,14 @@ const NewResetThePassword = ({ Alert }) => {
         { headers }
       );
       if (response.data.response === true) {
-        Alert("Пользователь успешно зарегистрирован", "success");
-        navigate("/");
+        Alert(response.data.message, "success");
+        navigate("/personal/login");
       }
       if (response.data.password || response.data.confirm_password) {
         setError(response.data);
       }
       if (response.data.response === false) {
         Alert(response.data.message, "error");
-        navigate("/personal/login");
       }
       dispatch(registerSuccess(response.data));
     } catch (error) {
@@ -77,7 +76,6 @@ const NewResetThePassword = ({ Alert }) => {
                 Пароль <span>*</span>
               </label>
               <input
-                required
                 className="input_form new_add_input"
                 type={visible ? "text" : "password"}
                 value={password}
@@ -93,7 +91,6 @@ const NewResetThePassword = ({ Alert }) => {
                 Повторите пароль <span>*</span>
               </label>
               <input
-                required
                 className="input_form new_add_input"
                 type={visible2 ? "text" : "password"}
                 value={confirm_password}
