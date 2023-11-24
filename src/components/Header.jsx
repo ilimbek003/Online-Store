@@ -23,7 +23,7 @@ const Header = ({user}) => {
                             color: "#000",
                             fontWeight: '400',
                             margin: "5px 0 0 0"
-                        }}>Привет {user.first_name}</h2> : (
+                        }}>Привет, {user.first_name}</h2> : (
                             <img src={bekbekei} alt=""/>
                         )
                     }
@@ -36,7 +36,7 @@ const Header = ({user}) => {
                         <div className="nav">
                             <div className="container d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => setIsOpens(false)}/>
-                                <h4 className="title_h5 all_title">Кабарлоо</h4>
+                                <h4 className="title_h5 all_title">Уведомление</h4>
                                 <div/>
                             </div>
                         </div>

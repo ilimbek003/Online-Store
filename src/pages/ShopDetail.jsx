@@ -33,7 +33,6 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
         axios.get(`${url}/${api}?cat=${cat}`)
             .then((response) => setData(response.data))
     }, [])
-
     const dataClick = async (dataID) => {
         try {
             const response = await axios.get(`${url}/${api}?cat=${dataID}`);
@@ -114,7 +113,6 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                 console.error("Ошибка при получении данных:", error);
             });
     }, [cat]);
-    const mun = JSON.parse(localStorage.getItem('plus'));
     return (<>
         <div id="modal">
             <div className="nav_line">
@@ -123,7 +121,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                         <h4 className="title_h5 all_title_one">
                             {/*{data && data[0] && data[0].name}*/}
-                            Name
+                            Имя
                         </h4>
                         <BsSearch className="fi" onClick={() => setSearch(true)}/>
                     </div>
@@ -155,7 +153,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             </div>
                             <div className="dnow d-flex align-items-center" onClick={() => setFilter(true)}>
                                 <HiOutlineArrowsUpDown className="icons"/>
-                                <h6 className="title_one mt_one">Иретоо</h6>
+                                <h6 className="title_one mt_one">Сортировка</h6>
                             </div>
                         </div>
                     </div>
@@ -166,7 +164,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     <div className="nav">
                         <div className="container d-flex justify-content-between align-items-center">
                             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
-                            <h4 className="title_h5 all_title">Издоо</h4>
+                            <h4 className="title_h5 all_title">Поиск</h4>
                             <div/>
                         </div>
                     </div>
@@ -179,7 +177,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             onChange={handleInputChange}
                         />
                         <button className="search-button" onClick={handleSearchButtonClick}>
-                            Search
+                            Поиск
                         </button>
                     </div>
                 </div>)}
@@ -189,26 +187,26 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         <div className="container">
                             <div className="d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => navigate(-1)}/>
-                                <h4 className="title_h5 all_title_one mt-2">Иреттоолор</h4>
+                                <h4 className="title_h5 all_title_one mt-2">Сортировка</h4>
                                 <AiOutlineDelete className="fi"/>
                             </div>
                         </div>
                     </div>
                     <div className="container iner">
-                        <h3 className="title_h4 mt-5" style={{color: '#000'}}>Баасы, сом</h3>
+                        <h3 className="title_h4 mt-5" style={{color: '#000'}}>Цена</h3>
                         <div className="renge mt-3">
                             <div className="d-flex align-items-center justify-content-between">
                                 <div className="d-flex align-items-center">
                                     <div className="value">
                                         <span className="values">{requests.budget[0]}</span>
                                     </div>
-                                    <h6 className="title_h6 nava">Баштап</h6>
+                                    <h6 className="title_h6 nava">Сначала</h6>
                                 </div>
                                 <div className="d-flex align-items-center">
                                     <div className="value">
                                         <span className="values"> {requests.budget[1]}</span>
                                     </div>
-                                    <h6 className="title_h6 nava">чейин</h6>
+                                    <h6 className="title_h6 nava">Вплоть до</h6>
                                 </div>
                             </div>
                             <Slider
@@ -225,7 +223,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             className="btn_button all_btn"
                             onClick={filtersData}
                         >
-                            Колдонуу
+                            Израсходовать
                         </button>
                     </div>
                 </div>)}
@@ -303,7 +301,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                 <div className="order" onClick={(e) => e.stopPropagation()}>
                     <div className="container">
                         <div className="d-flex justify-content-between">
-                            <h6 className="title_h3 orders">Иретоо</h6>
+                            <h6 className="title_h3 orders">Сортировка</h6>
                             <AiOutlineClose className="icons" onClick={() => setFilter(false)}/>
                         </div>
                         <div className="d-flex mt_bt">
@@ -312,7 +310,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                                 name="wp-comment-cookies-consent"
                                 onClick={() => setFilter(false)}
                                 type="checkbox"
-                                value="yes" x
+                                value="yes"
                             />
                             <h6 className="title_one m-lg-2">По умолчение</h6>
                         </div>
