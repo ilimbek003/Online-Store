@@ -1,6 +1,5 @@
 import React from 'react';
 import Slider from "react-slick";
-import mobile from "../img/mobile.svg";
 import slide from "../img/slide1.svg"
 import slides from "../img/slide2.svg"
 import {useNavigate} from "react-router";
@@ -22,7 +21,7 @@ const ToComeIn = () => {
                 <div className="container">
                     <Slider {...settings}>
                         <div className="mobile">
-                            <img src={mobile} alt=""/>
+                            <img src={slide} alt=""/>
                             <p>Накопительная карта - это возможность экономить на покупках, получать скидки, подарки и
                                 многое другое...</p>
                         </div>
