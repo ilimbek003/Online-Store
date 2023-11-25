@@ -6,7 +6,7 @@ import { FiPhone } from "react-icons/fi";
 import { LiaTelegramPlane } from "react-icons/lia";
 import { BsWhatsapp } from "react-icons/bs";
 import { BsChatRightText } from "react-icons/bs";
-import ihsan from "../../src/img/сотрудник.jpg";
+import ihsan from "../../src/img/support-bek.svg";
 import { IoMailOutline } from "react-icons/io5";
 
 const ToHelpPage = () => {

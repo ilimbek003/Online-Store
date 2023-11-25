@@ -519,22 +519,22 @@ p {
 }
 
 .worker_box {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  border: 7px solid #ff5c00;
-  display: flex;
   align-items: center;
+  /* border: 7px solid #ff5c00; */
+  /* border-radius: 50%; */
+  display: flex;
+  height: 200px;
   justify-content: center;
-  margin: 40px 0 0 0;
+  margin: 40px 0 0;
+  width: 230px;
 }
 
 .worker_box img {
-  width: 100%;
+  /* border-radius: 50%; */
   height: 100%;
-  border-radius: 50%;
   object-fit: cover;
   object-position: center;
+  /* width: 100%; */
 }
 
 .to_contact {
@@ -1078,6 +1078,8 @@ input#file-upload-button {
   color: #fff;
   border: none;
   border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400 !important;
 }
 
 .person_btn {
@@ -1120,7 +1122,7 @@ input#file-upload-button {
 .phone_btn {
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   background: var(--orange);
   margin-top: 20px;
 }
