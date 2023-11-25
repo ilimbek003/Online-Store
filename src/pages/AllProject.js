@@ -11,7 +11,7 @@ import ToComeIn from "../components/ToComeIn";
 import ToHelpPage from "./ToHelpPage";
 import {AlertData} from "../UI/Alert/Alert";
 
-const AllProject = ({FuncAlert}) => {
+const AllProject = () => {
     const [openAlert, setOpenAlert] = useState({
         open: false,
         props: "",
@@ -42,7 +42,6 @@ const AllProject = ({FuncAlert}) => {
         }
     }, [openAlert.open]);
 
-    const token = localStorage.getItem("token");
 
     return (
         <>
