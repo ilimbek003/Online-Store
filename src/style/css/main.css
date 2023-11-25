@@ -1234,7 +1234,8 @@ input#file-upload-button {
 }
 
 .ner {
-  margin: 18px auto !important;
+  padding: 15px;
+  border-bottom: 0.5px solid #f4f4f4;
 }
 
 .new_reset_the_password {

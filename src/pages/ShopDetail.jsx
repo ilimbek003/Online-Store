@@ -116,7 +116,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
     return (<>
         <div id="modal">
             <div className="nav_line">
-                <div className="nav">
+                <div>
                     <div className="container d-flex justify-content-between align-items-center ner">
                         <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                         <h4 className="title_h5 all_title_one">
@@ -125,7 +125,8 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         </h4>
                         <BsSearch className="fi" onClick={() => setSearch(true)}/>
                     </div>
-                    <div className="container d-flex align-items-center scroll">
+                    <div style={{padding: "18px"}}
+                         className="container d-flex align-items-center scroll">
                         <div className="from_btn">
                             <div className={lastClicked === 'handleTabClick' ? 'btn_tabs' : 'btn_tabs_active'}
                                  onClick={dataClicks}>
@@ -145,12 +146,13 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         ))}
                     </div>
                     <div className="container">
-                        <div className="filter">
+                        <div className="filter" style={{padding: "0 0 18px 0"}}>
                             <div className="dnow d-flex align-items-center"
                                  onClick={() => setFilters(true)}>
                                 <FiFilter className="icons"/>
                                 <h6 className="title_one mt_one">Фильтр</h6>
                             </div>
+                            <div className="dnow_one"/>
                             <div className="dnow d-flex align-items-center" onClick={() => setFilter(true)}>
                                 <HiOutlineArrowsUpDown className="icons"/>
                                 <h6 className="title_one mt_one">Сортировка</h6>

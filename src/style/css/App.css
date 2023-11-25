@@ -199,9 +199,6 @@ h6 {
 
 .nav_line {
     width: 100%;
-    height: 150px;
-    display: flex;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -210,6 +207,16 @@ h6 {
     z-index: 998;
     margin: 0 auto;
     border: 1px solid #f4f4f4;
+}
+.dnow{
+    width: 50%;
+    margin: 0 40px;
+}
+
+.dnow_one{
+    height: 30px;
+    width: 2px;
+    background: #f4f4f4;
 }
 
 .sapn {
@@ -279,7 +286,7 @@ label span {
 }
 
 .row_one {
-    padding: 150px 0 30px 0;
+    padding: 160px 0 30px 0;
     height: 110%;
     background: #ffffff;
 }
@@ -353,10 +360,9 @@ label span {
 }
 
 .filter {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
     align-items: center;
-    margin: 15px 0 0 0;
+    justify-content: center;
 }
 
 button {
