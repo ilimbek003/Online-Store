@@ -57,6 +57,7 @@ const ToHelpPage = () => {
                   <p className="title_h6" style={{ marginTop: "8px" }}>
                     Telegram
                   </p>
+
                 </div>
               </a>
               <a href="https://wa.me/+996705000003" target="_blank">
