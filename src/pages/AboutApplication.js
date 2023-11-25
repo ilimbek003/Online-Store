@@ -24,8 +24,10 @@ const AboutApplication = () => {
                         <img src={bekbekei} alt=""/>
                     </div>
                     <div>
-                        <div className="area_all">
-                            <a href="https://docs.google.com/document/d/1_Gwdg1PZr3U_ws6ZNPNiufvj3QaRZJg5WQ5QN0E_uV8" target="_blank">
+
+                        <a href="https://docs.google.com/document/d/1_Gwdg1PZr3U_ws6ZNPNiufvj3QaRZJg5WQ5QN0E_uV8"
+                           target="_blank">
+                            <div className="area_all">
                                 <div className="bell">
                                     <div className="bi">
                                         {" "}
@@ -33,28 +35,31 @@ const AboutApplication = () => {
                                     </div>
                                     <h3 className="mt-2">Правила программы лояльности </h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div className="area_all">
-                            <a href="https://docs.google.com/document/d/1mogXES8M3fNwr81zgFvzDH_NPcIGQuwrAvcz-llmV7w" target="_blank">
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1mogXES8M3fNwr81zgFvzDH_NPcIGQuwrAvcz-llmV7w"
+                           target="_blank">
+                            <div className="area_all">
+                                target="_blank">
                                 <div className="bell">
                                     <div className="bi">
                                         <LuScrollText className="be"/>
                                     </div>
                                     <h3 className="mt-2">Политика конфиденциальности</h3>
                                 </div>
-                            </a>
-                        </div>
-                        <div className="area_all">
-                            <a href="https://docs.google.com/document/d/1yNnE69w55nCvdy8EXokTlFMG0e5RWBzSJuIs6-4Xt24" target="_blank">
+                            </div>
+                        </a>
+                        <a href="https://docs.google.com/document/d/1yNnE69w55nCvdy8EXokTlFMG0e5RWBzSJuIs6-4Xt24"
+                           target="_blank">
+                            <div className="area_all">
                                 <div className="bell">
                                     <div className="bi">
                                         <LuScrollText className="be"/>
                                     </div>
                                     <h3 className="mt-2">Лицензионное соглашение</h3>
                                 </div>
-                            </a>
-                        </div>
+                            </div>
+                        </a>
                     </div>
                     <div>
                         <h3 style={{textAlign: "center"}} className="cent">Как вам наше приложение?</h3>
@@ -91,7 +96,8 @@ const AboutApplication = () => {
                 </div>
             </div>
         </>
-    );
+    )
+        ;
 };
 
 export default AboutApplication;
