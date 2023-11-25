@@ -23,8 +23,7 @@ const AboutApplication = () => {
                     <div className="nav_img">
                         <img src={bekbekei} alt=""/>
                     </div>
-                    <div>
-
+                    <div className="a_class">
                         <a href="https://docs.google.com/document/d/1_Gwdg1PZr3U_ws6ZNPNiufvj3QaRZJg5WQ5QN0E_uV8"
                            target="_blank">
                             <div className="area_all">
@@ -40,7 +39,6 @@ const AboutApplication = () => {
                         <a href="https://docs.google.com/document/d/1mogXES8M3fNwr81zgFvzDH_NPcIGQuwrAvcz-llmV7w"
                            target="_blank">
                             <div className="area_all">
-                                target="_blank">
                                 <div className="bell">
                                     <div className="bi">
                                         <LuScrollText className="be"/>
