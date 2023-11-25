@@ -181,7 +181,9 @@ p {
   cursor: pointer;
   margin: 0 0 20px 0;
 }
-
+.area_all a{
+  text-decoration: none;
+}
 .one {
   margin: 85px 0 30px 0;
 }
@@ -733,15 +735,16 @@ input#file-upload-button {
   font-weight: 500;
   padding: 30px 0 30px 0;
 }
-.flex_one button {
+.flex_one a {
   margin: 0 5px 0 5px;
 }
+
 .flex_one button {
   --border-radius: 16px;
   --border-width: 2px;
   appearance: none;
   position: relative;
-  padding: 25px 2em;
+  padding: 25px 2.59em;
   border: 0;
   background-color: transparent;
   font-family: "Montserrat", sans-serif;

@@ -25,35 +25,42 @@ const AboutApplication = () => {
                     </div>
                     <div>
                         <div className="area_all">
-                            <div className="bell">
-                                <div className="bi">
-                                    {" "}
-                                    <LuScrollText className="be"/>{" "}
+                            <a href="#">
+                                <div className="bell">
+                                    <div className="bi">
+                                        {" "}
+                                        <LuScrollText className="be"/>{" "}
+                                    </div>
+                                    <h3 className="mt-2">Правила программы лояльности </h3>
                                 </div>
-                                <h3 className="mt-2">Правила программы лояльности </h3>
-                            </div>
+                            </a>
                         </div>
                         <div className="area_all">
-                            <div className="bell">
-                                <div className="bi">
-                                    <LuScrollText className="be"/>
+                            <a href="#">
+                                <div className="bell">
+                                    <div className="bi">
+                                        <LuScrollText className="be"/>
+                                    </div>
+                                    <h3 className="mt-2">Политика конфиденциальности</h3>
                                 </div>
-                                <h3 className="mt-2">Политика конфиденциальности</h3>
-                            </div>
+                            </a>
                         </div>
                         <div className="area_all">
-                            <div className="bell">
-                                <div className="bi">
-                                    <LuScrollText className="be"/>
+                            <a href="#">
+                                <div className="bell">
+                                    <div className="bi">
+                                        <LuScrollText className="be"/>
+                                    </div>
+                                    <h3 className="mt-2">Лицензионное соглашение</h3>
                                 </div>
-                                <h3 className="mt-2">Лицензионное соглашение</h3>
-                            </div>
+                            </a>
                         </div>
                     </div>
                     <div>
                         <h3 style={{textAlign: "center"}} className="cent">Как вам наше приложение?</h3>
                         <div className="d-flex flex_one">
-                            <button>
+                            <a href="#">
+                                <button>
                                 <span style={{
                                     position: "absolute",
                                     color: '#ff640d',
@@ -63,8 +70,10 @@ const AboutApplication = () => {
                                 }}>
                                    <AiTwotoneDislike className="fis"/>
                                 </span>
-                            </button>
-                            <button>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button>
                                 <span style={{
                                     position: "absolute",
                                     color: '#ff640d',
@@ -74,7 +83,8 @@ const AboutApplication = () => {
                                 }}>
                                     <AiTwotoneLike className="fis"/>
                                 </span>
-                            </button>
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
