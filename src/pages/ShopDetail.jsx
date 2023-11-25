@@ -125,7 +125,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         </h4>
                         <BsSearch className="fi" onClick={() => setSearch(true)}/>
                     </div>
-                    <div style={{padding: "18px"}}
+                    <div style={{padding: "18px",borderBottom: "0.5px solid #f4f4f4"}}
                          className="container d-flex align-items-center scroll">
                         <div className="from_btn">
                             <div className={lastClicked === 'handleTabClick' ? 'btn_tabs' : 'btn_tabs_active'}
@@ -146,7 +146,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         ))}
                     </div>
                     <div className="container">
-                        <div className="filter" style={{padding: "0 0 15px 0"}}>
+                        <div className="filter" style={{padding: "15px"}}>
                             <div className="dnow d-flex align-items-center"
                                  onClick={() => setFilters(true)}>
                                 <FiFilter className="icons"/>
