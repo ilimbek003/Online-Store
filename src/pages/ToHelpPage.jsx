@@ -39,7 +39,7 @@ const ToHelpPage = () => {
               </p>
             </div>
             <div className="to_contact">
-              <a href="#">
+              <a href="tel:+996705000003">
                 <div className="contact_box">
                   <FiPhone size={23} />
                 </div>
@@ -49,7 +49,7 @@ const ToHelpPage = () => {
                   </p>
                 </div>
               </a>
-              <a href="#" target="_blank">
+              <a href="https://t.me/+996705000003" target="_blank">
                 <div className="contact_box">
                   <LiaTelegramPlane size={23} />
                 </div>
@@ -59,7 +59,7 @@ const ToHelpPage = () => {
                   </p>
                 </div>
               </a>
-              <a href="#" target="_blank">
+              <a href="https://wa.me/+996705000003" target="_blank">
                 <div className="contact_box">
                   <BsWhatsapp size={23} />
                 </div>
@@ -71,7 +71,7 @@ const ToHelpPage = () => {
               </a>
               <a href="#" target="_blank">
                 <div className="contact_box">
-                  <a href="mailto:vlad@htmlbook.ru" className="fi">
+                  <a href="mailto:aaammuu@bk.ru" className="fi">
                     <IoMailOutline className="" size={23} />
                   </a>
                 </div>
