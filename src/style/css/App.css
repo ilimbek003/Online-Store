@@ -210,7 +210,6 @@ h6 {
 }
 .dnow{
     width: 50%;
-    margin: 0 40px;
 }
 
 .dnow_one{
@@ -926,8 +925,9 @@ button {
 }
 
 .mobile img {
-    width: 150px;
     margin: 100px auto 30px;
+    max-width: 280px;
+    max-height: 300px;
 }
 
 .mobile h5 {
@@ -945,6 +945,7 @@ button {
     text-align: center;
     line-height: 1;
     margin: 0 auto;
+    width: 90%;
 }
 
 .slick-dots {

@@ -1,6 +1,8 @@
 import React from 'react';
 import Slider from "react-slick";
 import mobile from "../img/mobile.svg";
+import slide from "../img/slide1.svg"
+import slides from "../img/slide2.svg"
 import {useNavigate} from "react-router";
 
 const ToComeIn = () => {
@@ -25,12 +27,12 @@ const ToComeIn = () => {
                                 многое другое...</p>
                         </div>
                         <div className="mobile">
-                            <img src={mobile} alt=""/>
+                            <img src={slide} alt=""/>
                             <p>Выбирайте свои скидки и акции на любимые товары и заглядывайте к нам чаще за
                                 покупками</p>
                         </div>
                         <div className="mobile">
-                            <img src={mobile} alt=""/>
+                            <img src={slides} alt=""/>
                             <p>Все преимущества в твоем смартфоне - показывайте QR-код при оплате покупок</p>
                         </div>
                     </Slider>

@@ -121,7 +121,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                         <h4 className="title_h5 all_title_one">
                             {/*{data && data[0] && data[0].name}*/}
-                            Каталог товары
+                            Каталог, товары
                         </h4>
                         <BsSearch className="fi" onClick={() => setSearch(true)}/>
                     </div>
@@ -147,13 +147,13 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                     </div>
                     <div className="container">
                         <div className="filter">
-                            <div className="dnow d-flex align-items-center"
+                            <div className="dnow d-flex align-items-center justify-content-center"
                                  onClick={() => setFilters(true)}>
                                 <FiFilter className="icons"/>
                                 <h6 className="title_one mt_one">Фильтр</h6>
                             </div>
                             <div className="dnow_one"/>
-                            <div className="dnow d-flex align-items-center" onClick={() => setFilter(true)}>
+                            <div className="dnow d-flex align-items-center justify-content-center" onClick={() => setFilter(true)}>
                                 <HiOutlineArrowsUpDown className="icons"/>
                                 <h6 className="title_one mt_one">Сортировка</h6>
                             </div>
