@@ -206,7 +206,7 @@ h6 {
     background: #ffffff;
     z-index: 998;
     margin: 0 auto;
-    border: 1px solid #f4f4f4;
+    border: 0.5px solid #f4f4f4;
 }
 .dnow{
     width: 50%;
