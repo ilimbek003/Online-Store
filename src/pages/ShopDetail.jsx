@@ -146,7 +146,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         ))}
                     </div>
                     <div className="container">
-                        <div className="filter" style={{padding: "0 0 18px 0"}}>
+                        <div className="filter" style={{padding: "0 0 15px 0"}}>
                             <div className="dnow d-flex align-items-center"
                                  onClick={() => setFilters(true)}>
                                 <FiFilter className="icons"/>
