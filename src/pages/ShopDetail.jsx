@@ -121,7 +121,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                         <HiArrowLongLeft className="fi" onClick={() => navigate('/shop-all/shop')}/>
                         <h4 className="title_h5 all_title_one">
                             {/*{data && data[0] && data[0].name}*/}
-                            Имя
+                            Каталог товары
                         </h4>
                         <BsSearch className="fi" onClick={() => setSearch(true)}/>
                     </div>
