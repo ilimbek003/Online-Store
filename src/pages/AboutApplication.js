@@ -61,38 +61,38 @@ const AboutApplication = () => {
                             </div>
                         </a>
                     </div>
-                    <div>
-                        <h3 style={{textAlign: "center"}} className="cent">Как вам наше приложение?</h3>
-                        <div className="d-flex flex_one">
-                            <a href="#">
-                                <button>
-
-                                <span style={{
-                                    position: "absolute",
-                                    color: '#ff640d',
-                                    top: '0',
-                                    left: "0",
-                                    right: '0',
-                                }}>
-                                   <AiTwotoneDislike className="fis"/>
-                                </span>
-                                </button>
-                            </a>
-                            <a href="#">
-                                <button>
-                                <span style={{
-                                    position: "absolute",
-                                    color: '#ff640d',
-                                    top: '0',
-                                    left: "0",
-                                    right: '0',
-                                }}>
-                                    <AiTwotoneLike className="fis"/>
-                                </span>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+                    {/*// <div>*/}
+                    {/*//     <h3 style={{textAlign: "center"}} className="cent">Как вам наше приложение?</h3>*/}
+                    {/*//     <div className="d-flex flex_one">*/}
+                    {/*//         <a href="#">*/}
+                    {/*//             <button>*/}
+                    {/*//*/}
+                    {/*//             <span style={{*/}
+                    {/*//                 position: "absolute",*/}
+                    {/*//                 color: '#ff640d',*/}
+                    {/*//                 top: '0',*/}
+                    {/*//                 left: "0",*/}
+                    {/*//                 right: '0',*/}
+                    {/*//             }}>*/}
+                    {/*//                <AiTwotoneDislike className="fis"/>*/}
+                    {/*//             </span>*/}
+                    {/*//             </button>*/}
+                    {/*//         </a>*/}
+                    {/*        <a href="#">*/}
+                    {/*            <button>*/}
+                    {/*            <span style={{*/}
+                    {/*                position: "absolute",*/}
+                    {/*                color: '#ff640d',*/}
+                    {/*                top: '0',*/}
+                    {/*                left: "0",*/}
+                    {/*                right: '0',*/}
+                    {/*            }}>*/}
+                    {/*                <AiTwotoneLike className="fis"/>*/}
+                    {/*            </span>*/}
+                    {/*            </button>*/}
+                    {/*        </a>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
             </div>
         </>
