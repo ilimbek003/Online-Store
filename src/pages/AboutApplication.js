@@ -25,7 +25,7 @@ const AboutApplication = () => {
                     </div>
                     <div>
                         <div className="area_all">
-                            <a href="#">
+                            <a href="https://docs.google.com/document/d/1_Gwdg1PZr3U_ws6ZNPNiufvj3QaRZJg5WQ5QN0E_uV8" target="_blank">
                                 <div className="bell">
                                     <div className="bi">
                                         {" "}
@@ -36,7 +36,7 @@ const AboutApplication = () => {
                             </a>
                         </div>
                         <div className="area_all">
-                            <a href="#">
+                            <a href="https://docs.google.com/document/d/1mogXES8M3fNwr81zgFvzDH_NPcIGQuwrAvcz-llmV7w" target="_blank">
                                 <div className="bell">
                                     <div className="bi">
                                         <LuScrollText className="be"/>
@@ -46,7 +46,7 @@ const AboutApplication = () => {
                             </a>
                         </div>
                         <div className="area_all">
-                            <a href="#">
+                            <a href="https://docs.google.com/document/d/1yNnE69w55nCvdy8EXokTlFMG0e5RWBzSJuIs6-4Xt24" target="_blank">
                                 <div className="bell">
                                     <div className="bi">
                                         <LuScrollText className="be"/>
