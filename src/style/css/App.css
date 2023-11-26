@@ -926,8 +926,8 @@ button {
 
 .mobile img {
     margin: 100px auto 30px;
+    height: 320px;
     max-width: 280px;
-    max-height: 300px;
 }
 
 .mobile h5 {
