@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import "../style/css/main.css";
 import { fetchData } from "../Redux/reduser/fetchData"
 
-const GetShot = ({ token }) => {
+const GetShot = ({ token}) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { data } = useSelector(state => state.myData);

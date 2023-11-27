@@ -26,7 +26,7 @@ const QrCode = () => {
                             <div className="container d-flex justify-content-between align-items-center">
                                 <HiArrowLongLeft className="fi" onClick={() => navigate("/")}/>
                                 <p className="qr_cod_header">
-                                    Сиздин Bekbekei картаныз <br/>{" "}
+                                    Ваша карта <br/>{" "}
                                     <span className="sapn">{user.bonus_id}</span>
                                 </p>
                                 <LiaQuestionCircleSolid
