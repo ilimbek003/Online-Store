@@ -4,7 +4,7 @@ import activationReduser from "./slice/activationReduser";
 import UserSlice from "./slice/UserSlice";
 import myReducer from "./slice/mySlice"
 import userInfo from "./slice/userInfo"
-
+import storis from "./slice/Storis/StorisSlice"
 export const store = configureStore(
     {
         reducer: {
@@ -13,6 +13,7 @@ export const store = configureStore(
             user: UserSlice,
             myData: myReducer,
             users: userInfo,
+            stosis:storis,
         }
     }
 )

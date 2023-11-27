@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { Routes, Route, useLocation } from "react-router-dom";
+import {Routes, Route, useLocation} from "react-router-dom";
 import Promotion from "./pages/Promotion";
 import SpecialDetails from "./pages/SpecialDetails";
 import SpecialDetailsId from "./pages/SpecialDetailsId";
@@ -16,65 +16,82 @@ import Project from "./pages/Project";
 import QrCode from "./pages/QrCode";
 import MyInformation from "./pages/MyInformation";
 import "react-toastify/dist/ReactToastify.css";
-import { AlertData } from "./UI/Alert/Alert";
+import {AlertData} from "./UI/Alert/Alert";
 import AllProject from "./pages/AllProject";
-import { useNavigate } from "react-router";
+import {useNavigate} from "react-router";
 import AboutApplication from "./pages/AboutApplication";
-import { BsFillArrowDownCircleFill } from "react-icons/bs";
-import { PiAppStoreLogoBold } from "react-icons/pi";
-import { FaGooglePlay } from "react-icons/fa";
-import { FaCloudArrowDown } from "react-icons/fa6";
+import {BsFillArrowDownCircleFill} from "react-icons/bs";
+import {PiAppStoreLogoBold} from "react-icons/pi";
+import {FaGooglePlay} from "react-icons/fa";
+import {FaCloudArrowDown} from "react-icons/fa6";
 import axios from "axios";
 import {url} from "./Api";
 
 const App = () => {
-  const [openAlert, setOpenAlert] = useState({
-    open: false,
-    props: "",
-    text: "",
-  });
+    const [openAlert, setOpenAlert] = useState({
+        open: false,
+        props: "",
+        text: "",
+    });
 
-  const location = useLocation();
-  const navigate = useNavigate();
-  const [version, setVersion] = useState([]);
-  const [upDate, setUpDate] = useState(false);
-  const handleScroll = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-  useEffect(() => {
-    handleScroll();
-  }, [location]);
+    const [user, setUser] = useState([])
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [version, setVersion] = useState([]);
+    const [upDate, setUpDate] = useState(false);
+    const [local, setLocal] = useState(localStorage.getItem("tokens"));
 
-  function FuncAlert(text, props) {
-    setTimeout(() => {
-      setOpenAlert({
-        ...openAlert,
-        open: true,
-        text: text,
-        props: props,
-      });
-    }, 200);
-    setOpenAlert({ ...openAlert, open: false });
-  }
+    const headers = {
+        Authorization: `Token ${local}`,
+    };
+    const handleScroll = () => {
+        window.scrollTo({top: 0, behavior: "smooth"});
+    };
+    useEffect(() => {
+        handleScroll();
+    }, [location]);
 
-  useEffect(() => {
-    if (openAlert.open) {
-      const timeoutId = setTimeout(() => {
-        setOpenAlert({ ...openAlert, open: false });
-      }, 3000);
-
-      return () => {
-        clearTimeout(timeoutId);
-      };
+    function FuncAlert(text, props) {
+        setTimeout(() => {
+            setOpenAlert({
+                ...openAlert,
+                open: true,
+                text: text,
+                props: props,
+            });
+        }, 200);
+        setOpenAlert({...openAlert, open: false});
     }
-  }, [openAlert.open]);
 
-  const token = localStorage.getItem("token");
-  useEffect(() => {
-    if (!token) {
-      navigate("/personal/to-come-in");
-    }
-  }, [token]);
+    useEffect(() => {
+        axios
+            .get(url + "/auth/user-info", {headers})
+            .then((response) => {
+                setUser(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }, [])
+
+    useEffect(() => {
+        if (openAlert.open) {
+            const timeoutId = setTimeout(() => {
+                setOpenAlert({...openAlert, open: false});
+            }, 3000);
+
+            return () => {
+                clearTimeout(timeoutId);
+            };
+        }
+    }, [openAlert.open]);
+
+    const token = localStorage.getItem("token");
+    useEffect(() => {
+        if (!token) {
+            navigate("/personal/to-come-in");
+        }
+    }, [token]);
 
 
     useEffect(() => {
@@ -132,7 +149,7 @@ const App = () => {
                     )}
                     <div>
                         <Routes>
-                            <Route path="/" element={<Main/>}/>
+                            <Route path="/" element={<Main user={user}/>}/>
                             <Route path="promotion" element={<Promotion/>}/>
                             <Route path="/special-details" element={<SpecialDetails/>}/>
                             <Route
