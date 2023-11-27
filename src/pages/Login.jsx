@@ -6,6 +6,7 @@ import IMask from "imask";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../Redux/slice/UserSlice";
 import Loading from "../UI/Loading/Loading";
+import { LiaQuestionCircleSolid } from "react-icons/lia";
 import { url } from "../Api";
 import axios from "axios";
 import {
@@ -77,7 +78,10 @@ const Login = ({ Alert }) => {
           <div className="container d-flex justify-content-between align-items-center ">
             <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
             <p className="header_name">Войти</p>
-            <div />
+            <LiaQuestionCircleSolid
+              className="fi"
+              onClick={() => navigate("/personal/to-help-page")}
+            />
           </div>
         </div>
         <div className="container">
