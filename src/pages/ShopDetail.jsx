@@ -246,7 +246,7 @@ const ShopDetail = ({data, setData, saveToLocalStorage, handlePlus, handleMinus,
                             <h3 className="title_one mt">{el.title}</h3>
                             <div className="d-flex align-items-center justify-content-between mt-2">
                                 <p className="project">
-                                    <span>{el.price_for} шт </span>
+                                    <span>1 {el.price_for}</span>
                                 </p>
                                 <h2>{el.price} сом</h2>
                             </div>

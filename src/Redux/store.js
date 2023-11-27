@@ -5,6 +5,7 @@ import UserSlice from "./slice/UserSlice";
 import myReducer from "./slice/mySlice"
 import userInfo from "./slice/userInfo"
 import storis from "./slice/Storis/StorisSlice"
+import products from "./slice/ProducSlice"
 export const store = configureStore(
     {
         reducer: {
@@ -14,6 +15,7 @@ export const store = configureStore(
             myData: myReducer,
             users: userInfo,
             stosis:storis,
+            products:products,
         }
     }
 )
