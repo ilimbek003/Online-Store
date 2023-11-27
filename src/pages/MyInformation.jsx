@@ -220,6 +220,32 @@ const MyInformation = ({ Alert }) => {
     }
   };
 
+  useEffect(() => {
+    if (user && info.car == !user.car) {
+      setInputChanged(true);
+    } else if (info.first_name !== user.first_name) {
+      setInputChanged(true);
+    } else if (info.last_name !== user.last_name) {
+      setInputChanged(true);
+    } else if (info.language !== user.language) {
+      setInputChanged(true);
+    } else if (info.city !== user.city) {
+      setInputChanged(true);
+    } else if (info.married !== user.married) {
+      setInputChanged(true);
+    } else if (info.status !== user.status) {
+      setInputChanged(true);
+    } else if (info.gender !== user.gender) {
+      setInputChanged(true);
+    } else if (info.birthday !== user.birthday) {
+      setInputChanged(true);
+    } else if (info.animal == !user.animal) {
+      setInputChanged(true);
+    } else {
+      setInputChanged(false);
+    }
+  }, [info]);
+
   return (
     <div className="my_information">
       {user.last_name ? (
@@ -344,7 +370,8 @@ const MyInformation = ({ Alert }) => {
                         className="input_select"
                         onChange={(e) =>
                           setInfo({ ...info, status: e.target.value }) ||
-                          setInputChanged(true)
+                          setInputChanged(true) ||
+                          setInputChanged(false)
                         }
                         value={info.status}
                       >
@@ -376,8 +403,7 @@ const MyInformation = ({ Alert }) => {
                     <label className="switch">
                       <input
                         onClick={() =>
-                          setInfo({ ...info, animal: !info.animal }) ||
-                          setInputChanged(true)
+                          setInfo({ ...info, animal: !info.animal })
                         }
                         type="checkbox"
                         checked={info.animal}
@@ -389,10 +415,7 @@ const MyInformation = ({ Alert }) => {
                     <p>Наличие автомобиля</p>
                     <label className="switch">
                       <input
-                        onClick={() =>
-                          setInfo({ ...info, car: !info.car }) ||
-                          setInputChanged(true)
-                        }
+                        onClick={() => setInfo({ ...info, car: !info.car })}
                         type="checkbox"
                         checked={info.car}
                       />

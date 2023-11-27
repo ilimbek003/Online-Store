@@ -5,6 +5,7 @@ import IMask from "imask";
 import { useDispatch, useSelector } from "react-redux";
 import { forgotUser } from "../Redux/slice/ForgotSlice";
 import Loading from "../UI/Loading/Loading";
+import { LiaQuestionCircleSolid } from "react-icons/lia";
 import axios from "axios";
 import { url } from "../Api";
 import {
@@ -65,7 +66,10 @@ const ResetThePassword = ({ Alert }) => {
         <div className="container d-flex justify-content-between align-items-center ">
           <HiArrowLongLeft className="fi" onClick={() => navigate(-1)} />
           <p className="header_name">Сбросить пароль</p>
-          <span></span>
+          <LiaQuestionCircleSolid
+            className="fi"
+            onClick={() => navigate("/personal/to-help-page")}
+          />
         </div>
       </div>
       <div className="container">
