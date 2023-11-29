@@ -1,6 +1,6 @@
 import React from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
-import bekbekei from "../img/2.png";
+import bekbekei from "../img/bekbekei-h-logo.svg";
 import { LiaQuestionCircleSolid } from "react-icons/lia";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -18,10 +18,19 @@ const Activation = ({ Alert }) => {
   const [code, setCode] = useState("");
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
-
+  const [error, setError] = useState([]);
+  const phone = localStorage.getItem("phone");
+  let repeatActivationCredential = {
+    phone,
+  };
+  const handleCode = () => {
+    axios.post(url + "/auth/send-code", repeatActivationCredential);
+  };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const phone = localStorage.getItem("phone");
+
     let activationCredential = {
       phone,
       code,
@@ -43,9 +52,14 @@ const Activation = ({ Alert }) => {
         Alert(response.data.message, "success");
         navigate("/");
       }
+      if (response.data.password) {
+        setError(response.data);
+      }
+      setLoading(false);
     } catch (error) {
       dispatch(registerFailure(error.message));
     }
+    setLoading(false);
   };
 
   return (
@@ -56,7 +70,7 @@ const Activation = ({ Alert }) => {
           <img className="images" src={bekbekei} alt="Бекбекей" />
           <LiaQuestionCircleSolid
             className="fi"
-            onClick={() => navigate("/to-help-page")}
+            onClick={() => navigate("/personal/to-help-page")}
           />
         </div>
       </div>
@@ -72,6 +86,7 @@ const Activation = ({ Alert }) => {
               placeholder="Введите код"
               onChange={(e) => setCode(e.target.value)}
             />
+            {error.password && <p className="red">{error.password}</p>}
             <button
               disabled={loading}
               style={{ marginTop: 20 }}
@@ -79,6 +94,9 @@ const Activation = ({ Alert }) => {
               type="submit"
             >
               {loading ? <Loading /> : "Подтвердить"}
+            </button>
+            <button onClick={handleCode} className="repeat_the_code_btn">
+              Отправить снова код
             </button>
           </form>
         </div>
