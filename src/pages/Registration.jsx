@@ -197,10 +197,19 @@ const Registration = ({ Alert }) => {
                     <p className="red">{error.confirm_password}</p>
                   )}
                 </div>
+                <p className="user_agreement">
+                  Нажимая на кнопку "Pегистрация" я принимаю условия
+                  <a
+                    href="https://docs.google.com/document/d/1yNnE69w55nCvdy8EXokTlFMG0e5RWBzSJuIs6-4Xt24"
+                    className="px-1 terms-link"
+                  >
+                    Пользовательского соглашения
+                  </a>
+                </p>
                 <button
                   disabled={isLoading}
                   onSubmit={handleSubmit}
-                  className=" phone_btn"
+                  className="phone_btn"
                 >
                   {isLoading ? <Loading /> : "Регистрация"}
                 </button>

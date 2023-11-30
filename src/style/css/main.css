@@ -874,12 +874,10 @@ input#file-upload-button {
   color: var(--orange);
   cursor: pointer;
 }
-
 .add {
   font-size: 18px;
   margin-right: 5px;
 }
-
 .page_empty {
   width: 100%;
   display: flex;
@@ -887,29 +885,24 @@ input#file-upload-button {
   align-items: center;
   justify-content: center;
 }
-
 .page_empty h2 {
   text-align: center;
   font-size: 20px;
   font-weight: 700;
   margin-bottom: 0px !important;
 }
-
 .page_empty p {
   font-size: 16px;
   text-align: center;
 }
-
 .new_block {
   width: 100%;
   padding-top: 60px;
 }
-
 .new_add_input {
   border: none !important;
   background: #e9ecef;
 }
-
 .new_button {
   border: none;
   color: #fff;
@@ -927,42 +920,35 @@ input#file-upload-button {
 }
 
 /* MyCouponDeatilsId */
-
 .coupon_number {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
 }
-
 .c_number {
   color: #04c700;
   font-size: 16px !important;
 }
-
 .goods {
   font-size: 18px;
   margin-top: 10px;
 }
-
 .goods_order {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: 10px;
 }
-
 .goods_order p {
   font-size: 16px;
   font-weight: 400;
 }
-
 .goods_order span {
   font-size: 14px;
   font-weight: 400;
   color: red;
 }
-
 .conditions {
   display: block;
   width: 100%;
@@ -974,11 +960,9 @@ input#file-upload-button {
   font-weight: 400;
   margin-top: 20px;
 }
-
 .qr_cod_block {
   margin-top: 20px;
 }
-
 .qr_cod_block img {
   width: 100%;
   height: 100%;
@@ -990,39 +974,32 @@ input#file-upload-button {
   height: 100%;
   background: #fff;
 }
-
 .toogle_block_inform {
   background: #e9ecef !important;
 }
-
 .infor_block {
   margin-top: 0px !important;
   background: #e9ecef !important;
 }
-
 .ionic_box1 {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 80px;
 }
-
 .ionic_button {
   border: none;
   background: var(--orange);
 }
-
 .ionic_button_text {
   font-size: 18px;
   margin-bottom: 0px !important;
   color: #fff;
 }
-
 .ionic_button_date {
   color: #fff !important;
   font-size: 14px;
 }
-
 .block_border {
   width: 250px;
   height: 250px;
@@ -1032,7 +1009,6 @@ input#file-upload-button {
   align-items: center;
   justify-content: center;
 }
-
 .acaunt_block_modal {
   width: 100%;
   display: flex;
@@ -1040,17 +1016,14 @@ input#file-upload-button {
   align-items: center;
   padding: 15px;
 }
-
 .acaunt_block_modal h3 {
   font-size: 22px;
   font-weight: 700;
 }
-
 .acaunt_block_modal p {
   text-align: center;
   line-height: 1.2;
 }
-
 .acaunt_block_modal button {
   background: var(--orange);
   color: #fff;
@@ -1059,7 +1032,6 @@ input#file-upload-button {
   font-size: 16px;
   font-weight: 400;
 }
-
 .acaunt_block_modal h4 {
   font-size: 16px;
   font-weight: 400;
@@ -1072,7 +1044,6 @@ input#file-upload-button {
   height: 100%;
   background: #fff;
 }
-
 .registr_btn {
   background: var(--orange);
   color: #fff;
@@ -1081,15 +1052,12 @@ input#file-upload-button {
   font-size: 16px;
   font-weight: 400 !important;
 }
-
 .person_btn {
   margin: 0 0 20px 0;
 }
-
 .phone_block_all {
   padding-top: 80px;
 }
-
 .phone_block_all {
   background: #ffffff;
   height: 100%;
@@ -1098,73 +1066,61 @@ input#file-upload-button {
   flex-direction: column;
   justify-content: space-between;
 }
-
 .phone_block {
   width: 100%;
 }
-
 .phone_block h1 {
   line-height: 1.1;
   font-weight: 600;
   margin-bottom: 20px;
 }
-
 .phone_block p {
   margin-top: 20px;
   line-height: 1.1;
 }
-
 .phone_block input {
   background: #e9ecef;
   border: none;
 }
-
 .phone_btn {
   border: none;
   color: #fff;
   font-size: 16px;
   background: var(--orange);
-  margin-top: 20px;
+  margin-top: 15px;
 }
-
 .registration h2 {
   font-weight: 600;
 }
-
 .input_checkbox_block {
   width: 100%;
   display: flex;
   margin-top: 15px;
   line-height: 1.1;
 }
-
 .input_checkbox_block input[type="checkbox"] {
   width: 16px;
   height: 16px;
   border-radius: 0px !important;
   cursor: pointer;
 }
-
 .input_checkbox_block p > h6 {
   font-weight: 600;
   font-size: 18px;
 }
-
 .phone_add {
   margin-top: 10px;
 }
-
 .header_name {
   font-size: 17px;
   font-weight: 500;
 }
-
 .come_in {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
   gap: 10px;
   font-weight: 400;
 }
@@ -1172,14 +1128,12 @@ input#file-upload-button {
 .come_in span {
   color: var(--orange);
   margin-left: 2px;
-  font-weight: 500;
+  font-weight: 400;
   cursor: pointer;
 }
-
 .login_block {
   padding-top: 50px;
 }
-
 .forgot_password {
   font-size: 16px;
   margin-top: 10px;
@@ -1187,27 +1141,23 @@ input#file-upload-button {
   font-weight: 400;
   cursor: pointer;
 }
-
 .forgot_btn {
   border: none;
   background: var(--orange);
   color: #fff;
   margin-top: 10px;
 }
-
 .reset_password_block {
   padding-top: 60px;
 }
-
 .reset_password_block p {
-  line-height: 1.1;
+  line-height: 1.2;
   text-align: center;
+  font-size: 14px;
 }
-
 .reset_btn {
-  margin-top: 25px;
+  margin-top: 20px;
 }
-
 .span-icon {
   z-index: 1;
   position: absolute;
@@ -1238,21 +1188,17 @@ input#file-upload-button {
   padding: 15px;
   border-bottom: 0.5px solid #f4f4f4;
 }
-
 .new_reset_the_password {
   margin-top: 60px;
 }
-
 .new_btn {
   margin-top: 30px;
 }
-
 .text {
   font-size: 16px;
   color: #111;
   font-weight: 500;
 }
-
 .search_in {
   padding: 60px 0 0 0;
 }

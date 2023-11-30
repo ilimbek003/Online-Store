@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { HiArrowLongLeft } from "react-icons/hi2";
 import { useNavigate } from "react-router";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -15,6 +15,29 @@ import {
 } from "../Redux/slice/activationReduser";
 
 const Login = ({ Alert }) => {
+  // const phoneInputRef = useRef(null);
+  // const staticCode = "+996";
+
+  // const handlePaste = (e) => {
+  //   e.preventDefault();
+  //   const clipboardData = e.clipboardData || window.clipboardData;
+  //   const pastedData = clipboardData.getData("text");
+  //   const modifiedData = `${staticCode}${pastedData}`;
+  //   document.execCommand("insertText", false, modifiedData);
+  // };
+
+  // useEffect(() => {
+  //   if (phoneInputRef.current) {
+  //     phoneInputRef.current.addEventListener("paste", handlePaste);
+  //   }
+
+  //   return () => {
+  //     if (phoneInputRef.current) {
+  //       phoneInputRef.current.removeEventListener("paste", handlePaste);
+  //     }
+  //   };
+  // }, []);
+
   useEffect(() => {
     const phoneInput = document.getElementById("phone");
     if (phoneInput) {
@@ -41,13 +64,14 @@ const Login = ({ Alert }) => {
       password,
     };
     try {
+      // Отправляем запрос на сервер для аутентификации пользователя
       const response = await axios.post(url + "/auth/login", userCredential);
       dispatch(registerSuccess(response.data));
-      if (response.data.response == true) {
+      if (response.data.response === true) {
         navigate("/");
         Alert(response.data.message, "success");
       }
-      if (response.data.response == false) {
+      if (response.data.response === false) {
         Alert(response.data.message, "error");
       }
       if (response.data.token) {
@@ -62,6 +86,7 @@ const Login = ({ Alert }) => {
       dispatch(registerFailure(error.message));
       setIsLoading(false);
     }
+    // После выполнения запроса Redux для входа пользователя
     dispatch(loginUser(userCredential)).then((result) => {
       if (result.payload) {
         setPhone("");
@@ -91,6 +116,7 @@ const Login = ({ Alert }) => {
                 Номер телефона <span>*</span>
               </label>
               <input
+                // ref={phoneInputRef}
                 id="phone"
                 className="input_form new_add_input"
                 placeholder="996"

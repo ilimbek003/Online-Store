@@ -74,7 +74,10 @@ const ResetThePassword = ({ Alert }) => {
       </div>
       <div className="container">
         <form className="reset_password_block" onSubmit={handleForgotEvent}>
-          <p>укажите ваш номер телефон который использовался при регистрации</p>
+          <p>
+            Пожалуйста, запoлните требуемые поля. После корректного
+            заполнения.Вам будет отправлено сообщение с новым паролем
+          </p>
           <div className="input_box">
             <label>
               Номер телефона <span>*</span>
@@ -86,7 +89,7 @@ const ResetThePassword = ({ Alert }) => {
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
-            {errorCode.phone && <p className="red">{errorCode.phone}</p>}
+            {errorCode.phone && <p className="red">{errorCode.phone} </p>}
           </div>
           <button
             disabled={isLoading}
