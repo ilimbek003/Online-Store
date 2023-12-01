@@ -35,7 +35,7 @@ const ToHelpPage = () => {
             <div className="support_text">
               <h3>Возникли вопросы?</h3>
               <p className="title_h6">
-                Наша служба поддержки по всем вашим вопросам дает информацию.
+                Наша поддержка проконсультирует Вас по любым возникшим вопросам.
               </p>
             </div>
             <div className="to_contact">
@@ -57,7 +57,6 @@ const ToHelpPage = () => {
                   <p className="title_h6" style={{ marginTop: "8px" }}>
                     Telegram
                   </p>
-
                 </div>
               </a>
               <a href="https://wa.me/+996705000003" target="_blank">

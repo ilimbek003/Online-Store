@@ -186,7 +186,7 @@ const App = () => {
                     </div>
                 </div>
             ) : (
-                <div className="background_register_login">
+                <div>
                     <Routes>
                         <Route
                             path="personal/*"

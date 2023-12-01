@@ -880,7 +880,6 @@ button {
   background: #e9ecef;
   border: none !important;
 }
-
 .activation p {
   font-size: 14px;
   font-weight: 400;
@@ -888,7 +887,6 @@ button {
   color: black;
   padding: 0 0 5px 0;
 }
-
 .register_login {
   display: flex;
   align-items: center;
@@ -897,7 +895,6 @@ button {
   right: 20px;
   left: 20px;
 }
-
 .register_login div {
   width: 100%;
   margin: 0 5px 0 5px;
@@ -908,12 +905,14 @@ button {
   border: 1px solid #000;
   color: #000;
 }
-
 .background_register_login {
   width: 100%;
+  height: calc(100vh);
   background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
 .mobile {
   display: flex;
   align-items: center;
@@ -927,7 +926,7 @@ button {
 }
 
 .mobile img {
-  margin: 100px auto 30px;
+  margin: 0 auto 30px;
   height: 320px;
   max-width: 280px;
 }

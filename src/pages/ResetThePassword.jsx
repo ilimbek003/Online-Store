@@ -74,10 +74,7 @@ const ResetThePassword = ({ Alert }) => {
       </div>
       <div className="container">
         <form className="reset_password_block" onSubmit={handleForgotEvent}>
-          <p>
-            Пожалуйста, запoлните требуемые поля. После корректного
-            заполнения.Вам будет отправлено сообщение с новым паролем
-          </p>
+          <p className="py-2">Вам будет отправлено сообщение с новым паролем</p>
           <div className="input_box">
             <label>
               Номер телефона <span>*</span>

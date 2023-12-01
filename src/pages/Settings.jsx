@@ -239,12 +239,32 @@ const Settings = ({ Alert }) => {
             {/*)}*/}
             <h5
               className="settings_title akaunt_remove"
-              onClick={() =>
-                localStorage.removeItem("token") || navigate("/to-come-in")
-              }
+              // onClick={() =>
+              //   localStorage.removeItem("token") || navigate("/to-come-in")
+              // }
+              onClick={() => navigate()}
             >
               Удалить акаунт
             </h5>
+
+            {/* {openModal === true && (
+            <div className="filters_oll" onClick={closeOpenModal}>
+              <div className="order">
+                <div className="acaunt_block_modal">
+                  <h3>Выйти из аккаунта?</h3>
+                  <button
+                    onClick={() =>
+                      localStorage.removeItem("token") ||
+                      navigate("/to-come-in")
+                    }
+                  >
+                    Да, я выйду
+                  </button>
+                  <h4>Нет, я останусь</h4>
+                </div>
+              </div>
+            </div>
+          )} */}
           </div>
         </div>
       </div>
