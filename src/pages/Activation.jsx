@@ -29,37 +29,42 @@ const Activation = ({ Alert }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
-    const phone = localStorage.getItem("phone");
+    if (code == "") {
+      Alert("Введите код подтверждения", "error");
+      setLoading(false);
+    } else {
+      const phone = localStorage.getItem("phone");
 
-    let activationCredential = {
-      phone,
-      code,
-    };
-    try {
-      const response = await axios.post(
-        url + "/auth/verify-phone",
-        activationCredential
-      );
-      dispatch(registerSuccess(response.data));
-      if (response.data.response === false) {
-        Alert(response.data.message, "error");
-      }
-      if (response.data.token) {
-        localStorage.setItem("token", JSON.stringify(response.data.token));
-        localStorage.setItem("tokens", response.data.token);
-      }
-      if (response.data.response === true) {
-        Alert(response.data.message, "success");
-        navigate("/");
-      }
-      if (response.data.password) {
-        setError(response.data);
+      let activationCredential = {
+        phone,
+        code,
+      };
+      try {
+        const response = await axios.post(
+          url + "/auth/verify-phone",
+          activationCredential
+        );
+        dispatch(registerSuccess(response.data));
+        if (response.data.response === false) {
+          Alert(response.data.message, "error");
+        }
+        if (response.data.token) {
+          localStorage.setItem("token", JSON.stringify(response.data.token));
+          localStorage.setItem("tokens", response.data.token);
+        }
+        if (response.data.response === true) {
+          Alert(response.data.message, "success");
+          navigate("/");
+        }
+        if (response.data.code) {
+          setError(response.data);
+        }
+        setLoading(false);
+      } catch (error) {
+        dispatch(registerFailure(error.message));
       }
       setLoading(false);
-    } catch (error) {
-      dispatch(registerFailure(error.message));
     }
-    setLoading(false);
   };
 
   return (
@@ -76,7 +81,7 @@ const Activation = ({ Alert }) => {
       </div>
       <div className="container">
         <div className="activation">
-          <p>Введите код, который мы вам отправили на сообщение</p>
+          <p>Введитe код подтверждения из CMC</p>
           <form onSubmit={handleSubmit}>
             <input
               style={{ textAlign: "center" }}
@@ -86,7 +91,7 @@ const Activation = ({ Alert }) => {
               placeholder="Введите код"
               onChange={(e) => setCode(e.target.value)}
             />
-            {error.password && <p className="red">{error.password}</p>}
+            {error.code && <p className="red">{error.code}</p>}
             <button
               disabled={loading}
               style={{ marginTop: 20 }}

@@ -30,11 +30,11 @@ const GetShotDetailsId = () => {
             </div>
             <img className="special_image_id" src={card.img} alt="" />
             <div className="dolor">
-              <div className="dateto">
+              {/* <div className="dateto">
                 <div className="container">
                   <h6>{card.date}</h6>
                 </div>
-              </div>
+              </div> */}
               <div className="container">
                 <h5 className="card_title">{card.title}</h5>
                 <p className="card_item">{card.text}</p>

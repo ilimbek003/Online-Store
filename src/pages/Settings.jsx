@@ -11,6 +11,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../Redux/reduser/auth";
 
 const Settings = ({ Alert }) => {
+  const [openModalSetting, setOpenModalSetting] = useState(false);
+  const isOpenModal1 = () => {
+    setOpenModalSetting(true);
+  };
+
+  const closeOpenModal = () => {
+    setOpenModalSetting(false);
+  };
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.users);
@@ -242,29 +251,28 @@ const Settings = ({ Alert }) => {
               // onClick={() =>
               //   localStorage.removeItem("token") || navigate("/to-come-in")
               // }
-              onClick={() => navigate()}
+              onClick={() => isOpenModal1()}
             >
               Удалить акаунт
             </h5>
-
-            {/* {openModal === true && (
-            <div className="filters_oll" onClick={closeOpenModal}>
-              <div className="order">
-                <div className="acaunt_block_modal">
-                  <h3>Выйти из аккаунта?</h3>
-                  <button
-                    onClick={() =>
-                      localStorage.removeItem("token") ||
-                      navigate("/to-come-in")
-                    }
-                  >
-                    Да, я выйду
-                  </button>
-                  <h4>Нет, я останусь</h4>
+            {openModalSetting === true && (
+              <div className="filters_oll" onClick={closeOpenModal}>
+                <div className="order">
+                  <div className="acaunt_block_modal">
+                    <h3>Вы действительно хотите удалить?</h3>
+                    <button
+                      onClick={() =>
+                        localStorage.removeItem("token") ||
+                        navigate("/to-come-in")
+                      }
+                    >
+                      Да
+                    </button>
+                    <h4>Нет</h4>
+                  </div>
                 </div>
               </div>
-            </div>
-          )} */}
+            )}
           </div>
         </div>
       </div>
