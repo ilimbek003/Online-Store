@@ -154,7 +154,7 @@ input:checked + .slider_toggle:before {
   border-top-right-radius: 15px;
   animation: slideIn 0.5s;
   position: absolute;
-  bottom: 55px;
+  bottom: 69px;
 }
 
 @keyframes slideIn {
