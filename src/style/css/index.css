@@ -236,4 +236,9 @@ a:focus {
   .my-information {
     margin-bottom: calc(env(safe-area-inset-bottom) + 20px) !important;
   }
+  .order {
+    margin-bottom: calc(env(safe-area-inset-bottom) + 20px) !important;
+  }
 }
+
+
